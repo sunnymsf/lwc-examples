@@ -1,0 +1,75 @@
+.custom-button button {
+        border-radius: var(--dx-g-spacing-xs) !important;
+        justify-content: space-between !important;
+        height: 44px !important;
+}
+
+.custom-button span {
+    font-family: var(--dx-g-font-sans) !important;
+    font-size: var(--dx-g-text-base) !important;
+    font-weight: var(--dx-g-font-normal) !important;
+    line-height: var(--dx-g-spacing-lg) !important;
+    letter-spacing: 0.019px !important;
+}
+
+.custom-button dx-icon svg {
+    --dx-c-icon-size: var(--dx-g-icon-size-md) !important;
+    fill: var(--dx-g-blue-vibrant-20) !important;
+}
+
+dx-popover .popover {
+    border: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+dx-popover .popover-container {
+    padding: var(--dx-g-spacing-sm) 0 var(--dx-g-spacing-sm) 0 !important;
+    margin: var(--dx-g-spacing-sm) 0 0 0 !important;
+    background: var(--sds-g-gray-1) !important;
+    border-radius: var(--dx-g-spacing-xs) !important;
+    box-shadow: var(--dx-g-box-shadow-sm) !important;
+}
+
+dx-dropdown-option button {
+    padding: 9px 70px var(--dx-g-spacing-sm) var(--dx-g-spacing-md) !important;
+    height: 41px !important;
+    gap: 8px !important;
+    border-radius: 0 !important;
+}
+
+dx-dropdown-option button .option_label {
+    color: var(--dx-g-gray-10) !important;
+    font-family: var(--dx-g-font-sans) !important;
+    font-size: var(--dx-g-text-base) !important;
+    font-weight: var(--dx-g-font-normal) !important;
+    line-height: var(--dx-g-spacing-lg) !important;
+    letter-spacing: 0.019px  !important;
+}
+
+dx-dropdown-option button .option_icon {
+    margin-right: 0 !important;
+}
+
+.expanded {
+    background: #EAF5FE !important;
+    border: var(--dx-g-spacing-2xs) solid var(--dx-g-blue-vibrant-20) !important;
+    padding: 9px 15px !important;
+    color: var(--dx-g-blue-vibrant-20) !important;
+}
+
+.shrink {
+    background: var(--sds-g-gray-1) !important;
+    border: 1px solid var(--dx-g-gray-50) !important;
+    padding: 10px var(--dx-g-spacing-md) !important;
+    color: var(--dx-g-gray-10) !important;
+}
+
+.option:not(.option-active):hover {
+    background: #EAF5FE !important;
+}
+
+.option-active {
+    background: #EAF5FE !important;
+}

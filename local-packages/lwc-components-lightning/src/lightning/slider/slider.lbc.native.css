@@ -1,0 +1,4 @@
+@import 'lightning/sldsCommon';
+@import './slider.slds.css';
+@import './form-element.slds.css';
+@import 'lightning/sldsUtilsSizing';

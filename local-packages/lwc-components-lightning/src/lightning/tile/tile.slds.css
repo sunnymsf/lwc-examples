@@ -1,0 +1,38 @@
+
+@supports (--styling-hooks: '') {
+
+  :host([data-render-mode="shadow"].slds-tile:not(:first-of-type)) {
+    margin-block-start: var(--slds-g-spacing-2);
+  }
+
+  :host([data-render-mode="shadow"]) .slds-tile__detail {
+    position: relative;
+  }
+
+  :host([data-render-mode="shadow"]) .slds-tile__meta {
+    color: var(--slds-g-color-on-surface-3);
+  }
+
+  :host([data-render-mode="shadow"]) .slds-tile_board {
+    position: relative;
+  }
+
+  :host([data-render-mode="shadow"]) .slds-tile_board .slds-has-alert {
+    padding-inline-end: var(--slds-g-spacing-5);
+  }
+
+  :host([data-render-mode="shadow"]) .slds-tile_board__icon {
+    width: var(--slds-g-spacing-4);
+    height: var(--slds-g-spacing-4);
+    position: absolute;
+    inset-block-end: var(--slds-g-spacing-1);
+    inset-inline-end: var(--slds-g-spacing-1);
+  }
+
+  :host([data-render-mode="shadow"]) .slds-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

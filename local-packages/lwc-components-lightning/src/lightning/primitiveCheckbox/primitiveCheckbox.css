@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Parent container of input-checkbox
+ */
+[part~='input-checkbox'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-c-inputcheckbox-spacing-gap, var(--sds-s-input-spacing-gap));
+}
+
+/**
+ * The visual container of the checkbox indicator
+ */
+[part='checkbox'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--sds-c-inputcheckbox-color-background, var(--sds-s-input-color-background));
+  box-shadow: var(--sds-c-inputcheckbox-shadow);
+  width: var(--sds-c-inputcheckbox-sizing, 1rem);
+  height: var(--sds-c-inputcheckbox-sizing, 1rem);
+  border: var(--sds-c-inputcheckbox-sizing-border, var(--sds-s-input-sizing-border, 1px)) solid
+    var(--sds-c-inputcheckbox-color-border, var(--sds-s-input-color-border, currentColor));
+  border-radius: var(--sds-c-inputcheckbox-radius-border);
+}
+
+/**
+ * Focus state
+ */
+[part='checkbox']:has(:focus) {
+  --sds-c-inputcheckbox-shadow: var(
+    --sds-c-inputcheckbox-shadow-focus,
+    var(--sds-s-input-shadow-focus, revert)
+  );
+  --sds-c-inputcheckbox-color-background: var(
+    --sds-c-inputcheckbox-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-inputcheckbox-color-border: var(
+    --sds-c-inputcheckbox-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+}
+
+/**
+ * Checked state
+ */
+[part='checkbox']:has(:checked) {
+  --sds-c-inputcheckbox-shadow: var(--sds-c-inputcheckbox-shadow-checked, revert);
+  --sds-c-inputcheckbox-color-background: var(--sds-c-inputcheckbox-color-background-checked, revert);
+  --sds-c-inputcheckbox-color-border: var(--sds-c-inputcheckbox-color-border-checked, revert);
+}
+
+/**
+ * Indeterminate state
+ */
+[part='checkbox']:has(:indeterminate) {
+  --sds-c-inputcheckbox-shadow: var(--sds-c-inputcheckbox-shadow-indeterminate, revert);
+  --sds-c-inputcheckbox-color-background: var(--sds-c-inputcheckbox-color-background-indeterminate, revert);
+  --sds-c-inputcheckbox-color-border: var(--sds-c-inputcheckbox-color-border-indeterminate, revert);
+}
+
+/**
+ * The checked mark
+ */
+[part='mark'] {
+  display: inline-flex;
+  opacity: 0;
+  color: var(--sds-c-inputcheckbox-mark-color-foreground, var(--sds-s-mark-color-foreground));
+  background-color: var(--sds-c-inputcheckbox-mark-color-background, var(--sds-s-mark-color-background));
+  width: var(--sds-c-inputcheckbox-mark-sizing, var(--sds-s-mark-sizing, 1em));
+  height: var(--sds-c-inputcheckbox-mark-sizing, var(--sds-s-mark-sizing, 1em));
+}
+
+/**
+ * When the label or checkbox is clicked, a checked state is applied to the host element
+ */
+[part='checkbox']:has(:checked) [part='mark'] {
+  opacity: 1;
+
+  --sds-c-inputcheckbox-mark-color-background: var(
+    --sds-c-inputcheckbox-mark-color-background-checked,
+    var(--sds-s-mark-color-background-checked, revert)
+  );
+}
+
+/**
+ * Indicator, Indeterminate state
+ */
+[part='checkbox']:has(:indeterminate) [part='mark'] {
+  --sds-c-inputcheckbox-mark-color-foreground: var(
+    --sds-c-inputcheckbox-mark-color-foreground-indeterminate,
+    revert
+  );
+  --sds-c-inputcheckbox-mark-color-background: var(
+    --sds-c-inputcheckbox-mark-color-background-indeterminate,
+    revert
+  );
+}
+
+/**
+ * The label of the checkbox
+ */
+[part~='label'] {
+  color: var(--sds-c-inputcheckbox-label-color, var(--sds-s-label-color));
+  font-size: var(--sds-c-inputcheckbox-label-font-size, var(--sds-s-label-font-size));
+}
+
+/**
+ * If told, the label will be hidden from view
+ */
+:host([label-hidden]) [part~='label'] {
+  position: absolute !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
+
+/**
+ * Help text
+ * ---
+ * "visible" gets added when the slotchange confirms there are children
+ * This prevents box-model customizations from being applied, in the case of no children
+ */
+[part='help-text visible'] {
+  font-size: var(--sds-c-inputcheckbox-helptext-font-size, var(--sds-s-helptext-font-size));
+  color: var(--sds-c-inputcheckbox-helptext-text-color, var(--sds-s-helptext-color));
+  padding-inline-start: var(
+    --sds-c-inputcheckbox-helptext-spacing-inlinestart,
+    var(--sds-c-inputcheckbox-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputcheckbox-helptext-spacing-inlineend,
+    var(--sds-c-inputcheckbox-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputcheckbox-helptext-spacing-blockstart,
+    var(--sds-c-inputcheckbox-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputcheckbox-helptext-spacing-blockend,
+    var(--sds-c-inputcheckbox-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+}
+
+/**
+ * HTML checkbox element, hidden from view
+ * No part is exposed because it should not be altered by an outside factor
+ */
+input[type='checkbox'] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  opacity: 0;
+}

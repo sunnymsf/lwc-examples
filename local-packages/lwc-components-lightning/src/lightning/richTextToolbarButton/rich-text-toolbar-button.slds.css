@@ -1,0 +1,41 @@
+
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+  Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+  /**
+    * Set border radius just for buttons
+    * to ensure that slots are unaffected
+    */
+
+  :host([data-render-mode="shadow"]) .slds-button_first {
+    --slds-s-button-radius-border-startstart: var(--slds-g-radius-border-2);
+    --slds-s-button-radius-border-startend: 0;
+    --slds-s-button-radius-border-endstart: var(--slds-g-radius-border-2);
+    --slds-s-button-radius-border-endend: 0;
+  }
+
+  :host([data-render-mode="shadow"]) .slds-button_middle {
+    --slds-s-button-radius-border: 0;
+
+    /* Nudge buttons over to remove double border effect */
+    margin-inline-start: calc(-1 * var(--slds-g-sizing-border-1));
+  }
+
+  :host([data-render-mode="shadow"]) .slds-button_last {
+    --slds-s-button-radius-border-startstart: 0;
+    --slds-s-button-radius-border-startend: var(--slds-g-radius-border-2);
+    --slds-s-button-radius-border-endstart: 0;
+    --slds-s-button-radius-border-endend: var(--slds-g-radius-border-2);
+
+    /* Nudge buttons over to remove double border effect */
+    margin-inline-start: calc(-1 * var(--slds-g-sizing-border-1));
+  }
+
+  /**
+    * Adds stacking context so the focus shadow is visible
+    */
+
+  :host([data-render-mode="shadow"]) .slds-button:focus {
+    position: relative;
+    z-index: 1;
+  }

@@ -1,0 +1,57 @@
+<template>
+    <template if:true={isLoaded}>
+        <label
+            class={computedLabelClass}
+            part="label"
+        >
+        <template if:true={required}>
+            <abbr class="slds-required" title={i18n.required}>*</abbr>
+        </template>
+            {label}
+        </label>
+        <lightning-helptext
+            if:true={fieldLevelHelp}
+            content={fieldLevelHelp}
+            alternative-text={helptextAlternativeText}
+        ></lightning-helptext>
+        <div class="slds-form-element__control">
+            <lightning-base-combobox
+                class={computedLookupComboboxClass}
+                name={name}
+                autocomplete={autocomplete}
+                variant="lookup"
+                items={_items}
+                disabled={disabled}
+                dropdown-alignment="auto"
+                placeholder={placeholder}
+                input-text={inputText}
+                input-icon-name={_inputIconName}
+                show-input-activity-indicator={showActivityIndicator}
+                ontextinput={handleTextInput}
+                onselect={handleSelect}
+                onready={handleComboboxReady}
+                onfocus={handleFocus}
+                onblur={handleBlur}
+                attribution-logo-url={_googleLogoUrl}
+                attribution-logo-assistive-text={_googleLogoText}
+            ></lightning-base-combobox>
+        </div>
+        <template if:true={_helpMessage}>
+            <div
+                id="help-message"
+                data-help-message
+                class="slds-form-element__help"
+                aria-live="assertive"
+                role="status"
+            >
+                {_helpMessage}
+            </div>
+        </template>
+    </template>
+    <lightning-primitive-iframe
+        style="display:none"
+        src={apiSrc}
+        domain={apiDomain}
+        oniframeload={handleIframeLoad}
+    ></lightning-primitive-iframe>
+</template>

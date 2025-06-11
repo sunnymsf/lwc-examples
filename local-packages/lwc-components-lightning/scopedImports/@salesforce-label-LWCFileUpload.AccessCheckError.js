@@ -1,0 +1,1 @@
+export default 'This feature isn\'t enabled, or you don\'t have permission to upload.';

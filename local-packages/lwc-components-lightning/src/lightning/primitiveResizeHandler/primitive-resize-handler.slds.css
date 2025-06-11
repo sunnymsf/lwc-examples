@@ -1,0 +1,101 @@
+
+:host([data-render-mode="shadow"]) {
+  display: block;
+}
+
+:host([data-render-mode="shadow"]) .slds-assistive-text {
+  position: absolute !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__handle {
+  width: var(--slds-g-sizing-7);
+  height: 100%;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: calc(var(--slds-g-spacing-3) * -1);
+}
+
+/* fix styles for last resizer, needed for div mode */
+
+:host([data-render-mode="shadow"]) .slds-resizable__handle[data-is-last-col='true'] {
+  width: var(--slds-g-sizing-4);
+  inset-inline-end: 0;
+}
+
+/**
+* Grab handle divider indicator when resizing column
+*/
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: col-resize;
+  z-index: 5000;
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider::before,:host([data-render-mode="shadow"]) 
+.slds-resizable__divider::after {
+  height: 100%;
+  content: ' ';
+  display: block;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: var(--slds-g-spacing-3);
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider::before {
+  /* stylelint-disable sds-stylelint-plugin/styling-hooks-pattern */
+  background-color: var(--slds-s-table-resize-color, var(--slds-g-color-border-1));
+  height: 100%;
+  width: calc(var(--slds-g-sizing-1) / 2);
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider::after {
+  background-color: var(--slds-s-table-resize-color-active, var(--slds-g-color-accent-3));
+  width: calc(var(--slds-g-sizing-1) / 2);
+  height: 100vh;
+  opacity: 0;
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider:hover::before,:host([data-render-mode="shadow"]) 
+.slds-resizable__divider:focus::before,:host([data-render-mode="shadow"]) 
+.slds-resizable__divider:active::before {
+  background-color: var(--slds-s-table-resize-color-active, var(--slds-g-color-accent-3));
+  width: var(--slds-g-sizing-2);
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider:hover::after,:host([data-render-mode="shadow"]) 
+.slds-resizable__divider:focus::after,:host([data-render-mode="shadow"]) 
+.slds-resizable__divider:active::after {
+  opacity: 1;
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__divider[data-is-last-col='true']::before,:host([data-render-mode="shadow"]) 
+.slds-resizable__divider[data-is-last-col='true']::after {
+  inset-inline-end: 0;
+}
+
+/* Handles making the handle + divider visible during keyboard navigation */
+
+:host([data-render-mode="shadow"]) .slds-resizable__input:focus ~ .slds-resizable__handle .slds-resizable__divider::before {
+  background-color: var(--slds-s-table-resize-color-active, var(--slds-g-color-accent-3));
+  width: var(--slds-g-sizing-2);
+}
+
+:host([data-render-mode="shadow"]) .slds-resizable__input:focus ~ .slds-resizable__handle .slds-resizable__divider::after {
+  opacity: 1;
+}
+

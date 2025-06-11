@@ -1,0 +1,37 @@
+<template>
+  <div part="select">
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label" for={id}>
+        <slot name="label" onslotchange={handleLabelSlotChange}></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+    <div part="select-container" onclick={handleClick}>
+      <slot name="start"></slot>
+      <select
+        id={id}
+        name={name}
+        disabled={disabled}
+        required={required}
+        multiple={multiple}
+        size={size}
+        onchange={handleChange}
+        onblur={handleBlur}
+        aria-invalid={invalid}
+      ></select>
+      <slot name="end"></slot>
+      <div part="indicator">
+        <slot name="indicator">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 10l5 5 5-5z"></path>
+          </svg>
+        </slot>
+      </div>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text" onslotchange={handleHelpTextSlotChange}></slot>
+  </div>
+  <slot onslotchange={handleSlotChange}></slot>
+</template>

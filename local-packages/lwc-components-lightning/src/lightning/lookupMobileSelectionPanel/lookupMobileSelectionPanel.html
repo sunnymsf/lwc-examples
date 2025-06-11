@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-p-around_medium" ontouchmove={handleTouchMove}>
+        <lightning-mobile-grouped-combobox
+            aria-label={label}
+            filter-input-text={selectedEntityLabel}
+            filter-items={entityFilterOptions}
+            filter-label={entitySelectedAssistiveLabel}
+            filter-icon-name={selectedEntityIconName}
+            filter-icon-alternative-text={selectedEntityIconAlternativeText}
+            items={state.data}
+            input-text={inputText}
+            placeholder={placeholder}
+            show-activity-indicator={showActivityIndicator}
+            onselect={handleSelect}
+            onselectfilter={handleEntityOptionSelect}
+            ontextinput={handleInputChange}>
+        </lightning-mobile-grouped-combobox>
+
+        <template if:true={emptyState.show}>
+            <lightning-lookup-mobile-no-result
+                text={emptyState.text}
+                sub-text={emptyState.subText}
+            ></lightning-lookup-mobile-no-result>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,182 @@
+import StylingHooks from './inputRadio.hooks.mdx';
+
+### Overview
+The Radio element is a control that allows the user to select one value out of a set. While similar to a Checkbox element, only one Radio element in a particular set can be selected at any given time.
+
+### Use Cases
+The Radio element is leveraged to indicate a single selection from a set of two or more options. Many forms use radio buttons to allow users to pick a single option from an pre-set list of options.
+
+**Note**: A set with only one Radio element is not allowed.
+
+### Non-goals
+
+- Composite radio buttons (larger components that are made up of multiple SDS components)
+- Complex radio buttons (components that use a radio button internally but do not have a form-like look and feel, such as [SLDS' Visual Picker - Non-Coverable Content](https://www.lightningdesignsystem.com/components/visual-picker/#Non-Coverable-Content) component) or a [radio button-based star rating component](https://codepen.io/lsirivong/pen/ekBxI)
+- Customizations made outside of [Styling Hooks][styling-hooks-jump] are not supported.
+
+### Features
+
+- The API design of the SDS Radio uses the [WAI-ARIA](https://www.w3.org/TR/wai-aria-practices-1.1/#radiobutton) approach of creating a custom element with `role='radio'`. It replicates the spec from [HTML Input](https://html.spec.whatwg.org/multipage/input.html#radio-button-state-(type=radio)).
+- The "default" appearance provides the basic structure of a radio button.
+- The "default" appearance comes unbranded.
+- [Styling hooks][styling-hooks-jump] should be used to customize the appearance of the radio button.
+- Customization beyond Styling Hooks can be achieved through the [CSS Shadow Parts API][css-shadow-parts].
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/radio-group/)
+- [Ant Design](https://ant.design/components/radio/)
+- [Atlassian](https://atlassian.design/components/radio/)
+- [Material Design](https://material.io/components/radio-buttons)
+- [Carbon](https://www.carbondesignsystem.com/components/radio-button/usage/)
+- [FAST](https://explore.fast.design/components/fast-radio)
+- [Morning Star](https://designsystem.morningstar.com/components/radio-button/)
+- [Polaris](https://polaris.shopify.com/components/forms/radio-button)
+- [Open UI](https://open-ui.org/components/radio-button.research)
+
+### API
+
+The Radio component should support all attributes, functionality, and accessibility considerations of the [HTML Input Radio Button state](https://html.spec.whatwg.org/multipage/input.html#radio-button-state-(type=radio)).
+
+#### Custom Element
+
+This specification will apply to an SDS custom element but also can be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix of the custom elements definition:
+
+1. `sds-input-radio` - This is owned by the Salesforce Design System (SDS) Team
+2. `<namespace>-input-radio` - This is owned by a subsystem build on SDS, e.g., `dxp-input-radio`
+
+### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is required to use the SDS Radio CSS.
+
+#### DOM Structure
+
+```html
+<host>
+    <div part="input-radio">
+    <div part="radio">
+      <input type="radio" />
+      <div part="mark">
+        <slot name="mark"></slot>
+      </div>
+    </div>
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label">
+        <slot></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Required | Description | Fallback Content |
+| - | - | - | - |
+| `default` | TRUE | The text content that labels the radio element | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `input-radio` | The components default wrapper |
+| `radio` | The radio container |
+| `mark` | The control's `checked` mark |
+| `label` | The control's label |
+| `label-container` | The container of the label and its start and end slots |
+
+#### Properties & Attributes
+
+| Attribute | Type | Default Value | Required | Description |
+| - | - | - | - | - |
+| `name`          | `string` | `null` | TRUE | Specifies the name of the control for purposes of form submission and associating the radio group. This attribute can be set by the parent input-radio-group |
+| `value`         | `string` | | TRUE | Specifies the value of the radio when submitting the form, if the radio is toggled on |
+| `id`            | `string` | `null` | | The ID of the input |
+| `checked`       | `boolean` | `false` | | If present, the radio is toggled on by default. This attribute can be applied to only 1 control in a particular group at one time |
+| `disabled`      | `boolean` | `false` | | Prevents the user from interacting with the control |
+| `required`      | `boolean` | `false` | | Indicates that the control set is invalid unless at least one radio in the group is checked |
+| `aria-invalid`  | `boolean` | `null` | | Indicates the component is in error state, when it is invalid |
+| `aria-posinset` | `number` | `null` | | Indicates the position within the set of radios |
+| `aria-setsize`  | `number` | `null` | | Indicates the total number of radios in the set |
+
+
+
+#### Events
+Events should conform to the [HTML Standard](https://html.spec.whatwg.org/multipage/input.html#radio-button-state-(type=radio))
+
+| Event Name | Type | Bubbles | Composed | Cancellable | Dispatch Behavior |
+| - | - | - | - | - | - |
+| `click`    | PointerEvent | `true` | `true`  | `true` | Native event emitted once when the element becomes `:checked` by clicking or using the keyboard |
+| `focus`    | FocusEvent | `false` | `true`  | `false` | Native event emitted when the element receives focus |
+| `blur`     | FocusEvent | `false` | `true`  | `false` | Native event emitted when the element loses focus |
+
+#### Styling Hooks
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description |
+| - | - | - | - |
+| `Checked`   | `true/false` | `null` | When `true`, associates the control with the parent form data and displays the control with a checked appearance. |
+| `Disabled`  | `true/false` | `null` | When `true`, disables the control, preventing user interaction. Applies `aria-disabled` attribute and displays the control with a disabled appearance. |
+| `Required`  | `true/false` | `null` | When `true`, applies the `required` and `aria-required` attributes to the radio. |
+| `Invalid`   | `true/false` | `null` | When `true`, applies the `aria-invalid` attribute to the radio and displays the control with an invalid appearance. Invalid appearance overrides disabled appearance. |
+
+The following states are not handled in this component. If necessary add these to the sub-system css.
+- `Invalid + Hover`
+- `Invalid + Hover + Checked`
+- `Invalid + Focus`
+- `Invalid + Focus + Checked`
+- `Invalid + Disabled`
+
+### Accessibility
+
+#### General Usage
+
+The Radio component should conform to the [WAI-ARIA authoring practices](https://www.w3.org/TR/2017/WD-wai-aria-practices-1.1-20170628/examples/radio/radio-1/radio-1.html) for Radio Buttons.
+
+#### Keyboard
+
+Keyboard users can operate the Radio element as follows:
+
+- The Radio is eligible for document focus.
+- The Radio can be the target of `click` events (when not `disabled`) either through mouse click, user tap, or keyboard <kbd>space</kbd> key press.
+- The Radio elements in a set can move focus either through mouse click, user swipe (on a touch device), or keyboard <kbd>←</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, or <kbd>→</kbd> key presses.
+
+#### Form input
+
+Control is eligible for all native form capabilities including:
+
+- Form submission
+- Form validation
+- Form state restoration
+
+#### Use with Assistive Technology
+
+Implements the [radio button role](https://www.w3.org/TR/wai-aria-1.1/#radio) per the [HTML AAM spec](https://www.w3.org/TR/html-aam-1.0/#html-element-role-mappings).
+
+### Internationalization
+
+All slotted content inside the Radio element should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left) using the HTML `dir` attribute.
+
+### Test Plan
+
+- All Radios should have visual regression tests to catch any unintended modifications to the visuals of the radios
+- All Radios should have a test to catch color contrast regressions that, at a minimum, fulfill the requirements of WCAG 2.1
+- All Radios should have unit tests to ensure behavior and functionality works as intended
+
+[styling-hooks-jump]: #styling-hooks
+[css-shadow-parts]: https://drafts.csswg.org/css-shadow-parts/
+[namespace-service]: https://github.com/salesforce-experience-platform-emu/salesforce-design-system/blob/main/packages/sds-namespaces/src/namespaces.js
+
+### Open Questions
+
+- Allow for field validation and form participation?
+- Option to deselect radios?

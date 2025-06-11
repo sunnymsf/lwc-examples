@@ -1,0 +1,62 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * Base image styles
+ */
+[part~='image'] {
+  border-radius: var(--sds-c-image-radius-border, var(--sds-s-image-radius-border));
+  height: var(--sds-c-image-sizing-height);
+  width: var(--sds-c-image-sizing-width, 100%);
+  box-shadow: var(--sds-c-image-shadow, var(--sds-s-image-shadow));
+  vertical-align: middle;
+}
+
+/**
+ * Object fit
+ */
+:host([fit='cover']) [part~='image'] {
+  object-fit: cover;
+}
+
+:host([fit='contain']) [part~='image'] {
+  object-fit: contain;
+}
+
+:host([fit='initial']) [part~='image'] {
+  object-fit: initial;
+}
+
+:host([fit='none']) [part~='image'] {
+  object-fit: none;
+}
+
+:host([fit='scale-down']) [part~='image'] {
+  object-fit: scale-down;
+}
+
+/**
+ * Ratios
+ * ---
+ * Predefined aspect ratios for declarative usage. Custom ratios can be set by
+ * the consumer as well via the `ratio` field.
+ */
+:host([ratio='square']) [part~='image'] {
+  aspect-ratio: var(--sds-g-ratio-square);
+}
+
+:host([ratio='landscape']) [part~='image'] {
+  aspect-ratio: var(--sds-g-ratio-landscape);
+}
+
+:host([ratio='portrait']) [part~='image'] {
+  aspect-ratio: var(--sds-g-ratio-portrait);
+}
+
+:host([ratio='wide']) [part~='image'] {
+  aspect-ratio: var(--sds-g-ratio-wide);
+}
+
+:host([ratio='ultrawide']) [part~='image'] {
+  aspect-ratio: var(--sds-g-ratio-ultrawide);
+}

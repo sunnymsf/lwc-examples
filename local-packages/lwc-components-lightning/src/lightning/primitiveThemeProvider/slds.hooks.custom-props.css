@@ -1,0 +1,1093 @@
+/** This file is generated. Do not edit manually. **/
+@layer deprecated, defaults, shared, theme, component;
+@layer defaults {
+  :where(html) {
+    /* Spacing size 1. */
+    --sds-g-spacing-1: var(--slds-g-spacing-1);
+    --slds-g-spacing-1: 0.25rem;
+    /* Spacing size 2. */
+    --sds-g-spacing-2: var(--slds-g-spacing-2);
+    --slds-g-spacing-2: 0.5rem;
+    /* Spacing size 3. */
+    --sds-g-spacing-3: var(--slds-g-spacing-3);
+    --slds-g-spacing-3: 0.75rem;
+    /* Spacing size 4. */
+    --sds-g-spacing-4: var(--slds-g-spacing-4);
+    --slds-g-spacing-4: 1rem;
+    /* Spacing size 5. */
+    --sds-g-spacing-5: var(--slds-g-spacing-5);
+    --slds-g-spacing-5: 1.5rem;
+    /* Spacing size 6. */
+    --sds-g-spacing-6: var(--slds-g-spacing-6);
+    --slds-g-spacing-6: 2rem;
+    /* Spacing size 7. */
+    --sds-g-spacing-7: var(--slds-g-spacing-7);
+    --slds-g-spacing-7: 2.5rem;
+    /* Spacing size 8. */
+    --sds-g-spacing-8: var(--slds-g-spacing-8);
+    --slds-g-spacing-8: 3rem;
+    /* Spacing size 9. */
+    --sds-g-spacing-9: var(--slds-g-spacing-9);
+    --slds-g-spacing-9: 3.5rem;
+    /* Spacing size 10. */
+    --sds-g-spacing-10: var(--slds-g-spacing-10);
+    --slds-g-spacing-10: 4rem;
+    /* Spacing size 11. */
+    --sds-g-spacing-11: var(--slds-g-spacing-11);
+    --slds-g-spacing-11: 4.5rem;
+    /* Spacing size 12. */
+    --sds-g-spacing-12: var(--slds-g-spacing-12);
+    --slds-g-spacing-12: 5rem;
+    /* Border size 1. */
+    --sds-g-sizing-border-1: var(--slds-g-sizing-border-1);
+    --slds-g-sizing-border-1: 1px;
+    /* Border size 2. */
+    --sds-g-sizing-border-2: var(--slds-g-sizing-border-2);
+    --slds-g-sizing-border-2: 2px;
+    /* Border size 3. */
+    --sds-g-sizing-border-3: var(--slds-g-sizing-border-3);
+    --slds-g-sizing-border-3: 3px;
+    /* Border size 4. */
+    --sds-g-sizing-border-4: var(--slds-g-sizing-border-4);
+    --slds-g-sizing-border-4: 4px;
+    /* Size 1. */
+    --sds-g-sizing-1: var(--slds-g-sizing-1);
+    --slds-g-sizing-1: 0.125rem;
+    /* Size 2. */
+    --sds-g-sizing-2: var(--slds-g-sizing-2);
+    --slds-g-sizing-2: 0.25rem;
+    /* Size 3. */
+    --sds-g-sizing-3: var(--slds-g-sizing-3);
+    --slds-g-sizing-3: 0.5rem;
+    /* Size 4. */
+    --sds-g-sizing-4: var(--slds-g-sizing-4);
+    --slds-g-sizing-4: 0.75rem;
+    /* Size 5. */
+    --sds-g-sizing-5: var(--slds-g-sizing-5);
+    --slds-g-sizing-5: 1rem;
+    /* Size 6. */
+    --sds-g-sizing-6: var(--slds-g-sizing-6);
+    --slds-g-sizing-6: 1.25rem;
+    /* Size 7. */
+    --sds-g-sizing-7: var(--slds-g-sizing-7);
+    --slds-g-sizing-7: 1.5rem;
+    /* Size 8. */
+    --sds-g-sizing-8: var(--slds-g-sizing-8);
+    --slds-g-sizing-8: 1.75rem;
+    /* Size 9. */
+    --sds-g-sizing-9: var(--slds-g-sizing-9);
+    --slds-g-sizing-9: 2rem;
+    /* Size 10. */
+    --sds-g-sizing-10: var(--slds-g-sizing-10);
+    --slds-g-sizing-10: 3rem;
+    /* Size 11. */
+    --sds-g-sizing-11: var(--slds-g-sizing-11);
+    --slds-g-sizing-11: 4rem;
+    /* Size 12. */
+    --sds-g-sizing-12: var(--slds-g-sizing-12);
+    --slds-g-sizing-12: 5rem;
+    /* Size 13. */
+    --sds-g-sizing-13: var(--slds-g-sizing-13);
+    --slds-g-sizing-13: 10rem;
+    /* Size 14. */
+    --sds-g-sizing-14: var(--slds-g-sizing-14);
+    --slds-g-sizing-14: 15rem;
+    /* Size 15. */
+    --sds-g-sizing-15: var(--slds-g-sizing-15);
+    --slds-g-sizing-15: 20rem;
+    /* Size 16. */
+    --sds-g-sizing-16: var(--slds-g-sizing-16);
+    --slds-g-sizing-16: 30rem;
+    /* Content Size 1. */
+    --sds-g-sizing-content-1: var(--slds-g-sizing-content-1);
+    --slds-g-sizing-content-1: 20ch;
+    /* Content Size 2. */
+    --sds-g-sizing-content-2: var(--slds-g-sizing-content-2);
+    --slds-g-sizing-content-2: 45ch;
+    /* Content Size 3. */
+    --sds-g-sizing-content-3: var(--slds-g-sizing-content-3);
+    --slds-g-sizing-content-3: 60ch;
+    /* Header content size 1. */
+    --sds-g-sizing-heading-1: var(--slds-g-sizing-heading-1);
+    --slds-g-sizing-heading-1: 20ch;
+    /* Header content size 2. */
+    --sds-g-sizing-heading-2: var(--slds-g-sizing-heading-2);
+    --slds-g-sizing-heading-2: 25ch;
+    /* Header content size 3. */
+    --sds-g-sizing-heading-3: var(--slds-g-sizing-heading-3);
+    --slds-g-sizing-heading-3: 35ch;
+    /* Shadow depth 1 */
+    --sds-g-shadow-1: var(--slds-g-shadow-1);
+    --slds-g-shadow-1: 0px 2px 2px 0px #0000001A;
+    /* Shadow depth 2 */
+    --sds-g-shadow-2: var(--slds-g-shadow-2);
+    --slds-g-shadow-2: 0px 2px 3px 0px #00000027;
+    /* Shadow depth 3 */
+    --sds-g-shadow-3: var(--slds-g-shadow-3);
+    --slds-g-shadow-3: 0px -1px 3px 0px #18181803, 0 1px 2px -5px #1818180a, 0 2px 5px -5px #1818180a, 0 4px 12px -5px #18181808, 0 12px 15px -5px #18181810;
+    /* Shadow depth 4 */
+    --sds-g-shadow-4: var(--slds-g-shadow-4);
+    --slds-g-shadow-4: 0 -2px 5px 0 #18181803, 0 1px 1px -2px #1818180a, 0 2px 2px -2px #1818180a, 0 5px 5px -2px #18181808, 0 12px 15px -5px #18181808, 0 16px 16px -2px #18181810;
+    /* Shadow depth 5 */
+    --sds-g-shadow-5: var(--slds-g-shadow-5);
+    --slds-g-shadow-5: 0 -1px 2px 0 #18181803, 0 2px 1px -2px #1818180a, 0 5px 5px -2px #1818180a, 0 10px 10px -2px #18181808, 0 20px 20px -2px #18181808, 0 40px 40px -2px #18181810;
+    /* Shadow depth 6 */
+    --sds-g-shadow-6: var(--slds-g-shadow-6);
+    --slds-g-shadow-6: 0 -1px 2px 0 #18181803, 0 3px 2px -2px #1818180a, 0 7px 5px -2px #1818180a, 0 12px 10px -2px #18181808, 0 22px 18px -2px #18181808, 0 41px 33px -2px #18181808, 0 100px 80px -2px #18181810;
+    /* Shadow inverse depth 1 */
+    --sds-g-shadow-inverse-1: var(--slds-g-shadow-inverse-1);
+    --slds-g-shadow-inverse-1: 0 0 3px #f3f3f3;
+    /* Square aspect ratio. */
+    --sds-g-ratio-square: var(--slds-g-ratio-square);
+    --slds-g-ratio-square: 1;
+    /* Landscape aspect ratio. */
+    --sds-g-ratio-landscape: var(--slds-g-ratio-landscape);
+    --slds-g-ratio-landscape: 4/3;
+    /* Portrait aspect ratio. */
+    --sds-g-ratio-portrait: var(--slds-g-ratio-portrait);
+    --slds-g-ratio-portrait: 3/4;
+    /* Widescreen aspect ratio. */
+    --sds-g-ratio-wide: var(--slds-g-ratio-wide);
+    --slds-g-ratio-wide: 16/9;
+    /* Ultra Widescreen aspect ratio. */
+    --sds-g-ratio-ultrawide: var(--slds-g-ratio-ultrawide);
+    --slds-g-ratio-ultrawide: 18/5;
+    /* Small border radius for UI elements. */
+    --sds-g-radius-border-1: var(--slds-g-radius-border-1);
+    --slds-g-radius-border-1: 0.125rem;
+    /* Medium border radius for UI elements. */
+    --sds-g-radius-border-2: var(--slds-g-radius-border-2);
+    --slds-g-radius-border-2: 0.25rem;
+    /* Large border radius for UI elements. */
+    --sds-g-radius-border-3: var(--slds-g-radius-border-3);
+    --slds-g-radius-border-3: 0.5rem;
+    /* Extra Large border radius for UI elements. */
+    --sds-g-radius-border-4: var(--slds-g-radius-border-4);
+    --slds-g-radius-border-4: 1rem;
+    /* Pill shaped border radius for UI elements. */
+    --sds-g-radius-border-pill: var(--slds-g-radius-border-pill);
+    --slds-g-radius-border-pill: 15rem;
+    /* Circular border radius for UI elements. */
+    --sds-g-radius-border-circle: var(--slds-g-radius-border-circle);
+    --slds-g-radius-border-circle: 100%;
+    /* Blue 10 */
+    --sds-g-color-palette-blue-10: var(--slds-g-color-palette-blue-10);
+    --slds-g-color-palette-blue-10: #001639;
+    /* Blue 15 */
+    --sds-g-color-palette-blue-15: var(--slds-g-color-palette-blue-15);
+    --slds-g-color-palette-blue-15: #03234d;
+    /* Blue 20 */
+    --sds-g-color-palette-blue-20: var(--slds-g-color-palette-blue-20);
+    --slds-g-color-palette-blue-20: #032d60;
+    /* Blue 30 */
+    --sds-g-color-palette-blue-30: var(--slds-g-color-palette-blue-30);
+    --slds-g-color-palette-blue-30: #014486;
+    /* Blue 40 */
+    --sds-g-color-palette-blue-40: var(--slds-g-color-palette-blue-40);
+    --slds-g-color-palette-blue-40: #0b5cab;
+    /* Blue 50 */
+    --sds-g-color-palette-blue-50: var(--slds-g-color-palette-blue-50);
+    --slds-g-color-palette-blue-50: #0176d3;
+    /* Blue 60 */
+    --sds-g-color-palette-blue-60: var(--slds-g-color-palette-blue-60);
+    --slds-g-color-palette-blue-60: #1b96ff;
+    /* Blue 65 */
+    --sds-g-color-palette-blue-65: var(--slds-g-color-palette-blue-65);
+    --slds-g-color-palette-blue-65: #57a3fd;
+    /* Blue 70 */
+    --sds-g-color-palette-blue-70: var(--slds-g-color-palette-blue-70);
+    --slds-g-color-palette-blue-70: #78b0fd;
+    /* Blue 80 */
+    --sds-g-color-palette-blue-80: var(--slds-g-color-palette-blue-80);
+    --slds-g-color-palette-blue-80: #aacbff;
+    /* Blue 90 */
+    --sds-g-color-palette-blue-90: var(--slds-g-color-palette-blue-90);
+    --slds-g-color-palette-blue-90: #d8e6fe;
+    /* Blue 95 */
+    --sds-g-color-palette-blue-95: var(--slds-g-color-palette-blue-95);
+    --slds-g-color-palette-blue-95: #eef4ff;
+    /* Cloud Blue 10 */
+    --sds-g-color-palette-cloud-blue-10: var(--slds-g-color-palette-cloud-blue-10);
+    --slds-g-color-palette-cloud-blue-10: #001a28;
+    /* Cloud Blue 15 */
+    --sds-g-color-palette-cloud-blue-15: var(--slds-g-color-palette-cloud-blue-15);
+    --slds-g-color-palette-cloud-blue-15: #0a2636;
+    /* Cloud Blue 20 */
+    --sds-g-color-palette-cloud-blue-20: var(--slds-g-color-palette-cloud-blue-20);
+    --slds-g-color-palette-cloud-blue-20: #023248;
+    /* Cloud Blue 30 */
+    --sds-g-color-palette-cloud-blue-30: var(--slds-g-color-palette-cloud-blue-30);
+    --slds-g-color-palette-cloud-blue-30: #084968;
+    /* Cloud Blue 40 */
+    --sds-g-color-palette-cloud-blue-40: var(--slds-g-color-palette-cloud-blue-40);
+    --slds-g-color-palette-cloud-blue-40: #05628a;
+    /* Cloud Blue 50 */
+    --sds-g-color-palette-cloud-blue-50: var(--slds-g-color-palette-cloud-blue-50);
+    --slds-g-color-palette-cloud-blue-50: #107cad;
+    /* Cloud Blue 60 */
+    --sds-g-color-palette-cloud-blue-60: var(--slds-g-color-palette-cloud-blue-60);
+    --slds-g-color-palette-cloud-blue-60: #0d9dda;
+    /* Cloud Blue 65 */
+    --sds-g-color-palette-cloud-blue-65: var(--slds-g-color-palette-cloud-blue-65);
+    --slds-g-color-palette-cloud-blue-65: #08abed;
+    /* Cloud Blue 70 */
+    --sds-g-color-palette-cloud-blue-70: var(--slds-g-color-palette-cloud-blue-70);
+    --slds-g-color-palette-cloud-blue-70: #1ab9ff;
+    /* Cloud Blue 80 */
+    --sds-g-color-palette-cloud-blue-80: var(--slds-g-color-palette-cloud-blue-80);
+    --slds-g-color-palette-cloud-blue-80: #90d0fe;
+    /* Cloud Blue 90 */
+    --sds-g-color-palette-cloud-blue-90: var(--slds-g-color-palette-cloud-blue-90);
+    --slds-g-color-palette-cloud-blue-90: #cfe9fe;
+    /* Cloud Blue 95 */
+    --sds-g-color-palette-cloud-blue-95: var(--slds-g-color-palette-cloud-blue-95);
+    --slds-g-color-palette-cloud-blue-95: #eaf5fe;
+    /* Green 10 */
+    --sds-g-color-palette-green-10: var(--slds-g-color-palette-green-10);
+    --slds-g-color-palette-green-10: #071b12;
+    /* Green 15 */
+    --sds-g-color-palette-green-15: var(--slds-g-color-palette-green-15);
+    --slds-g-color-palette-green-15: #0c2912;
+    /* Green 20 */
+    --sds-g-color-palette-green-20: var(--slds-g-color-palette-green-20);
+    --slds-g-color-palette-green-20: #1C3326;
+    /* Green 30 */
+    --sds-g-color-palette-green-30: var(--slds-g-color-palette-green-30);
+    --slds-g-color-palette-green-30: #194e31;
+    /* Green 40 */
+    --sds-g-color-palette-green-40: var(--slds-g-color-palette-green-40);
+    --slds-g-color-palette-green-40: #396547;
+    /* Green 50 */
+    --sds-g-color-palette-green-50: var(--slds-g-color-palette-green-50);
+    --slds-g-color-palette-green-50: #2e844a;
+    /* Green 60 */
+    --sds-g-color-palette-green-60: var(--slds-g-color-palette-green-60);
+    --slds-g-color-palette-green-60: #3ba755;
+    /* Green 65 */
+    --sds-g-color-palette-green-65: var(--slds-g-color-palette-green-65);
+    --slds-g-color-palette-green-65: #41b658;
+    /* Green 70 */
+    --sds-g-color-palette-green-70: var(--slds-g-color-palette-green-70);
+    --slds-g-color-palette-green-70: #45c65a;
+    /* Green 80 */
+    --sds-g-color-palette-green-80: var(--slds-g-color-palette-green-80);
+    --slds-g-color-palette-green-80: #91db8b;
+    /* Green 90 */
+    --sds-g-color-palette-green-90: var(--slds-g-color-palette-green-90);
+    --slds-g-color-palette-green-90: #cdefc4;
+    /* Green 95 */
+    --sds-g-color-palette-green-95: var(--slds-g-color-palette-green-95);
+    --slds-g-color-palette-green-95: #ebf7e6;
+    /* Hot Orange 10 */
+    --sds-g-color-palette-hot-orange-10: var(--slds-g-color-palette-hot-orange-10);
+    --slds-g-color-palette-hot-orange-10: #281202;
+    /* Hot Orange 15 */
+    --sds-g-color-palette-hot-orange-15: var(--slds-g-color-palette-hot-orange-15);
+    --slds-g-color-palette-hot-orange-15: #421604;
+    /* Hot Orange 20 */
+    --sds-g-color-palette-hot-orange-20: var(--slds-g-color-palette-hot-orange-20);
+    --slds-g-color-palette-hot-orange-20: #4A2413;
+    /* Hot Orange 30 */
+    --sds-g-color-palette-hot-orange-30: var(--slds-g-color-palette-hot-orange-30);
+    --slds-g-color-palette-hot-orange-30: #7e2600;
+    /* Hot Orange 40 */
+    --sds-g-color-palette-hot-orange-40: var(--slds-g-color-palette-hot-orange-40);
+    --slds-g-color-palette-hot-orange-40: #aa3001;
+    /* Hot Orange 50 */
+    --sds-g-color-palette-hot-orange-50: var(--slds-g-color-palette-hot-orange-50);
+    --slds-g-color-palette-hot-orange-50: #d83a00;
+    /* Hot Orange 60 */
+    --sds-g-color-palette-hot-orange-60: var(--slds-g-color-palette-hot-orange-60);
+    --slds-g-color-palette-hot-orange-60: #ff5d2d;
+    /* Hot Orange 65 */
+    --sds-g-color-palette-hot-orange-65: var(--slds-g-color-palette-hot-orange-65);
+    --slds-g-color-palette-hot-orange-65: #ff784f;
+    /* Hot Orange 70 */
+    --sds-g-color-palette-hot-orange-70: var(--slds-g-color-palette-hot-orange-70);
+    --slds-g-color-palette-hot-orange-70: #ff906e;
+    /* Hot Orange 80 */
+    --sds-g-color-palette-hot-orange-80: var(--slds-g-color-palette-hot-orange-80);
+    --slds-g-color-palette-hot-orange-80: #feb9a5;
+    /* Hot Orange 90 */
+    --sds-g-color-palette-hot-orange-90: var(--slds-g-color-palette-hot-orange-90);
+    --slds-g-color-palette-hot-orange-90: #ffded5;
+    /* Hot Orange 95 */
+    --sds-g-color-palette-hot-orange-95: var(--slds-g-color-palette-hot-orange-95);
+    --slds-g-color-palette-hot-orange-95: #fef1ed;
+    /* Indigo 10 */
+    --sds-g-color-palette-indigo-10: var(--slds-g-color-palette-indigo-10);
+    --slds-g-color-palette-indigo-10: #200647;
+    /* Indigo 15 */
+    --sds-g-color-palette-indigo-15: var(--slds-g-color-palette-indigo-15);
+    --slds-g-color-palette-indigo-15: #1f0974;
+    /* Indigo 20 */
+    --sds-g-color-palette-indigo-20: var(--slds-g-color-palette-indigo-20);
+    --slds-g-color-palette-indigo-20: #321D71;
+    /* Indigo 30 */
+    --sds-g-color-palette-indigo-30: var(--slds-g-color-palette-indigo-30);
+    --slds-g-color-palette-indigo-30: #2f2cb7;
+    /* Indigo 40 */
+    --sds-g-color-palette-indigo-40: var(--slds-g-color-palette-indigo-40);
+    --slds-g-color-palette-indigo-40: #3a49da;
+    /* Indigo 50 */
+    --sds-g-color-palette-indigo-50: var(--slds-g-color-palette-indigo-50);
+    --slds-g-color-palette-indigo-50: #5867e8;
+    /* Indigo 60 */
+    --sds-g-color-palette-indigo-60: var(--slds-g-color-palette-indigo-60);
+    --slds-g-color-palette-indigo-60: #7f8ced;
+    /* Indigo 65 */
+    --sds-g-color-palette-indigo-65: var(--slds-g-color-palette-indigo-65);
+    --slds-g-color-palette-indigo-65: #8e9bef;
+    /* Indigo 70 */
+    --sds-g-color-palette-indigo-70: var(--slds-g-color-palette-indigo-70);
+    --slds-g-color-palette-indigo-70: #9ea9f1;
+    /* Indigo 80 */
+    --sds-g-color-palette-indigo-80: var(--slds-g-color-palette-indigo-80);
+    --slds-g-color-palette-indigo-80: #bec7f6;
+    /* Indigo 90 */
+    --sds-g-color-palette-indigo-90: var(--slds-g-color-palette-indigo-90);
+    --slds-g-color-palette-indigo-90: #e0e5f8;
+    /* Indigo 95 */
+    --sds-g-color-palette-indigo-95: var(--slds-g-color-palette-indigo-95);
+    --slds-g-color-palette-indigo-95: #f1f3fb;
+    /* Orange 10 */
+    --sds-g-color-palette-orange-10: var(--slds-g-color-palette-orange-10);
+    --slds-g-color-palette-orange-10: #201600;
+    /* Orange 15 */
+    --sds-g-color-palette-orange-15: var(--slds-g-color-palette-orange-15);
+    --slds-g-color-palette-orange-15: #371e03;
+    /* Orange 20 */
+    --sds-g-color-palette-orange-20: var(--slds-g-color-palette-orange-20);
+    --slds-g-color-palette-orange-20: #3e2b02;
+    /* Orange 30 */
+    --sds-g-color-palette-orange-30: var(--slds-g-color-palette-orange-30);
+    --slds-g-color-palette-orange-30: #5f3e02;
+    /* Orange 40 */
+    --sds-g-color-palette-orange-40: var(--slds-g-color-palette-orange-40);
+    --slds-g-color-palette-orange-40: #825101;
+    /* Orange 50 */
+    --sds-g-color-palette-orange-50: var(--slds-g-color-palette-orange-50);
+    --slds-g-color-palette-orange-50: #a96404;
+    /* Orange 60 */
+    --sds-g-color-palette-orange-60: var(--slds-g-color-palette-orange-60);
+    --slds-g-color-palette-orange-60: #dd7a01;
+    /* Orange 65 */
+    --sds-g-color-palette-orange-65: var(--slds-g-color-palette-orange-65);
+    --slds-g-color-palette-orange-65: #f38303;
+    /* Orange 70 */
+    --sds-g-color-palette-orange-70: var(--slds-g-color-palette-orange-70);
+    --slds-g-color-palette-orange-70: #fe9339;
+    /* Orange 80 */
+    --sds-g-color-palette-orange-80: var(--slds-g-color-palette-orange-80);
+    --slds-g-color-palette-orange-80: #ffba90;
+    /* Orange 90 */
+    --sds-g-color-palette-orange-90: var(--slds-g-color-palette-orange-90);
+    --slds-g-color-palette-orange-90: #fedfd0;
+    /* Orange 95 */
+    --sds-g-color-palette-orange-95: var(--slds-g-color-palette-orange-95);
+    --slds-g-color-palette-orange-95: #fff1ea;
+    /* Pink 10 */
+    --sds-g-color-palette-pink-10: var(--slds-g-color-palette-pink-10);
+    --slds-g-color-palette-pink-10: #370114;
+    /* Pink 15 */
+    --sds-g-color-palette-pink-15: var(--slds-g-color-palette-pink-15);
+    --slds-g-color-palette-pink-15: #4b0620;
+    /* Pink 20 */
+    --sds-g-color-palette-pink-20: var(--slds-g-color-palette-pink-20);
+    --slds-g-color-palette-pink-20: #61022a;
+    /* Pink 30 */
+    --sds-g-color-palette-pink-30: var(--slds-g-color-palette-pink-30);
+    --slds-g-color-palette-pink-30: #8a033e;
+    /* Pink 40 */
+    --sds-g-color-palette-pink-40: var(--slds-g-color-palette-pink-40);
+    --slds-g-color-palette-pink-40: #b60554;
+    /* Pink 50 */
+    --sds-g-color-palette-pink-50: var(--slds-g-color-palette-pink-50);
+    --slds-g-color-palette-pink-50: #e3066a;
+    /* Pink 60 */
+    --sds-g-color-palette-pink-60: var(--slds-g-color-palette-pink-60);
+    --slds-g-color-palette-pink-60: #ff538a;
+    /* Pink 65 */
+    --sds-g-color-palette-pink-65: var(--slds-g-color-palette-pink-65);
+    --slds-g-color-palette-pink-65: #fe7298;
+    /* Pink 70 */
+    --sds-g-color-palette-pink-70: var(--slds-g-color-palette-pink-70);
+    --slds-g-color-palette-pink-70: #fe8aa7;
+    /* Pink 80 */
+    --sds-g-color-palette-pink-80: var(--slds-g-color-palette-pink-80);
+    --slds-g-color-palette-pink-80: #fdb6c5;
+    /* Pink 90 */
+    --sds-g-color-palette-pink-90: var(--slds-g-color-palette-pink-90);
+    --slds-g-color-palette-pink-90: #fddde3;
+    /* Pink 95 */
+    --sds-g-color-palette-pink-95: var(--slds-g-color-palette-pink-95);
+    --slds-g-color-palette-pink-95: #fef0f3;
+    /* Purple 10 */
+    --sds-g-color-palette-purple-10: var(--slds-g-color-palette-purple-10);
+    --slds-g-color-palette-purple-10: #240643;
+    /* Purple 15 */
+    --sds-g-color-palette-purple-15: var(--slds-g-color-palette-purple-15);
+    --slds-g-color-palette-purple-15: #300b60;
+    /* Purple 20 */
+    --sds-g-color-palette-purple-20: var(--slds-g-color-palette-purple-20);
+    --slds-g-color-palette-purple-20: #401075;
+    /* Purple 30 */
+    --sds-g-color-palette-purple-30: var(--slds-g-color-palette-purple-30);
+    --slds-g-color-palette-purple-30: #5a1ba9;
+    /* Purple 40 */
+    --sds-g-color-palette-purple-40: var(--slds-g-color-palette-purple-40);
+    --slds-g-color-palette-purple-40: #7526e3;
+    /* Purple 50 */
+    --sds-g-color-palette-purple-50: var(--slds-g-color-palette-purple-50);
+    --slds-g-color-palette-purple-50: #9050e9;
+    /* Purple 60 */
+    --sds-g-color-palette-purple-60: var(--slds-g-color-palette-purple-60);
+    --slds-g-color-palette-purple-60: #ad7bee;
+    /* Purple 65 */
+    --sds-g-color-palette-purple-65: var(--slds-g-color-palette-purple-65);
+    --slds-g-color-palette-purple-65: #b78def;
+    /* Purple 70 */
+    --sds-g-color-palette-purple-70: var(--slds-g-color-palette-purple-70);
+    --slds-g-color-palette-purple-70: #c29ef1;
+    /* Purple 80 */
+    --sds-g-color-palette-purple-80: var(--slds-g-color-palette-purple-80);
+    --slds-g-color-palette-purple-80: #D7BFF2;
+    /* Purple 90 */
+    --sds-g-color-palette-purple-90: var(--slds-g-color-palette-purple-90);
+    --slds-g-color-palette-purple-90: #ece1f9;
+    /* Purple 95 */
+    --sds-g-color-palette-purple-95: var(--slds-g-color-palette-purple-95);
+    --slds-g-color-palette-purple-95: #f6f2fb;
+    /* Red 10 */
+    --sds-g-color-palette-red-10: var(--slds-g-color-palette-red-10);
+    --slds-g-color-palette-red-10: #300c01;
+    /* Red 15 */
+    --sds-g-color-palette-red-15: var(--slds-g-color-palette-red-15);
+    --slds-g-color-palette-red-15: #4a0c04;
+    /* Red 20 */
+    --sds-g-color-palette-red-20: var(--slds-g-color-palette-red-20);
+    --slds-g-color-palette-red-20: #640103;
+    /* Red 30 */
+    --sds-g-color-palette-red-30: var(--slds-g-color-palette-red-30);
+    --slds-g-color-palette-red-30: #8e030f;
+    /* Red 40 */
+    --sds-g-color-palette-red-40: var(--slds-g-color-palette-red-40);
+    --slds-g-color-palette-red-40: #ba0517;
+    /* Red 50 */
+    --sds-g-color-palette-red-50: var(--slds-g-color-palette-red-50);
+    --slds-g-color-palette-red-50: #ea001e;
+    /* Red 60 */
+    --sds-g-color-palette-red-60: var(--slds-g-color-palette-red-60);
+    --slds-g-color-palette-red-60: #fe5c4c;
+    /* Red 65 */
+    --sds-g-color-palette-red-65: var(--slds-g-color-palette-red-65);
+    --slds-g-color-palette-red-65: #fe7765;
+    /* Red 70 */
+    --sds-g-color-palette-red-70: var(--slds-g-color-palette-red-70);
+    --slds-g-color-palette-red-70: #fe8f7d;
+    /* Red 80 */
+    --sds-g-color-palette-red-80: var(--slds-g-color-palette-red-80);
+    --slds-g-color-palette-red-80: #feb8ab;
+    /* Red 90 */
+    --sds-g-color-palette-red-90: var(--slds-g-color-palette-red-90);
+    --slds-g-color-palette-red-90: #feded8;
+    /* Red 95 */
+    --sds-g-color-palette-red-95: var(--slds-g-color-palette-red-95);
+    --slds-g-color-palette-red-95: #fef1ee;
+    /* Teal 10 */
+    --sds-g-color-palette-teal-10: var(--slds-g-color-palette-teal-10);
+    --slds-g-color-palette-teal-10: #071b12;
+    /* Teal 15 */
+    --sds-g-color-palette-teal-15: var(--slds-g-color-palette-teal-15);
+    --slds-g-color-palette-teal-15: #072825;
+    /* Teal 20 */
+    --sds-g-color-palette-teal-20: var(--slds-g-color-palette-teal-20);
+    --slds-g-color-palette-teal-20: #023434;
+    /* Teal 30 */
+    --sds-g-color-palette-teal-30: var(--slds-g-color-palette-teal-30);
+    --slds-g-color-palette-teal-30: #024d4c;
+    /* Teal 40 */
+    --sds-g-color-palette-teal-40: var(--slds-g-color-palette-teal-40);
+    --slds-g-color-palette-teal-40: #056764;
+    /* Teal 50 */
+    --sds-g-color-palette-teal-50: var(--slds-g-color-palette-teal-50);
+    --slds-g-color-palette-teal-50: #0b827c;
+    /* Teal 60 */
+    --sds-g-color-palette-teal-60: var(--slds-g-color-palette-teal-60);
+    --slds-g-color-palette-teal-60: #06a59a;
+    /* Teal 65 */
+    --sds-g-color-palette-teal-65: var(--slds-g-color-palette-teal-65);
+    --slds-g-color-palette-teal-65: #03b4a7;
+    /* Teal 70 */
+    --sds-g-color-palette-teal-70: var(--slds-g-color-palette-teal-70);
+    --slds-g-color-palette-teal-70: #01c3b3;
+    /* Teal 80 */
+    --sds-g-color-palette-teal-80: var(--slds-g-color-palette-teal-80);
+    --slds-g-color-palette-teal-80: #04e1cb;
+    /* Teal 90 */
+    --sds-g-color-palette-teal-90: var(--slds-g-color-palette-teal-90);
+    --slds-g-color-palette-teal-90: #acf3e4;
+    /* Teal 95 */
+    --sds-g-color-palette-teal-95: var(--slds-g-color-palette-teal-95);
+    --slds-g-color-palette-teal-95: #def9f3;
+    /* Violet 10 */
+    --sds-g-color-palette-violet-10: var(--slds-g-color-palette-violet-10);
+    --slds-g-color-palette-violet-10: #2e0039;
+    /* Violet 15 */
+    --sds-g-color-palette-violet-15: var(--slds-g-color-palette-violet-15);
+    --slds-g-color-palette-violet-15: #3d0157;
+    /* Violet 20 */
+    --sds-g-color-palette-violet-20: var(--slds-g-color-palette-violet-20);
+    --slds-g-color-palette-violet-20: #481A54;
+    /* Violet 30 */
+    --sds-g-color-palette-violet-30: var(--slds-g-color-palette-violet-30);
+    --slds-g-color-palette-violet-30: #730394;
+    /* Violet 40 */
+    --sds-g-color-palette-violet-40: var(--slds-g-color-palette-violet-40);
+    --slds-g-color-palette-violet-40: #9602c7;
+    /* Violet 50 */
+    --sds-g-color-palette-violet-50: var(--slds-g-color-palette-violet-50);
+    --slds-g-color-palette-violet-50: #ba01ff;
+    /* Violet 60 */
+    --sds-g-color-palette-violet-60: var(--slds-g-color-palette-violet-60);
+    --slds-g-color-palette-violet-60: #cb65ff;
+    /* Violet 65 */
+    --sds-g-color-palette-violet-65: var(--slds-g-color-palette-violet-65);
+    --slds-g-color-palette-violet-65: #d17dfe;
+    /* Violet 70 */
+    --sds-g-color-palette-violet-70: var(--slds-g-color-palette-violet-70);
+    --slds-g-color-palette-violet-70: #d892fe;
+    /* Violet 80 */
+    --sds-g-color-palette-violet-80: var(--slds-g-color-palette-violet-80);
+    --slds-g-color-palette-violet-80: #e5b9fe;
+    /* Violet 90 */
+    --sds-g-color-palette-violet-90: var(--slds-g-color-palette-violet-90);
+    --slds-g-color-palette-violet-90: #f2defe;
+    /* Violet 95 */
+    --sds-g-color-palette-violet-95: var(--slds-g-color-palette-violet-95);
+    --slds-g-color-palette-violet-95: #f9f0ff;
+    /* Yellow 10 */
+    --sds-g-color-palette-yellow-10: var(--slds-g-color-palette-yellow-10);
+    --slds-g-color-palette-yellow-10: #281202;
+    /* Yellow 15 */
+    --sds-g-color-palette-yellow-15: var(--slds-g-color-palette-yellow-15);
+    --slds-g-color-palette-yellow-15: #2e2204;
+    /* Yellow 20 */
+    --sds-g-color-palette-yellow-20: var(--slds-g-color-palette-yellow-20);
+    --slds-g-color-palette-yellow-20: #4f2100;
+    /* Yellow 30 */
+    --sds-g-color-palette-yellow-30: var(--slds-g-color-palette-yellow-30);
+    --slds-g-color-palette-yellow-30: #6f3400;
+    /* Yellow 40 */
+    --sds-g-color-palette-yellow-40: var(--slds-g-color-palette-yellow-40);
+    --slds-g-color-palette-yellow-40: #8c4b02;
+    /* Yellow 50 */
+    --sds-g-color-palette-yellow-50: var(--slds-g-color-palette-yellow-50);
+    --slds-g-color-palette-yellow-50: #a86403;
+    /* Yellow 60 */
+    --sds-g-color-palette-yellow-60: var(--slds-g-color-palette-yellow-60);
+    --slds-g-color-palette-yellow-60: #ca8501;
+    /* Yellow 65 */
+    --sds-g-color-palette-yellow-65: var(--slds-g-color-palette-yellow-65);
+    --slds-g-color-palette-yellow-65: #d79304;
+    /* Yellow 70 */
+    --sds-g-color-palette-yellow-70: var(--slds-g-color-palette-yellow-70);
+    --slds-g-color-palette-yellow-70: #e4a201;
+    /* Yellow 80 */
+    --sds-g-color-palette-yellow-80: var(--slds-g-color-palette-yellow-80);
+    --slds-g-color-palette-yellow-80: #fcc003;
+    /* Yellow 90 */
+    --sds-g-color-palette-yellow-90: var(--slds-g-color-palette-yellow-90);
+    --slds-g-color-palette-yellow-90: #f9e3b6;
+    /* Yellow 95 */
+    --sds-g-color-palette-yellow-95: var(--slds-g-color-palette-yellow-95);
+    --slds-g-color-palette-yellow-95: #fbf3e0;
+    /* Neutral 10 */
+    --sds-g-color-palette-neutral-10: var(--slds-g-color-palette-neutral-10);
+    --slds-g-color-palette-neutral-10: #181818;
+    /* Neutral 15 */
+    --sds-g-color-palette-neutral-15: var(--slds-g-color-palette-neutral-15);
+    --slds-g-color-palette-neutral-15: #242424;
+    /* Neutral 20 */
+    --sds-g-color-palette-neutral-20: var(--slds-g-color-palette-neutral-20);
+    --slds-g-color-palette-neutral-20: #2e2e2e;
+    /* Neutral 30 */
+    --sds-g-color-palette-neutral-30: var(--slds-g-color-palette-neutral-30);
+    --slds-g-color-palette-neutral-30: #444444;
+    /* Neutral 40 */
+    --sds-g-color-palette-neutral-40: var(--slds-g-color-palette-neutral-40);
+    --slds-g-color-palette-neutral-40: #5c5c5c;
+    /* Neutral 50 */
+    --sds-g-color-palette-neutral-50: var(--slds-g-color-palette-neutral-50);
+    --slds-g-color-palette-neutral-50: #747474;
+    /* Neutral 60 */
+    --sds-g-color-palette-neutral-60: var(--slds-g-color-palette-neutral-60);
+    --slds-g-color-palette-neutral-60: #939393;
+    /* Neutral 65 */
+    --sds-g-color-palette-neutral-65: var(--slds-g-color-palette-neutral-65);
+    --slds-g-color-palette-neutral-65: #a0a0a0;
+    /* Neutral 70 */
+    --sds-g-color-palette-neutral-70: var(--slds-g-color-palette-neutral-70);
+    --slds-g-color-palette-neutral-70: #aeaeae;
+    /* Neutral 80 */
+    --sds-g-color-palette-neutral-80: var(--slds-g-color-palette-neutral-80);
+    --slds-g-color-palette-neutral-80: #c9c9c9;
+    /* Neutral 90 */
+    --sds-g-color-palette-neutral-90: var(--slds-g-color-palette-neutral-90);
+    --slds-g-color-palette-neutral-90: #e5e5e5;
+    /* Neutral 95 */
+    --sds-g-color-palette-neutral-95: var(--slds-g-color-palette-neutral-95);
+    --slds-g-color-palette-neutral-95: #f3f3f3;
+    /* Neutral 100 */
+    --sds-g-color-palette-neutral-100: var(--slds-g-color-palette-neutral-100);
+    --slds-g-color-palette-neutral-100: #ffffff;
+    /* System font stack for your application. */
+    --sds-g-font-family: var(--slds-g-font-family);
+    --slds-g-font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    /* Monospace font stack for your application. */
+    --sds-g-font-family-monospace: var(--slds-g-font-family-monospace);
+    --slds-g-font-family-monospace: Consolas, Menlo, Monaco, Courier, monospace;
+    /* Bold font-weight, use to increase emphasis. */
+    --sds-g-font-weight-bold: var(--slds-g-font-weight-bold);
+    --slds-g-font-weight-bold: bold;
+    /* Font weight 1 */
+    --sds-g-font-weight-1: var(--slds-g-font-weight-1);
+    --slds-g-font-weight-1: 100;
+    /* Font weight 2 */
+    --sds-g-font-weight-2: var(--slds-g-font-weight-2);
+    --slds-g-font-weight-2: 200;
+    /* Font weight 3 */
+    --sds-g-font-weight-3: var(--slds-g-font-weight-3);
+    --slds-g-font-weight-3: 300;
+    /* Font weight 4 */
+    --sds-g-font-weight-4: var(--slds-g-font-weight-4);
+    --slds-g-font-weight-4: 400;
+    /* Font weight 5 */
+    --sds-g-font-weight-5: var(--slds-g-font-weight-5);
+    --slds-g-font-weight-5: 500;
+    /* Font weight 6 */
+    --sds-g-font-weight-6: var(--slds-g-font-weight-6);
+    --slds-g-font-weight-6: 600;
+    /* Font weight 7 */
+    --sds-g-font-weight-7: var(--slds-g-font-weight-7);
+    --slds-g-font-weight-7: 700;
+    /* Default line-height for your application. */
+    --sds-g-font-lineheight-base: var(--slds-g-font-lineheight-base);
+    --slds-g-font-lineheight-base: 1.5;
+    /* Line-height 1. */
+    --sds-g-font-lineheight-1: var(--slds-g-font-lineheight-1);
+    --slds-g-font-lineheight-1: 1;
+    /* Line-height 2. */
+    --sds-g-font-lineheight-2: var(--slds-g-font-lineheight-2);
+    --slds-g-font-lineheight-2: 1.25;
+    /* Line-height 3. */
+    --sds-g-font-lineheight-3: var(--slds-g-font-lineheight-3);
+    --slds-g-font-lineheight-3: 1.375;
+    /* Line-height 4. */
+    --sds-g-font-lineheight-4: var(--slds-g-font-lineheight-4);
+    --slds-g-font-lineheight-4: 1.5;
+    /* Line-height 5. */
+    --sds-g-font-lineheight-5: var(--slds-g-font-lineheight-5);
+    --slds-g-font-lineheight-5: 1.75;
+    /* Line-height 6. */
+    --sds-g-font-lineheight-6: var(--slds-g-font-lineheight-6);
+    --slds-g-font-lineheight-6: 2;
+    /* Default ratio for your font scale. */
+    --sds-g-font-scale-ratio: var(--slds-g-font-scale-ratio);
+    --slds-g-font-scale-ratio: 1.15;
+    /* Default font-scale ratio for your application. */
+    --sds-g-font-size-base: var(--slds-g-font-size-base);
+    --slds-g-font-size-base: 0.8125rem;
+    /* 4 steps down from base font-size. */
+    --sds-g-font-scale-neg-4: var(--slds-g-font-scale-neg-4);
+    --slds-g-font-scale-neg-4: var(--slds-g-font-scale-neg-3);
+    /* 3 steps down from base font-size. */
+    --sds-g-font-scale-neg-3: var(--slds-g-font-scale-neg-3);
+    --slds-g-font-scale-neg-3: var(--slds-g-font-scale-neg-2);
+    /* 2 steps down from base font-size. */
+    --sds-g-font-scale-neg-2: var(--slds-g-font-scale-neg-2);
+    --slds-g-font-scale-neg-2: 0.625rem;
+    /* 1 step down from base font-size. */
+    --sds-g-font-scale-neg-1: var(--slds-g-font-scale-neg-1);
+    --slds-g-font-scale-neg-1: 0.75rem;
+    /* 1 step up from base font-size. */
+    --sds-g-font-scale-1: var(--slds-g-font-scale-1);
+    --slds-g-font-scale-1: 0.875rem;
+    /* 2 steps up from base font-size. */
+    --sds-g-font-scale-2: var(--slds-g-font-scale-2);
+    --slds-g-font-scale-2: 1rem;
+    /* 3 steps up from base font-size. */
+    --sds-g-font-scale-3: var(--slds-g-font-scale-3);
+    --slds-g-font-scale-3: 1.125rem;
+    /* 4 steps up from base font-size. */
+    --sds-g-font-scale-4: var(--slds-g-font-scale-4);
+    --slds-g-font-scale-4: 1.25rem;
+    /* 5 steps up from base font-size. */
+    --sds-g-font-scale-5: var(--slds-g-font-scale-5);
+    --slds-g-font-scale-5: 1.5rem;
+    /* 6 steps up from base font-size. */
+    --sds-g-font-scale-6: var(--slds-g-font-scale-6);
+    --slds-g-font-scale-6: 1.75rem;
+    /* 7 steps up from base font-size. */
+    --sds-g-font-scale-7: var(--slds-g-font-scale-7);
+    --slds-g-font-scale-7: 2rem;
+    /* 8 steps up from base font-size. */
+    --sds-g-font-scale-8: var(--slds-g-font-scale-8);
+    --slds-g-font-scale-8: 2.625rem;
+    /* 9 steps up from base font-size. */
+    --sds-g-font-scale-9: var(--slds-g-font-scale-9);
+    --slds-g-font-scale-9: var(--slds-g-font-scale-8);
+    /* 10 steps up from base font-size. */
+    --sds-g-font-scale-10: var(--slds-g-font-scale-10);
+    --slds-g-font-scale-10: var(--slds-g-font-scale-8);
+    /* Neutral Base 100 - if used as a background, please use Neutral Base 60-10 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-100: var(--slds-g-color-neutral-base-100);
+    --slds-g-color-neutral-base-100: #ffffff;
+    /* Neutral Base 95 - if used as a background, please use Neutral Base 50-10 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-95: var(--slds-g-color-neutral-base-95);
+    --slds-g-color-neutral-base-95: #f3f3f3;
+    /* Neutral Base 90 - if used as a background, please use Neutral Base 40-10 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-90: var(--slds-g-color-neutral-base-90);
+    --slds-g-color-neutral-base-90: #e5e5e5;
+    /* Neutral Base 80 - if used as a background, please use Neutral Base 30-10 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-80: var(--slds-g-color-neutral-base-80);
+    --slds-g-color-neutral-base-80: #c9c9c9;
+    /* Neutral Base 70 - if used as a background, please use Neutral Base 20-10 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-70: var(--slds-g-color-neutral-base-70);
+    --slds-g-color-neutral-base-70: #aeaeae;
+    /* Neutral Base 65 - if used as a background, please use Neutral Base 15-10 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-65: var(--slds-g-color-neutral-base-65);
+    --slds-g-color-neutral-base-65: #a0a0a0;
+    /* Neutral Base 60 - if used as a background, please use Neutral Base 100 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-60: var(--slds-g-color-neutral-base-60);
+    --slds-g-color-neutral-base-60: #939393;
+    /* Neutral Base 50 - if used as a background, please use Neutral Base 100-95 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-50: var(--slds-g-color-neutral-base-50);
+    --slds-g-color-neutral-base-50: #747474;
+    /* Neutral Base 40 - if used as a background, please use Neutral Base 100-90 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-40: var(--slds-g-color-neutral-base-40);
+    --slds-g-color-neutral-base-40: #5c5c5c;
+    /* Neutral Base 30 - if used as a background, please use Neutral Base 100-80 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-30: var(--slds-g-color-neutral-base-30);
+    --slds-g-color-neutral-base-30: #444444;
+    /* Neutral Base 20 - if used as a background, please use Neutral Base 100-70 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-20: var(--slds-g-color-neutral-base-20);
+    --slds-g-color-neutral-base-20: #2e2e2e;
+    /* Neutral Base 15 - if used as a background, please use Neutral Base 100-65 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-15: var(--slds-g-color-neutral-base-15);
+    --slds-g-color-neutral-base-15: #242424;
+    /* Neutral Base 10 - if used as a background, please use Neutral Base 100-65 to meet accessibility guidelines. */
+    --sds-g-color-neutral-base-10: var(--slds-g-color-neutral-base-10);
+    --slds-g-color-neutral-base-10: #181818;
+    /* Brand Base 100 - if used as a background, please use Brand Base 60-10 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-100: var(--slds-g-color-brand-base-100);
+    --slds-g-color-brand-base-100: #ffffff;
+    /* Brand Base 95 - if used as a background, please use Brand Base 50-10 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-95: var(--slds-g-color-brand-base-95);
+    --slds-g-color-brand-base-95: #eef4ff;
+    /* Brand Base 90 - if used as a background, please use Brand Base 40-10 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-90: var(--slds-g-color-brand-base-90);
+    --slds-g-color-brand-base-90: #d8e6fe;
+    /* Brand Base 80 - if used as a background, please use Brand Base 30-10 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-80: var(--slds-g-color-brand-base-80);
+    --slds-g-color-brand-base-80: #aacbff;
+    /* Brand Base 70 - if used as a background, please use Brand Base 20-10 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-70: var(--slds-g-color-brand-base-70);
+    --slds-g-color-brand-base-70: #78b0fd;
+    /* Brand Base 65 - if used as a background, please use Brand Base 15-10 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-65: var(--slds-g-color-brand-base-65);
+    --slds-g-color-brand-base-65: #57a3fd;
+    /* Brand Base 60 - if used as a background, please use Brand Base 100 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-60: var(--slds-g-color-brand-base-60);
+    --slds-g-color-brand-base-60: #1b96ff;
+    /* Brand Base 50 - if used as a background, please use Brand Base 100-95 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-50: var(--slds-g-color-brand-base-50);
+    --slds-g-color-brand-base-50: #0176d3;
+    /* Brand Base 40 - if used as a background, please use Brand Base 100-90 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-40: var(--slds-g-color-brand-base-40);
+    --slds-g-color-brand-base-40: #0b5cab;
+    /* Brand Base 30 - if used as a background, please use Brand Base 100-80 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-30: var(--slds-g-color-brand-base-30);
+    --slds-g-color-brand-base-30: #014486;
+    /* Brand Base 20 - if used as a background, please use Brand Base 100-70 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-20: var(--slds-g-color-brand-base-20);
+    --slds-g-color-brand-base-20: #032d60;
+    /* Brand Base 15 - if used as a background, please use Brand Base 100-65 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-15: var(--slds-g-color-brand-base-15);
+    --slds-g-color-brand-base-15: #03234d;
+    /* Brand Base 10 - if used as a background, please use Brand Base 100-65 to meet accessibility guidelines. */
+    --sds-g-color-brand-base-10: var(--slds-g-color-brand-base-10);
+    --slds-g-color-brand-base-10: #001639;
+    /* Error Base 100 - if used as a background, please use Error Base 60-10 to meet accessibility guidelines. */
+    --sds-g-color-error-base-100: var(--slds-g-color-error-base-100);
+    --slds-g-color-error-base-100: #ffffff;
+    /* Error Base 90 - if used as a background, please use Error Base 50-10 to meet accessibility guidelines. */
+    --sds-g-color-error-base-90: var(--slds-g-color-error-base-90);
+    --slds-g-color-error-base-90: #feded8;
+    /* Error Base 80 - if used as a background, please use Error Base 40-10 to meet accessibility guidelines. */
+    --sds-g-color-error-base-80: var(--slds-g-color-error-base-80);
+    --slds-g-color-error-base-80: #feb8ab;
+    /* Error Base 70 - if used as a background, please use Error Base 30-10 to meet accessibility guidelines. */
+    --sds-g-color-error-base-70: var(--slds-g-color-error-base-70);
+    --slds-g-color-error-base-70: #fe8f7d;
+    /* Error Base 60 - if used as a background, please use Error Base 20-10 to meet accessibility guidelines. */
+    --sds-g-color-error-base-60: var(--slds-g-color-error-base-60);
+    --slds-g-color-error-base-60: #fe5c4c;
+    /* Error Base 50 - if used as a background, please use Error Base 100-90 to meet accessibility guidelines. */
+    --sds-g-color-error-base-50: var(--slds-g-color-error-base-50);
+    --slds-g-color-error-base-50: #ea001e;
+    /* Error Base 40 - if used as a background, please use Error Base 100-80 to meet accessibility guidelines. */
+    --sds-g-color-error-base-40: var(--slds-g-color-error-base-40);
+    --slds-g-color-error-base-40: #ba0517;
+    /* Error Base 30 - if used as a background, please use Error Base 100-70 to meet accessibility guidelines. */
+    --sds-g-color-error-base-30: var(--slds-g-color-error-base-30);
+    --slds-g-color-error-base-30: #8e030f;
+    /* Error Base 20 - if used as a background, please use Error Base 100-60 to meet accessibility guidelines. */
+    --sds-g-color-error-base-20: var(--slds-g-color-error-base-20);
+    --slds-g-color-error-base-20: #640103;
+    /* Error Base 10 - if used as a background, please use Error Base 100-50 to meet accessibility guidelines. */
+    --sds-g-color-error-base-10: var(--slds-g-color-error-base-10);
+    --slds-g-color-error-base-10: #300c01;
+    /* Warning Base 100 - if used as a background, please use Warning Base 60-10 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-100: var(--slds-g-color-warning-base-100);
+    --slds-g-color-warning-base-100: #ffffff;
+    /* Warning Base 90 - if used as a background, please use Warning Base 50-10 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-90: var(--slds-g-color-warning-base-90);
+    --slds-g-color-warning-base-90: #fedfd0;
+    /* Warning Base 80 - if used as a background, please use Warning Base 40-10 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-80: var(--slds-g-color-warning-base-80);
+    --slds-g-color-warning-base-80: #ffba90;
+    /* Warning Base 70 - if used as a background, please use Warning Base 30-10 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-70: var(--slds-g-color-warning-base-70);
+    --slds-g-color-warning-base-70: #fe9339;
+    /* Warning Base 60 - if used as a background, please use Warning Base 20-10 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-60: var(--slds-g-color-warning-base-60);
+    --slds-g-color-warning-base-60: #dd7a01;
+    /* Warning Base 50 - if used as a background, please use Warning Base 100-90 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-50: var(--slds-g-color-warning-base-50);
+    --slds-g-color-warning-base-50: #a96404;
+    /* Warning Base 40 - if used as a background, please use Warning Base 100-80 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-40: var(--slds-g-color-warning-base-40);
+    --slds-g-color-warning-base-40: #825101;
+    /* Warning Base 30 - if used as a background, please use Warning Base 100-70 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-30: var(--slds-g-color-warning-base-30);
+    --slds-g-color-warning-base-30: #5f3e02;
+    /* Warning Base 20 - if used as a background, please use Warning Base 100-60 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-20: var(--slds-g-color-warning-base-20);
+    --slds-g-color-warning-base-20: #3e2b02;
+    /* Warning Base 10 - if used as a background, please use Warning Base 100-50 to meet accessibility guidelines. */
+    --sds-g-color-warning-base-10: var(--slds-g-color-warning-base-10);
+    --slds-g-color-warning-base-10: #201600;
+    /* Success Base 100 - if used as a background, please use Success Base 60-10 to meet accessibility guidelines. */
+    --sds-g-color-success-base-100: var(--slds-g-color-success-base-100);
+    --slds-g-color-success-base-100: #ffffff;
+    /* Success Base 90 - if used as a background, please use Success Base 50-10 to meet accessibility guidelines. */
+    --sds-g-color-success-base-90: var(--slds-g-color-success-base-90);
+    --slds-g-color-success-base-90: #cdefc4;
+    /* Success Base 80 - if used as a background, please use Success Base 40-10 to meet accessibility guidelines. */
+    --sds-g-color-success-base-80: var(--slds-g-color-success-base-80);
+    --slds-g-color-success-base-80: #91db8b;
+    /* Success Base 70 - if used as a background, please use Success Base 30-10 to meet accessibility guidelines. */
+    --sds-g-color-success-base-70: var(--slds-g-color-success-base-70);
+    --slds-g-color-success-base-70: #45c65a;
+    /* Success Base 60 - if used as a background, please use Success Base 20-10 to meet accessibility guidelines. */
+    --sds-g-color-success-base-60: var(--slds-g-color-success-base-60);
+    --slds-g-color-success-base-60: #3ba755;
+    /* Success Base 50 - if used as a background, please use Success Base 100-90 to meet accessibility guidelines. */
+    --sds-g-color-success-base-50: var(--slds-g-color-success-base-50);
+    --slds-g-color-success-base-50: #2e844a;
+    /* Success Base 40 - if used as a background, please use Success Base 100-80 to meet accessibility guidelines. */
+    --sds-g-color-success-base-40: var(--slds-g-color-success-base-40);
+    --slds-g-color-success-base-40: #396547;
+    /* Success Base 30 - if used as a background, please use Success Base 100-70 to meet accessibility guidelines. */
+    --sds-g-color-success-base-30: var(--slds-g-color-success-base-30);
+    --slds-g-color-success-base-30: #194e31;
+    /* Success Base 20 - if used as a background, please use Success Base 100-60 to meet accessibility guidelines. */
+    --sds-g-color-success-base-20: var(--slds-g-color-success-base-20);
+    --slds-g-color-success-base-20: #1C3326;
+    /* Success Base 10 - if used as a background, please use Success Base 100-50 to meet accessibility guidelines. */
+    --sds-g-color-success-base-10: var(--slds-g-color-success-base-10);
+    --slds-g-color-success-base-10: #071b12;
+    /* Nuetral border color for UI elements. */
+    --sds-g-color-border-1: var(--slds-g-color-border-1);
+    --slds-g-color-border-1: var(--slds-g-color-neutral-base-80);
+    /* Neutral border color for UI elements. */
+    --sds-g-color-border-2: var(--slds-g-color-border-2);
+    --slds-g-color-border-2: var(--slds-g-color-neutral-base-50);
+    /* Brand border color for UI elements. */
+    --sds-g-color-border-accent-1: var(--slds-g-color-border-accent-1);
+    --slds-g-color-border-accent-1: #0176d3;
+    /* Alternate brand border color for UI elements. */
+    --sds-g-color-border-accent-2: var(--slds-g-color-border-accent-2);
+    --slds-g-color-border-accent-2: #0b5cab;
+    /* Alternate brand border color for UI elements. */
+    --sds-g-color-border-accent-3: var(--slds-g-color-border-accent-3);
+    --slds-g-color-border-accent-3: #014486;
+    /* Neutral surface color for UI elements. This is the lightest value of the surface ranges. */
+    --sds-g-color-surface-1: var(--slds-g-color-surface-1);
+    --slds-g-color-surface-1: #ffffff;
+    /* Neutral surface color for UI elements. This is one step darker than surface-1. */
+    --sds-g-color-surface-2: var(--slds-g-color-surface-2);
+    --slds-g-color-surface-2: #f3f3f3;
+    /* Neutral surface color for UI elements. This is one step darker than surface-2. */
+    --sds-g-color-surface-3: var(--slds-g-color-surface-3);
+    --slds-g-color-surface-3: #e5e5e5;
+    /* Neutral surface container color for UI elements. This sits on top of a surface. This is the lightest value of the surface container ranges. */
+    --sds-g-color-surface-container-1: var(--slds-g-color-surface-container-1);
+    --slds-g-color-surface-container-1: #ffffff;
+    /* Neutral surface container color for UI elements. This sits on top of a surface. This is one step darker than surface-container-1. */
+    --sds-g-color-surface-container-2: var(--slds-g-color-surface-container-2);
+    --slds-g-color-surface-container-2: #f3f3f3;
+    /* Neutral surface container color for UI elements. This sits on top of a surface. This is one step darker than surface-container-2. */
+    --sds-g-color-surface-container-3: var(--slds-g-color-surface-container-3);
+    --slds-g-color-surface-container-3: #e5e5e5;
+    /* Text/icon color that sits on top of a neutral surface color for UI elements. This is the lightest value of the on surface ranges. */
+    --sds-g-color-on-surface-1: var(--slds-g-color-on-surface-1);
+    --slds-g-color-on-surface-1: #747474;
+    /* Text/icon color that sits on top of a neutral surface color for UI elements. This is one step darker than on-surface-1. */
+    --sds-g-color-on-surface-2: var(--slds-g-color-on-surface-2);
+    --slds-g-color-on-surface-2: #2e2e2e;
+    /* Text/icon color that sits on top of a neutral surface color for UI elements. This is one step darker than on-surface-2. */
+    --sds-g-color-on-surface-3: var(--slds-g-color-on-surface-3);
+    --slds-g-color-on-surface-3: #181818;
+    /* Brand accent color for UI elements. This is the lightest value of the accent ranges. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-1: var(--slds-g-color-accent-1);
+    --slds-g-color-accent-1: var(--lwc-brandPrimary, var(--slds-g-color-brand-base-60));
+    /* Brand accent color for UI elements. This is one step darker than accent-1. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-2: var(--slds-g-color-accent-2);
+    --slds-g-color-accent-2: var(--lwc-brandPrimaryActive, var(--slds-g-color-brand-base-50));
+    /* Brand accent color for UI elements. This is one step darker than accent-2. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-3: var(--slds-g-color-accent-3);
+    --slds-g-color-accent-3: #0b5cab;
+    /* Brand accent color for UI elements contain text/icon. This is the lightest value of the accent container ranges. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-accent-1. */
+    --sds-g-color-accent-container-1: var(--slds-g-color-accent-container-1);
+    --slds-g-color-accent-container-1: var(--lwc-brandAccessible, var(--slds-g-color-brand-base-50));
+    /* Brand accent color for UI elements contain text/icon. This is one step darker than accent-container-1. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-accent-1. */
+    --sds-g-color-accent-container-2: var(--slds-g-color-accent-container-2);
+    --slds-g-color-accent-container-2: var(--lwc-brandAccessibleActive, var(--slds-g-color-brand-base-40));
+    /* Brand accent color for UI elements contain text/icon. This is one step darker than accent-container-2. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-accent-1. */
+    --sds-g-color-accent-container-3: var(--slds-g-color-accent-container-3);
+    --slds-g-color-accent-container-3: #014486;
+    /* Text/icon color that sits on top of a brand accent color for UI elements. This is the lightest value of the accent ranges. */
+    --sds-g-color-on-accent-1: var(--slds-g-color-on-accent-1);
+    --slds-g-color-on-accent-1: var(--slds-g-color-brand-base-100);
+    /* Accent color denoting an error for UI elements. This is the lightest value of the error ranges. */
+    --sds-g-color-error-1: var(--slds-g-color-error-1);
+    --slds-g-color-error-1: #ba0517;
+    /* Error accent color for UI elements containing a text or icon. This is the lightest value of the error container ranges. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-error-1. */
+    --sds-g-color-error-container-1: var(--slds-g-color-error-container-1);
+    --slds-g-color-error-container-1: #ba0517;
+    /* Text/icon color that sits on top of an error color for UI elements. */
+    --sds-g-color-on-error-1: var(--slds-g-color-on-error-1);
+    --slds-g-color-on-error-1: #ffffff;
+    /* Border color for elements denoting an error. This is the lightest value of the error border ranges. */
+    --sds-g-color-border-error-1: var(--slds-g-color-border-error-1);
+    --slds-g-color-border-error-1: #ba0517;
+    /* Accent color denoting an warning for UI elements. This is the lightest value of the warning ranges. */
+    --sds-g-color-warning-1: var(--slds-g-color-warning-1);
+    --slds-g-color-warning-1: #fe9339;
+    /* Warning accent color for UI elements containing a text or icon. This is the lightest value of the warning container ranges. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-warning-1. */
+    --sds-g-color-warning-container-1: var(--slds-g-color-warning-container-1);
+    --slds-g-color-warning-container-1: #dd7a01;
+    /* Text/icon color that sits on top of an warning color for UI elements. */
+    --sds-g-color-on-warning-1: var(--slds-g-color-on-warning-1);
+    --slds-g-color-on-warning-1: #181818;
+    /* Border color for elements denoting an warning. This is the lightest value of the warning border ranges. */
+    --sds-g-color-border-warning-1: var(--slds-g-color-border-warning-1);
+    --slds-g-color-border-warning-1: #dd7a01;
+    /* Accent color denoting an success for UI elements. This is the lightest value of the success ranges. */
+    --sds-g-color-success-1: var(--slds-g-color-success-1);
+    --slds-g-color-success-1: #2e844a;
+    /* success accent color for UI elements containing a text or icon. This is the lightest value of the success container ranges. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-success-1. */
+    --sds-g-color-success-container-1: var(--slds-g-color-success-container-1);
+    --slds-g-color-success-container-1: #2e844a;
+    /* Text/icon color that sits on top of a success accent color for UI elements. This is the lightest value of the success ranges. */
+    --sds-g-color-on-success-1: var(--slds-g-color-on-success-1);
+    --slds-g-color-on-success-1: #ffffff;
+    /* Border color for elements denoting an success. This is the lightest value of the success border ranges. */
+    --sds-g-color-border-success-1: var(--slds-g-color-border-success-1);
+    --slds-g-color-border-success-1: #2e844a;
+    /* Accent color denoting an info for UI elements. This is the lightest value of the info ranges. */
+    --sds-g-color-info-1: var(--slds-g-color-info-1);
+    --slds-g-color-info-1: #444444;
+    /* Info accent color for UI elements containing a text or icon. This is the lightest value of the info container ranges. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-info-1. */
+    --sds-g-color-info-container-1: var(--slds-g-color-info-container-1);
+    --slds-g-color-info-container-1: #5c5c5c;
+    /* Text/icon color that sits on top of an info color for UI elements. */
+    --sds-g-color-on-info-1: var(--slds-g-color-on-info-1);
+    --slds-g-color-on-info-1: #ffffff;
+    /* Color denoting disabled UI elements. This is the lightest value of the disabled ranges. */
+    --sds-g-color-disabled-1: var(--slds-g-color-disabled-1);
+    --slds-g-color-disabled-1: #c9c9c9;
+    /* Disabled color for UI elements containing a text or icon. This is the lightest value of the disabled container ranges. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-disabled-1. */
+    --sds-g-color-disabled-container-1: var(--slds-g-color-disabled-container-1);
+    --slds-g-color-disabled-container-1: #ffffff;
+    /* Text/icon color that sits on top of an disabled color for UI elements. This is the base disabled text color value. */
+    --sds-g-color-on-disabled-1: var(--slds-g-color-on-disabled-1);
+    --slds-g-color-on-disabled-1: #c9c9c9;
+    /* Border color for disabled UI elements. This is the lightest value of the disabled ranges. */
+    --sds-g-color-border-disabled-1: var(--slds-g-color-border-disabled-1);
+    --slds-g-color-border-disabled-1: #c9c9c9;
+    /* Brand accent color for UI elements contain text/icon. This is one step darker than error-container-1. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-accent-1. */
+    --sds-g-color-error-container-2: var(--slds-g-color-error-container-2);
+    --slds-g-color-error-container-2: #8e030f;
+    /* Border color for elements denoting an error. This is one step darker than border-error-1. */
+    --sds-g-color-border-error-2: var(--slds-g-color-border-error-2);
+    --slds-g-color-border-error-2: #8e030f;
+    /* success accent color for UI elements containing a text or icon. This is one step darker than success-container-1. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-success-1. */
+    --sds-g-color-success-container-2: var(--slds-g-color-success-container-2);
+    --slds-g-color-success-container-2: #194e31;
+    /* Text/icon color that sits on top of a success accent color for UI elements. This is one step darker than on-success-1. */
+    --sds-g-color-on-success-2: var(--slds-g-color-on-success-2);
+    --slds-g-color-on-success-2: #181818;
+    /* Color denoting disabled UI elements. This is one step darker than disabled-1. */
+    --sds-g-color-disabled-2: var(--slds-g-color-disabled-2);
+    --slds-g-color-disabled-2: #aeaeae;
+    /* Disabled color for UI elements containing a text or icon. This is two steps darker than disabled-container-1. This needs to be accompanied by a text/icon color that meets accessibility guidelines, such as on-disabled-1. */
+    --sds-g-color-disabled-container-2: var(--slds-g-color-disabled-container-2);
+    --slds-g-color-disabled-container-2: #c9c9c9;
+    /* Text/icon color that sits on top of an disabled color for UI elements. This is the alt disabled text color value. */
+    --sds-g-color-on-disabled-2: var(--slds-g-color-on-disabled-2);
+    --slds-g-color-on-disabled-2: #939393;
+    /* Border color for disabled UI elements. This is one step darker than disabled-border-1. */
+    --sds-g-color-border-disabled-2: var(--slds-g-color-border-disabled-2);
+    --slds-g-color-border-disabled-2: #aeaeae;
+    /* Reversed color of nuetral surface color, used selectively to create a contrasting effect. This is the lightest value of the surface inverse ranges. */
+    --sds-g-color-surface-inverse-1: var(--slds-g-color-surface-inverse-1);
+    --slds-g-color-surface-inverse-1: #032d60;
+    /* Reversed color of nuetral surface color, used selectively to create a contrasting effect. This is 1 step darker than surface-inverse-1. */
+    --sds-g-color-surface-inverse-2: var(--slds-g-color-surface-inverse-2);
+    --slds-g-color-surface-inverse-2: #001639;
+    /* Reversed color of nuetral surface color, used selectively to create a contrasting effect. This is the lightest value of the surface inverse ranges. */
+    --sds-g-color-surface-container-inverse-1: var(--slds-g-color-surface-container-inverse-1);
+    --slds-g-color-surface-container-inverse-1: #032d60;
+    /* Reversed color of nuetral surface color, used selectively to create a contrasting effect. This is 1 step darker than surface-container-inverse-1. */
+    --sds-g-color-surface-container-inverse-2: var(--slds-g-color-surface-container-inverse-2);
+    --slds-g-color-surface-container-inverse-2: #001639;
+    /* Text/icon color that sits on top of a inversed surface color for UI elements. This is the lightest value of the on inversed surface ranges. */
+    --sds-g-color-on-surface-inverse-1: var(--slds-g-color-on-surface-inverse-1);
+    --slds-g-color-on-surface-inverse-1: #ffffff;
+    /* Text/icon color that sits on top of a inversed surface color for UI elements. This is one step darker than on-surface-inverse-1. */
+    --sds-g-color-on-surface-inverse-2: var(--slds-g-color-on-surface-inverse-2);
+    --slds-g-color-on-surface-inverse-2: #aeaeae;
+    /* Border color for UI elements that sit on top of or with a inversed surface color. This is the lightest value of the inversed border colors. */
+    --sds-g-color-border-inverse-1: var(--slds-g-color-border-inverse-1);
+    --slds-g-color-border-inverse-1: #f3f3f3;
+    /* Border color for UI elements that sit on top of or with a inversed surface color. This is one step darker than surface-1. */
+    --sds-g-color-border-inverse-2: var(--slds-g-color-border-inverse-2);
+    --slds-g-color-border-inverse-2: #032d60;
+    /* Brand accent color for UI elements. This is the lightest value of the light accent ranges. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-light-1: var(--slds-g-color-accent-light-1);
+    --slds-g-color-accent-light-1: var(--lwc-brandLight, var(--slds-g-color-brand-base-95));
+    /* Brand accent color for UI elements. This is one step darker than accent-light-1. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-light-2: var(--slds-g-color-accent-light-2);
+    --slds-g-color-accent-light-2: var(--lwc-brandLightActive, var(--slds-g-color-brand-base-90));
+    /* Brand accent color for UI elements. This is the lightest value of the dark accent ranges. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-dark-1: var(--slds-g-color-accent-dark-1);
+    --slds-g-color-accent-dark-1: var(--lwc-brandDark, var(--slds-g-color-brand-base-20));
+    /* Brand accent color for UI elements. This is one step darker than accent-dark-1. This accent should not have any text/icon on top of it. */
+    --sds-g-color-accent-dark-2: var(--slds-g-color-accent-dark-2);
+    --slds-g-color-accent-dark-2: var(--lwc-brandDarkActive, var(--slds-g-color-brand-base-10));
+  }
+}
+  

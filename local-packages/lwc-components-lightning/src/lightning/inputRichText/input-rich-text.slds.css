@@ -1,0 +1,563 @@
+
+  /* Rich Text Editor: aka .slds-rich-text-editor */
+  :host([data-render-mode="shadow"]) [part="rich-text-editor"] {
+    border: var(--slds-g-sizing-border-1) solid var(--slds-g-color-border-base-4, var(--slds-g-color-neutral-base-90));
+    border-radius: var(--slds-g-radius-border-2);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor"].slds-has-focus {
+    border-color: var(--slds-g-color-brand-base-60, var(--slds-g-color-border-brand-2));
+    box-shadow: 0 0 var(--slds-g-sizing-border-3) var(--slds-g-color-brand-base-50);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor"] .slds-button-group-list,:host([data-render-mode="shadow"]) 
+  ::slotted(lightning-rich-text-toolbar-button-group) {
+    margin-inline-end: var(--slds-g-spacing-1);
+    margin-block-end: var(--slds-g-spacing-1);
+    margin-inline-start: 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor"] .slds-button-group-list:last-child,:host([data-render-mode="shadow"]) 
+  ::slotted(lightning-rich-text-toolbar-button-group:last-child) {
+    margin-block-end: 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor"].slds-has-error .slds-form-element__help{
+    margin-top: 0;
+  }
+  :host([data-render-mode="shadow"]) .slds-rich-text-editor__select {
+    margin-inline-end: var(--slds-g-spacing-1);
+    margin-block-end: var(--slds-g-spacing-1);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-toolbar"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    white-space: nowrap;
+    position: relative;
+    padding-block-start: var(--slds-g-spacing-2);
+    padding-inline-end: var(--slds-g-spacing-2);
+    padding-block-end: var(--slds-g-spacing-1);
+    padding-inline-start: var(--slds-g-spacing-2);
+    border-top-left-radius: var(--slds-g-radius-border-2);
+    border-top-right-radius: var(--slds-g-radius-border-2);
+    border-bottom: var(--slds-g-sizing-border-1) solid var(--slds-g-color-border-base-4, var(--slds-g-color-neutral-base-90));
+    background-color: var(--slds-g-color-neutral-base-95, var(--slds-g-color-neutral-base-95));
+  }
+  :host([data-render-mode="shadow"]) .slds-rich-text-area__content {
+    /**
+      * Remap to SLDS blueprint hooks for parity
+      * https://www.lightningdesignsystem.com/components/rich-text-editor/#Styling-Hooks-Overview
+      *
+      */
+    --slds-c-textarea-sizing-min-height: var(--slds-c-inputrichtext-textarea-sizing-height-min);
+    --slds-c-textarea-sizing-max-height: var(--slds-c-inputrichtext-textarea-sizing-height-max);
+
+    overflow-y: auto;
+    min-height: var(--slds-c-inputrichtext-textarea-sizing-height-min, 6rem);
+    max-height: var(--slds-c-inputrichtext-textarea-sizing-height-max, 15rem);
+    padding: var(--slds-g-spacing-4);
+    background-color: var(--slds-g-color-neutral-base-100, var(--slds-g-color-neutral-base-100));
+  }
+  [contenteditable]:focus {
+    outline: none;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"]:last-child .slds-rich-text-area__content {
+    border-radius: 0 0 var(--slds-g-sizing-2) var(--slds-g-sizing-2);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"]:first-child .slds-rich-text-area__content {
+    border-radius: var(--slds-g-sizing-2) var(--slds-g-sizing-2) 0 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-editor {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    user-select: text;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-editor.ql-blank::before {
+    color: var(--slds-g-color-neutral-base-50, var(--slds-g-color-neutral-base-50));
+    content: attr(data-placeholder);
+    pointer-events: none;
+    position: absolute;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-editor a {
+    text-decoration: underline;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .overflow-menu {
+    z-index: 2;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-active {
+    background-color: var(--slds-g-color-neutral-base-95, var(--slds-g-color-neutral-base-95));
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-clipboard {
+    position: absolute !important;
+    margin: calc(-1 * var(--slds-g-sizing-border-1)) !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: var(--slds-g-sizing-border-1) !important;
+    height: var(--slds-g-sizing-border-1) !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] p,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ol,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] pre,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] blockquote,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h1,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h2,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h3,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h4,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h5,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h6 {
+    counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul {
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 1.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol > li {
+    list-style-type: none;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul > li {
+    list-style-type: none;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul > li::before {
+    content: '\2022';
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul[data-checked="true"],:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul[data-checked="false"] {
+    pointer-events: none;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul[data-checked="true"] > li::before {
+    color: var(--slds-g-color-neutral-base-50, var(--slds-g-color-neutral-base-50));
+    cursor: pointer;
+    pointer-events: all;
+    content: '\2611';
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul[data-checked="false"] > li::before {
+    color: var(--slds-g-color-neutral-base-50, var(--slds-g-color-neutral-base-50));
+    cursor: pointer;
+    pointer-events: all;
+    content: '\2610';
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li::before {
+    display: inline-block;
+    margin-inline-end: 0.3em;
+    text-align: right;
+    white-space: nowrap;
+    width: 1.2em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li:not(.ql-direction-rtl)::before {
+    margin-inline-start: -1.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li {
+    padding-inline-start: 1.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li {
+    counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+    counter-increment: list-num;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li::before {
+    content: counter(list-num, decimal) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-1 {
+    counter-increment: list-1;
+    counter-reset: list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-1::before {
+    content: counter(list-1, lower-alpha) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-2 {
+    counter-increment:list-2;
+    counter-reset: list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-2::before {
+    content: counter(list-2, lower-roman) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-3 {
+    counter-increment: list-3;
+    counter-reset: list-4 list-5 list-6 list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-3::before {
+    content: counter(list-3, decimal) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-4 {
+    counter-increment: list-4;
+    counter-reset: list-5 list-6 list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-4::before {
+    content: counter(list-4, lower-alpha) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-5{
+    counter-increment: list-5;
+    counter-reset: list-6 list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-5::before {
+    content: counter(list-5, lower-roman) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-6{
+    counter-increment: list-6;
+    counter-reset: list-7 list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-6::before {
+    content: counter(list-6, decimal) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-7 {
+    counter-increment: list-7;
+    counter-reset: list-8 list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-7::before {
+    content: counter(list-7, lower-alpha) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-8 {
+    counter-increment: list-8;
+    counter-reset: list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-8::before {
+    content: counter(list-8, lower-roman) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-9 {
+    counter-increment: list-9;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol li.ql-indent-9::before {
+    content: counter(list-9, decimal) ". ";
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul li.ql-indent-1::before {
+    content: '\25e6';
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul li.ql-indent-2::before,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li.ql-indent-3::before,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li.ql-indent-4::before,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li.ql-indent-5::before,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li.ql-indent-6::before,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li.ql-indent-7::before,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul li.ql-indent-8::before {
+    content: '\25aa';
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-1:not(.ql-direction-rtl) {
+    padding-inline-start: 4.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-1.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 4.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-2:not(.ql-direction-rtl) {
+    padding-inline-start: 7.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-2.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 7.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-3:not(.ql-direction-rtl) {
+    padding-inline-start: 10.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-3.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 10.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-4:not(.ql-direction-rtl) {
+    padding-inline-start: 13.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-4.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 13.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-5:not(.ql-direction-rtl) {
+    padding-inline-start: 16.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-5.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 16.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-6:not(.ql-direction-rtl) {
+    padding-inline-start: 19.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-6.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 19.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-7:not(.ql-direction-rtl) {
+    padding-inline-start: 22.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-7.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 22.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-8:not(.ql-direction-rtl) {
+    padding-inline-start: 25.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-8.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 25.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-9:not(.ql-direction-rtl) {
+    padding-inline-start: 28.5em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] li.ql-indent-9.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 28.5em;
+  }
+  /* .slds-rich-text-editor__output isn't used in template. removed here */
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] {
+    line-height: var(--slds-g-font-lineheight);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: manual;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h1 {
+    font-size: 1.5rem;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h2 {
+    font-size: var(--slds-g-font-scale-1);
+    font-weight: var(--slds-g-font-weight-7);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h3 {
+    font-size: var(--slds-g-font-scale-1);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h4 {
+    font-size: var(--slds-g-font-scale-neg-1);
+    font-weight: var(--slds-g-font-weight-7);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h5 {
+    font-size: var(--slds-g-font-scale-neg-1);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h6 {
+    font-size: var(--slds-g-font-scale-neg-3);
+    font-weight: var(--slds-g-font-weight-7);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] h1,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h2,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h3,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h4,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h5,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] h6,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ul,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] ol,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] dl,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] img {
+    margin-block-end: var(--slds-g-sizing-4);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] blockquote {
+    margin: var(--slds-g-sizing-9) var(--slds-g-sizing-7);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ins {
+    color: var(--slds-g-color-success-base-50, #2e844a);
+    text-decoration: underline;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] del {
+    color: var(--slds-g-color-error-base-30, #ea001e);
+    text-decoration: line-through;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul {
+    margin-inline-start: var(--slds-g-sizing-7);
+    list-style: disc;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul ul {
+    list-style: circle;
+    margin-block-end: 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul ul ul {
+    list-style: square;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul ul ul ul {
+    list-style: disc;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul ul ul ul ul {
+    list-style: circle;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ul ol {
+    margin-inline-start: var(--slds-g-sizing-7);
+    list-style: decimal;
+    margin-block-end: 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol {
+    margin-inline-start: var(--slds-g-sizing-7);
+    list-style: decimal;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol ol {
+    list-style: lower-alpha;
+    margin-block-end: 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol ol ol {
+    list-style: lower-roman;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol ol ol ol {
+    list-style: decimal;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol ol ol ol ol {
+    list-style: lower-alpha;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] ol ul {
+    margin-inline-start: var(--slds-g-sizing-7);
+    list-style: disc;
+    margin-block-end: 0;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] dd {
+    /* 2.5rem */
+    margin-inline-start: calc(5 * var(--slds-g-sizing-3));
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] abbr[title],:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] acronym[title] {
+    border-bottom: var(--slds-g-sizing-border-1) dotted;
+    cursor: help;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] table {
+    overflow-wrap: normal;
+    word-wrap: normal;
+    word-break: normal;
+    width: auto;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] table caption {
+    text-align: center;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] th,:host([data-render-mode="shadow"]) 
+  [part="rich-text-editor-textarea"] td {
+    padding: var(--slds-g-sizing-3);
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .sans-serif {
+    font-family: sans-serif;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .courier {
+    font-family: courier;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .verdana {
+    font-family: verdana;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .tahoma {
+    font-family: tahoma;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .garamond {
+    font-family: garamond;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .serif {
+    font-family: serif;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-1:not(.ql-direction-rtl) {
+    padding-inline-start: 3em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-1.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 3em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-2:not(.ql-direction-rtl) {
+    padding-inline-start: 6em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-2.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 6em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-3:not(.ql-direction-rtl) {
+    padding-inline-start: 9em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-3.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 9em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-4:not(.ql-direction-rtl) {
+    padding-inline-start: 12em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-4.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 12em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-5:not(.ql-direction-rtl) {
+    padding-inline-start: 15em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-5.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 15em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-6:not(.ql-direction-rtl) {
+    padding-inline-start: 18em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-6.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 18em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-7:not(.ql-direction-rtl) {
+    padding-inline-start: 21em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-7.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 21em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-8:not(.ql-direction-rtl) {
+    padding-inline-start: 24em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-8.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 24em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-9:not(.ql-direction-rtl) {
+    padding-inline-start: 27em;
+  }
+  :host([data-render-mode="shadow"]) [part="rich-text-editor-textarea"] .ql-indent-9.ql-direction-rtl.ql-align-right {
+    padding-inline-end: 27em;
+  }
+  /* Other Adjustments */
+  :host([data-render-mode="shadow"]) .slds-hide {
+    /* TODO: this will be replaced by the visibility utils when ready https://www.lightningdesignsystem.com/utilities/visibility/#Hide-Show */
+    display: none !important;
+  }
+  /* Button Group: aka .slds-button-group-list  */
+  :host([data-render-mode="shadow"]) [part='button-group'] [part~='button'] {
+    border-radius: 0;
+    border-width: var(--slds-g-sizing-border-1);
+  }
+  /* Nudge buttons over to remove double border effect */
+  :host([data-render-mode="shadow"]) [part='button-group'] li + li [part~='button'] {
+    margin-inline-start: calc(-1 * var(--slds-g-sizing-border-1));
+  }
+  /* First child in group */
+  :host([data-render-mode="shadow"]) [part='button-group'] li:first-child [part~='button'] {
+    border-start-start-radius: var(--slds-g-radius-border-2);
+    border-end-start-radius: var(--slds-g-radius-border-2);
+  }
+  /* Last child in group */
+  :host([data-render-mode="shadow"]) [part='button-group'] li:last-child [part~='button'] {
+    border-start-end-radius: var(--slds-g-radius-border-2);
+    border-end-end-radius: var(--slds-g-radius-border-2);
+  }
+  /**
+  * Focused button child in group
+  *
+  * Adds stacking context so the focus shadow is visible
+  */
+  :host([data-render-mode="shadow"]) [part='button-group'] [part~='button']:focus {
+    position: relative;
+    z-index: 1;
+  }
+  /* Button Icon, [variant='border-filled'] aka .slds-button_icon-border-filled  */
+  /* replace [variant='border-filled'] [part~='button-icon'] rules use to alter style in Native Shadow */
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled {
+    line-height: var(--slds-g-font-lineheight-1);
+    vertical-align: middle;
+    color: var(--slds-g-color-neutral-base-50);
+    transition: border 0.15s linear;
+    background-color: var(--slds-g-color-neutral-base-100);
+
+    /* merged properties from other catch-all button styling */
+    width: var(--slds-g-sizing-9);
+    height: var(--slds-g-sizing-9);
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled:disabled,:host([data-render-mode="shadow"]) 
+  .slds-button_icon-border-filled[disabled] {
+    color: var(--slds-g-color-neutral-base-80);
+  }
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled.slds-is-selected {
+    background-color: var(--slds-g-color-brand-base-50);
+    border-color: var(--slds-g-color-brand-base-50);
+    color: var(--slds-g-color-neutral-base-100);
+  }
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled.slds-is-selected:disabled,:host([data-render-mode="shadow"]) 
+  .slds-button_icon-border-filled.slds-is-selected[disabled] {
+    background-color: var(--slds-g-color-disabled-container-2);
+    border-color: var(--slds-g-color-border-disabled-1);
+  }
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled.slds-is-selected:link,:host([data-render-mode="shadow"]) 
+  .slds-button_icon-border-filled.slds-is-selected:visited,:host([data-render-mode="shadow"]) 
+  .slds-button_icon-border-filled.slds-is-selected:active {
+    color: var(--slds-g-color-neutral-base-100);
+  }
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled.slds-is-selected:hover,:host([data-render-mode="shadow"]) 
+  .slds-button_icon-border-filled.slds-is-selected:focus {
+    background-color: var(--slds-g-color-accent-container-3);
+    border-color: var(--slds-g-color-border-accent-3);
+    color: var(--slds-g-color-neutral-base-100);
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-accent-1);
+  }
+  :host([data-render-mode="shadow"]) .slds-button_icon-border-filled.slds-is-selected:active {
+    background-color: var(--slds-g-color-accent-container-3);
+    border-color: var(--slds-g-color-border-accent-3);
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-accent-1);
+  }
+  :host([data-render-mode="shadow"]) .slds-has-error {
+    border: var(--slds-g-sizing-border-2) solid var(--slds-g-color-error-base-50);
+  }

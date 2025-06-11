@@ -1,0 +1,129 @@
+import StylingHooks from './progress.hooks.mdx';
+
+### Overview
+
+The progress primitive displays an indicator showing the completion progress of a task.
+
+### Use Cases
+
+A progress primitive indicates that the user's request has been received and the application is making progress toward completing the requested action.
+
+### Non-goals
+
+- Complex or composite progress.
+- Progress indicators that are not the common "bar" type, e.g., circle, etc.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- Customizable `min` and `max` value ranges.
+- Automatic value interoplation between `min` and `max` value ranges.
+- Validation of `value` against `min` and `max` value ranges.
+- The default appearance provides the basic structure of the primitive.
+- The default appearance comes unbranded.
+- Styling Hooks should be used to customize the appearance.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+
+---
+
+### API
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-progress` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-progress` - This is owned by a subsystem built on SDS, e.g. `dxp-progress`
+
+#### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is **required** to use the SDS progress CSS.
+
+##### DOM Structure
+
+```html
+<host>
+  <div part="label-container">
+    <slot name="label-start"></slot>
+    <label part="label">
+      <slot name="label"></slot>
+    </label>
+    <slot name="label-end"></slot>
+  </div>
+  <div part="progress-container">
+    <slot name="start"></slot>
+    <div part="progress">
+      <div part="indicator"></div>
+    </div>
+    <slot name="end"></slot>
+  </div>
+</host>
+```
+
+##### Slots
+
+| Slot Name     | Description                                                 | Fallback Content |
+| ------------- | ----------------------------------------------------------- | ---------------- |
+| `start`       | Content placed before the progress                          | empty            |
+| `end`         | Content placed after the progress                           | empty            |
+| `label`       | Content placed in the label that describes the progress     | empty            |
+| `label-start` | Content placed before the label that describes the progress | empty            |
+| `label-end`   | Content placed after the label that describes the progress  | empty            |
+
+##### Parts
+
+**⚠️ Important:** Customizations through the CSS Shadow Parts API falls outside the support matrix of SDS.
+
+| Part Name            | Description                                        |
+| -------------------- | -------------------------------------------------- |
+| `label-container`    | Enables advanced styling of the label container    |
+| `label`              | Enables advanced styling of the label              |
+| `progress-container` | Enables advanced styling of the progress container |
+| `progress`           | Enables advanced styling of the progress           |
+| `indicator`          | Enables advanced styling of the indicator          |
+
+##### Properties & Attributes
+
+| Attribute | Type     | Default Value | Description                                                        |
+| --------- | -------- | ------------- | ------------------------------------------------------------------ |
+| `id`      | `string` | `progress-id` | Value for the `id` on the progress. Associates progress with label |
+| `max`     | `number` | `100`         | Maximum accetable value in the min and max range                   |
+| `min`     | `number` | `0`           | Minimum accetable value in the min and max range                   |
+| `value`   | `number` | `0`           | Current value of the progress                                      |
+
+##### Events
+
+All [standard events](https://w3c.github.io/uievents/) that bubble and/or composed are supported.
+
+##### Styling Hooks
+
+Use the following Styling Hooks to customize the appearance of the component.
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+No states or interactions are defined for the progress primitive.
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [requirements of the progress bar role](https://w3c.github.io/aria/#progressbar) per the W3C.
+
+#### Labelling
+
+In most cases you should provide an accessible label. You may use `aria-label` or provide a text label with the `label` slot.
+
+### Internationalization
+
+All slotted content should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Open Questions
+
+- `indeterminate` state support
+- Should the progress primitive be differentiated from the `meter` role? At the moment, the progress primitive allows `meter`-like custom value ranges.
+- Cross-root Aria concerns for using `aria-describedby` to associate the progress with another part of the application when attempting to indicate a loading status with `aria-busy="true"`.

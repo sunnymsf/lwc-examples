@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-form-element__control slds-faux-input_container" onclick={handleButtonContainerClick}>
+        <button class="slds-faux-input slds-button slds-button_neutral"
+                type="button"
+                disabled={disabled}
+                onblur={handleBlur}
+        >
+            <lightning-icon
+                class="slds-input__icon slds-input__icon_right"
+                icon-name="utility:search"
+                size="x-small"
+            ></lightning-icon>
+        </button>
+    </div>
+</template>

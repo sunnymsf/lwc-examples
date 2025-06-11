@@ -1,0 +1,53 @@
+{
+  "name": "lwc-exampels-lwr",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf node_modules __lwr_cache__ site",
+    "dev": "lwr dev",
+    "dev:compat": "lwr dev --mode compat",
+    "build": "lwr build --clean --logLevel error",
+    "build:prod-compat": "lwr build --clean --mode prod-compat",
+    "heroku-postbuild": "lwr build --clean",
+    "start": "lwr start",
+    "start:dev": "rimraf __lwr_cache__ && lwr start",
+    "stage": "yarn build && yarn start",
+    "stage:prod-compat": "yarn build:prod-compat && yarn start"
+  },
+  "dependencies": {
+    "@babel/core": "7.24.7",
+    "@salesforce-ux/design-system": "2.26",
+    "axios": "^1.9.0",
+    "lwc-components-lightning": "file:./local-packages/lwc-components-lightning",
+    "lwc": "7.1.0",
+    "lwr": "0.15.0"
+  },
+  "devDependencies": {
+    "@sa11y/wdio": "^6.2.0",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.1",
+    "@wdio/allure-reporter": "^7.19.0",
+    "@wdio/cli": "^7.19.0",
+    "@wdio/local-runner": "^7.19.0",
+    "@wdio/mocha-framework": "^7.19.0",
+    "@wdio/selenium-standalone-service": "^7.19.0",
+    "@wdio/spec-reporter": "^7.19.0",
+    "allure-commandline": "2.20.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.16.5",
+    "typescript": "^5.7.2",
+    "wdio-video-reporter": "^3.4.0",
+    "webdriverio": "^7.19.0"
+  },
+  "resolutions": {
+    "leveldown": "6.1.1",
+    "lwc": "7.1.0"
+  },
+  "engines": {
+    "node": "20.18.2",
+    "yarn": "1.22.x"
+  }
+}

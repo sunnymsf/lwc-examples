@@ -1,0 +1,188 @@
+import StylingHooks from './button.hooks.mdx';
+
+### Overview
+
+The button represent an control that should invoke an action.
+
+### Use Cases
+
+The button enables an implementor to create a simple, but customizable button.
+
+### Non-goals
+
+- Complex or composite buttons.
+- Customizations can be made through [Styling Hooks][styling-hooks-jump] and `::part` API, where the addition of CSS through `::part` falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The API design of the SDS Button is specific to the [HTML Button][https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element] element and should not be implemented on any other HTML element. All methods and properties pertain to the HTML element as it was designed by the web platform.
+- The "default" appearance provides the basic structure of a button.
+- The "default" appearance comes unbranded.
+- The "default" appearance includes color contrast fallbacks for accessibility, which are based on relative values.
+- [Styling hooks](#styling-hooks) should be used to customize the appearance of the button.
+- Customization beyond Styling Hooks can be achieved through the [CSS Shadow Parts API][css-shadow-parts]. The addition of CSS is allowed through `::part` but falls outside the support matrix of SDS.
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/buttons/)
+- [Ant Design](https://ant.design/components/button/)
+- [Atlassian](https://atlassian.design/components/button/examples)
+- [Material Design](https://material.io/components/buttons)
+- [Carbon](https://www.carbondesignsystem.com/components/button/usage/)
+- [FAST](https://explore.fast.design/components/fast-button)
+- [Morning Star](https://designsystem.morningstar.com/components/button/?version=3.1.4&tab=variations)
+- [Polaris](https://polaris.shopify.com/components/actions/button)
+
+---
+
+### API
+
+The API design that follows _only_ applies to the [HTML Button Element][button-spec].
+
+The SDS button component should support all methods and attributes of the [HTML Button Element][button-spec].
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-button` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-button` - This is owned by a subsystem built on SDS, e.g. `dxp-button`
+
+#### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is **required** to use the SDS button CSS.
+
+##### Diagram
+
+![Example Diagram](sds-button.diagram.png)
+
+##### DOM Structure
+
+```html
+<host>
+  <button part="button">
+    <slot name="start"></slot>
+    <slot></slot>
+    <slot name="end"></slot>
+  </button>
+</host>
+```
+
+##### Slots
+
+| Slot Name | Description                                                 | Fallback Content |
+| --------- | ----------------------------------------------------------- | ---------------- |
+| `start`   | The content that at the start of the primary button content | empty            |
+| `default` | The primary button content                                  | empty            |
+| `end`     | The content that at the start of the primary button content | empty            |
+
+##### Parts
+
+| Part Name | Description                                                                   |
+| --------- | ----------------------------------------------------------------------------- |
+| `button`  | Enables styling beyond Styling Hooks, falls outside the support matrix of SDS |
+
+##### Properties & Attributes
+
+| Attribute  | Type     | Default Value | Description                                                                           |
+| ---------- | -------- | ------------- | ------------------------------------------------------------------------------------- |
+| `disabled` | `bool`   | `false`       | Indicates whether the button is disabled and cannot be interacted with.               |
+| `name`     | `string` | `null`        | Name of the element to use for form submission and in the `form.elements` API         |
+| `role`     | `enum`   | `button`      | Defines ARIA semantics.                                                               |
+| `tabindex` | `number` | `null`        | Allows HTML elements to be focusable or prevent them from beingsequentially focusable |
+| `title`    | `string` | `null`        | Text representing advisory information related to the element it belongs to.          |
+| `type`     | `enum`   | `button`      | The type attribute controls the behavior of the button when it is activated.          |
+| `value`    | `string` | `null`        | Value to be used for form submission.                                                 |
+| `variant`  | `string` | `null`        | Change the appearance of the button.                                                  |
+| `aria-pressed`  | `string` | `null`   | Optional interface to define a button as pressed. Triggers stateful behavior.         |
+
+##### Events
+
+All [standard events](https://w3c.github.io/uievents/) that bubble and/or composed are supported.
+
+##### Styling Hooks
+
+Use the following Styling Hooks to customize the appearance of the button component.
+
+##### Component
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States           | Initial State | Description                                                                                                                                              |
+| ----------- | ---------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `focus`     | `false`          | `false`       | When a button receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's <kbd>Tab</kbd> key. |
+| `disabled`  | `true` / `false` | `false`       | Indicates whether the button is disabled and cannot be interacted with.                                                                                  |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) per the W3C.
+
+#### Button vs Link
+
+The HTML elements for buttons and links describe a very specific type of action that is going to be taken when they are used. It is important you know when to use which, as the distinction matters:
+
+- Use a **link** when you’re **navigating to another place**, such as: a "view all" page, "Jane Chen" profile, a page "skip link" etc.
+- Use **buttons** when you are **performing an action**, such as: "submit," "merge," "create new," "upload," etc.
+- Taking action on a button is almost **always** on the same page
+
+If pressing a button results in a new URL, or the resultant UI makes sense as "a new browser tab", that is a link `<a>`. Everything else is a `<button>`.
+
+#### Screen readers
+
+The distinction between a button and a link is important to screen reader users to know what's going to happen next. Will I navigate somewhere or will something happen on the page? So it's important to choose the right HTML element for the job.
+
+If you absolutely cannot use a `<button>` element for an action and instead need to use an `<a>`, you are required to do 2 things:
+
+- Add `role="button"` attribute to the `<a>` to make the element announce itself as a button element.
+- Add a JavaScript event handler for when the user presses the space key. This is because a button element will respond by default to both the enter and space keys being pressed, but an `<a>` element will not.
+
+#### Color
+
+Finally, color alone does not suffice when conveying the meaning of buttons. Ensure that the text you use in the button matches the meaning you are trying to convey via color.
+
+For example, if you create a button variant to point out a potential warning, make sure the text communicates the same message.
+
+#### Links that look like buttons
+
+**Use these with caution** - dictation software users may not be able to properly identify these actions, as they can say "show buttons" and these won't highlight since they are semantically links, even though they may look like buttons.
+
+#### Truncation
+
+The text within a button should never be truncated. If you are dealing with long text, please wrap the text to a second line.
+
+### Internationalization
+
+All slotted content inside the button should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All buttons should have visual regression tests to catch any unintended modifications to the visuals of the button
+- All buttons should have unit tests to ensure the correct input and output of attributes and events
+- All buttons should have a test to catch color contrast regressions that, at a minimum, fulfill the requirements of WCAG 2.1.
+
+[button-spec]: https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element
+[anchor-spec]: https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element
+[input-spec]: https://html.spec.whatwg.org/multipage/input.html#the-input-element
+[input-button-spec]: https://html.spec.whatwg.org/multipage/input.html#button-state-(type=button)
+[input-submit-spec]: https://html.spec.whatwg.org/multipage/input.html#submit-button-state-(type=submit)
+[css-shadow-parts]: https://drafts.csswg.org/css-shadow-parts/
+[styling-hooks-jump]: #styling-hooks
+[namespace-service]: https://github.com/salesforce-experience-platform-emu/salesforce-design-system/blob/main/packages/sds-namespaces/src/namespaces.js
+
+### Open Questions
+
+- `ariaBraillelabel` and `ariaBrailleroledescription` are not yet supported by LWC.
+- Aria attributes that require a reference to an element outside of its shadow root
+  - `aria-controls`
+  - `aria-describedby`
+  - `aria-details`
+  - `aria-flowto`
+  - `aria-labelledby`
+  - `aria-owns`

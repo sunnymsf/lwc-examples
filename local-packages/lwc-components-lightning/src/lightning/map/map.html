@@ -1,0 +1,53 @@
+<template>
+    <div class="slds-map_container">
+        <div class="slds-map">
+            <lightning-primitive-iframe
+                id="mapContainer"
+                title={mapTitle}
+                src={mapSrc}
+                domain={mapDomain}
+                oniframeload={handleIframeLoad}
+                frame-style={mapStyle}
+            >
+            </lightning-primitive-iframe>
+        </div>
+        <template if:true={showFooter}>
+            <div class="slds-p-around_medium">
+                <div class="slds-button slds-button_brand">
+                    <lightning-external-link title={title} href={mapHref}
+                        >{i18n.openInGoogleMapsString}</lightning-external-link
+                    >
+                </div>
+            </div>
+        </template>
+    </div>
+    <template if:true={showCoordinatesSidebar}>
+        <div class="slds-coordinates">
+            <div class="slds-coordinates__header">
+                <h2 class="slds-coordinates__title">
+                    {markersTitle} ({filteredMarkers.length})
+                </h2>
+            </div>
+            <ul
+                class="slds-coordinates__list"
+                key={computeGuid}
+                onprivatecoordinateregister={handleCoordinateRegister}
+            >
+                <template for:each={filteredMarkers} for:item="coordinate">
+                    <li class="slds-coordinates__item" key={coordinate.key}>
+                        <lightning-primitive-coordinate-item
+                            key={coordinate.key}
+                            item-title={coordinate.title}
+                            item-address={coordinate.formattedAddress}
+                            oncoordinateclick={handleCoordinateClick}
+                            oncoordinatesmouseover={handleCoordinateHover}
+                            icon-name={coordinate.icon}
+                            guid={coordinate.key}
+                        >
+                        </lightning-primitive-coordinate-item>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</template>

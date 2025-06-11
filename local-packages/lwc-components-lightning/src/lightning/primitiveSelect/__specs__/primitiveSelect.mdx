@@ -1,0 +1,143 @@
+import StylingHooks from './select.hooks.mdx';
+
+### Overview
+
+The `select` element represents a control that provides a menu of options.
+
+### Use Cases
+
+### Non-goals
+
+- Autocomplete or type-ahead functionality.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The API design of the SDS Select is specific to the [HTML Select](https://html.spec.whatwg.org/multipage/input.html#the-select-element) element.
+- The default appearance provides the basic structure of a select with an associated label and help text.
+- The default appearance comes unbranded.
+- Styling Hooks should be used to customize the appearance.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+
+### Prior Art/Examples
+
+- [FAST Select (React)](https://www.npmjs.com/package/@microsoft/fast-components-react-msft)
+- [Ant Design](https://ant.design/components/select/)
+- [Carbon Design](https://www.carbondesignsystem.com/components/select/code/)
+- [Atlassian UI](https://atlaskit.atlassian.com/packages/core/select)
+- [Lightning Design System](https://www.lightningdesignsystem.com/components/select/)
+- [W3 Example](https://www.w3.org/TR/wai-aria-practices-1.1/examples/listbox/listbox-collapsible.html)
+
+---
+
+### API
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-select` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-select` - This is owned by a subsystem built on SDS, e.g. `dxp-select`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="select">
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label">
+        <slot name="label"></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+    <div part="select-container">
+      <slot name="start"></slot>
+      <select></select>
+      <slot name="end"></slot>
+      <div part="indicator">
+        <slot name="indicator"></slot>
+      </div>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text"></slot>
+  </div>
+  <slot></slot>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| `default` | A list of HTML `<option>` elements | empty |
+| `start`   | Content placed prior to the select element, such as an icon | empty |
+| `end`     | Content placed after to the select element, such as an icon | empty |
+| `label`   | The label for the select element | empty |
+| `label-start` | Content placed prior to the label | empty |
+| `label-end`   | Content placed after to the label | empty |
+| `help-text`   | The help text for the select element | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `select` | The select container |
+| `label-container` | The label container that holds the label, and its start and end slots |
+| `label` | The label of the select |
+| `select-container` | The select container |
+| `indicator` | The indicator container that holds the icon |
+| `help-text` | The help text container |
+
+#### Properties & Attributes
+
+| Attribute | Type | Default Value | Description |
+| - | - | - | - |
+| `disabled` | `boolean` | `false` | Disables the select element |
+| `multiple` | `boolean` | `false` | Allows multiple options to be selected |
+| `name` | `string` | `''` | The name of the select element |
+| `required` | `boolean` | `false` | Indicates that the user must select a value before submitting the form |
+| `size` | `number` | `0` | The number of options to show in the select element |
+| `value` | `string` | `''` | The value of the select element |
+| `id` | `string` | `''` | The id of the select element |
+
+#### Events
+
+| Event Name | Type | Bubbles | Composed | Cancellable | Dispatch Behavior |
+| - | - | - | - | - | - |
+| `change`  | none | `false` | `false` | `false` | Fires after the value of the select changes |
+| `blur`   | none | `false` | `false` | `false` | Fires after the select loses focus |
+
+#### Styling Hooks
+<StylingHooks />
+
+---
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description|
+| - | - | - | - |
+| `focus` | `false` | `false` | When the select receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+| `disabled` | `true`/`false` | `false` | Indicates whether the select is disabled and cannot be interacted with. When disabled, the control is not included in form validation |
+| `active` | `true`/`false` | `false` | Controls whether or not the user is currently typing in the form control |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) per the W3C.
+
+When interacting with the associated label via click, it should focus the related select.
+
+### Internationalization
+
+All elements of the select control (e.g., `start`/`end` slots, user-entered text, icons, etc) should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All selects should have visual regression tests to catch any unintended modifications to the visuals.
+- All selects should have unit tests to ensure the correct input and output of attributes, states, and events.
+- All selects should test for color contrast combinations that, at a minimum, fulfill the requirements of WCAG 2.1.
+- All selects should be tested across all supported devices, ensuring that modifications for mobile are taken into account.

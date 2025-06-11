@@ -1,0 +1,250 @@
+<template>
+    <template if:true={isRenderable}>
+        <template if:true={failed}>
+            <span class="slds-hide">No input rendered: {errorMessage}</span>
+        </template>
+        <template if:true={ready}>
+            <template if:true={isTypeName}>
+                <lightning-input-name
+                    label={label}
+                    first-name={internalValue.FirstName}
+                    first-name-label={firstNameLabel}
+                    middle-name={internalValue.MiddleName}
+                    middle-name-label={middleNameLabel}
+                    last-name={internalValue.LastName}
+                    last-name-label={lastNameLabel}
+                    salutation={internalValue.Salutation}
+                    salutation-label={salutationLabel}
+                    suffix={internalValue.Suffix}
+                    suffix-label={suffixLabel}
+                    options={picklistOptions}
+                    disabled={_disabled}
+                    readonly={readOnly}
+                    required={required}
+                    variant={inputVariant}
+                    field-level-help={inlineHelpText}
+                    fields-to-display={nameFieldsToDisplay}
+                    onchange={handleChange}></lightning-input-name>
+            </template>
+            <template if:true={isTypeAddress}>
+                <lightning-input-address
+                    address-label={label}
+                    street-label={streetLabel}
+                    city-label={cityLabel}
+                    province-label={state.label}
+                    country-label={countryLabel}
+                    postal-code-label={postCodeLabel}
+                    street={_street}
+                    city={_city}
+                    province={_state}
+                    postal-code={_postalCode}
+                    country={_country}
+                    province-options={stateOptions}
+                    country-options={countryOptions}
+                    disabled={_disabled}
+                    readonly={readOnly}
+                    required={required}
+                    variant={inputVariant}
+                    field-level-help={inlineHelpText}
+                    onchange={handleChange}></lightning-input-address>
+            </template>
+            <template if:true={isTypeNumber}>
+                <lightning-input
+                disabled={_disabled}
+                readonly={readOnly}
+                name={_fieldName}
+                type="number"
+                variant={inputVariant}
+                required={required}
+                label={label}
+                formatter={numberFormatter}
+                value={internalValue}
+                step={numberStep}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-input>
+            </template>
+            <template if:true={isTypeText}>
+                <lightning-input
+                disabled={_disabled}
+                readonly={readOnly}
+                autocomplete={autocomplete}
+                label={label}
+                variant={inputVariant}
+                aria-invalid={ariaInvalid}
+                value={internalValue}
+                name={_fieldName}
+                required={required}
+                maxlength={fieldLength}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-input>
+            </template>
+            <template if:true={isTypeCheckbox}>
+                <lightning-input
+                disabled={_disabled}
+                readonly={readOnly}
+                label={label}
+                name={_fieldName}
+                checked={internalValue}
+                type="checkbox"
+                variant={inputVariant}
+                required={externalRequired}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-input>
+            </template>
+            <template if:true={isTypeEmail}>
+                <lightning-input
+                disabled={_disabled}
+                readonly={readOnly}
+                autocomplete={autocomplete}
+                label={label}
+                name={_fieldName}
+                value={internalValue}
+                required={required}
+                type="email"
+                variant={inputVariant}
+                maxlength={uiField.length}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-input>
+            </template>
+            <template if:true={isTypeTextArea}>
+                <lightning-textarea
+                label={label}
+                name={_fieldName}
+                value={internalValue}
+                disabled={_disabled}
+                readonly={readOnly}
+                autocomplete={autocomplete}
+                required={required}
+                variant={inputVariant}
+                maxlength={uiField.length}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-textarea>
+            </template>
+            <template if:true={isTypeRichText}>
+                <lightning-quill
+                    label={label}
+                    value={internalValue}
+                    disabled={_disabled}
+                    required={required}
+                    variant={inputVariant}
+                    field-level-help={inlineHelpText}
+                    onchange={handleChange}></lightning-quill>
+                </template>
+            <template if:true={isTypeDate}>
+                <lightning-input label={label}
+                    name={_fieldName}
+                    type="date"
+                    variant={inputVariant}
+                    value={internalValue}
+                    disabled={_disabled}
+                    readonly={readOnly}
+                    required={required}
+                    field-level-help={inlineHelpText}
+                    onchange={handleChange}></lightning-input>
+            </template>
+            <template if:true={isTypeDateTime}>
+                <lightning-input
+                    label={label}
+                    name={_fieldName}
+                    type="datetime"
+                    variant={inputVariant}
+                    value={internalValue}
+                    required={required}
+                    disabled={_disabled}
+                    readonly={readOnly}
+                    field-level-help={inlineHelpText}
+                    onchange={handleChange}> </lightning-input>
+            </template>
+            <template if:true={isTypeTime}>
+                <lightning-input
+                    label={label}
+                    name={_fieldName}
+                    type="time"
+                    variant={inputVariant}
+                    value={internalValue}
+                    required={required}
+                    disabled={_disabled}
+                    readonly={readOnly}
+                    field-level-help={inlineHelpText}
+                    onchange={handleChange}> </lightning-input>
+            </template>
+            <template if:true={isTypePicklist}>
+                <lightning-picklist
+                label={label}
+                name={_fieldName}
+                variant={inputVariant}
+                value={internalValue}
+                disabled={_disabled}
+                autocomplete={autocomplete}
+                options={picklistOptions}
+                required={required}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-picklist>
+            </template>
+            <template if:true={isTypeMultiPicklist}>
+                <lightning-picklist
+                multiple
+                label={label}
+                name={_fieldName}
+                variant={inputVariant}
+                value={internalValue}
+                disabled={_disabled}
+                options={picklistOptions}
+                required={required}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-picklist>
+            </template>
+            <template if:true={isTypeReferenceWithLightningLookupSupported}>
+                <lightning-lookup
+                    disabled={_disabled}
+                    field-name={_fieldName}
+                    object-infos={objectInfos}
+                    record={record.record}
+                    value={lookupValue}
+                    variant={inputVariant}
+                    label={label}
+                    required={required}
+                    show-create-new="advanced-only"
+                    onchange={handleChange}></lightning-lookup>
+            </template>
+            <template if:true={isTypeReferenceWithLightningLookupUnsupported}>
+                <lightning-input
+                disabled={_disabled}
+                readonly={readOnly}
+                autocomplete={autocomplete}
+                label={label}
+                variant={inputVariant}
+                value={value}
+                name={_fieldName}
+                required={required}
+                maxlength={fieldLength}
+                field-level-help={inlineHelpText}
+                onchange={handleChange}></lightning-input>
+            </template>
+            <template if:true={isTypeLocation}>
+                <lightning-input-location
+                    longitude={value.longitude}
+                    latitude={value.latitude}
+                    label={label}
+                    disabled={_disabled}
+                    readonly={readOnly}
+                    required={required}
+                    onchange={handleChange}></lightning-input-location>
+            </template>
+            <template if:true={isTypeUnsupportedReference}>
+                <lightning-input
+                    disabled
+                    readonly={readOnly}
+                    autocomplete={autocomplete}
+                    label={label}
+                    name={_fieldName}
+                    value={displayValue}
+                    required={required}
+                    type="text"
+                    variant={inputVariant}
+                    field-level-help={inlineHelpText}
+                    onchange={handleChange}></lightning-input>
+            </template>
+        </template>
+    </template>
+</template>

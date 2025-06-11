@@ -1,0 +1,7 @@
+:host {
+    display: block;
+}
+
+.input-rich-text-placeholder {
+    color: var(--slds-g-color-neutral-base-50, #747474); /* $color-text-placeholder - https://www.lightningdesignsystem.com/design-tokens/#category-text-color */
+}

@@ -1,0 +1,13 @@
+:host {
+    display: block;
+}
+
+.slds-button_neutral[disabled],
+.slds-button_neutral:disabled,
+.slds-button--neutral[disabled],
+.slds-button--neutral:disabled {
+    background-color: var(--slds-s-input-color-background-disabled, var(
+        --lwc-colorBackgroundInputDisabled,
+        rgb(243, 243, 243)
+    ));
+}

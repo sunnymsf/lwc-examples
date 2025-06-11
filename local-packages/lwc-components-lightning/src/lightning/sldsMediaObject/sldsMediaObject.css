@@ -1,0 +1,74 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+.slds-media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.slds-media__figure {
+    flex-shrink: 0;
+    margin-inline-end: var(--slds-g-spacing-3);
+}
+
+.slds-media__figure_fixed-width {
+    min-width: var(--slds-g-sizing-10);
+}
+
+.slds-media__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.slds-media__body,
+.slds-media__body> :last-child {
+    margin-block-end: 0;
+}
+
+.slds-media-body-iefix {
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.slds-media_small .slds-media__figure {
+    margin-inline-end: var(--slds-g-spacing-1);
+}
+
+.slds-media_small .slds-media__figure_reverse {
+    margin-inline-start: var(--slds-g-spacing-1);
+}
+
+.slds-media_large .slds-media__figure {
+    margin-inline-end: var(--slds-g-spacing-5);
+}
+
+.slds-media_large .slds-media__figure_reverse {
+    margin-inline-start: var(--slds-g-spacing-5);
+}
+
+.slds-media_inline .slds-media__body {
+    flex: 0 1 auto;
+}
+
+.slds-media_center {
+    align-items: center;
+}
+
+.slds-media__figure_reverse {
+    margin-block: 0;
+    margin-inline-start: var(--slds-g-spacing-3);
+    margin-inline-end: 0;
+}
+
+@media (width <= 48em) {
+
+    .slds-media_responsive {
+        display: block;
+    }
+
+    .slds-media_responsive .slds-media__figure {
+        margin-block: 0;
+        margin-inline-start: var(--slds-g-spacing-3);
+        margin-inline-end: 0;
+    }
+}

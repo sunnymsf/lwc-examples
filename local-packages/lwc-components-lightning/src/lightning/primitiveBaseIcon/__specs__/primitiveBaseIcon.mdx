@@ -1,0 +1,171 @@
+import StylingHooks from './icon.hooks.mdx';
+
+# Specification
+
+## Overview
+
+Icons are symbols used to represent features, functionality, or content.
+
+## Use Cases
+
+Use an icon to provide additional context or enhanced usability to a UI element.
+
+## Non-goals
+
+- Support every format out of the box. We provide a sensible default, SVG, based on best practices and flexibility. Use the default `<slot>` to handle formats other than SVG.
+- Customizations made outside of Styling Hooks.
+- Component variants. Variants should be applied at the subsystem layer.
+
+## Features
+
+- Bring your own icons. No unwanted default assets are shipped with the icon component.
+- Render your SVG icon in a consistent, customizable, and accessible manner.
+- Internal icon caching to prevent multiple requests for the same icon.
+- Prefetch and cache icon assets for availability ahead of time.
+- Custom icon set registration with the ability to have multiple icon sets registered at the same time.
+- Flexibility to clean dirty `svg` icons during registration process to make them behave more predictably.
+- Reference your icons through a declarative API.
+- One-off icons and unique file formats supported through slot usage.
+- Allow for optional accessible text that is read by screen readers but is not visible on screen.
+- Automatic `role` assignment when accessible text is enabled.
+
+## Prior Art/Examples
+
+- [SLDS](https://lightningdesignsystem.com/components/icon)
+- [Newport (Vlocity)](https://newport.vlocinternal.com/?path=/story/ui-components-icons--default)
+- [Bootstrap](https://icons.getbootstrap.com/#usage)
+- [Material](https://material-components.github.io/material-components-web-components/demos/icon/)
+- [Ionic](https://ionicons.com/usage)
+- [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons)
+- [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons)
+- [Shoelace](https://shoelace.style/components/icon?id=icon-libraries)
+- [Stencil Icons](https://paulcpederson.com/articles/stencil-icons/)
+
+## API
+
+## Anatomy and Appearance
+
+### DOM Structure
+
+**Note:** please refer to the [accessibility section](#Accessibility) for important accessibility requirements.
+
+```html
+<host>
+  <span part="boundary">
+    <span part="icon">
+      <slot></slot>
+    </span>
+  </span>
+</host>
+```
+
+### Slots
+
+| Slot Name | Description                                                               | Fallback Content |
+| --------- | ------------------------------------------------------------------------- | ---------------- |
+| default   | An optional space for providing formats other than but also including SVG | empty            |
+
+### Parts
+
+| Part Name  | Description                             |
+| ---------- | --------------------------------------- |
+| `boundary` | The container around the icon container |
+| `icon`     | The container of the icon element       |
+
+### Properties & Attributes
+
+| Attribute   | Type     | Default Value | Description                                                                                                  |
+| ----------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `set`       | `string` | `null`        | The set name of the icon collection. Corresponds to the registered icon set.                                 |
+| `symbol`    | `string` | `null`        | The name of the SVG in the set.                                                                              |
+| `prefetch`  | `string` | `null`        | A [comma-separated list of the icons](https://html.spec.whatwg.org/#comma-separated-tokens) to be prefetched |
+| `icon-sets` | `array`  | `null`        | Declarative way to register your icon set(s)                                                                 |
+
+### Methods
+
+| Method              | Type     | Description                                                            |
+| ------------------- | -------- | ---------------------------------------------------------------------- |
+| `registerIconSet`   | `array`  | Receives an array of objects that define custom icon sets to register. |
+| `unregisterIconSet` | `string` | Receives the name of a registered icon set and unregisters it.         |
+
+#### `registerIconSet`
+
+An array of objects that define custom icon sets to register with the component.
+
+```js
+// yourComponent.js
+
+handleRegisterIconSet(value) {
+  this.template.querySelector('sds-icon').registerIconSet(value);
+}
+```
+
+##### Example Method Call
+
+```js
+yourComponent.handleRegisterIconSet([
+  {
+    name: 'foo',
+    resolver: (name) => `/url/path/to/icon/set/${name}.svg`,
+    mutator: (svg) => {
+      // Optional mutations
+      svg.setAttribute('fill', 'currentColor');
+      return svg;
+    },
+  },
+  {
+    name: 'bar',
+    resolver: (name) => `/url/path/to/icon/set/${name}.svg`,
+  },
+]);
+```
+
+| Key        | Value      | Description                                                                       |
+| ---------- | ---------- | --------------------------------------------------------------------------------- |
+| `name`     | `string`   | The string identifier for the custom icon set.                                    |
+| `resolver` | `function` | The URL of the icon set.                                                          |
+| `mutator`  | `function` | Optional mutations to run on each icon. Good for cleaning icon sets before using. |
+
+#### `unregisterIconSet`
+
+A method that removes an icon set from the component's registry.
+
+```js
+// yourComponent.js
+
+handleUnregisterIconSet(value) {
+  this.template.querySelector('sds-icon').unregisterIconSet(value);
+}
+```
+
+##### Example Method Call
+
+```js
+yourComponent.handleUnregisterIconSet('foo');
+```
+
+### Events
+
+N/A
+
+### Styling Hooks
+
+<StylingHooks />
+
+## Accessibility
+
+### Assistive Text
+
+If an icon does not have a visible label that describes what the icon represents, assistive text is required.
+
+Use the `aria-label` attribute to pass in a string that describes what the icon represents. When the `aria-label` attribute is present, `role="img"` is automatically applied.
+
+## Internationalization
+
+Icons by themselves don’t have any associated visual text, but the assistive text that is visually hidden should allow for all languages to be used.
+
+Icons should follow standard usage rules when displayed in bidirectional (RTL) text flows. For example, icons with associated text should appear on the right (or start) of the text in RTL. Also, some icons may need new assets if the glyph represents, in part, a direction (e.g., arrows, bulleted lists).
+
+## Open Questions
+
+- Do we need to bake in SVG sprite support?

@@ -1,0 +1,35 @@
+<template>
+    <lightning-popup-source
+        style="position: absolute; top: 30%; left: 50%"
+        onclickout={handleClickOut}
+    >
+        <lightning-button
+            slot="source"
+            label="Show popup"
+            onclick={handleSourceClick}
+        ></lightning-button>
+        <lightning-button-icon
+            icon-name="utility:close"
+            alternative-text="Close"
+            title="close"
+            variant="bare"
+            size="small"
+            class="slds-float_right slds-popover__close"
+            onclick={handleClose}
+        ></lightning-button-icon>
+
+        <div class="slds-popover__body">
+            <header class="slds-popover__header">
+                <h2>Header title</h2>
+            </header>
+            <p>
+                The header/footer popup is displayed relative to the trigger element.
+            </p>
+        </div>
+        <footer class="slds-popover__footer">
+            <div class="slds-grid slds-grid_vertical-align-center">
+              <button class="slds-button slds-button_neutral slds-col_bump-left">Learn More</button>
+            </div>
+          </footer>
+    </lightning-popup-source>
+</template>

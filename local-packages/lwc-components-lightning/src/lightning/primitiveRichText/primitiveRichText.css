@@ -1,0 +1,87 @@
+/**
+  Styling Hooks and Default styling for required HTML slotted elements
+*/
+
+::slotted(h1) {
+  font-size: var(--sds-c-richtext-h1-font-size, var(--sds-g-font-scale-4)) !important;
+}
+
+::slotted(h2) {
+  font-size: var(--sds-c-richtext-h2-font-size, var(--sds-g-font-scale-3)) !important;
+}
+
+::slotted(h3) {
+  font-size: var(--sds-c-richtext-h3-font-size, var(--sds-g-font-scale-2)) !important;
+}
+
+::slotted(h4) {
+  font-size: var(--sds-c-richtext-h4-font-size, var(--sds-g-font-scale-1)) !important;
+}
+
+::slotted(:where(h1, h2, h3, h4)) {
+  margin-block-start: var(--sds-g-spacing-2) !important;
+  margin-block-end: var(--sds-g-spacing-4) !important;
+}
+
+::slotted(ul),
+::slotted(ol) {
+  padding-block: var(
+    --sds-c-richtext-list-spacing-block,
+    var(--sds-c-richtext-list-spacing, var(--sds-g-spacing-4))
+  ) !important;
+  padding-inline: var(
+    --sds-c-richtext-list-spacing-inline,
+    var(--sds-c-richtext-list-spacing, var(--sds-g-spacing-4))
+  ) !important;
+}
+
+::slotted(p) {
+  margin-block: var(
+    --sds-c-richtext-p-spacing-block,
+    var(--sds-c-richtext-p-spacing, var(--sds-g-spacing-4))
+  ) !important;
+  margin-inline: var(--sds-c-richtext-p-spacing-inline, var(--sds-c-richtext-p-spacing)) !important;
+}
+
+::slotted(p:first-child) {
+  margin-block-start: 0 !important;
+}
+
+::slotted(p:last-child) {
+  margin-block-end: 0 !important;
+}
+
+/**
+ * Rich Text
+ * ---
+ * The Rich Text holds the `default` slot content.
+ */
+[part~='rich-text-container'] {
+  font-size: var(--sds-c-richtext-font-size, var(--sds-g-font-size-base)) !important;
+  line-height: var(--sds-c-richtext-font-lineheight, var(--sds-g-font-lineheight-base)) !important;
+  padding-block: var(--sds-c-richtext-spacing-block, var(--sds-c-richtext-spacing));
+  padding-inline: var(--sds-c-richtext-spacing-inline, var(--sds-c-richtext-spacing));
+}
+
+[part~='copy-container'] {
+  text-align: right;
+}
+
+[part~='copy'] {
+  display: inline-flex;
+  background: var(--sds-c-richtext-copy-color-background, var(--sds-s-button-color-background, transparent));
+  color: var(--sds-c-richtext-copy-text-color, var(--sds-s-button-color, currentColor));
+  padding-block: var(
+    --sds-c-richtext-copy-spacing-block,
+    var(--sds-c-richtext-copy-spacing, var(--sds-s-button-spacing))
+  );
+  padding-inline: var(
+    --sds-c-richtext-copy-spacing-inline,
+    var(--sds-c-richtext-copy-spacing, var(--sds-s-button-spacing))
+  );
+  border-color: var(--sds-c-richtext-copy-color-border, var(--sds-s-button-color-border, transparent));
+}
+
+[part~='copy']:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,5 @@
+/* Fix aura that cascades in navex parent */
+:host {
+    width: unset !important;
+    height: unset !important;
+}

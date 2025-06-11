@@ -1,0 +1,8 @@
+
+:host([data-render-mode="shadow"]) [part='bubble'] {
+  /* Note: The following styling hooks are remapped from popover for usability reason.
+      Users will have an option to use the following styling hooks from both popover and bubble.
+      This makes it easier/more predictable to use our styling hooks based on our internal rules for styling hook naming convention. */
+  --slds-c-popover-position-zindex: var(--slds-c-bubble-position-zindex);
+  --slds-c-popover-color-background: var(--slds-c-bubble-color-background);
+}

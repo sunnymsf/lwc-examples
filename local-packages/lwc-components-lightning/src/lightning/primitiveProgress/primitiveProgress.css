@@ -1,0 +1,100 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * Normalize box-sizing
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Progress Container
+ * ---
+ * The Progress Container holds the `start` and `end` slot contents, as well as the progress itself
+ */
+[part~='progress-container'] {
+  display: flex;
+  gap: var(--sds-c-progress-spacing-gap);
+}
+
+[part~='progress'] {
+  background-color: var(--sds-c-progress-color-background);
+  border: var(--sds-c-progress-sizing-border, 1px) solid var(--sds-c-progress-color-border, currentColor);
+  border-start-start-radius: var(
+    --sds-c-progress-radius-border-startstart,
+    var(--sds-c-progress-radius-border)
+  );
+  border-start-end-radius: var(--sds-c-progress-radius-border-startend, var(--sds-c-progress-radius-border));
+  border-end-start-radius: var(--sds-c-progress-radius-border-endstart, var(--sds-c-progress-radius-border));
+  border-end-end-radius: var(--sds-c-progress-radius-border-endend, var(--sds-c-progress-radius-border));
+  block-size: var(--sds-c-progress-sizing-height, 1rem);
+  inline-size: var(--sds-c-progress-sizing-width, 100%);
+  overflow: hidden; /* Keeps border-radius consistent on indicator */
+}
+
+/**
+ * Indicator
+ * ---
+ * The indicator is the part of the progress that shows the current progress
+ */
+[part~='indicator'] {
+  background-color: var(--sds-c-progress-color-foreground, currentColor);
+  block-size: var(--sds-c-progress-sizing-height, 1rem);
+}
+
+/**
+ * Label Container
+ * ---
+ * Holds the label-start, label, and label-end slots
+ */
+[part='label-container'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-c-progress-label-spacing-gap, var(--sds-s-label-spacing-gap));
+  padding-inline-start: var(
+    --sds-c-progress-label-spacing-inlinestart,
+    var(--sds-c-progress-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-progress-label-spacing-inlineend,
+    var(--sds-c-progress-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-progress-label-spacing-blockstart,
+    var(--sds-c-progress-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-progress-label-spacing-blockend,
+    var(--sds-c-progress-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  color: var(--sds-c-progress-label-color, var(--sds-s-label-color));
+}
+
+/**
+ * Label
+ * ---
+ * Label element
+ */
+[part='label'] {
+  font-size: var(--sds-c-progress-label-font-size, var(--sds-s-label-font-size));
+  font-weight: var(--sds-c-progress-label-font-weight, var(--sds-s-label-font-weight));
+}
+
+/**
+ * If told, the label will be hidden from view
+ */
+:host([label-hidden]) [part='label-container'] {
+  position: absolute !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}

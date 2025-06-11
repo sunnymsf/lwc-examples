@@ -1,0 +1,1 @@
+export default 'Enter a valid email address, such as name@email.com.';

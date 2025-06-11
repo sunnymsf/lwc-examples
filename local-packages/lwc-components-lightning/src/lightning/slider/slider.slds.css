@@ -1,0 +1,165 @@
+
+/**
+ * @summary Initializes slider component
+ */
+:host([data-render-mode="shadow"]) .slds-slider {
+    display: flex;
+    position: relative;
+}
+/**
+ * @summary Range track for slider
+ */
+:host([data-render-mode="shadow"]) .slds-slider__range {
+    appearance: none;
+    width: 100%;
+    background: none;
+    background-color: transparent;
+    border-radius: var(--slds-g-radius-border-1);
+}
+:host([data-render-mode="shadow"]) .slds-slider__range:focus {
+    outline: 0;
+}
+/**
+ * @summary Element that contains value of input range
+ */
+:host([data-render-mode="shadow"]) .slds-slider__value {
+    padding: 0 var(--slds-g-spacing-2);
+}
+/**
+ * @summary Contains the label for the slider and adds a hook for adding `.slds-assistive-text` class to visually hide the label, but not the range
+*/
+:host([data-render-mode="shadow"]) .slds-slider-label__label {
+    display: block;
+}
+/**
+ * @summary Modifier that makes the slider vertical
+*/
+:host([data-render-mode="shadow"]) .slds-slider_vertical {
+    height: calc(12rem + 1.875rem);
+}
+:host([data-render-mode="shadow"]) .slds-slider_vertical .slds-slider__range {
+    width: 12rem;
+    height: var(--slds-g-sizing-5);
+    transform: rotate(-90deg);
+    transform-origin: calc(12rem * 0.5) calc(12rem * 0.5);
+}
+:host([data-render-mode="shadow"]) .slds-slider_vertical .slds-slider__value {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-end: 0;
+    padding: 0;
+}
+/* @summary .slds-slider__range (Webkit – Thumb) */
+:host([data-render-mode="shadow"]) .slds-slider__range::-webkit-slider-thumb {
+    appearance: none;
+    width: var(--slds-g-sizing-5);
+    height: var(--slds-g-sizing-5);
+    border-radius: var(--slds-c-slider-thumb-radius-border, var(--slds-g-radius-border-circle));
+    background: none;
+    background-color: var(--slds-c-slider-thumb-color-foreground, var(--slds-g-color-accent-container-1));
+    border: 0;
+    box-shadow: var(--slds-c-slider-thumb-shadow, var(--slds-g-color-neutral-base-10, rgba(0, 0, 0, 16%) 0 2px 3px));
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+    margin-block-start: calc(((var(--slds-g-sizing-5) / 2) - (var(--slds-g-sizing-2) / 2)) * -1);
+}
+:host([data-render-mode="shadow"]) .slds-slider__range::-webkit-slider-thumb:hover {
+    background-color: var(--slds-c-slider-thumb-color-foreground-hover, var(--slds-g-color-accent-container-2));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range:focus::-webkit-slider-thumb {
+    background-color: var(--slds-c-slider-thumb-color-foreground-focus, var(--slds-g-color-accent-container-2));
+    box-shadow: var(--slds-c-slider-thumb-shadow-focus, var(--slds-s-button-shadow-focus));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range:active::-webkit-slider-thumb {
+    background-color: var(--slds-c-slider-thumb-color-foreground-active, var(--slds-g-color-accent-container-2));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range[disabled]::-webkit-slider-thumb {
+    background-color: var(--slds-g-color-on-disabled-1);
+    cursor: default;
+}
+/* @summary .slds-slider__range (Webkit – Track) */
+:host([data-render-mode="shadow"]) .slds-slider__range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: var(--slds-g-sizing-2);
+    cursor: pointer;
+    background: none;
+    background-color: var(--slds-c-slider-track-color-background, var(--slds-g-color-border-1));
+    border-radius: var(--slds-c-slider-track-radius-border, var(--slds-g-radius-border-1));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range[disabled]::-webkit-slider-runnable-track {
+    background-color: var(--slds-g-color-border-disabled-1);
+    cursor: default;
+}
+/* @summary .slds-slider__range (Moz – Thumb) */
+:host([data-render-mode="shadow"]) .slds-slider__range::-moz-range-thumb {
+    appearance: none;
+    width: var(--slds-g-sizing-5);
+    height: var(--slds-g-sizing-5);
+    border-radius: var(--slds-c-slider-thumb-radius-border, var(--slds-g-radius-border-circle));
+    background: none;
+    background-color: var(--slds-c-slider-thumb-color-foreground, var(--slds-g-color-accent-container-1));
+    border: 0;
+    box-shadow: var(--slds-c-slider-thumb-shadow, var(--slds-g-color-neutral-base-10, rgba(0, 0, 0, 16%) 0 2px 3px));
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+    margin-block-start: calc(((var(--slds-g-sizing-5) / 2) - (var(--slds-g-sizing-2) / 2)) * -1);
+}
+:host([data-render-mode="shadow"]) .slds-slider__range::-moz-range-thumb:hover {
+    background-color: var(--slds-c-slider-thumb-color-foreground-hover, var(--slds-g-color-accent-container-2));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range:focus::-moz-range-thumb {
+    background-color: var(--slds-c-slider-thumb-color-foreground-focus, var(--slds-g-color-accent-container-2));
+    box-shadow: var(--slds-c-slider-thumb-shadow-focus, var(--slds-s-button-shadow-focus));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range:active::-moz-range-thumb {
+    background-color: var(--slds-c-slider-thumb-color-foreground-active, var(--slds-g-color-accent-container-2));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range[disabled]::-moz-range-thumb {
+    background-color: var(--slds-g-color-on-disabled-1);
+    cursor: default;
+}
+/* @summary .slds-slider__range (Moz – Track) */
+:host([data-render-mode="shadow"]) .slds-slider__range::-moz-range-track {
+    width: 100%;
+    height: var(--slds-g-sizing-2);
+    cursor: pointer;
+    background: none;
+    background-color: var(--slds-c-slider-track-color-background, var(--slds-g-color-border-1));
+    border-radius: var(--slds-c-slider-track-radius-border, var(--slds-g-radius-border-1));
+}
+:host([data-render-mode="shadow"]) .slds-slider__range[disabled]::-moz-range-track {
+    background-color: var(--slds-g-color-border-disabled-1);
+}
+/* @summary .slds-slider__range (MS – Thumb) */
+:host([data-render-mode="shadow"]) .slds-slider__range::-ms-thumb {
+    width: 100%;
+    height: var(--slds-g-sizing-2);
+    cursor: pointer;
+    background: none;
+    background-color: var(--slds-c-slider-track-color-background, 
+        var(--slds-g-color-neutral-base-95, var(--slds-g-color-surface-2))
+    );
+    border-radius: var(--slds-c-slider-track-radius-border, var(--slds-g-radius-border-1));
+    margin-block-start: calc(var(--slds-g-sizing-2) / 4);
+}
+:host([data-render-mode="shadow"]) .slds-slider__range[disabled]::-ms-thumb {
+    background-color: var(--slds-g-color-on-disabled-1);
+    cursor: default;
+}
+/* @summary .slds-slider__range (MS – Track) */
+:host([data-render-mode="shadow"]) .slds-slider__range::-ms-track {
+    width: 100%;
+    height: var(--slds-g-sizing-2);
+    cursor: pointer;
+    background: none;
+    background-color: var(--slds-c-slider-track-color-background,
+        var(--slds-g-color-neutral-base-95, var(--slds-g-color-surface-2))
+    );
+    border-radius: var(--slds-c-slider-track-radius-border, var(--slds-g-radius-border-1));
+    border-color: transparent;
+    color: transparent;
+}
+:host([data-render-mode="shadow"]) .slds-slider__range[disabled]::-ms-track {
+    background-color: var(--slds-g-color-border-disabled-1);
+    cursor: default;
+}

@@ -1,0 +1,106 @@
+import StylingHooks from './richText.hooks.mdx';
+
+### Overview
+
+A rich text component is a read-only representation of rich text.
+
+### Use Cases
+
+A Rich Text component enables user to customise advanced styling options like headings(h1 to h4), bold, italic, underine, strikethrough, Ordered and Unordered list, font sizes, font line heights and links.
+
+### Non-goals
+
+- Complex or composite HTML elements.
+- Validation of slotted content
+- Undo/Redo actions and Alignment options.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through `::part` falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- Styling Hooks should be used to customize the appearance for the supported HTML elements.
+- The default appearance provides the basic structure of the primitive.
+- The default appearance comes unbranded.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://developer.salesforce.com/docs/component-library/bundle/lightning-formatted-rich-text/documentation)
+- [Atlassian](https://atlaskit.atlassian.com/packages/editor/editor-core)
+
+---
+
+### API
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-rich-text` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-progress` - This is owned by a subsystem built on SDS, e.g. `dxp-rich-text`
+
+### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is **required** to use the SDS progress CSS.
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="rich-text">
+    <div part="copy-container">
+      <button part="copy">
+        <slot name="copy-label"></slot>
+      </button>
+    </div>
+    <div part="rich-text-container">
+      <slot></slot>
+    </div>
+  </div>
+</host>
+```
+
+##### Slots
+
+| Slot Name     | Description                | Fallback Content |
+| ------------- | -------------------------- | ---------------- |
+| `default`     | Rich Text Content          | empty            |
+| `copy-label`  | Copy Button Content        | empty            |
+
+##### Parts
+
+| Part Name       | Description                                                                   |
+| --------------- | ----------------------------------------------------------------------------- |
+| `rich-text`     | Enables advanced styling of the rich text |
+| `rich-text-container`     | Enables advanced styling of the rich text container |
+| `copy-container`     | Enables advanced styling of the copy container |
+| `copy`     | Enables advanced styling of the copy button |
+
+#### Properties & Attributes
+
+N/A
+
+#### Styling Hooks
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+N/A
+
+### Accessibility
+
+#### Headings
+
+The heading level depends on the placement within the hierarchy of the document.
+
+### Internationalization
+
+All slotted content inside the Rich Text should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All Rich Text's should have visual regression tests to catch any unintended modifications to the visuals of the content.
+- All Rich Text's should have a test to catch color contrast regressions that, at a minimum, fulfill the requirements of WCAG 2.1.

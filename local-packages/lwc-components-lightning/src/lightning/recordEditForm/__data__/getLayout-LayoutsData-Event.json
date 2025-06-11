@@ -1,0 +1,235 @@
+{
+    "eTag": "0bc0d24f8e61aff1d9661382d08fa343",
+    "id": "00hxx0000019Z9jAAE",
+    "layoutType": "Full",
+    "mode": "Create",
+    "objectApiName": "Event",
+    "recordTypeId": "012000000000000AAA",
+    "saveOptions": [],
+    "sections": [
+        {
+            "collapsible": true,
+            "columns": 2,
+            "heading": "Calendar Details",
+            "id": "01Bxx000002C99SEAS",
+            "layoutRows": [
+                {
+                    "layoutItems": [
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Assigned To",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "OwnerId",
+                                    "componentType": "Field",
+                                    "label": "Assigned To ID"
+                                }
+                            ],
+                            "lookupIdApiName": "OwnerId",
+                            "required": true,
+                            "sortable": false
+                        },
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Related To",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "WhatId",
+                                    "componentType": "Field",
+                                    "label": "Related To ID"
+                                }
+                            ],
+                            "lookupIdApiName": "WhatId",
+                            "required": false,
+                            "sortable": false
+                        }
+                    ]
+                },
+                {
+                    "layoutItems": [
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Subject",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "Subject",
+                                    "componentType": "Field",
+                                    "label": "Subject"
+                                }
+                            ],
+                            "lookupIdApiName": "Id",
+                            "required": true,
+                            "sortable": false
+                        },
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Name",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "WhoId",
+                                    "componentType": "Field",
+                                    "label": "Name ID"
+                                }
+                            ],
+                            "lookupIdApiName": "WhoId",
+                            "required": false,
+                            "sortable": false
+                        }
+                    ]
+                },
+                {
+                    "layoutItems": [
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "All-Day Event",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "IsAllDayEvent",
+                                    "componentType": "Field",
+                                    "label": "All-Day Event"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": false,
+                            "sortable": false
+                        },
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Private",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "IsPrivate",
+                                    "componentType": "Field",
+                                    "label": "Private"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": false,
+                            "sortable": false
+                        }
+                    ]
+                },
+                {
+                    "layoutItems": [
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Start",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "StartDateTime",
+                                    "componentType": "Field",
+                                    "label": "Start Date Time"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": true,
+                            "sortable": false
+                        },
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Reminder Set",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "IsReminderSet",
+                                    "componentType": "Field",
+                                    "label": "Reminder Set"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": false,
+                            "sortable": false
+                        }
+                    ]
+                },
+                {
+                    "layoutItems": [
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "End",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "EndDateTime",
+                                    "componentType": "Field",
+                                    "label": "End Date Time"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": true,
+                            "sortable": false
+                        },
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Repeat",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "IsRecurrence2",
+                                    "componentType": "Field",
+                                    "label": "Repeat"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": false,
+                            "sortable": false
+                        },
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Create Recurring Series of Events",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "IsRecurrence",
+                                    "componentType": "Field",
+                                    "label": "Create Recurring Series of Events"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": false,
+                            "sortable": false
+                        }
+                    ]
+                }
+            ],
+            "rows": 6,
+            "useHeading": true
+        },
+        {
+            "collapsible": true,
+            "columns": 1,
+            "heading": "Description Information",
+            "id": "01Bxx000002C99UEAS",
+            "layoutRows": [
+                {
+                    "layoutItems": [
+                        {
+                            "editableForNew": true,
+                            "editableForUpdate": true,
+                            "label": "Description",
+                            "layoutComponents": [
+                                {
+                                    "apiName": "Description",
+                                    "componentType": "Field",
+                                    "label": "Description"
+                                }
+                            ],
+                            "lookupIdApiName": null,
+                            "required": false,
+                            "sortable": false
+                        }
+                    ]
+                }
+            ],
+            "rows": 1,
+            "useHeading": true
+        }
+    ]
+}

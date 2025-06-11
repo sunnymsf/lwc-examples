@@ -1,0 +1,49 @@
+
+.preview-container {
+  padding: var(--dx-g-spacing-smd) 0px;
+}
+
+.example-selector-container {
+  padding: var(--dx-g-spacing-sm) var(--dx-g-spacing-lg);
+}
+
+.label {
+  font-family: var(--dx-g-font-display);
+  color: var(--dx-g-cloud-blue-vibrant-20);
+  font-size: 32px;
+  font-weight: var(--dx-g-font-demi);
+  line-height: var(--dx-g-spacing-lg);
+  letter-spacing: 0.08px;
+}
+
+.example-selector-label {
+  margin-bottom: var(--dx-g-spacing-xs);
+}
+
+.example-description {
+  margin-top: var(--dx-g-spacing-md);
+  display: inline-block;
+  color: var(--dx-g-gray-10);
+  font-family: var(--dx-g-font-sans);
+  font-size: var(--dx-g-text-sm);
+  line-height: var(--dx-g-spacing-mlg);
+}
+
+.preview {
+  /* Note: The min-height must be updated if the height of the doc-component-playground iframe is changed. */
+  min-height: 150px;
+  padding: var(--dx-g-spacing-lg);
+}
+  
+.custom-button {
+  width: 100%;
+}
+
+.code-header {
+  display: flex;
+  height: var(--dx-g-text-5xl);
+  padding: 0px var(--dx-g-spacing-lg);
+  align-items: center;
+  gap: var(--dx-g-spacing-md);
+  border-top: 1px solid var(--dx-g-gray-90);
+}

@@ -1,0 +1,124 @@
+### Overview
+
+A Menu is a composite widget that offers a list of choices to the user, such as a set of actions or functions.
+
+### Use Cases
+
+A Menu appears when a trigger element is activated, such as a button. They appear in front of all other permanent UI elements.
+
+### Non-goals
+
+- Menu items cannot be any interactive elements. For example, there cannot be a button, link or input as a menu item.
+- Menu item names are flattened strings and should not contain any formatting, semantics or hierarchy that is a requirement for understanding the menu item meaning
+- Menu items cannot be required
+- Customizations can be made through Light DOM styling with CSS and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+
+### Features
+
+- The API design of the SDS Menu Manager is specific to the [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/) specification.
+- Manager will automatically upgrade the HTML passed through the slot if contracts are met. If contracts are not met, the HTML will be ignored and a warning will be logged to the console.
+- Full keyboard navigation and screen reader support incorporated for Menu
+- Menu items can be grouped, with a label for each group
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/accessibility/patterns/menu/)
+- [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/)
+
+---
+
+### API
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-menu-manager` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-menu-manager` - This is owned by a subsystem built on SDS, e.g. `dxp-menu-manager`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="menu">
+    <slot></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| `default` | menu items to be listed in the menu | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `menu` | Enables styling for the containing Menu |
+
+#### Contracts
+
+The following contracts must be met for the SDS Menu Manager to upgrade the HTML passed through the slot:
+
+- All menu items must have a unique `id` attribute
+- If the html passed through the slot has a parent - child structure, then the parent element must be one of the tags below:
+  - `div`
+  - `ul`
+  - `ol`
+- The menu items inside the containing parent element must be:
+  - `span` or `div` when inside a `div` parent
+  - `li` when inside a `ul` or `ol` parent
+- No nesting beyond one level of `div` or `li` elements
+- No interactive elements within the passed menu items
+- If multiple menu groups are detected, you are required to have an menu group label.
+  - The direct descendant of the group must be a semantically correct element based on the parent, ie, an `li` in a `ul`, with `role="presentation"` and a unique `id` attribute
+- If you need to associate the menu with a label, you must use the `aria-labelledby` attribute on the menu manager element and reference the label's `id` attribute
+- If no label is provided, the menu will be labeled with the `aria-label` attribute
+
+#### Properties & Attributes
+
+The following properties and attributes are derived from the [WIA Aria specification](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/):
+
+| Attribute | Type | Options | Default Value | Description |
+| - | - | - | - | - |
+| `aria-labelledby` | `string` | | | Refers to the element containing the Menu label. |
+| `aria-label` | `string` | | | When no visible label is present, value that describes the content of the Menu. |
+| `aria-activedescendant` | `string` | | | Refers to the id of current active item in the menu. |
+| `value` | `string` | | | Returns the content of the last selected/clicked menu item. |
+
+#### Events
+
+| Event Name | Type | Bubbles | Composed | Cancellable | Dispatch Behavior |
+| - | - | - | - | - | - |
+| `selectionchange` | none | `false`  | | `false` | Emitted when a menu item is selected|
+
+#### Methods
+| Method Name | Parameters | Description |
+| - | - | - |
+| `focus` | | Focuses the Menu |
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description |
+| - | - | - | - |
+| `focus` | `false` | `false` | When the menu receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/#wai-ariaroles,states,andproperties) per the W3C.
+
+The Menu adheres to the ARIA guidance on [keyboard navigation](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/#keyboardinteraction).
+
+### Test Plan
+
+- A Menu should have visual regression tests to catch any unintended modifications to the visuals.
+- A Menu should have unit tests to ensure the correct input and output of attributes, states, and events.
+- A Menu should be tested across all supported devices, ensuring that modifications for mobile are taken into account.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="xmlns=http://soap.sforce.com/2006/04/metadata">
+    <isExposed>true</isExposed>
+    <!-- APIs in this bundle are being experimented so cannot be exposed to customers. -->
+    <!-- So don't set the minApiVersion -->
+</LightningComponentBundle>

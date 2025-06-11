@@ -1,0 +1,34 @@
+<template>
+  <div part="input-time">
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label" for={id}>
+        <slot name="label" onslotchange={handleLabelSlotChange}></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+    <div part="input-container" onclick={handleClick}>
+      <slot name="start"></slot>
+      <input
+        part="input"
+        id={id}
+        name={name}
+        type="text"
+        value={value}
+        locale={locale}
+        disabled={disabled}
+        readonly={readOnly}
+        required={required}
+        maxlength="5"
+        aria-invalid={invalid}
+        onkeypress={handleKeyPress}
+        oninput={handleInput}
+        onblur={handleBlur}
+      />
+      <slot name="end"></slot>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text" onslotchange={handleHelpTextSlotChange}></slot>
+  </div>
+</template>

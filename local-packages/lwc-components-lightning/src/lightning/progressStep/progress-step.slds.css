@@ -1,0 +1,405 @@
+
+/* No variables for logical properties existed, so these were created */
+:host([data-render-mode="shadow"]) {
+    --_slds-c-progressstep-margin-inlinestart-large: 0.375rem;
+    --_slds-c-progressstep-margin-inlinestart-small: 0;
+    
+    --_slds-c-progressstep-margin-inlineend-large: 0.4375rem;
+    --_slds-c-progressstep-margin-inlineend-small: 0;
+
+    --_slds-c-progressstep-inset-inlinestart-large: 1.125rem;
+    --_slds-c-progressstep-inset-inlinestart-small: -0.25rem;
+
+    --_slds-c-progressstep-inset-inlineend-large: 0.625rem;
+    --_slds-c-progressstep-inset-inlineend-small: -0.3125rem;
+
+    --_slds-c-progressstep-inset-blockstart-zero: 0;
+    --_slds-c-progressstep-inset-blockend-zero: 0;
+
+}
+/* Variant = BASE */
+/*
+ * A list item for each step of the process
+ */
+:host([data-render-mode="shadow"].slds-progress__item) {
+    display: inline-flex;
+    align-self: center;
+}
+:host([data-render-mode="shadow"].slds-progress__item.slds-is-completed) .slds-progress__marker {
+    background-color: var(--_slds-c-progressstep-background-color, var(--slds-g-color-surface-container-1));
+    border-color: var(--_slds-c-progressstep-border-color, var(--slds-g-color-accent-container-1));
+}
+/**
+ * Stateful class for a completed step, `.slds-progress__item` should receive a success icon at this point
+ */
+:host([data-render-mode="shadow"].slds-progress__item.slds-is-completed) .slds-progress__marker_icon {
+    border-color: var(--_slds-c-progressstep-border-color, var(--slds-g-color-on-accent-1));
+    --slds-c-icon-color-foreground: var(--slds-g-color-accent-container-1);
+}
+/**
+ * Stateful class for the active step
+ */
+:host([data-render-mode="shadow"].slds-progress__item.slds-is-active) .slds-progress__marker {
+    /* Adds whitespace around indicator */
+    box-shadow: var(--_slds-c-progressstep-box-shadow-active, var(--slds-g-color-surface-container-1)) 0 0 0 var(--slds-g-sizing-2);
+    background-color: var(--_slds-c-progressstep-background-color-active, var(--slds-g-color-surface-container-1));
+    border-color: var(--slds-g-color-accent-container-1);
+}
+:host([data-render-mode="shadow"].slds-progress__item.slds-is-active) .slds-progress__marker:hover,:host([data-render-mode="shadow"].slds-progress__item.slds-is-active) .slds-progress__marker:focus {
+    border-color: var(--slds-g-color-border-accent-2);
+}
+:host([data-render-mode="shadow"].slds-progress__item.slds-is-active) .slds-progress__marker:focus {
+    box-shadow: var(--slds-g-shadow-5, 0 0 3px var(--slds-g-color-accent-2));
+}
+/**
+ * Indicates error state for a step in the progress
+ */
+:host([data-render-mode="shadow"].slds-progress__item.slds-has-error) .slds-progress__marker,:host([data-render-mode="shadow"].slds-progress__item.slds-has-error) .slds-progress__marker:hover,:host([data-render-mode="shadow"].slds-progress__item.slds-has-error) .slds-progress__marker:focus {
+    --slds-c-icon-color-foreground: var(--slds-g-color-error-1);
+
+    background-color: var(--_slds-c-progressstep-background-color, var(--slds-g-color-surface-container-1));
+    border-color: var(--_slds-c-progressstep-border-color, transparent);
+    box-shadow: none;
+}
+:host([data-render-mode="shadow"].slds-progress__item.slds-has-error) .slds-progress__marker:focus {
+    box-shadow: var(--slds-s-button-shadow-focus);
+}
+/**
+ * Dot indicator for each step
+ */
+:host([data-render-mode="shadow"]) .slds-progress__marker {
+    width: var(--slds-g-sizing-5);
+    height: var(--slds-g-sizing-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: var(--slds-g-radius-border-circle);
+    background-color: var(--slds-g-color-neutral-base-80);
+    border: var(--slds-g-sizing-2) solid var(--_slds-c-progressstep-border-color, var(--slds-g-color-on-accent-1));
+    vertical-align: middle;
+}
+:host([data-render-mode="shadow"]) .slds-progress__marker:focus-visible {
+    outline: none;
+}
+:host([data-render-mode="shadow"]) .slds-progress__marker:focus {
+    box-shadow: var(--slds-s-button-shadow-focus);
+}
+/**
+  * Modifier that notifies the marker indicator that the step has been completed and its getting an icon
+  */
+:host([data-render-mode="shadow"]) .slds-progress__marker_icon {
+    width: auto;
+    height: auto;
+}
+:host([data-render-mode="shadow"]) .slds-progress__marker_icon .slds-icon_container {
+    line-height: 0;
+}
+:host([data-render-mode="shadow"]) .slds-progress__marker_icon .slds-icon {
+    fill: currentcolor;
+}
+/* Variant = PATH */
+/**
+ * Creates the incomplete stage of the path
+ */
+:host([data-render-mode="shadow"].slds-is-incomplete),:host([data-render-mode="shadow"].slds-is-incomplete)::before,:host([data-render-mode="shadow"].slds-is-incomplete)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-incomplete, var(--slds-g-color-surface-container-2));
+}
+:host([data-render-mode="shadow"].slds-is-incomplete) .slds-path__link {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    color: var(--_slds-c-path-item-color-incomplete, var(--slds-g-color-on-surface-3));
+}
+:host([data-render-mode="shadow"].slds-is-incomplete:hover),:host([data-render-mode="shadow"].slds-is-incomplete:hover)::before,:host([data-render-mode="shadow"].slds-is-incomplete:hover)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-incomplete-hover, var(--slds-g-color-neutral-base-80));
+}
+/**
+ * Creates the completed stage of the path
+ */
+:host([data-render-mode="shadow"].slds-is-complete),:host([data-render-mode="shadow"].slds-is-complete)::before,:host([data-render-mode="shadow"].slds-is-complete)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-complete, var(--slds-g-color-success-base-60));
+}
+:host([data-render-mode="shadow"].slds-is-complete) .slds-path__stage {
+    transform: translate(-50%, -50%) rotateX(0deg);
+}
+:host([data-render-mode="shadow"].slds-is-complete) .slds-path__stage .slds-icon-text-default {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-success-1);
+}
+:host([data-render-mode="shadow"].slds-is-complete) .slds-path__title {
+    transform: rotateX(180deg);
+}
+:host([data-render-mode="shadow"].slds-is-complete) .slds-path__link {
+    color: var(--slds-g-color-on-success-1);
+}
+:host([data-render-mode="shadow"].slds-is-complete:hover),:host([data-render-mode="shadow"].slds-is-complete:hover)::before,:host([data-render-mode="shadow"].slds-is-complete:hover)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-complete-hover, var(--slds-g-color-success-container-2));
+}
+:host([data-render-mode="shadow"].slds-is-complete:hover) .slds-path__stage {
+    transform: translate(-50%, -50%) rotateX(-180deg);
+}
+:host([data-render-mode="shadow"].slds-is-complete:hover) .slds-path__title {
+    transform: rotateX(0deg);
+}
+/**
+ * Creates the current stage of the path
+ */
+:host([data-render-mode="shadow"].slds-is-current) {
+    background-color: var(--slds-g-color-neutral-base-100);
+}
+:host([data-render-mode="shadow"].slds-is-current)::before,:host([data-render-mode="shadow"].slds-is-current)::after {
+    background-color: var(--slds-g-color-neutral-base-100);
+
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background-image: linear-gradient(
+        90deg,
+        var(--slds-g-color-brand-base-30),
+        var(--slds-g-color-brand-base-30) var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)),
+        transparent var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2))
+    ),
+    linear-gradient(
+        90deg,
+        var(--slds-g-color-brand-base-30),
+        var(--slds-g-color-brand-base-30) var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)),
+        transparent var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2))
+    ),
+    linear-gradient(
+        var(--slds-g-color-brand-base-30),
+        var(--slds-g-color-brand-base-30) var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)),
+        transparent var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2))
+    );
+    background-repeat: no-repeat;
+    
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background-size: var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)) 100%,
+                     var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)) 100%,
+                    100% var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2));
+}
+:host([data-render-mode="shadow"].slds-is-current)::before {
+    background-position: top right, top left, top left;
+}
+:host([data-render-mode="shadow"].slds-is-current)::after {
+    background-position: top right, top left, bottom left;
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child) {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    border: var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)) solid var(--slds-g-color-brand-base-30);
+    border-inline-end: 0;
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child)::before,:host([data-render-mode="shadow"].slds-is-current:first-child)::after {
+    background-color: transparent;
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background-image: linear-gradient(
+        90deg,
+        var(--slds-g-color-brand-base-30),
+        var(--slds-g-color-brand-base-30) var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)),
+        transparent var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2))
+    );
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child)::before {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-block-start: calc(var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)) * -1);
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-block-end: calc(var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)) * -1);
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child):hover {
+    border-color: var(--slds-g-color-brand-base-20);
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child:hover)::before,:host([data-render-mode="shadow"].slds-is-current:first-child:hover)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background-image: linear-gradient(
+        90deg,
+        var(--slds-g-color-brand-base-20),
+        var(--slds-g-color-brand-base-20) var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2)),
+        transparent var(--_slds-c-path-item-sizing-border, var(--slds-g-sizing-border-2))
+    );
+}
+:host([data-render-mode="shadow"].slds-is-current:first-child) .slds-path__link {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    height: var(--_slds-c-path-item-sizing-height, var(--slds-g-sizing-8));
+}
+:host([data-render-mode="shadow"].slds-is-current) .slds-path__link {
+    color: var(--slds-g-color-brand-base-20);
+}
+:host([data-render-mode="shadow"].slds-is-current:hover)::before,:host([data-render-mode="shadow"].slds-is-current:hover)::after {
+    background-image: linear-gradient(
+        90deg,
+        var(--slds-g-color-brand-base-20),
+        var(--slds-g-color-brand-base-20) var(--slds-g-sizing-border-2),
+        transparent var(--slds-g-sizing-border-2)
+    ),
+    linear-gradient(
+        90deg,
+        var(--slds-g-color-brand-base-20),
+        var(--slds-g-color-brand-base-20) var(--slds-g-sizing-border-2),
+        transparent var(--slds-g-sizing-border-2)
+    ),
+    linear-gradient(
+        var(--slds-g-color-brand-base-20),
+        var(--slds-g-color-brand-base-20) var(--slds-g-sizing-border-2),
+        transparent var(--slds-g-sizing-border-2)
+    );
+}
+:host([data-render-mode="shadow"].slds-is-current:hover) .slds-path__link {
+    color: var(--slds-g-color-brand-base-20);
+}
+/**
+ * Creates the active stage of the sales path
+ */
+:host([data-render-mode="shadow"].slds-is-active),:host([data-render-mode="shadow"].slds-is-active)::before,:host([data-render-mode="shadow"].slds-is-active)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-active, var(--slds-g-color-brand-base-30));
+}
+:host([data-render-mode="shadow"].slds-is-active:first-child) {
+    border: 0;
+}
+:host([data-render-mode="shadow"].slds-is-active:first-child)::before,:host([data-render-mode="shadow"].slds-is-active:first-child)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-active, var(--slds-g-color-brand-base-30));
+}
+:host([data-render-mode="shadow"].slds-is-active:first-child)::before {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-block-start: var(--_slds-c-progressstep-inset-blockstart-zero);
+}
+:host([data-render-mode="shadow"].slds-is-active:first-child)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-block-end: var(--_slds-c-progressstep-inset-blockend-zero);
+}
+:host([data-render-mode="shadow"].slds-is-active:first-child) .slds-path__link {
+    height: var(--slds-g-sizing-9);
+}
+:host([data-render-mode="shadow"].slds-is-active) .slds-path__stage {
+    transform: translateY(-50%) rotateX(-180deg);
+}
+:host([data-render-mode="shadow"].slds-is-active) .slds-path__title {
+    transform: rotateX(0deg);
+}
+:host([data-render-mode="shadow"].slds-is-active) .slds-path__link {
+    color: var(--slds-g-color-on-accent-1);
+}
+:host([data-render-mode="shadow"].slds-is-active:hover),:host([data-render-mode="shadow"].slds-is-active:hover)::before,:host([data-render-mode="shadow"].slds-is-active:hover)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    background: var(--_slds-c-path-item-color-background-active-hover, var(--slds-g-color-surface-container-inverse-1));
+}
+:host([data-render-mode="shadow"].slds-is-active:hover) .slds-path__link {
+    color: var(--slds-g-color-on-accent-1);
+}
+/* Note: Order matters. Keep the path__item below the above selectors */
+/**
+ * Individual stages of a path
+ */
+:host([data-render-mode="shadow"].slds-path__item) {
+    position: relative;
+    flex: 1;
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    margin-inline-start: var(--_slds-c-progressstep-margin-inlinestart-large);
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    margin-inline-end: var(--_slds-c-progressstep-margin-inlineend-large);
+    min-width: var(--slds-g-sizing-12);
+    text-align: center;
+}
+:host([data-render-mode="shadow"].slds-path__item)::before,:host([data-render-mode="shadow"].slds-path__item)::after {
+    content: '';
+    position: absolute;
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-inline-start: var(--_slds-c-progressstep-inset-inlinestart-small);
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-inline-end: var(--_slds-c-progressstep-inset-inlineend-small);
+    cursor: pointer;
+}
+:host([data-render-mode="shadow"].slds-path__item)::before {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-block-start: var(--_slds-c-progressstep-inset-blockstart-zero);
+
+    /* W-15630363 Left as hard value because it is different between :before and :after */
+    height: 1.0313rem;
+    transform: skew(28deg) translate3d(0, 0, 0);
+}
+:host([data-render-mode="shadow"].slds-path__item)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-block-end: var(--_slds-c-progressstep-inset-blockend-zero);
+
+    /* W-15630363 Left as hard value because it is different between :before and :after */
+    height: 1rem;
+    transform: skew(-30deg) translate3d(0, 0, 0);
+}
+:host([data-render-mode="shadow"].slds-path__item:first-child) {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    margin-inline-start: var(--_slds-c-progressstep-margin-inlinestart-small);
+    border-start-start-radius: calc(var(--slds-g-radius-border-4) * 2);
+    border-end-start-radius: calc(var(--slds-g-radius-border-4) * 2);
+    padding-inline-start: calc(var(--slds-g-spacing-7) / 4);
+}
+:host([data-render-mode="shadow"].slds-path__item:first-child)::before,:host([data-render-mode="shadow"].slds-path__item:first-child)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-inline-start: var(--_slds-c-progressstep-inset-inlinestart-large);
+}
+:host([data-render-mode="shadow"].slds-path__item:last-child) {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    margin-inline-end: var(--_slds-c-progressstep-margin-inlineend-small);
+    border-start-end-radius: calc(var(--slds-g-radius-border-4) * 2);
+    border-end-end-radius: calc(var(--slds-g-radius-border-4) * 2);
+    padding-inline-end: calc(var(--slds-g-spacing-7) / 4);
+}
+:host([data-render-mode="shadow"].slds-path__item:last-child) .slds-path__link {
+    padding-inline-start: var(--slds-g-spacing-1);
+}
+:host([data-render-mode="shadow"].slds-path__item:last-child)::before,:host([data-render-mode="shadow"].slds-path__item:last-child)::after {
+    /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+    inset-inline-end: var(--_slds-c-progressstep-inset-inlineend-large);
+}
+/**
+ * Contains the name of the stage
+ */
+:host([data-render-mode="shadow"]) .slds-path__title {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transform: translate3d(0, 0, 0);
+}
+/**
+ * Contains the check mark when the stage is completed
+ */
+:host([data-render-mode="shadow"]) .slds-path__stage {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%) rotateX(-180deg);
+}
+/**
+ * Creates actionable element inside of each path item
+ */
+:host([data-render-mode="shadow"]) .slds-path__link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--slds-g-sizing-9);
+    padding: var(--slds-g-spacing-2) var(--slds-g-spacing-1) var(--slds-g-spacing-2) var(--slds-g-spacing-2);
+    text-decoration: none;
+    z-index: 5;
+    cursor: pointer;  
+}
+:host([data-render-mode="shadow"]) .slds-path__link:hover {
+    text-decoration: none;
+}
+:host([data-render-mode="shadow"]) .slds-path__link:focus {
+    outline: 0;
+}
+:host([data-render-mode="shadow"]) .slds-path__title,:host([data-render-mode="shadow"]) 
+.slds-path__stage {
+    display: block;
+    transition: transform 0.2s linear;
+    backface-visibility: hidden;
+}
+:host([data-render-mode="shadow"].slds-path__item.slds-is-rtl)::before {
+    transform: skew(-30deg) translate3d(0, 0, 0);
+}
+:host([data-render-mode="shadow"].slds-path__item.slds-is-rtl)::after {
+    transform: skew(28deg) translate3d(0, 0, 0);
+}

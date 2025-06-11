@@ -1,0 +1,29 @@
+<template>
+    <lightning-grouped-combobox
+        disabled={disabled}
+        filter-input-text={selectedEntityLabel}
+        filter-items={entityOptions}
+        filter-label={chooseAnObjectAssistiveLabel}
+        field-level-help={fieldLevelHelp}
+        input-icon-name={inputIconName}
+        input-maxlength={inputMaxlength}
+        input-pill={inputPill}
+        input-text={inputText}
+        items={items}
+        label={label}
+        onblur={handleBlur}
+        pills={internalPills}
+        placeholder={placeholder}
+        required={required}
+        show-activity-indicator={showActivityIndicator}
+        value={_value}
+        variant={variant}
+        ondropdownopen={handleDropdownOpen}
+        ondropdownopenrequest={handleDropdownOpenRequest}
+        onpillremove={handlePillRemove}
+        onselect={handleSelect}
+        onselectfilter={handleEntityOptionSelect}
+        ontextinput={handleTextInput}
+    >
+    </lightning-grouped-combobox>
+</template>

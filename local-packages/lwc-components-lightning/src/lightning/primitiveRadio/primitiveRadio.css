@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Parent container of input-radio
+ */
+[part='input-radio'] {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-c-inputradio-spacing-gap, var(--sds-s-input-spacing-gap));
+}
+
+/**
+ * The visual container of the radio indicator
+ */
+[part='radio'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--sds-c-inputradio-color-background, var(--sds-s-input-color-background));
+  box-shadow: var(--sds-c-inputradio-shadow);
+  width: var(--sds-c-inputradio-sizing, 1rem);
+  height: var(--sds-c-inputradio-sizing, 1rem);
+  border: var(--sds-c-inputradio-sizing-border, var(--sds-s-input-sizing-border, 1px)) solid
+    var(--sds-c-inputradio-color-border, var(--sds-s-input-color-border, currentColor));
+  border-radius: var(--sds-c-inputradio-radius-border, 100%);
+}
+
+/**
+ * Disabled state
+ */
+:host([disabled])::part(mark) {
+  --sds-c-inputradio-mark-color-foreground: var(--sds-c-inputradio-mark-color-foreground-disabled, revert);
+}
+
+:host([disabled])::part(radio) {
+  --sds-c-inputradio-color-background: var(--sds-c-inputradio-color-background-disabled, revert);
+  --sds-c-inputradio-color-border: var(--sds-c-inputradio-color-border-disabled, revert);
+}
+
+/**
+ * Focus state
+ */
+[part='radio']:has(:focus) {
+  --sds-c-inputradio-shadow: var(--sds-c-inputradio-shadow-focus, var(--sds-s-input-shadow-focus, revert));
+  --sds-c-inputradio-color-background: var(
+    --sds-c-inputradio-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-inputradio-color-border: var(
+    --sds-c-inputradio-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+}
+
+/**
+ * Checked state
+ */
+[part='radio']:hover {
+  --sds-c-inputradio-shadow: var(--sds-c-inputradio-shadow-hover, var(--sds-s-input-shadow-hover, revert));
+  --sds-c-inputradio-color-background: var(
+    --sds-c-inputradio-color-background-hover,
+    var(--sds-s-input-color-background-hover, revert)
+  );
+  --sds-c-inputradio-color-border: var(
+    --sds-c-inputradio-color-border-hover,
+    var(--sds-s-input-color-border-hover, revert)
+  );
+}
+
+/**
+ * Checked state
+ */
+[part='radio']:has(:checked) {
+  --sds-c-inputradio-shadow: var(--sds-c-inputradio-shadow-checked, revert);
+  --sds-c-inputradio-color-background: var(--sds-c-inputradio-color-background-checked, revert);
+  --sds-c-inputradio-color-border: var(--sds-c-inputradio-color-border-checked, revert);
+}
+
+/**
+ * The checked mark
+ */
+[part='mark'] {
+  display: inline-flex;
+  opacity: 0;
+  color: var(--sds-c-inputradio-mark-color-foreground, var(--sds-s-mark-color-foreground));
+  background-color: var(--sds-c-inputradio-mark-color-background, var(--sds-s-mark-color-background));
+  width: var(--sds-c-inputradio-mark-sizing, var(--sds-s-mark-sizing, 1em));
+  height: var(--sds-c-inputradio-mark-sizing, var(--sds-s-mark-sizing, 1em));
+}
+
+/**
+ * When the label or radio is clicked, a checked state is applied to the host element
+ */
+[part='radio']:has(:checked) [part='mark'] {
+  opacity: 1;
+}
+
+/**
+ * The label of the radio
+ */
+[part='label'] {
+  color: var(--sds-c-inputradio-label-color, var(--sds-s-label-color));
+  font-size: var(
+    --sds-c-inputradio-label-font-size,
+    var(--sds-s-label-font-size, var(--sds-s-input-font-size))
+  );
+}
+
+/**
+ * HTML radio element, hidden from view
+ * No part is exposed because it should not be altered by an outside factor
+ */
+input[type='radio'] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+/**
+ * help text element, hidden from view.
+ * No part is exposed because it should not be altered by an outside factor
+ */
+.help-text {
+  position: absolute;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  text-transform: none;
+  white-space: nowrap;
+}

@@ -1,0 +1,99 @@
+### Overview
+
+The popover provides a mechanism for displaying content on top of other page content.
+
+### Use Cases
+
+Use a popover when you want to display content on top of other page content in a non-modal context. Non-modal behaviors allows the user to still interact with the page content underneath the popover.
+
+### Non-goals
+
+- Not a replacement for a modal. A modal is a better choice when the user needs to focus on a task, the content is critical, and content underneath becomes inert.
+- Not a replacement for a tooltip. A tooltip is a better choice when the content is contextual to a specific element and does not contain focusable content.
+- Not a replacement for a dropdown. A dropdown is a better choice when the content is a list of options and the user needs to select one or more options.
+- Customizations can be made through Light DOM styling with CSS and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+
+### Features
+
+- Design follows and uses the standard [Popover API](https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute) specification.
+- Supports browsers that have not implemented the [Popover API](https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute) specification.
+- "Bring your own elements" approach. The popover does not provide any UI elements. It is up to the developer to provide the UI elements and the popover will manage the behavior.
+- Robust set of placement options that align with logical positioning properties, e.g., `block-start`, `inline-end`, `block-end-start`, etc.
+- Detects if the content within the popover is clipped by the viewport and will automatically adjust the position of the popover to be visible.
+- Add custom offsets to position the popover relative to the trigger element based on the offset amount.
+- Automatically resize the popover to the size of the triggering element.
+
+### Prior Art/Examples
+
+- [Salesforce Design System](https://www.lightningdesignsystem.com/components/popovers/)
+- [Ionic](https://ionicframework.com/docs/api/popover)
+- [Carbon](https://carbondesignsystem.com/components/popover/usage/)
+- [Spectrum](https://opensource.adobe.com/spectrum-web-components/components/popover/)
+
+---
+
+### API
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-popover-manager` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-popover-manager` - This is owned by a subsystem built on SDS, e.g. `dxp-popover-manager`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <slot></slot>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| --------- | ----------- | ---------------- |
+| `default` |             | empty            |
+
+#### Contracts
+
+The following contracts must be met for the SDS Popover Manager to upgrade the HTML passed through the slot:
+
+- The element that contains the content of the popover must have a valid `id`.
+- The element that triggers the popover must have an `aria-controls` attribute with the value of the popover `id`.
+- The element that triggers the popover must be a button or have the attribute `role="button"` with button behaviors.
+
+#### Properties & Attributes
+
+| Attribute       | Type     | Options                                                                                                                                                                                                     | Default Value | Description                                                 |
+| --------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------- |
+| `id`            | `string` |                                                                                                                                                                                                             |               | The `id` of the popover.                                    |
+| `aria-controls` | `string` |                                                                                                                                                                                                             |               | References the `id` of the popover.                         |
+| `aria-haspopup` | `enum` | `menu`,`listbox`,`tree`,`dialog`,`grid`                                                                                                                                                                                       | `dialog`        | Indicates that the button has a specific popup content.                      |
+| `aria-expanded` | `string` | `true`, `false`                                                                                                                                                                                             | `false`       | Indicates that the button has expanded the popup.           |
+| `popover`       | `string` |                                                                                                                                                                                                             | `manual`      | Activates the standards-based Popover API.                  |
+| `placement`     | `enum`   | `block-start`, `block-start-start`,`block-start-end`,`block-end`,`block-end-start`,`block-end-end`,`inline-start`,`inline-start-start`,`inline-start-end`,`inline-end`,`inline-end-start`,`inline-end-end`, | `block-start` | Positions the popover based on the logical placement value. |
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States          | Initial State | Description                         |
+| ----------- | --------------- | ------------- | ----------------------------------- |
+| `open`      | `true`, `false` | `false`       | Indicates that the popover is open. |
+
+### Accessibility
+
+The popover utilizes logical properties to position the popover through logical, rather than physical, direction mappings.
+
+## Questions
+
+- Need to keep tabs on Firefox implementation of popover API.
+- Need to flesh out nested popovers. Open behavior works great, closing is a bit weird.
+- Need to add performance benchmarks and unit tests.
+- Need to add container clipping detection.
+- How shoud modal dialog behavior be handled? Do we include backdrop and focus trapping into this manager?

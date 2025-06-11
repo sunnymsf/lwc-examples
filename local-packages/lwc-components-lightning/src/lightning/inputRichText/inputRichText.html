@@ -1,0 +1,232 @@
+<template>
+    <div
+        role="group"
+        aria-label={label}
+    >
+        <template if:true={renderLabel}>
+            <span class={computedLabelClass}>
+                <template if:true={required}>
+                    <abbr class="slds-required" title={i18n.required}>*</abbr>
+                </template>
+                <span data-label id="label">{computedLabel}</span>
+            </span>
+            <lightning-helptext
+                if:true={fieldLevelHelp}
+                content={fieldLevelHelp}
+                alternative-text={helptextAlternativeText}
+            ></lightning-helptext>
+        </template>
+        <div class="slds-form-element__control">
+            <div
+                onclick={activateEditor}
+                class="slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap"
+                part="rich-text-editor"
+            >
+                <!-- If bottom-toolbar variant, position the editor above the toolbar -->
+                <template if:true={isBottomToolbar}>
+                    <div class="slds-rich-text-editor__textarea slds-grid editor"
+                         part="rich-text-editor-textarea"></div>
+                    <div
+                        if:true={quillNotReady}
+                        class="slds-rich-text-editor__textarea slds-grid"
+                        part="rich-text-editor-textarea"
+                    >
+                        <div
+                            class="slds-rich-text-area__content slds-grow slds-text-color-weak standin"
+                            onclick={handleStandInClick}
+                        >
+                            <lightning-formatted-rich-text
+                                value={value}
+                                disable-linkify
+                            ></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                    <template if:false={valid}>
+                        <div
+                            id="error-message"
+                            data-error-message
+                            class="slds-form-element__help slds-p-around_small"
+                        >
+                            {errorMessage}
+                        </div>
+                    </template>
+                </template>
+                <!-- Toolbar: Font Menu, Font Size Menu, Formatting Buttons -->
+                <div
+                    role="toolbar"
+                    class="slds-rich-text-editor__toolbar slds-shrink-none"
+                    part="rich-text-editor-toolbar"
+                    onkeydown={navigateToolbar}
+                    aria-label={toolbarAriaLabel}
+                >
+                    <template if:true={isFontMenusVisible}>
+                        <div
+                            class="slds-grid slds-wrap"
+                            role="group"
+                            aria-label={i18n.formatFont}
+                        >
+                            <div class="slds-rich-text-editor__select">
+                                <lightning-combobox
+                                    onfocus={activateEditor}
+                                    value={selectedFontValue}
+                                    variant="label-hidden"
+                                    label={i18n.font}
+                                    options={fontMenus.fontList}
+                                    onchange={selectFont}
+                                    disabled={disabled}
+                                    dropdown-alignment="auto"
+                                    title={i18n.font}
+                                ></lightning-combobox>
+                            </div>
+                            <div class="slds-rich-text-editor__select slds-size_xx-small">
+                                <lightning-combobox
+                                    onfocus={activateEditor}
+                                    value={selectedSizeValue}
+                                    variant="label-hidden"
+                                    label={i18n.fontSize}
+                                    options={fontMenus.sizeList}
+                                    onchange={selectSize}
+                                    disabled={disabled}
+                                    dropdown-alignment="auto"
+                                    title={i18n.fontSize}
+                                ></lightning-combobox>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={isColorpickerVisible}>
+                        <lightning-primitive-colorpicker-button
+                            disabled={disabled}
+                            value={selectedTextColorValue}
+                            onchange={handleColorUpdate}
+                            title={i18n.colorPicker}
+                        ></lightning-primitive-colorpicker-button>
+                    </template>
+                    <template
+                        for:each={computedCategories}
+                        for:item="category"
+                    >
+                        <!-- Could not migrate to lightning-button-group as there was a significant performance regression. Parts and styling added here.-->
+                        <ul
+                            class="slds-button-group-list"
+                            aria-label={category.label}
+                            key={category.label}
+                            part="button-group"
+                        >
+                            <template
+                                for:each={category.buttons}
+                                for:item="button"
+                            >
+                                <!-- Could not migrate to lightning-button as there was a significant performance regression. Parts and styling added here.-->
+                                <li key={button.key}>
+                                    <button
+                                        type="button"
+                                        class={button.computedClass}
+                                        value={button.value}
+                                        title={button.label}
+                                        data-format={button.format}
+                                        aria-pressed="false"
+                                        part="button button-icon"
+                                    >
+                                        <lightning-primitive-icon
+                                            icon-name={button.iconName}
+                                            svg-class="slds-button__icon"
+                                            variant={button.variant}
+                                            size="x-small"
+                                        ></lightning-primitive-icon>
+                                        <span
+                                            class="slds-assistive-text"
+                                         >{button.label}</span>
+                                    </button>
+
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+
+                    <slot name="toolbar"></slot>
+
+                </div>
+                <!-- If top-toolbar variant, position the editor below the toolbar -->
+                <template if:false={isBottomToolbar}>
+                    <div class="slds-rich-text-editor__textarea slds-grid editor"
+                         part="rich-text-editor-textarea"></div>
+                    <div
+                        if:true={quillNotReady}
+                        class="slds-rich-text-editor__textarea slds-grid"
+                        part="rich-text-editor-textarea"
+                    >
+                        <div
+                            class="slds-rich-text-area__content slds-grow slds-text-color-weak standin"
+                            onclick={handleStandInClick}
+                        >
+                            <lightning-formatted-rich-text
+                                value={value}
+                                disable-linkify
+                                if:false={shouldShowPlaceholder}
+                            ></lightning-formatted-rich-text>
+                            <p
+                                class="input-rich-text-placeholder"
+                                if:true={shouldShowPlaceholder}
+                                aria-placeholder={placeholder}
+                            >{placeholder}</p>
+                        </div>
+                    </div>
+                    <template if:false={valid}>
+                        <div
+                            id="error-message-bottom"
+                            data-error-message
+                            class="slds-form-element__help slds-p-around_small"
+                        >{errorMessage}</div>
+                    </template>
+                </template>
+            </div>
+        </div>
+        <lightning-popup
+            data-link-popup
+            aria-describedby="link-popup-body"
+        >
+            <div
+                id="link-popup-body"
+                data-link-popup-body
+                class="slds-popover slds-popover__body"
+            >
+                <lightning-input
+                    name="link-input-title"
+                    value={showLinkTitle}
+                    label={i18n.linkInputTitle}
+                    onchange={handleLinkTitleChange}
+                ></lightning-input>
+                <lightning-input
+                    name="link-input"
+                    class="link-input"
+                    value={showLinkValue}
+                    label={i18n.linkInput}
+                    onchange={handleLinkValueChange}
+                    onkeydown={linkKeyboardPress}
+                ></lightning-input>
+                <div class="slds-m-top_small">
+                    <lightning-button
+                        variant="brand"
+                        label={i18n.linkSave}
+                        data-save-link-button
+                        onclick={saveLink}
+                    ></lightning-button>
+                    <lightning-button
+                        variant="bare"
+                        label={i18n.linkCancel}
+                        data-cancel-link-button
+                        onclick={cancelLink}
+                        style="margin-left: .25rem"
+                    ></lightning-button>
+                </div>
+            </div>
+        </lightning-popup>
+
+        <!-- When clicking on the image toolbar button, the file picker is triggered from the invisible input -->
+        <input
+            type="file"
+            class="image-picker slds-hide"
+            accept={allowedImageFormats}
+            onchange={handleInsertImage}>
+    </div>
+</template>

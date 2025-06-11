@@ -1,0 +1,15 @@
+<template>
+  <div part="container" role={role}>
+    <div part="header" header-direction={headerDirection}>
+      <slot name="header-start"></slot>
+      <slot name="header"></slot>
+      <slot name="header-end"></slot>
+    </div>
+    <div part="body" body-direction={bodyDirection}>
+      <slot></slot>
+    </div>
+    <div part="footer" footer-direction={footerDirection}>
+      <slot name="footer"></slot>
+    </div>
+  </div>
+</template>

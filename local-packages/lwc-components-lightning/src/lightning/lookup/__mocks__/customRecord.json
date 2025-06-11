@@ -1,0 +1,175 @@
+{
+    "apiName": "Custom_Object__c",
+    "childRelationships": {},
+    "eTag": "7812bd8ed5126516a54d66b6f59349bc",
+    "fields": {
+        "CreatedBy": {
+            "displayValue": "Admin User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "eTag": "0537b99e150dfacf1b92db5759c4207d",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "005RM000001azaXYAQ"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Admin User"
+                    }
+                },
+                "id": "005RM000001azaXYAQ",
+                "lastModifiedById": "005RM000001azaXYAQ",
+                "lastModifiedDate": "2022-11-29T08:49:38.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2022-12-15T14:03:58.000Z",
+                "weakEtag": 1671113038000
+            }
+        },
+        "CreatedById": {
+            "displayValue": null,
+            "value": "005RM000001azaXYAQ"
+        },
+        "CreatedDate": {
+            "displayValue": "12/15/2022, 6:18 AM",
+            "value": "2022-12-15T14:18:27.000Z"
+        },
+        "LastModifiedBy": {
+            "displayValue": "Admin User",
+            "value": {
+                "apiName": "User",
+                "childRelationships": {},
+                "eTag": "0537b99e150dfacf1b92db5759c4207d",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "005RM000001azaXYAQ"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Admin User"
+                    }
+                },
+                "id": "005RM000001azaXYAQ",
+                "lastModifiedById": "005RM000001azaXYAQ",
+                "lastModifiedDate": "2022-11-29T08:49:38.000Z",
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": "2022-12-15T14:03:58.000Z",
+                "weakEtag": 1671113038000
+            }
+        },
+        "LastModifiedById": {
+            "displayValue": null,
+            "value": "005RM000001azaXYAQ"
+        },
+        "LastModifiedDate": {
+            "displayValue": "12/15/2022, 6:18 AM",
+            "value": "2022-12-15T14:18:27.000Z"
+        },
+        "Linked_Account__c": {
+            "displayValue": null,
+            "value": "001RM000003rv9vYAA"
+        },
+        "Linked_Account__r": {
+            "displayValue": "Actuant Corporation",
+            "value": {
+                "apiName": "Account",
+                "childRelationships": {},
+                "eTag": "d80d8763d9357341fd5f8f24c5fd9f05",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "001RM000003rv9vYAA"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Actuant Corporation"
+                    },
+                    "RecordTypeId": {
+                        "displayValue": null,
+                        "value": null
+                    }
+                },
+                "id": "001RM000003rv9vYAA",
+                "lastModifiedById": "005RM000001azaXYAQ",
+                "lastModifiedDate": "2019-02-06T23:47:05.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2019-02-06T23:47:05.000Z",
+                "weakEtag": 1549496825000
+            }
+        },
+        "Name": {
+            "displayValue": null,
+            "value": "CO-0001"
+        },
+        "Object1__c": {
+            "displayValue": null,
+            "value": "a0FRM0000005LUc2AM"
+        },
+        "Object1__r": {
+            "displayValue": "Hello World",
+            "value": {
+                "apiName": "Object1__c",
+                "childRelationships": {},
+                "eTag": "4a49e8945c7c389bc1552c066eeb3798",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "a0FRM0000005LUc2AM"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Hello World"
+                    }
+                },
+                "id": "a0FRM0000005LUc2AM",
+                "lastModifiedById": "005RM000001azaXYAQ",
+                "lastModifiedDate": "2022-12-15T14:18:21.000Z",
+                "recordTypeId": "012000000000000AAA",
+                "recordTypeInfo": null,
+                "systemModstamp": "2022-12-15T14:18:21.000Z",
+                "weakEtag": 1671113901000
+            }
+        },
+        "Owner": {
+            "displayValue": "Admin User",
+            "value": {
+                "apiName": "Name",
+                "childRelationships": {},
+                "eTag": "ced3586e1f3b713cf7d7b236730b8277",
+                "fields": {
+                    "Id": {
+                        "displayValue": null,
+                        "value": "005RM000001azaXYAQ"
+                    },
+                    "Name": {
+                        "displayValue": null,
+                        "value": "Admin User"
+                    }
+                },
+                "id": "005RM000001azaXYAQ",
+                "lastModifiedById": null,
+                "lastModifiedDate": null,
+                "recordTypeId": null,
+                "recordTypeInfo": null,
+                "systemModstamp": null,
+                "weakEtag": 0
+            }
+        },
+        "OwnerId": {
+            "displayValue": null,
+            "value": "005RM000001azaXYAQ"
+        }
+    },
+    "id": "a0JRM000000VTCd2AO",
+    "lastModifiedById": "005RM000001azaXYAQ",
+    "lastModifiedDate": "2022-12-15T14:18:27.000Z",
+    "recordTypeId": "012000000000000AAA",
+    "recordTypeInfo": null,
+    "systemModstamp": "2022-12-15T14:18:27.000Z",
+    "weakEtag": 1671113907000
+}

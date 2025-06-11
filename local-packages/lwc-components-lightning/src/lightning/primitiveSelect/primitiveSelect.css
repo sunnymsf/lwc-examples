@@ -1,0 +1,291 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  * Select parent element
+  */
+[part='select'] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/**
+  * Select HTML Element
+  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+  * Hide all the default styles
+  */
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: currentcolor;
+  font-size: var(--sds-c-select-font-size, var(--sds-s-input-font-size));
+  padding-inline-start: var(
+    --sds-c-select-spacing-inlinestart,
+    var(--sds-c-select-spacing-inline, var(--sds-c-select-spacing, var(--sds-s-input-spacing)))
+  );
+  padding-inline-end: var(
+    --sds-c-select-spacing-inlineend,
+    var(
+      --sds-c-select-spacing-inline,
+      var(--sds-c-select-spacing, var(--sds-s-input-spacing, 1em)) /* 1em is to make room for indicator */
+    )
+  );
+  padding-block-start: var(
+    --sds-c-select-spacing-blockstart,
+    var(--sds-c-select-spacing-block, var(--sds-c-select-spacing, var(--sds-s-input-spacing)))
+  );
+  padding-block-end: var(
+    --sds-c-select-spacing-blockend,
+    var(--sds-c-select-spacing-block, var(--sds-c-select-spacing, var(--sds-s-input-spacing)))
+  );
+}
+
+/**
+ * Multiple select
+ * Reset the default styles since there is no indicator
+ */
+select[multiple] {
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+/**
+ * Contatiner for the select and indicator
+ */
+[part='select-container'] {
+  display: grid;
+  grid-template-areas: 'select';
+  align-items: center;
+  position: relative;
+  grid-area: select;
+  min-width: var(--sds-c-select-sizing-width-min, 15ch);
+  max-width: var(--sds-c-select-sizing-width-max, 30ch);
+  border-block-start: var(--sds-c-select-sizing-border-blockstart, var(--sds-c-select-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-select-color-border-blockstart,
+      var(--sds-c-select-color-border, var(--sds-s-input-color-border, currentcolor))
+    );
+  border-inline-start: var(--sds-c-select-sizing-border-inlinestart, var(--sds-c-select-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-select-color-border-inlinestart,
+      var(--sds-c-select-color-border, var(--sds-s-input-color-border, currentcolor))
+    );
+  border-inline-end: var(--sds-c-select-sizing-border-inlineend, var(--sds-c-select-sizing-border, 1px)) solid
+    var(
+      --sds-c-select-color-border-inlineend,
+      var(--sds-c-select-color-border, var(--sds-s-input-color-border, currentcolor))
+    );
+  border-block-end: var(--sds-c-select-sizing-border-blockend, var(--sds-c-select-sizing-border, 1px)) solid
+    var(
+      --sds-c-select-color-border-blockend,
+      var(--sds-c-select-color-border, var(--sds-s-input-color-border, currentcolor))
+    );
+  cursor: pointer;
+  background-color: var(--sds-c-select-color-background, var(--sds-s-input-color-background));
+  border-radius: var(--sds-c-select-radius-border, var(--sds-s-input-radius-border));
+  box-shadow: var(--sds-c-select-shadow, var(--sds-s-input-shadow));
+  color: var(--sds-c-select-text-color, var(--sds-s-input-color));
+}
+
+/**
+ * Align select and indicator in the grid
+ */
+select,
+[part='indicator'] {
+  grid-area: select;
+}
+
+/**
+ * Visual indicator that indicates the select will open a dropdown
+ */
+[part='indicator'] {
+  width: var(--sds-c-select-indicator-sizing, 1rem);
+  height: var(--sds-c-select-indicator-sizing, 1rem);
+  color: var(--sds-c-select-indicator-color-foreground);
+  justify-self: end;
+  pointer-events: none;
+}
+
+/**
+ * Hide the indicator when the select is multiple
+ */
+:host([multiple]) [part='indicator'] {
+  display: none;
+}
+
+/**
+ * Hover styles for select
+ */
+[part='select-container']:hover {
+  --sds-c-select-color-background: var(
+    --sds-c-select-color-background-hover,
+    var(--sds-s-input-color-background-hover, revert)
+  );
+  --sds-c-select-color-border: var(
+    --sds-c-select-color-border-hover,
+    var(--sds-s-input-color-border-hover, revert)
+  );
+  --sds-c-select-shadow: var(--sds-c-select-shadow-hover, var(--sds-s-input-shadow-hover, revert));
+  --sds-c-select-text-color: var(--sds-c-select-text-color-hover, var(--sds-s-input-color-hover, revert));
+}
+
+/**
+ * Focus styles for select
+ */
+[part='select-container']:focus-within {
+  --sds-c-select-color-background: var(
+    --sds-c-select-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-select-color-border: var(
+    --sds-c-select-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+  --sds-c-select-shadow: var(--sds-c-select-shadow-focus, var(--sds-s-input-shadow-focus, revert));
+  --sds-c-select-text-color: var(--sds-c-select-text-color-focus, var(--sds-s-input-color-focus, revert));
+}
+
+/**
+ * Disabled styles for select
+ */
+[part='select-container']:has(:disabled) {
+  --sds-c-select-color-background: var(--sds-c-select-color-background-disabled);
+  --sds-c-select-color-border: var(--sds-c-select-color-border-disabled);
+  --sds-c-select-text-color: var(--sds-c-select-text-color-disabled);
+
+  cursor: unset;
+}
+
+/**
+ * Available styles for the option element when the select is multiple
+ */
+option {
+  padding-inline-start: var(
+    --sds-c-select-option-spacing-inlinestart,
+    var(--sds-c-select-option-spacing-inline, var(--sds-c-select-option-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-select-option-spacing-inlineend,
+    var(--sds-c-select-option-spacing-inline, var(--sds-c-select-option-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-select-option-spacing-blockstart,
+    var(--sds-c-select-option-spacing-block, var(--sds-c-select-option-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-select-option-spacing-blockstart,
+    var(--sds-c-select-option-spacing-block, var(--sds-c-select-option-spacing))
+  );
+}
+
+/**
+ * Available styles for the option element when checked when the select is multiple
+ */
+option:checked {
+  background-color: var(--sds-c-select-option-color-background-selected);
+  color: var(--sds-c-select-option-color-selected);
+}
+
+/**
+ * Label Container
+ * ---
+ * The container for the label and its adjacent slots, label-start and label-end
+ */
+[part='label-container'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-c-select-label-spacing-gap, var(--sds-s-label-spacing-gap));
+  padding-inline-start: var(
+    --sds-c-select-label-spacing-inlinestart,
+    var(--sds-c-select-label-spacing-inline, var(--sds-c-select-label-spacing, var(--sds-s-label-spacing)))
+  );
+  padding-inline-end: var(
+    --sds-c-select-label-spacing-inlineend,
+    var(--sds-c-select-label-spacing-inline, var(--sds-c-select-label-spacing, var(--sds-s-label-spacing)))
+  );
+  padding-block-start: var(
+    --sds-c-select-label-spacing-blockstart,
+    var(--sds-c-select-label-spacing-block, var(--sds-c-select-label-spacing, var(--sds-s-label-spacing)))
+  );
+  padding-block-end: var(
+    --sds-c-select-label-spacing-blockend,
+    var(--sds-c-select-label-spacing-block, var(--sds-c-select-label-spacing, var(--sds-s-label-spacing)))
+  );
+  color: var(--sds-c-select-label-color, var(--sds-s-label-color));
+}
+
+[part='label'] {
+  font-size: var(--sds-c-select-label-font-size, var(--sds-s-label-font-size));
+  font-weight: var(--sds-c-select-label-font-weight, var(--sds-s-label-font-weight));
+}
+
+/**
+ * Help text
+ * ---
+ * "visible" gets added when the slotchange confirms there are children
+ * This prevents box-model customizations from being applied, in the case of no children
+ */
+[part='help-text visible'] {
+  font-size: var(--sds-c-select-helptext-font-size, var(--sds-s-helptext-font-size));
+  color: var(--sds-c-select-helptext-text-color, var(--sds-s-helptext-text-color));
+  padding-inline-start: var(
+    --sds-c-select-helptext-spacing-inlinestart,
+    var(
+      --sds-c-select-helptext-spacing-inline,
+      var(--sds-c-select-helptext-spacing, var(--sds-s-helptext-spacing))
+    )
+  );
+  padding-inline-end: var(
+    --sds-c-select-helptext-spacing-inlineend,
+    var(
+      --sds-c-select-helptext-spacing-inline,
+      var(--sds-c-select-helptext-spacing, var(--sds-s-helptext-spacing))
+    )
+  );
+  padding-block-start: var(
+    --sds-c-select-helptext-spacing-blockstart,
+    var(
+      --sds-c-select-helptext-spacing-block,
+      var(--sds-c-select-helptext-spacing, var(--sds-s-helptext-spacing))
+    )
+  );
+  padding-block-end: var(
+    --sds-c-select-helptext-spacing-blockend,
+    var(
+      --sds-c-select-helptext-spacing-block,
+      var(--sds-c-select-helptext-spacing, var(--sds-s-helptext-spacing))
+    )
+  );
+}
+
+/**
+ * If told, the label will be hidden from view
+ */
+:host([label-hidden]) [part~='label'] {
+  position: absolute !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}

@@ -1,0 +1,32 @@
+<template>
+    <template if:true={recordId}>
+        <lightning-record-edit-form-edit
+            record-id={recordId}
+            object-api-name={objectApiName}
+            layout-type={layoutType}
+            optional-fields={optionalFields}
+            record-type-id={recordTypeId}
+            form-class={formClass}
+            density={formDensity}
+            onload={handleLoad}
+            onerror={handleError}
+        >
+            <slot></slot>
+        </lightning-record-edit-form-edit>
+    </template>
+
+    <template if:false={recordId}>
+        <lightning-record-edit-form-create
+            object-api-name={objectApiName}
+            layout-type={layoutType}
+            optional-fields={optionalFields}
+            record-type-id={recordTypeId}
+            form-class={formClass}
+            density={formDensity}
+            onload={handleLoad}
+            onerror={handleError}
+        >
+            <slot></slot>
+        </lightning-record-edit-form-create>
+    </template>
+</template>

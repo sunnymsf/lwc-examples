@@ -1,0 +1,151 @@
+import StylingHooks from './inputRange.hooks.mdx';
+
+### Overview
+
+An input range slider designed to select a value within a predefined numerical range. If a range is not provided, the slider defaults to a minimum of 0 and a maximum of 100.
+
+### Use Cases
+
+- Audio controls such as volume and balance, or filter controls.
+- Color configuration controls such as color channels, transparency, brightness, etc.
+
+### Non-goals
+
+- Complex or composite inputs.
+- Inputs with a preconfigured list of values using a datalist.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The API design of the SDS Input Range is specific to the [HTML Input](https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)) element.
+- Configurable minimum and maximum ranges.
+- Configurable step value.
+- The default appearance provides the basic structure of an input range.
+- The default appearance comes unbranded.
+- Styling Hooks should be used to customize the appearance.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/slider/)
+- [Ant Design](https://ant.design/components/slider/)
+- [Atlassian](https://atlassian.design/components/range/examples)
+- [Material](https://m3.material.io/components/sliders/overview)
+- [Carbon](https://carbondesignsystem.com/components/slider/usage/)
+- [FAST](https://explore.fast.design/components/fast-slider)
+- [Polaris](https://polaris.shopify.com/components/selection-and-input/range-slider)
+
+---
+
+### API
+
+The API design that follows _only_ applies to the [HTML Input Range](https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)).
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-input-range` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-input-range` - This is owned by a subsystem built on SDS, e.g. `dxp-input-range`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="input-range">
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label">
+        <slot name="label"></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+    <div part="input-container">
+      <slot name="start"></slot>
+      <input part="input"/>
+      <slot name="end"></slot>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text"></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name     | Description                                                                                              | Fallback Content |
+| ------------- | -------------------------------------------------------------------------------------------------------- | ---------------- |
+| `label`       | Text content that describes the input                                                                    | empty            |
+| `label-start` | Content placed before the label                                                                          | empty            |
+| `label-end`   | Content placed after the label                                                                           | empty            |
+| `start`       | Content placed before the slider track                                                                   | empty            |
+| `end`         | Content placed after the slider track                                                                    | empty            |
+| `help-text`   | Content area for additional text, such as examples of the type of required data entry, or error messages | empty            |
+
+#### Parts
+
+| Part Name         | Description                                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `input-range`     | Enables styling for the entire component beyond Styling Hooks, falls outside the support matrix of SDS                               |
+| `input-container` | Enables styling for the container of the input and corresponding `start` and `end` slots, falls outside of the support matrix of SDS |
+| `input`           | Enables styling for the input itself beyond Styling Hooks, falls outside the support matrix of SDS                                   |
+| `label`           | Enables styling for the label beyond Styling Hooks, falls outside of the support matrix of SDS                                       |
+| `label-container` | Enables styling for the label container, falls outside of the support matrix of SDS                                                  |
+| `help-text`       | Enables styling of the help text beyond Styling Hooks, falls outside the support matrix of SDS                                       |
+
+#### Properties & Attributes
+
+The following properties and attributes are derived from the [HTML Input specification](https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)):
+
+| Attribute  | Type               | Default Value | Description                                                                       |
+| ---------- | ------------------ | ------------- | --------------------------------------------------------------------------------- |
+| `disabled` | `bool`             | `false`       | Whether the control is disabled                                                   |
+| `form`     | `string`           |               | ID of the form to associate with the input                                        |
+| `invalid`  | `bool`             | `false`       | Validity state of the input                                                       |
+| `min`      | `number`           |               | The minimum valid value                                                           |
+| `max`      | `number`           |               | The maximum valid value                                                           |
+| `name`     | `string`           |               | Name of the element to use for form submission                                    |
+| `step`     | `number`, `string` | `1`           | The granularity that the value must adhere to; `any` means no stepping is implied |
+| `value`    | `string`           |               | Initial value of the control                                                      |
+
+#### Events
+
+All native [HTML Input type=number](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) events are available.
+
+#### Styling Hooks
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States         | Initial State | Description                                                                                                                                    |
+| ----------- | -------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `focus`     | `false`        | `false`       | When the input receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+| `disabled`  | `true`/`false` | `false`       | Indicates whether the input is disabled and cannot be interacted with. When disabled, the control is not included in form validation           |
+| `invalid`   | `true`/`false` | `false`       | Displays a style when the provided text does not meet the `pattern` Regular Expression requirements                                            |
+| `valid`     | `true`/`false` | `true`        | Displays a style when the provided text meets the `pattern` Regular Expression requirements                                                    |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)) per the W3C.
+
+When interacting with the associated label via click, it should focus the related input.
+
+### Internationalization
+
+All elements of the input control (e.g., `start`/`end` slots, user-entered text, icons, etc) should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All inputs should have visual regression tests to catch any unintended modifications to the visuals.
+- All inputs should have unit tests to ensure the correct input and output of attributes, states, and events.
+- All inputs should test for color contrast combinations that, at a minimum, fulfill the requirements of WCAG 2.1.
+- All inputs should be tested across all supported devices, ensuring that modifications for mobile are taken into account.

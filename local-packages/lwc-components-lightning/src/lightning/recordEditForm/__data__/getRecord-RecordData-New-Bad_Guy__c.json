@@ -1,0 +1,233 @@
+{
+  "apiName":"Bad_Guy__c",
+  "childRelationships":{},
+  "eTag":"03f13b9fc818a0717e3583ef593b72fe",
+  "fields":{
+    "Attack_Prep__c":{
+      "displayValue":"7/29/2019 2:09 PM",
+      "value":"2019-07-29T21:09:00.000Z"
+    },
+    "Auto_Number__c":{
+      "displayValue":null,
+      "value":"A-17/31-0001"
+    },
+    "Birthday__c":{
+      "displayValue":"5/17/1977",
+      "value":"1977-05-17"
+    },
+    "Cell_Number__c":{
+      "displayValue":null,
+      "value":"(415) 122-1212"
+    },
+    "City__c":{
+      "displayValue":"Vancouver",
+      "value":"Vancouver"
+    },
+    "Converted_Website__c":{
+      "displayValue":null,
+      "value":"&lt;a href=&quot;www.google.com&quot; target=&quot;_blank&quot;&gt;Tips &amp; Tricks&lt;/a&gt;"
+    },
+    "Country__c":{
+      "displayValue":"Canada",
+      "value":"Canada"
+    },
+    "CreatedBy":{
+      "displayValue":"Test User",
+      "value":{
+        "apiName":"User",
+        "childRelationships":{},
+        "eTag":"bf306bc78b47c4cd9afd4b7bf36df6e4",
+        "fields":{
+          "Id":{
+            "displayValue":null,
+            "value":"005R0000000F9tkIAC"
+          },
+          "Name":{
+            "displayValue":null,
+            "value":"Test User"
+          }
+        },
+        "id":"005R0000000F9tkIAC",
+        "recordTypeInfo":null
+      }
+    },
+    "CreatedById":{
+      "displayValue":null,
+      "value":"005R0000000F9tkIAC"
+    },
+    "CreatedDate":{
+      "displayValue":"8/31/2017 2:11 PM",
+      "value":"2017-08-31T21:11:18.000Z"
+    },
+    "Description__c":{
+      "displayValue":null,
+      "value":"Dark Lord of the Sith"
+    },
+    "Email_Address__c":{
+      "displayValue":null,
+      "value":"darth@empire.gov"
+    },
+    "Has_Weakness__c":{
+      "displayValue":null,
+      "value":true
+    },
+    "Has_Website__c":{
+      "displayValue":null,
+      "value":true
+    },
+    "Hideout_Location__Latitude__s":{
+      "displayValue":null,
+      "value":0
+    },
+    "Hideout_Location__Longitude__s":{
+      "displayValue":null,
+      "value":0
+    },
+    "LastModifiedBy":{
+      "displayValue":"Test User",
+      "value":{
+        "apiName":"User",
+        "childRelationships":{},
+        "eTag":"bf306bc78b47c4cd9afd4b7bf36df6e4",
+        "fields":{
+          "Id":{
+            "displayValue":null,
+            "value":"005R0000000F9tkIAC"
+          },
+          "Name":{
+            "displayValue":null,
+            "value":"Test User"
+          }
+        },
+        "id":"005R0000000F9tkIAC",
+        "recordTypeInfo":null
+      }
+    },
+    "LastModifiedById":{
+      "displayValue":null,
+      "value":"005R0000000F9tkIAC"
+    },
+    "LastModifiedDate":{
+      "displayValue":"9/11/2017 9:40 PM",
+      "value":"2017-09-12T04:40:39.000Z"
+    },
+    "Minions__c":{
+      "displayValue":null,
+      "value":12
+    },
+    "MultiCity__c":{
+      "displayValue":"Montreal;Vancouver",
+      "value":"Montreal;Vancouver"
+    },
+    "Name":{
+      "displayValue":null,
+      "value":"Darth Vader"
+    },
+    "Net_Worth__c":{
+      "displayValue":"$92,880.00",
+      "value":92880
+    },
+    "Next_Attack__c":{
+      "displayValue":"7/31/2019 2:09 PM",
+      "value":"2019-07-31T21:09:00.000Z"
+    },
+    "Nickname__c":{
+      "displayValue":null,
+      "value":"Vader"
+    },
+    "Owner":{
+      "displayValue":"Test User",
+      "value":{
+        "apiName":"Name",
+        "childRelationships":{},
+        "eTag":"4e94a722d0417299ad3296504d6fcc21",
+        "fields":{
+          "Id":{
+            "displayValue":null,
+            "value":"005R0000000F9tkIAC"
+          },
+          "Name":{
+            "displayValue":null,
+            "value":"Test User"
+          }
+        },
+        "id":"005R0000000F9tkIAC",
+        "recordTypeInfo":null
+      }
+    },
+    "OwnerId":{
+      "displayValue":null,
+      "value":"005R0000000F9tkIAC"
+    },
+    "Power_Level_Remaining__c":{
+      "displayValue":null,
+      "value":5000
+    },
+    "Power_level__c":{
+      "displayValue":null,
+      "value":5000
+    },
+    "Rich_Text_Field__c":{
+      "displayValue":null,
+      "value":"&lt;i&gt;&lt;b&gt;Rich text&lt;/b&gt;&lt;/i&gt;"
+    },
+    "Salary_Per_Year__c":{
+      "displayValue":"$2,322",
+      "value":2322
+    },
+    "Secret_Code__c":{
+      "displayValue":null,
+      "value":"1234"
+    },
+    "States_Provinces__c":{
+      "displayValue":"British Columbia",
+      "value":"British Columbia"
+    },
+    "Territories_Covered__c":{
+      "displayValue":"East;West;South",
+      "value":"East;West;South"
+    },
+    "Wakeup_time__c":{
+      "displayValue":"6:23 AM",
+      "value":"06:23:00.000Z"
+    },
+    "Weakness__c":{
+      "displayValue":"Emotional Blackmail",
+      "value":"Emotional Blackmail"
+    },
+    "Weapon__c":{
+      "displayValue":null,
+      "value":"a01R0000000M7taIAC"
+    },
+    "Weapon__r":{
+      "displayValue":"Lightsaber",
+      "value":{
+        "apiName":"Weapon__c",
+        "childRelationships":{},
+        "eTag":"87c4734056509ba7e47200004cedb4d1",
+        "fields":{
+          "Id":{
+            "displayValue":null,
+            "value":"a01R0000000M7taIAC"
+          },
+          "Name":{
+            "displayValue":null,
+            "value":"Lightsaber"
+          }
+        },
+        "id":"a01R0000000M7taIAC",
+        "recordTypeInfo":null
+      }
+    },
+    "Website__c":{
+      "displayValue":null,
+      "value":"www.google.com"
+    },
+    "age__c":{
+      "displayValue":null,
+      "value":40
+    }
+  },
+  "id":"a00R0000000xAHtIAM",
+  "recordTypeInfo":null
+}

@@ -1,0 +1,12 @@
+<template>
+    <template for:each={stencilArray} for:item="stencilItem">
+        <!-- TEMPORARY FOR 226 - replace these classes with ones from SLDS  -->
+        <div class="slds-p-around_x-small slds-grid" key={stencilItem.id}>
+            <div class="slds-p-left_x-small slds-col">
+                <div class="slds-size--2-of-5 slds-icon--xx-small slds-m-bottom_xx-small slds-filters__item slds-is-locked slds-progress-bar_circular slds-progress-bar--circular"></div>
+                <div class="slds-size--4-of-5 slds-icon--xx-small slds-m-bottom_xx-small slds-filters__item slds-is-locked  slds-progress-bar_circular slds-progress-bar--circular"></div>
+                <div class="slds-border_bottom"></div>
+            </div>
+        </div>
+    </template>
+</template>

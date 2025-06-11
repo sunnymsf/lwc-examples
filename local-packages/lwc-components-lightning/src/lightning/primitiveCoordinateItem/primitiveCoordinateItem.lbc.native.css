@@ -1,0 +1,5 @@
+@import 'lightning/sldsCommon';
+@import 'lightning/sldsMediaObject';
+@import 'lightning/sldsUtilsInteractions';
+@import './button.slds.css';
+@import './coordinate-item.slds.css';

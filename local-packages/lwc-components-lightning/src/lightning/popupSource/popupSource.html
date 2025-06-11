@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <slot name="source"></slot>
+    </div>
+    <lightning-popup
+        onalignmentupdate={handleAlignmentUpdate}
+        onclickout={handleClickOut}
+        onclose={handleClose}
+    >
+        <lightning-bubble size={_size} alignment={_nubbinAlignment}>
+            <slot></slot>
+        </lightning-bubble>
+    </lightning-popup>
+</template>

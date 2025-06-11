@@ -1,0 +1,39 @@
+<template>
+  <div part="textarea">
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label" for={id}>
+        <slot name="label" onslotchange={handleLabelSlotChange}></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+    <div part="textarea-container" onclick={handleClick}>
+      <slot name="start"></slot>
+      <textarea
+        part="textarea-input"
+        aria-invalid={ariaInvalid}
+        cols={cols}
+        disabled={disabled}
+        form={form}
+        id={id}
+        maxlength={maxLength}
+        minlength={minLength}
+        name={name}
+        onblur={handleBlur}
+        oninput={handleInput}
+        placeholder={placeholder}
+        readonly={readOnly}
+        required={required}
+        rows={rows}
+        spellcheck={spellcheck}
+        value={value}
+        wrap={wrap}
+      >
+      </textarea>
+      <slot name="end"></slot>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text" onslotchange={handleHelpTextSlotChange}></slot>
+  </div>
+</template>

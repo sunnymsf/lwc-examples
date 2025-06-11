@@ -1,0 +1,171 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <div class="slds-box slds-theme_shade" style="margin-left: 25%; margin-right:15%">
+                <div class="slds-align_absolute-center slds-text-heading_large">setFormat Configurator</div>
+                <lightning-combobox
+                    name="progress"
+                    label="Format"
+                    value={value}
+                    placeholder="Select Format"
+                    options={formatOptions}
+                    onchange={handleFormatChange} ></lightning-combobox>
+
+                <lightning-input label="Value" onchange={handleFormatValueChange}></lightning-input>
+                <br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-button label="Reset" onclick={handleClickReset}></lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button class="" label="Apply setFormat" variant="destructive"
+                            onclick={handleClickSetFormat}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-col">
+            <div class="slds-box slds-theme_shade" style="margin-left: 10%; margin-right:25%">
+                <div class="slds-align_absolute-center slds-text-heading_large">setRangeText Configurator</div>
+
+                <lightning-input label="Replacement" onchange={handleReplacementChange}></lightning-input>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input label="Start" onchange={handleStartChange}></lightning-input>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-input label="End" onchange={handleEndChange}></lightning-input>
+                    </div>
+                </div>
+
+                <lightning-input label="Select Mode" onchange={handleSelectModeChange}></lightning-input>
+                <br>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-button label="Reset" onclick={handleClickReset}></lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button class="" label="Apply setRangeText" variant="destructive"
+                            onclick={handleClick}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-col">
+            <div class="slds-box slds-theme_shade" style="margin-left: 5%; margin-right:5%">
+                <div class="slds-align_absolute-center slds-text-heading_large">Additional Controls</div>
+                <!-- Click this button and it will show or hide the custom markup buttons -->
+                <br/>
+                <lightning-input type="toggle" label="Show Custom Markup Buttons" name="input1"
+                    checked={showCustomMarkupButtons}
+                    onchange={handleShowCustomMarkupButton}></lightning-input>
+
+                <template if:true={showCustomMarkupButtons}>
+                    <br/>
+                    <lightning-input type="toggle" label="Show Custom Button Group" name="input2"
+                        checked={showCustomButtonGroup}
+                        onchange={handleShowCustomButtonGroup}></lightning-input>
+                </template>
+
+                <br/>
+                <lightning-input type="toggle" label="Show Toolbar Button Group" name="input3"
+                    checked={showToolBarButtonGroup}
+                    onchange={handleShowToolBarButtonGroup}></lightning-input>
+
+                <!--
+                    INSTRUCTION: Click this button, open popup on first custom button (Save button), then click outside popup
+                    Notice that the popup will not close. Click CANCEL button to close popup
+                -->
+                <br/>
+                <lightning-input type="toggle" label="Close on Clickout Popup" name="input1"
+                    checked={preventCloseOnClickOut}
+                    onchange={handleToggleCloseOnClickout}></lightning-input>
+            </div>
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <lightning-input-rich-text
+        formats="font, bold, italic, underline, strike, list, indent, align, link, image, clean, code, code-block, color, background, mention, header"
+        value="1234567890">
+
+        <!--
+            CUSTOM HTML MARKUP IN SLOT
+            NOT OFFICALLY SUPPORTED AND WE DON'T WANT TO DOC THIS
+            BUT IT WORKS
+            We want to be clear that items other than the doc'ed
+            components are not our responsibility
+        -->
+        <template if:true={showCustomMarkupButtons}>
+            <ul slot="toolbar" class="slds-button-group-list" id="html">
+                <li>
+                    <button type="button" value='av2' class="slds-button slds-button_icon-border-filled" title={label}
+                        data-format='myform' aria-pressed="false" onclick={handleClick}>
+
+                        <lightning-primitive-icon icon-name='utility:save' svg-class="slds-button__icon" variant="bare">
+                        </lightning-primitive-icon>
+                        <span class="slds-assistive-text">{label}</span>
+                    </button>
+                </li>
+            </ul>
+
+            <template if:true={showCustomButtonGroup}>
+                <lightning-button-group slot="toolbar" id="lightningButtonGroup">
+                    <lightning-button-icon variant="border-filled" alternative-text="Image" class="ql-image"
+                        icon-name="utility:formula">
+                    </lightning-button-icon>
+                    <lightning-button-icon variant="border-filled" alternative-text="Image" class="ql-image"
+                        icon-name="utility:copy_to_clipboard">
+                    </lightning-button-icon>
+                    <lightning-button-icon variant="border-filled" alternative-text="Image" class="ql-image"
+                        icon-name="utility:fallback">
+                    </lightning-button-icon>
+                </lightning-button-group>
+            </template>
+            <ul slot="toolbar" class="slds-button-group-list">
+                <li>
+                    <lightning-combobox id="lightningCombobox" variant="label-hidden" name="progress" label="Status"
+                        value="Select Value" placeholder="Select Progress" options={options} onchange={handleChange}>
+                    </lightning-combobox>
+                </li>
+                <li>
+                    <lightning-input type="toggle" label="Basic option" variant="label-hidden" name="input1">
+                    </lightning-input>
+                </li>
+            </ul>
+        </template>
+
+
+        <!-- EXPECTED ITEMS IN MARKUP -->
+        <template if:true={showToolBarButtonGroup}>
+            <lightning-rich-text-toolbar-button-group slot="toolbar" aria-label="First group">
+                <lightning-rich-text-toolbar-button icon-name="utility:save" icon-alternative-text="Save"
+                    onclick={openPopup} onpopupclickout={handlePopupClickout}>
+                    <!-- Popup Items -->
+                    <lightning-input label="label"></lightning-input>
+                    <div class="slds-m-top_small">
+                        <lightning-button variant="brand" label="Save" data-save-button></lightning-button>
+                        <lightning-button variant="bare" label="Cancel" onclick={closePopup} data-cancel-button
+                            style="margin-left: .25rem"></lightning-button>
+                    </div>
+                </lightning-rich-text-toolbar-button>
+                <lightning-rich-text-toolbar-button icon-name="utility:brush" disabled></lightning-rich-text-toolbar-button>
+                <lightning-rich-text-toolbar-button onclick={handleToggleSelect} onfocus={handleEvent} onblur={handleEvent}
+                    icon-name="utility:toggle" icon-alternative-text="Toggle Selected"></lightning-rich-text-toolbar-button>
+            </lightning-rich-text-toolbar-button-group>
+
+            <lightning-rich-text-toolbar-button-group slot="toolbar" aria-label="Second group">
+                <lightning-rich-text-toolbar-button icon-name="utility:brush"></lightning-rich-text-toolbar-button>
+                <lightning-rich-text-toolbar-button icon-name="utility:call"></lightning-rich-text-toolbar-button>
+                <lightning-rich-text-toolbar-button icon-name="utility:insert_tag_field"
+                    icon-alternative-text="Code Snippet" selected={isCodeBlockFormat} onclick={handleCodeBlockButtonClick}>
+                </lightning-rich-text-toolbar-button>
+            </lightning-rich-text-toolbar-button-group>
+        </template>
+    </lightning-input-rich-text>
+</template>

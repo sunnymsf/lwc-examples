@@ -1,0 +1,133 @@
+import StylingHooks from './textarea.hooks.mdx';
+
+### Overview
+
+Textareas are used for multi-line freeform data entry.
+
+### Use Cases
+
+Textarea enables an implementer to capture larger amounts of textual data, such as comments, descriptions, and other kinds of input where single lines are insufficient. This input type is typically part of a larger form and can be extended as part of a larger component.
+
+The Textarea component is implemented using the [HTML Textarea element](https://html.spec.whatwg.org/multipage/input.html#the-textarea-element).
+
+### Non-goals
+
+- Complex or composite textareas.
+- Textareas that feature non-text items, such as date or time controls.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through `::part` falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The API design of the SDS Textarea is specific to the HTML Textarea element.
+- SDS Textarea should accept text with line breaks.
+- The default appearance provides the basic structure of a textarea.
+- The default appearance comes unbranded.
+- Styling Hooks should be used to customize the appearance.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+- The textarea supports validation and error messaging.
+- The textarea also supports different states such as disabled and read-only.
+
+---
+
+### API
+
+The API design that follows _only_ applies to the [HTML Button Element][button-spec].
+
+The SDS button component should support all methods and attributes of the [HTML Button Element][button-spec].
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-button` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-button` - This is owned by a subsystem built on SDS, e.g. `dxp-button`
+
+##### DOM Structure
+
+```html
+<host>
+  <div part="textarea">
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label">
+        <slot name="label"></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+    <div part="textarea-container">
+      <textarea part="textarea-input"></textarea>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text"></slot>
+  </div>
+</host>
+```
+
+##### Slots
+
+| Slot Name     | Description                                     | Fallback Content |
+| ------------- | ----------------------------------------------- | ---------------- |
+| `label-start` | The content that appears before the label       | empty            |
+| `label`       | The main label content                          | empty            |
+| `label-end`   | The content that appears after the label        | empty            |
+| `help-text`   | Help or additional information for the textarea | empty            |
+
+##### Parts
+
+| Part Name            | Description                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------- |
+| `textarea`           | Container for the textarea, allows customization beyond Styling Hooks                          |
+| `label-container`    | Container for the label slot, allows customization beyond Styling Hooks                        |
+| `label`              | Enables styling of label content beyond Styling Hooks, falls outside the support matrix of SDS |
+| `textarea-container` | Container for the textarea, allows customization beyond Styling Hooks                          |
+| `textarea-input`     | Enables styling of the textarea beyond Styling Hooks, falls outside the support matrix of SDS  |
+| `help-text`          | Enables styling of the help text beyond Styling Hooks, falls outside the support matrix of SDS |
+
+##### Properties & Attributes
+
+##### Properties & Attributes
+
+| Attribute     | Type     | Default Value | Description                                                                      |
+| ------------- | -------- | ------------- | -------------------------------------------------------------------------------- |
+| `disabled`    | `bool`   | `false`       | Indicates whether the textarea is disabled and cannot be interacted with         |
+| `name`        | `string` | `null`        | Name of the textarea to use for form submission and in the `form.elements` API   |
+| `value`       | `string` | `null`        | Value of the textarea, can be used for form submission                           |
+| `placeholder` | `string` | `null`        | Specifies a short hint that describes the expected value of the textarea         |
+| `rows`        | `number` | `2`           | Specifies the visible number of lines in a text area                             |
+| `cols`        | `number` | `20`          | Specifies the visible width of a text area                                       |
+| `form`        | `string` | `null`        | Specifies one or more forms the text area belongs to                             |
+| `maxlength`   | `number` | `null`        | Specifies the maximum number of characters allowed in the text area              |
+| `minlength`   | `number` | `null`        | Specifies the minimum number of characters required in the textarea              |
+| `readonly`    | `bool`   | `false`       | Specifies that the text area should be read-only                                 |
+| `required`    | `bool`   | `false`       | Specifies that the text area must be filled out before submitting a form         |
+| `wrap`        | `string` | `soft`        | Specifies how the text in a text area is to be wrapped when submitted in a form  |
+| `id`          | `string` | `null`        | Unique identifier of the textarea                                                |
+| `spellcheck`  | `bool`   | `true`        | Specifies whether the element is to have its spelling and grammar checked or not |
+| `wrap`        | `enum`   | `soft`        | Specifies how the text in a textarea is to be wrapped when submitted in a form   |
+
+##### Styling Hooks
+
+<StylingHooks />
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States         | Initial State | Description                                                                                                                                       |
+| ----------- | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `focus`     | `false`        | `false`       | When the textarea receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+| `disabled`  | `true`/`false` | `false`       | Indicates whether the textarea is disabled and cannot be interacted with. When disabled, the control is not included in form validation           |
+| `readonly`  | `true`/`false` | `false`       | Controls whether or not the user can edit the form control                                                                                        |
+| `active`    | `true`/`false` | `false`       | Controls whether or not the user is currently typing in the form control                                                                          |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) per the W3C.
+
+When interacting with the associated label via click, it should focus the related input.
+
+### Internationalization
+
+All slotted content inside the button should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).

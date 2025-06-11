@@ -1,0 +1,38 @@
+<template>
+    <lightning-lookup-label
+        label={label}
+        required={required}
+        variant={variant}
+        onlabelledby={handleLabelLabelledBy}
+        onclick={focus}
+    ></lightning-lookup-label>
+
+    <template if:true={fieldLevelHelp}>
+        <lightning-lookup-helptext
+            content={fieldLevelHelp}
+            label={label}
+            ondescribedby={handleLabelDescribedBy}
+            onclick={handleHelptextClick}
+    ></lightning-lookup-helptext>
+    </template>
+
+    <template if:true={hasValue}>
+        <lightning-pill-container
+            items={pills}
+            onblur={handleBlur}
+            onitemremove={handlePillRemove}>
+        </lightning-pill-container>
+    </template>
+
+    <template if:false={hasValue}>
+        <lightning-lookup-mobile-faux-input
+            onblur={handleBlur}
+            onfauxinputclick={showPanel}
+            disabled={disabled}>
+        </lightning-lookup-mobile-faux-input>
+    </template>
+
+    <template if:true={errorMessage}>
+        <div class="slds-form-element__help" data-lookup-error id="lookup-error-message" role="alert">{errorMessage}</div>
+    </template>
+</template>

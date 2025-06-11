@@ -1,0 +1,5427 @@
+
+{
+  "accordion": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "activeSectionName"
+      },
+      {
+        "name": "allowMultipleSectionsOpen"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "accordionSection": {
+    "minVersion": "41.0",
+    "slotNames": [
+      "",
+      "actions"
+    ],
+    "properties": [
+      {
+        "name": "headingLevel"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "actions": {
+    "minVersion": "50.0"
+  },
+  "aiFormControl": {
+    "slotNames": [
+      "control",
+      "end"
+    ],
+    "properties": [
+      {
+        "name": "density"
+      },
+      {
+        "name": "layout"
+      }
+    ]
+  },
+  "aiLayout": {
+    "slotNames": [
+      "body",
+      "end",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "layout"
+      }
+    ]
+  },
+  "alert": {
+    "minVersion": "54.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "name": "theme"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "analyticsAppFrameworkApi": {},
+  "analyticsPlatformApi": {},
+  "analyticsSmartDataDiscoveryApi": {},
+  "analyticsTuaLibraryApi": {},
+  "analyticsUnifiedAnalyticsApi": {},
+  "analyticsWaveApi": {
+    "minVersion": "52.0"
+  },
+  "ariaObserver": {},
+  "auraDynamic": {},
+  "auraUtilsMock": {},
+  "avatar": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "fallbackIconName"
+      },
+      {
+        "name": "initials"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "src"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "badge": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "iconAlternativeText"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "iconPosition"
+      },
+      {
+        "name": "label"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "barcodeScanner": {
+    "minVersion": "57.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "disabledAlternativeText"
+      },
+      {
+        "name": "disabledIconSrc"
+      },
+      {
+        "name": "enableContinuousScan"
+      },
+      {
+        "name": "enabledAlternativeText"
+      },
+      {
+        "name": "enabledIconSrc"
+      },
+      {
+        "name": "iconSize"
+      },
+      {
+        "name": "scannerOptions"
+      }
+    ]
+  },
+  "baseFormattedText": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "linkify"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "baseSetupApi": {},
+  "billingApi": {},
+  "billingBatchApi": {},
+  "breadcrumb": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "href"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "focus"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "breadcrumbs": {
+    "minVersion": "0.0",
+    "slotNames": [
+      ""
+    ]
+  },
+  "button": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disableAnimation"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "iconPosition"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "stretch"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "buttonGroup": {
+    "minVersion": "45.0",
+    "slotNames": [
+      ""
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "buttonIcon": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "disableAlternativeTextTitle"
+      },
+      {
+        "name": "iconClass"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "tooltip"
+      },
+      {
+        "name": "tooltipType"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "buttonIconStateful": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "selected"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "tooltip"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "buttonMenu": {
+    "minVersion": "0.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "draftAlternativeText"
+      },
+      {
+        "name": "groupOrder"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "iconSize"
+      },
+      {
+        "name": "internalDatatableActionsMenu"
+      },
+      {
+        "name": "isDraft"
+      },
+      {
+        "name": "isLoading"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "loadingStateAlternativeText"
+      },
+      {
+        "name": "menuAlignment"
+      },
+      {
+        "name": "nubbin"
+      },
+      {
+        "name": "tooltip"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "buttonStateful": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "groupOrder"
+      },
+      {
+        "name": "iconNameWhenHover"
+      },
+      {
+        "name": "iconNameWhenOff"
+      },
+      {
+        "name": "iconNameWhenOn"
+      },
+      {
+        "name": "labelWhenHover"
+      },
+      {
+        "name": "labelWhenOff"
+      },
+      {
+        "name": "labelWhenOn"
+      },
+      {
+        "name": "selected"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "card": {
+    "minVersion": "0.0",
+    "slotNames": [
+      "",
+      "actions",
+      "footer",
+      "title"
+    ],
+    "properties": [
+      {
+        "name": "headingLevel"
+      },
+      {
+        "name": "hideHeader"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "carousel": {
+    "minVersion": "42.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "disableAutoRefresh"
+      },
+      {
+        "name": "disableAutoScroll"
+      },
+      {
+        "name": "scrollDuration"
+      }
+    ]
+  },
+  "carouselImage": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "description"
+      },
+      {
+        "name": "header"
+      },
+      {
+        "name": "href"
+      },
+      {
+        "name": "src"
+      }
+    ]
+  },
+  "cdpCalculatedInsightsApi": {},
+  "cdpDataTransformExperienceApi": {},
+  "cdpMetadataApi": {},
+  "cdpPersonalizationServiceApi": {},
+  "cdpQueryApi": {},
+  "cdpSemanticAuthoringApi": {},
+  "cdpSemanticEngineApi": {},
+  "checkboxGroup": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "clickToDial": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "params"
+      },
+      {
+        "name": "recordId"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      }
+    ]
+  },
+  "clickToDialService": {},
+  "cmsAuthoringApi": {},
+  "cmsDeliveryApi": {
+    "minVersion": "52.0"
+  },
+  "cmsInternalDeliveryApi": {},
+  "cmsManagedContentSpacesApi": {},
+  "cmsManagementApi": {},
+  "cmsOrchestratorApi": {},
+  "cmsTypeApi": {},
+  "combobox": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "dropdownAlignment"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "spinnerActive"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "commerceApi": {},
+  "commerceCatalogManagementApi": {},
+  "commerceChannelManagementApi": {},
+  "commerceConfigurationApi": {},
+  "commerceEsfApi": {},
+  "commerceExtensionApi": {},
+  "commerceGoalsAndRecommendationsApi": {},
+  "commerceManagementApi": {},
+  "commercePaymentsApi": {},
+  "commerceStoreManagementApi": {},
+  "communityInfoApi": {},
+  "communityMicrobatchingApi": {},
+  "communityNavigationMenuApi": {},
+  "communityPreviewUrlApi": {},
+  "communityRecordSeoPropertiesApi": {},
+  "configProvider": {
+    "minVersion": "0.0"
+  },
+  "confirm": {
+    "minVersion": "54.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "name": "theme"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "context": {
+    "slotNames": [
+      ""
+    ],
+    "statics": [
+      {
+        "name": "getDefaultContext"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "Provider"
+      }
+    ]
+  },
+  "conversationToolkitApi": {
+    "minVersion": "60.0",
+    "slotNames": [],
+    "methods": [
+      {
+        "name": "endConversation"
+      },
+      {
+        "name": "getConversationLog"
+      },
+      {
+        "name": "sendTextMessage"
+      },
+      {
+        "name": "setAgentInput"
+      }
+    ]
+  },
+  "dataProviderApi": {},
+  "datatable": {
+    "minVersion": "41.0",
+    "slotNames": [
+      "customdatatypes"
+    ],
+    "properties": [
+      {
+        "name": "columnWidthsMode"
+      },
+      {
+        "name": "columns"
+      },
+      {
+        "name": "data"
+      },
+      {
+        "name": "defaultSortDirection"
+      },
+      {
+        "name": "draftValues"
+      },
+      {
+        "name": "enableInfiniteLoading"
+      },
+      {
+        "name": "errors"
+      },
+      {
+        "name": "hideCheckboxColumn"
+      },
+      {
+        "name": "hideTableHeader"
+      },
+      {
+        "name": "isLoading"
+      },
+      {
+        "name": "keyField"
+      },
+      {
+        "name": "loadMoreOffset"
+      },
+      {
+        "name": "maxColumnWidth"
+      },
+      {
+        "name": "maxRowSelection"
+      },
+      {
+        "name": "minColumnWidth"
+      },
+      {
+        "name": "renderConfig"
+      },
+      {
+        "name": "renderMode"
+      },
+      {
+        "name": "resizeColumnDisabled"
+      },
+      {
+        "name": "resizeStep"
+      },
+      {
+        "name": "rowNumberOffset"
+      },
+      {
+        "name": "selectedRows"
+      },
+      {
+        "name": "showActionsMenu"
+      },
+      {
+        "name": "showRowNumberColumn"
+      },
+      {
+        "name": "singleRowSelectionMode"
+      },
+      {
+        "name": "sortedBy"
+      },
+      {
+        "name": "sortedDirection"
+      },
+      {
+        "name": "suppressBottomBar"
+      },
+      {
+        "name": "wrapTableHeader"
+      },
+      {
+        "name": "wrapTextMaxLines"
+      }
+    ],
+    "methods": [
+      {
+        "name": "getSelectedRows"
+      },
+      {
+        "name": "openInlineEdit"
+      }
+    ]
+  },
+  "datatableKeyboardMixins": {
+    "minVersion": "45.0"
+  },
+  "deprecatedOverlayLibrary": {},
+  "deprecatedOverlayUtils": {},
+  "dialog": {
+    "slotNames": [
+      "",
+      "footer"
+    ],
+    "properties": [
+      {
+        "name": "header"
+      },
+      {
+        "name": "size"
+      }
+    ],
+    "methods": [
+      {
+        "name": "close"
+      },
+      {
+        "name": "showModal"
+      }
+    ]
+  },
+  "dualListbox": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "addButtonLabel"
+      },
+      {
+        "name": "disableReordering"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "downButtonLabel"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "messageWhenRangeOverflow"
+      },
+      {
+        "name": "messageWhenRangeUnderflow"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "removeButtonLabel"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "requiredOptions"
+      },
+      {
+        "name": "selectedLabel"
+      },
+      {
+        "name": "showActivityIndicator"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "sourceLabel"
+      },
+      {
+        "name": "upButtonLabel"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "dynamicIcon": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "option"
+      },
+      {
+        "name": "type"
+      }
+    ]
+  },
+  "einsteinAiGatewayApi": {},
+  "einsteinllmApi": {},
+  "empApi": {
+    "minVersion": "44.0"
+  },
+  "engmtConfigApi": {},
+  "experienceMarketingIntegrationApi": {
+    "minVersion": "54.0"
+  },
+  "experienceModelApi": {},
+  "f6Controller": {},
+  "fieldDependencyManager": {},
+  "fieldUtils": {},
+  "fileDownload": {
+    "minVersion": "56.0"
+  },
+  "fileUpload": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "accept"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fileFieldName"
+      },
+      {
+        "name": "fileFieldValue"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "multiple"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "recordId"
+      },
+      {
+        "name": "required"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      }
+    ]
+  },
+  "flow": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "flowApiName"
+      },
+      {
+        "name": "flowFinishBehavior"
+      },
+      {
+        "name": "flowInputVariables"
+      },
+      {
+        "name": "flowInterviewId"
+      }
+    ],
+    "methods": [
+      {
+        "name": "resumeFlow"
+      },
+      {
+        "name": "startFlow"
+      }
+    ]
+  },
+  "flowBuilderApi": {},
+  "flowRuntimeApi": {},
+  "flowSupport": {
+    "minVersion": "0.0"
+  },
+  "focusTrap": {
+    "slotNames": [
+      ""
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "form": {
+    "slotNames": [
+      "",
+      "footer"
+    ],
+    "properties": [
+      {
+        "name": "bundle"
+      },
+      {
+        "name": "contexts"
+      },
+      {
+        "name": "dependentFieldValues"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "editing"
+      },
+      {
+        "name": "errors"
+      },
+      {
+        "name": "extraData"
+      },
+      {
+        "name": "isFormValid"
+      },
+      {
+        "name": "metadata"
+      },
+      {
+        "name": "values"
+      }
+    ],
+    "methods": [
+      {
+        "name": "getFieldsWithErrors"
+      },
+      {
+        "name": "getFormDraft"
+      },
+      {
+        "name": "reset"
+      }
+    ]
+  },
+  "formElement": {
+    "slotNames": [
+      ""
+    ]
+  },
+  "formField": {
+    "slotNames": [
+      "input",
+      "output"
+    ],
+    "properties": [
+      {
+        "name": "computedLabel"
+      },
+      {
+        "name": "contextName"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "editing"
+      },
+      {
+        "name": "extraData"
+      },
+      {
+        "name": "fieldName"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "formFooter": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "errors"
+      },
+      {
+        "name": "showErrorIcon"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "openErrorPopover"
+      }
+    ]
+  },
+  "formattedAddress": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "city"
+      },
+      {
+        "name": "country"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "latitude"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "longitude"
+      },
+      {
+        "name": "postalCode"
+      },
+      {
+        "name": "province"
+      },
+      {
+        "name": "showStaticMap"
+      },
+      {
+        "name": "street"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      }
+    ]
+  },
+  "formattedDateTime": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "day"
+      },
+      {
+        "name": "era"
+      },
+      {
+        "name": "hour"
+      },
+      {
+        "name": "hour12"
+      },
+      {
+        "name": "minute"
+      },
+      {
+        "name": "month"
+      },
+      {
+        "name": "second"
+      },
+      {
+        "name": "timeZone"
+      },
+      {
+        "name": "timeZoneName"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "weekday"
+      },
+      {
+        "name": "year"
+      }
+    ]
+  },
+  "formattedEmail": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "hideIcon"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "formattedLocation": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "latitude"
+      },
+      {
+        "name": "longitude"
+      }
+    ]
+  },
+  "formattedLookup": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "displayValue"
+      },
+      {
+        "name": "recordId"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "formattedName": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "firstName"
+      },
+      {
+        "name": "format"
+      },
+      {
+        "name": "informalName"
+      },
+      {
+        "name": "lastName"
+      },
+      {
+        "name": "middleName"
+      },
+      {
+        "name": "salutation"
+      },
+      {
+        "name": "suffix"
+      }
+    ]
+  },
+  "formattedNumber": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "currencyCode"
+      },
+      {
+        "name": "currencyDisplayAs"
+      },
+      {
+        "name": "formatStyle"
+      },
+      {
+        "name": "maximumFractionDigits"
+      },
+      {
+        "name": "maximumSignificantDigits"
+      },
+      {
+        "name": "minimumFractionDigits"
+      },
+      {
+        "name": "minimumIntegerDigits"
+      },
+      {
+        "name": "minimumSignificantDigits"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "formattedPhone": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "formattedRichText": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disableLinkify"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "formattedText": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "linkify"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "formattedTime": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "formattedUrl": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "target"
+      },
+      {
+        "name": "tooltip"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "formulaApi": {},
+  "groupedCombobox": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "customAriaHasPopup"
+      },
+      {
+        "name": "customRole"
+      },
+      {
+        "name": "disableDefaultHighlight"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "filterInputText"
+      },
+      {
+        "name": "filterItems"
+      },
+      {
+        "name": "filterLabel"
+      },
+      {
+        "name": "inputIconAlternativeText"
+      },
+      {
+        "name": "inputIconName"
+      },
+      {
+        "name": "inputIconSize"
+      },
+      {
+        "name": "inputMaxlength"
+      },
+      {
+        "name": "inputPill"
+      },
+      {
+        "name": "inputText"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "pills"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "showActivityIndicator"
+      },
+      {
+        "name": "showDropdownActivityIndicator"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "focusAndOpenDropdownIfNotEmpty"
+      },
+      {
+        "name": "highlightInputText"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "harmonizebillingApi": {},
+  "helptext": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "content"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "iconVariant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "i18nCldrOptions": {},
+  "i18nService": {},
+  "icon": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "src"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "iconSvgTemplates": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesAction": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesActionRtl": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesCustom": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesCustomRtl": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesDoctype": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesDoctypeRtl": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesRtl": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesStandard": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesStandardRtl": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesUtility": {
+    "slotNames": []
+  },
+  "iconSvgTemplatesUtilityRtl": {
+    "slotNames": []
+  },
+  "iconUtils": {},
+  "industriesActionPlanApi": {},
+  "industriesActionablelistApi": {},
+  "industriesAiAutofillApi": {},
+  "industriesAssessmentApi": {},
+  "industriesAuditTrailExportApi": {},
+  "industriesAutomotiveApi": {},
+  "industriesCibApi": {},
+  "industriesClmApi": {},
+  "industriesConstraintsApi": {},
+  "industriesContextApi": {},
+  "industriesContextRulesApi": {},
+  "industriesCpqApi": {},
+  "industriesCriteriaBasedSearchFilterApi": {},
+  "industriesDataloadingApi": {},
+  "industriesDecisionMatrixDesignerApi": {},
+  "industriesDecisiontableApi": {},
+  "industriesDfoApi": {},
+  "industriesDocgenApi": {},
+  "industriesDocumentmatrixApi": {},
+  "industriesEducationApi": {},
+  "industriesEducationPublicApi": {
+    "minVersion": "60.0"
+  },
+  "industriesEinsteinAIAcceleratorApi": {},
+  "industriesEnergyUtilitiesApi": {},
+  "industriesEpcApi": {},
+  "industriesEriApi": {},
+  "industriesExplainabilityApi": {},
+  "industriesExternalDocumentApi": {},
+  "industriesFeatureValidationApi": {},
+  "industriesFieldServiceApi": {},
+  "industriesFieldsetApi": {},
+  "industriesFilebasedDataimportApi": {},
+  "industriesFundraisingApi": {},
+  "industriesGdfDchApi": {},
+  "industriesGdfInformationLibApi": {},
+  "industriesGdfInformationLibCreateSnippetApi": {},
+  "industriesGdfInformationLibDeleteSnippetApi": {},
+  "industriesGroupApi": {},
+  "industriesHealthcloudApi": {},
+  "industriesHealthcloudHpiApi": {},
+  "industriesIdentityVerificationApi": {},
+  "industriesInformationLibraryListViewApi": {},
+  "industriesInstantPricingApi": {},
+  "industriesInsuranceBrokerageApi": {},
+  "industriesInsurancePolicyAdminApi": {},
+  "industriesIntegrationOrchestrationApi": {},
+  "industriesInterestTaggingApi": {},
+  "industriesLoyaltyEngineApi": {},
+  "industriesManufacturingApi": {},
+  "industriesMaterialityAssessmentCalculateApi": {},
+  "industriesMediaAdSalesApi": {},
+  "industriesMfgprogramApi": {},
+  "industriesNextgenerationsalesagreementpriceApi": {},
+  "industriesNlpServiceApi": {},
+  "industriesOmnianalyticsApi": {},
+  "industriesOmnidesignerApi": {},
+  "industriesPricingApi": {},
+  "industriesProgramMgmtApi": {},
+  "industriesPublicSectorApi": {},
+  "industriesRcgTenantmanagementApi": {},
+  "industriesRecordaggregationApi": {},
+  "industriesReminderApi": {},
+  "industriesRuleBuilderApi": {},
+  "industriesSalesAgreementProductApi": {},
+  "industriesSalesExcellenceApi": {},
+  "industriesSchedulerApi": {},
+  "industriesServiceExcellenceApi": {},
+  "industriesServiceprocessApi": {},
+  "industriesStagemanagementApi": {},
+  "industriesSustainabilityBeiApi": {},
+  "industriesSustainabilityCsvAttachApi": {},
+  "industriesSustainabilityDgfApi": {},
+  "industriesSustainabilityRecalculateApi": {},
+  "industriesSustainabilityRecordLockUnlockApi": {},
+  "industriesSustainabilityReferenceDataApi": {},
+  "industriesSustainabilityReferenceDataV2Api": {},
+  "industriesSustainabilityReferenceDataV3Api": {},
+  "industriesTearsheetApi": {},
+  "industriesTimelineApi": {},
+  "industriesVideoVisitsApi": {},
+  "input": {
+    "minVersion": "0.0",
+    "slotNames": [
+      "label-end"
+    ],
+    "properties": [
+      {
+        "name": "accept"
+      },
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "checked"
+      },
+      {
+        "name": "dateAccessKey"
+      },
+      {
+        "name": "dateAriaControls"
+      },
+      {
+        "name": "dateAriaDescribedBy"
+      },
+      {
+        "name": "dateAriaDetails"
+      },
+      {
+        "name": "dateAriaLabel"
+      },
+      {
+        "name": "dateAriaLabelledBy"
+      },
+      {
+        "name": "dateStyle"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "files"
+      },
+      {
+        "name": "formatFractionDigits"
+      },
+      {
+        "name": "formatter"
+      },
+      {
+        "name": "isLoading"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "maxLength"
+      },
+      {
+        "name": "messageToggleActive"
+      },
+      {
+        "name": "messageToggleInactive"
+      },
+      {
+        "name": "messageWhenBadInput"
+      },
+      {
+        "name": "messageWhenPatternMismatch"
+      },
+      {
+        "name": "messageWhenRangeOverflow"
+      },
+      {
+        "name": "messageWhenRangeUnderflow"
+      },
+      {
+        "name": "messageWhenStepMismatch"
+      },
+      {
+        "name": "messageWhenTooLong"
+      },
+      {
+        "name": "messageWhenTooShort"
+      },
+      {
+        "name": "messageWhenTypeMismatch"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "minLength"
+      },
+      {
+        "name": "multiple"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "pattern"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "selectionEnd"
+      },
+      {
+        "name": "selectionStart"
+      },
+      {
+        "name": "step"
+      },
+      {
+        "name": "timeAccessKey"
+      },
+      {
+        "name": "timeAriaControls"
+      },
+      {
+        "name": "timeAriaDescribedBy"
+      },
+      {
+        "name": "timeAriaDetails"
+      },
+      {
+        "name": "timeAriaLabel"
+      },
+      {
+        "name": "timeAriaLabelledBy"
+      },
+      {
+        "name": "timeStyle"
+      },
+      {
+        "name": "timezone"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "inputAddress": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "addressLabel"
+      },
+      {
+        "name": "addressLookupLabel"
+      },
+      {
+        "name": "addressLookupPlaceholder"
+      },
+      {
+        "name": "city"
+      },
+      {
+        "name": "cityLabel"
+      },
+      {
+        "name": "cityPlaceholder"
+      },
+      {
+        "name": "country"
+      },
+      {
+        "name": "countryDisabled"
+      },
+      {
+        "name": "countryLabel"
+      },
+      {
+        "name": "countryOptions"
+      },
+      {
+        "name": "countryPlaceholder"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "postalCode"
+      },
+      {
+        "name": "postalCodeLabel"
+      },
+      {
+        "name": "postalCodePlaceholder"
+      },
+      {
+        "name": "province"
+      },
+      {
+        "name": "provinceLabel"
+      },
+      {
+        "name": "provinceOptions"
+      },
+      {
+        "name": "provincePlaceholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "showAddressLookup"
+      },
+      {
+        "name": "showCompactAddress"
+      },
+      {
+        "name": "street"
+      },
+      {
+        "name": "streetLabel"
+      },
+      {
+        "name": "streetPlaceholder"
+      },
+      {
+        "name": "subpremise"
+      },
+      {
+        "name": "subpremiseLabel"
+      },
+      {
+        "name": "subpremisePlaceholder"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidityForField"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "inputField": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "dirty"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldName"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "clean"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "reset"
+      },
+      {
+        "name": "setErrors"
+      },
+      {
+        "name": "updateDependentField"
+      },
+      {
+        "name": "wirePicklistValues"
+      },
+      {
+        "name": "wireRecordUi"
+      }
+    ]
+  },
+  "inputLocation": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "latitude"
+      },
+      {
+        "name": "longitude"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidityForField"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "inputName": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "fieldsToDisplay"
+      },
+      {
+        "name": "firstName"
+      },
+      {
+        "name": "firstNameLabel"
+      },
+      {
+        "name": "informalName"
+      },
+      {
+        "name": "informalNameLabel"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "lastName"
+      },
+      {
+        "name": "lastNameLabel"
+      },
+      {
+        "name": "middleName"
+      },
+      {
+        "name": "middleNameLabel"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "salutation"
+      },
+      {
+        "name": "salutationLabel"
+      },
+      {
+        "name": "suffix"
+      },
+      {
+        "name": "suffixLabel"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidityForField"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ]
+  },
+  "inputRichText": {
+    "minVersion": "0.0",
+    "slotNames": [
+      "toolbar"
+    ],
+    "properties": [
+      {
+        "name": "customButtons"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "disabledCategories"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "formats"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "labelVisible"
+      },
+      {
+        "name": "messageWhenBadInput"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "shareWithEntityId"
+      },
+      {
+        "name": "valid"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "getFormat"
+      },
+      {
+        "name": "insertTextAtCursor"
+      },
+      {
+        "name": "setFormat"
+      },
+      {
+        "name": "setRangeText"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "interactionOrchestratorApi": {},
+  "internalLocalizationService": {},
+  "layout": {
+    "minVersion": "0.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "horizontalAlign"
+      },
+      {
+        "name": "multipleRows"
+      },
+      {
+        "name": "pullToBoundary"
+      },
+      {
+        "name": "verticalAlign"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "layoutItem": {
+    "minVersion": "0.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "alignmentBump"
+      },
+      {
+        "name": "flexibility"
+      },
+      {
+        "name": "largeDeviceSize"
+      },
+      {
+        "name": "mediumDeviceSize"
+      },
+      {
+        "name": "padding"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "smallDeviceSize"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "logger": {
+    "minVersion": "0.0"
+  },
+  "lookup": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "externalObjectValue"
+      },
+      {
+        "name": "fieldName"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "maxValues"
+      },
+      {
+        "name": "messageWhenBadInput"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "objectInfos"
+      },
+      {
+        "name": "record"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "showAdvancedSearch"
+      },
+      {
+        "name": "showCreateNew"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ]
+  },
+  "lookupAddress": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alwaysRender"
+      },
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "inputText"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ]
+  },
+  "lookupDesktop": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "enableCreateNew"
+      },
+      {
+        "name": "errorMessage"
+      },
+      {
+        "name": "fieldName"
+      },
+      {
+        "name": "inputText"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "maxValues"
+      },
+      {
+        "name": "objectInfos"
+      },
+      {
+        "name": "pills"
+      },
+      {
+        "name": "record"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "selectedTargetApiName"
+      },
+      {
+        "name": "textInfo"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "lookupMobile": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "errorMessage"
+      },
+      {
+        "name": "fieldApiName"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "objectInfos"
+      },
+      {
+        "name": "pills"
+      },
+      {
+        "name": "record"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "searchInProgress"
+      },
+      {
+        "name": "selectedTargetApiName"
+      },
+      {
+        "name": "textInfo"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "lookupMobileFauxInput": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "lookupMobileSelectionPanel": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "entityOptions"
+      },
+      {
+        "name": "entitySelectedAssistiveLabel"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "selectedEntityLabel"
+      },
+      {
+        "name": "showActivityIndicator"
+      }
+    ]
+  },
+  "map": {
+    "minVersion": "44.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "center"
+      },
+      {
+        "name": "listView"
+      },
+      {
+        "name": "mapMarkers"
+      },
+      {
+        "name": "markersTitle"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "region"
+      },
+      {
+        "name": "selectedMarkerValue"
+      },
+      {
+        "name": "showFooter"
+      },
+      {
+        "name": "zoomLevel"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "marketingAi4mApi": {},
+  "marketingAssetcreationApi": {},
+  "marketingCdpApi": {},
+  "mediaUtils": {
+    "minVersion": "0.0"
+  },
+  "menuDivider": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "menuItem": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "checked"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "download"
+      },
+      {
+        "name": "draftAlternativeText"
+      },
+      {
+        "name": "href"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "isDraft"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "prefixIconName"
+      },
+      {
+        "name": "target"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "menuSubheader": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "label"
+      }
+    ]
+  },
+  "messageContextConsumer": {
+    "slotNames": [],
+    "methods": [
+      {
+        "name": "getMessageContext"
+      }
+    ]
+  },
+  "messageDispatcher": {},
+  "messageService": {
+    "minVersion": "47.0"
+  },
+  "messageServiceInternal": {},
+  "messages": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "error"
+      }
+    ],
+    "methods": [
+      {
+        "name": "setError"
+      }
+    ]
+  },
+  "mobileCapabilities": {
+    "minVersion": "48.0"
+  },
+  "mobileGroupedCombobox": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "filterIconAlternativeText"
+      },
+      {
+        "name": "filterIconName"
+      },
+      {
+        "name": "filterInputText"
+      },
+      {
+        "name": "filterItems"
+      },
+      {
+        "name": "filterLabel"
+      },
+      {
+        "name": "inputText"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "showActivityIndicator"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      }
+    ]
+  },
+  "modal": {
+    "minVersion": "55.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "description"
+      },
+      {
+        "name": "disableClose"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "size"
+      }
+    ],
+    "methods": [
+      {
+        "name": "close"
+      }
+    ]
+  },
+  "modalBody": {
+    "minVersion": "55.0",
+    "slotNames": [
+      ""
+    ]
+  },
+  "modalFooter": {
+    "minVersion": "55.0",
+    "slotNames": [
+      ""
+    ]
+  },
+  "modalHeader": {
+    "minVersion": "55.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "label"
+      }
+    ]
+  },
+  "multiColumnSortingModal": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "dtInstance"
+      }
+    ]
+  },
+  "navigation": {
+    "minVersion": "43.0"
+  },
+  "outputField": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "fieldClass"
+      },
+      {
+        "name": "fieldName"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "wirePicklistValues"
+      },
+      {
+        "name": "wireRecordUi"
+      }
+    ]
+  },
+  "outputFieldUtils": {},
+  "overlayManager": {},
+  "pageReferenceUtils": {
+    "minVersion": "48.0"
+  },
+  "picklist": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "multiple"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "showActivityIndicator"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "suppressNoneOption"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ]
+  },
+  "pill": {
+    "minVersion": "0.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "hasError"
+      },
+      {
+        "name": "href"
+      },
+      {
+        "name": "isPlainLink"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focusLink"
+      },
+      {
+        "name": "focusRemove"
+      }
+    ]
+  },
+  "pillContainer": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "isCollapsible"
+      },
+      {
+        "name": "isExpanded"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "singleLine"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "placeOrderApi": {},
+  "placeQuoteApi": {},
+  "platformCdpMachineLearningApi": {},
+  "platformContentTaxonomyApi": {},
+  "platformExternalConnectivityApi": {},
+  "platformExternalServicesApi": {},
+  "platformFilesApi": {},
+  "platformGlobalizationApi": {},
+  "platformNamedCredentialApi": {},
+  "platformNotificationUtils": {},
+  "platformOverlayUtils": {},
+  "platformResourceLoader": {
+    "minVersion": "45.0"
+  },
+  "platformScaleCenterApi": {},
+  "platformSharingApi": {},
+  "platformShowToastEvent": {
+    "minVersion": "45.0"
+  },
+  "platformUtilityBarApi": {
+    "minVersion": "61.0"
+  },
+  "platformWorkspaceApi": {
+    "minVersion": "59.0"
+  },
+  "platformWorkspaceApiUtils": {},
+  "popup": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "alignment"
+      }
+    ],
+    "methods": [
+      {
+        "name": "close"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "show"
+      }
+    ]
+  },
+  "popupSource": {
+    "slotNames": [
+      "",
+      "source"
+    ],
+    "properties": [
+      {
+        "name": "isOpen"
+      }
+    ],
+    "methods": [
+      {
+        "name": "close"
+      },
+      {
+        "name": "open"
+      }
+    ]
+  },
+  "primitiveBaseButton": {
+    "slotNames": [
+      "",
+      "end",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "form"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "primitiveBaseIcon": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "iconSets"
+      },
+      {
+        "name": "prefetch"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "set"
+      },
+      {
+        "name": "symbol"
+      }
+    ],
+    "methods": [
+      {
+        "name": "registerIconSet"
+      },
+      {
+        "name": "unregisterIconSet"
+      }
+    ]
+  },
+  "primitiveCheckbox": {
+    "slotNames": [
+      "",
+      "help-text",
+      "label-end",
+      "label-start",
+      "mark"
+    ],
+    "properties": [
+      {
+        "name": "checked"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "indeterminate"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "labelHidden"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "removeIndeterminate"
+      },
+      {
+        "name": "setIndeterminate"
+      }
+    ]
+  },
+  "primitiveComboboxManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "selectMode"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "primitiveContainer": {
+    "slotNames": [
+      "",
+      "footer",
+      "header",
+      "header-end",
+      "header-start"
+    ],
+    "properties": [
+      {
+        "name": "bodyDirection"
+      },
+      {
+        "name": "footerDirection"
+      },
+      {
+        "name": "headerDirection"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "primitiveDropdownManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "autoResize"
+      },
+      {
+        "name": "close"
+      },
+      {
+        "name": "offset"
+      },
+      {
+        "name": "open"
+      },
+      {
+        "name": "placement"
+      },
+      {
+        "name": "setSize"
+      },
+      {
+        "name": "toggleOpenClose"
+      },
+      {
+        "name": "trigger"
+      }
+    ]
+  },
+  "primitiveExpandableSectionManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "open"
+      }
+    ]
+  },
+  "primitiveImage": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alt"
+      },
+      {
+        "name": "fit"
+      },
+      {
+        "name": "ratio"
+      },
+      {
+        "name": "sizes"
+      },
+      {
+        "name": "src"
+      },
+      {
+        "name": "srcset"
+      }
+    ]
+  },
+  "primitiveInputCounter": {
+    "slotNames": [
+      "end",
+      "help-text",
+      "label",
+      "label-end",
+      "label-start",
+      "start",
+      "step-down",
+      "step-up"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "form"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "step"
+      },
+      {
+        "name": "stepDownLabel"
+      },
+      {
+        "name": "stepUpLabel"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "primitiveInputDate": {
+    "slotNames": [
+      "end",
+      "help-text",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "day"
+      },
+      {
+        "name": "dayformat"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "isoDate"
+      },
+      {
+        "name": "labelHidden"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "month"
+      },
+      {
+        "name": "monthformat"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "year"
+      }
+    ]
+  },
+  "primitiveInputRange": {
+    "slotNames": [
+      "end",
+      "help-text",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "form"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "labelHidden"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "step"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "primitiveInputText": {
+    "slotNames": [
+      "end",
+      "help-text",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "form"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "labelHidden"
+      },
+      {
+        "name": "maxLength"
+      },
+      {
+        "name": "minLength"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "pattern"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "primitiveInputTime": {
+    "slotNames": [
+      "end",
+      "help-text",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "hour"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "isoTime"
+      },
+      {
+        "name": "locale"
+      },
+      {
+        "name": "minute"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "primitiveLayout": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "alignContent"
+      },
+      {
+        "name": "alignItems"
+      },
+      {
+        "name": "alignSelf"
+      },
+      {
+        "name": "axis"
+      },
+      {
+        "name": "colSpan"
+      },
+      {
+        "name": "columns"
+      },
+      {
+        "name": "flex"
+      },
+      {
+        "name": "flow"
+      },
+      {
+        "name": "gap"
+      },
+      {
+        "name": "grow"
+      },
+      {
+        "name": "height"
+      },
+      {
+        "name": "justifyContent"
+      },
+      {
+        "name": "justifyItems"
+      },
+      {
+        "name": "justifySelf"
+      },
+      {
+        "name": "layout"
+      },
+      {
+        "name": "order"
+      },
+      {
+        "name": "placeContent"
+      },
+      {
+        "name": "placeItems"
+      },
+      {
+        "name": "placeSelf"
+      },
+      {
+        "name": "rowSpan"
+      },
+      {
+        "name": "rows"
+      },
+      {
+        "name": "shrink"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "sizeLg"
+      },
+      {
+        "name": "sizeMd"
+      },
+      {
+        "name": "sizeSm"
+      },
+      {
+        "name": "sizeXLg"
+      },
+      {
+        "name": "templateColumns"
+      },
+      {
+        "name": "templateRows"
+      }
+    ]
+  },
+  "primitiveLink": {
+    "slotNames": [
+      "",
+      "end",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "download"
+      },
+      {
+        "name": "href"
+      },
+      {
+        "name": "hreflang"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "ping"
+      },
+      {
+        "name": "referrerpolicy"
+      },
+      {
+        "name": "rel"
+      },
+      {
+        "name": "target"
+      },
+      {
+        "name": "type"
+      }
+    ]
+  },
+  "primitiveListboxManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "multiselect"
+      },
+      {
+        "name": "navigate"
+      },
+      {
+        "name": "orientation"
+      },
+      {
+        "name": "role"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "clearFocused"
+      },
+      {
+        "name": "clearSelected"
+      },
+      {
+        "name": "filterListbox"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "handleListboxKeyboardNavigation"
+      }
+    ]
+  },
+  "primitiveListboxOption": {
+    "slotNames": [
+      "",
+      "end",
+      "start"
+    ]
+  },
+  "primitiveMenuManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "primitivePopoverManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "autoResize"
+      },
+      {
+        "name": "close"
+      },
+      {
+        "name": "offset"
+      },
+      {
+        "name": "open"
+      },
+      {
+        "name": "placement"
+      },
+      {
+        "name": "setSize"
+      },
+      {
+        "name": "toggleOpenClose"
+      }
+    ]
+  },
+  "primitiveProgress": {
+    "slotNames": [
+      "end",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "labelHidden"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "primitiveRadio": {
+    "slotNames": [
+      "",
+      "label-end",
+      "label-start",
+      "mark"
+    ],
+    "properties": [
+      {
+        "name": "checked"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "helpMessage"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "primitiveRichText": {
+    "slotNames": [
+      "",
+      "copy-label"
+    ],
+    "methods": [
+      {
+        "name": "copyRichText"
+      }
+    ]
+  },
+  "primitiveSelect": {
+    "slotNames": [
+      "",
+      "end",
+      "help-text",
+      "indicator",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "labelHidden"
+      },
+      {
+        "name": "multiple"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "primitiveTextarea": {
+    "slotNames": [
+      "end",
+      "help-text",
+      "label",
+      "label-end",
+      "label-start",
+      "start"
+    ],
+    "properties": [
+      {
+        "name": "cols"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "invalid"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "maxLength"
+      },
+      {
+        "name": "minLength"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "rows"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "validityMessage"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "wrap"
+      }
+    ]
+  },
+  "primitiveThemeProvider": {},
+  "primitiveTooltipManager": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "autoResize"
+      },
+      {
+        "name": "close"
+      },
+      {
+        "name": "offset"
+      },
+      {
+        "name": "open"
+      },
+      {
+        "name": "placement"
+      },
+      {
+        "name": "setSize"
+      }
+    ]
+  },
+  "primitiveUtils": {},
+  "progressBar": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "size"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "progressIndicator": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "currentStep"
+      },
+      {
+        "name": "hasError"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "stylesheets"
+      }
+    ]
+  },
+  "progressRing": {
+    "minVersion": "48.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "direction"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "progressStep": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "stylesheets"
+      },
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "prompt": {
+    "minVersion": "54.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "defaultValue"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "name": "theme"
+      },
+      {
+        "name": "variant"
+      }
+    ]
+  },
+  "purifyLib": {},
+  "quickActionPanel": {
+    "minVersion": "52.0",
+    "slotNames": [
+      "",
+      "footer"
+    ],
+    "properties": [
+      {
+        "name": "header"
+      }
+    ]
+  },
+  "quill": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "customButtons"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "disabledCategories"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ]
+  },
+  "quillLib": {},
+  "radioGroup": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "recordEditForm": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "density"
+      },
+      {
+        "name": "fieldNames"
+      },
+      {
+        "name": "formClass"
+      },
+      {
+        "name": "layoutType"
+      },
+      {
+        "name": "objectApiName"
+      },
+      {
+        "name": "optionalFields"
+      },
+      {
+        "name": "recordId"
+      },
+      {
+        "name": "recordTypeId"
+      }
+    ],
+    "methods": [
+      {
+        "name": "submit"
+      }
+    ]
+  },
+  "recordForm": {
+    "minVersion": "43.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "columns"
+      },
+      {
+        "name": "density"
+      },
+      {
+        "name": "fields"
+      },
+      {
+        "name": "layoutType"
+      },
+      {
+        "name": "mode"
+      },
+      {
+        "name": "objectApiName"
+      },
+      {
+        "name": "recordId"
+      },
+      {
+        "name": "recordTypeId"
+      }
+    ],
+    "methods": [
+      {
+        "name": "submit"
+      }
+    ]
+  },
+  "recordPicker": {
+    "minVersion": "59.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "displayInfo"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "filter"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "matchingInfo"
+      },
+      {
+        "name": "messageWhenBadInput"
+      },
+      {
+        "name": "objectApiName"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "clearSelection"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      }
+    ]
+  },
+  "recordUtils": {},
+  "recordViewForm": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "density"
+      },
+      {
+        "name": "objectApiName"
+      },
+      {
+        "name": "optionalFields"
+      },
+      {
+        "name": "recordId"
+      }
+    ]
+  },
+  "refresh": {
+    "minVersion": "55.0"
+  },
+  "relativeDateTime": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "value"
+      }
+    ]
+  },
+  "revenueAmendRenewCancelApi": {},
+  "revenueUsageDetailApi": {},
+  "richTextToolbarButton": {
+    "minVersion": "49.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "groupOrder"
+      },
+      {
+        "name": "iconAlternativeText"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "selected"
+      }
+    ],
+    "methods": [
+      {
+        "name": "click"
+      },
+      {
+        "name": "closePopup"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "showPopup"
+      }
+    ]
+  },
+  "richTextToolbarButtonGroup": {
+    "minVersion": "49.0",
+    "slotNames": [
+      ""
+    ]
+  },
+  "routerLink": {
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "target"
+      },
+      {
+        "name": "to"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "click"
+      },
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "routingService": {},
+  "salesAutomationRulesApi": {},
+  "salesChannelRevenueManagementApi": {},
+  "salesEinsteinCoachApi": {},
+  "salesEnablementMeasureApi": {},
+  "salesEnablementProgramApi": {},
+  "salesEngagementWorkspaceApi": {},
+  "salesEvfsdkApi": {},
+  "salesPathAssistantApi": {},
+  "salesPeopleApi": {},
+  "salesTransactionApi": {},
+  "salesTransactionContextsApi": {},
+  "salesUserWorkingHoursApi": {},
+  "select": {
+    "minVersion": "59.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "multiple"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "options"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "serviceAutomationServiceCatalogApi": {},
+  "serviceCloudVoiceToolkitApi": {
+    "minVersion": "52.0",
+    "slotNames": [],
+    "methods": [
+      {
+        "name": "acceptCall"
+      },
+      {
+        "name": "addParticipant"
+      },
+      {
+        "name": "declineCall"
+      },
+      {
+        "name": "endCall"
+      },
+      {
+        "name": "hold"
+      },
+      {
+        "name": "merge"
+      },
+      {
+        "name": "mute"
+      },
+      {
+        "name": "pauseRecording"
+      },
+      {
+        "name": "resume"
+      },
+      {
+        "name": "resumeRecording"
+      },
+      {
+        "name": "sendDigits"
+      },
+      {
+        "name": "startPreviewCall"
+      },
+      {
+        "name": "swap"
+      },
+      {
+        "name": "unmute"
+      },
+      {
+        "name": "updateNextBestActions"
+      }
+    ]
+  },
+  "serviceDataCategoryApi": {},
+  "serviceEinsteinllmApi": {},
+  "serviceEmployeeApi": {},
+  "serviceKnowledgeApi": {
+    "minVersion": "60.0"
+  },
+  "serviceMilestonesApi": {},
+  "serviceNetworkDataCategoryApi": {},
+  "serviceSalesforceJourneyApi": {},
+  "serviceServiceCatalogCategoryApi": {},
+  "serviceServiceplanApi": {},
+  "showToastEvent": {},
+  "sitesApi": {},
+  "slider": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "max"
+      },
+      {
+        "name": "messageWhenBadInput"
+      },
+      {
+        "name": "messageWhenPatternMismatch"
+      },
+      {
+        "name": "messageWhenRangeOverflow"
+      },
+      {
+        "name": "messageWhenRangeUnderflow"
+      },
+      {
+        "name": "messageWhenStepMismatch"
+      },
+      {
+        "name": "messageWhenTooLong"
+      },
+      {
+        "name": "messageWhenTypeMismatch"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "min"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "step"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "spinner": {
+    "minVersion": "0.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "alternativeText"
+      },
+      {
+        "name": "size"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "stackedTab": {
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "label"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "stackedTabset": {
+    "slotNames": [
+      ""
+    ]
+  },
+  "starterSolutionRecipesApi": {},
+  "staticIcon": {},
+  "staticIconRtl": {},
+  "tab": {
+    "minVersion": "44.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "endIconAlternativeText"
+      },
+      {
+        "name": "endIconName"
+      },
+      {
+        "name": "iconAssistiveText"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "showErrorIndicator"
+      },
+      {
+        "name": "value"
+      }
+    ],
+    "methods": [
+      {
+        "name": "loadContent"
+      }
+    ]
+  },
+  "tableauEmbeddingApi": {},
+  "tableauInsightsApi": {},
+  "tabset": {
+    "minVersion": "44.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "activeTabValue"
+      },
+      {
+        "name": "headingLabel"
+      },
+      {
+        "name": "headingLevel"
+      },
+      {
+        "name": "headingVisible"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ]
+  },
+  "testUtils": {},
+  "testUtilsButtonGroup": {},
+  "textarea": {
+    "minVersion": "0.0",
+    "slotNames": [
+      "label-end"
+    ],
+    "properties": [
+      {
+        "name": "autocomplete"
+      },
+      {
+        "name": "disabled"
+      },
+      {
+        "name": "fieldLevelHelp"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "maxLength"
+      },
+      {
+        "name": "messageWhenBadInput"
+      },
+      {
+        "name": "messageWhenTooLong"
+      },
+      {
+        "name": "messageWhenTooShort"
+      },
+      {
+        "name": "messageWhenValueMissing"
+      },
+      {
+        "name": "minLength"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "placeholder"
+      },
+      {
+        "name": "readOnly"
+      },
+      {
+        "name": "required"
+      },
+      {
+        "name": "validity"
+      },
+      {
+        "name": "value"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "blur"
+      },
+      {
+        "name": "checkValidity"
+      },
+      {
+        "name": "focus"
+      },
+      {
+        "name": "reportValidity"
+      },
+      {
+        "name": "setCustomValidity"
+      },
+      {
+        "name": "setRangeText"
+      },
+      {
+        "name": "showHelpMessageIfInvalid"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "tile": {
+    "minVersion": "0.0",
+    "slotNames": [
+      "",
+      "media"
+    ],
+    "properties": [
+      {
+        "name": "actions"
+      },
+      {
+        "name": "href"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "type"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "toast": {
+    "minVersion": "59.0",
+    "slotNames": [
+      "",
+      "message"
+    ],
+    "properties": [
+      {
+        "name": "label"
+      },
+      {
+        "name": "labelLinks"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "name": "messageLinks"
+      },
+      {
+        "name": "mode"
+      },
+      {
+        "name": "variant"
+      }
+    ],
+    "methods": [
+      {
+        "name": "focus"
+      }
+    ],
+    "statics": [
+      {
+        "name": "show"
+      }
+    ]
+  },
+  "toastContainer": {
+    "minVersion": "58.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "containerPosition"
+      },
+      {
+        "name": "maxToasts"
+      },
+      {
+        "name": "toastPosition"
+      }
+    ],
+    "methods": [
+      {
+        "name": "close"
+      }
+    ],
+    "statics": [
+      {
+        "name": "instance"
+      }
+    ]
+  },
+  "tree": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "header"
+      },
+      {
+        "name": "headingLevel"
+      },
+      {
+        "name": "items"
+      },
+      {
+        "name": "selectedItem"
+      }
+    ]
+  },
+  "treeGrid": {
+    "minVersion": "42.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "columns"
+      },
+      {
+        "name": "data"
+      },
+      {
+        "name": "expandedRows"
+      },
+      {
+        "name": "hideCheckboxColumn"
+      },
+      {
+        "name": "isLoading"
+      },
+      {
+        "name": "keyField"
+      },
+      {
+        "name": "maxColumnWidth"
+      },
+      {
+        "name": "minColumnWidth"
+      },
+      {
+        "name": "resizeColumnDisabled"
+      },
+      {
+        "name": "rowNumberOffset"
+      },
+      {
+        "name": "selectedRows"
+      },
+      {
+        "name": "showRowNumberColumn"
+      }
+    ],
+    "methods": [
+      {
+        "name": "collapseAll"
+      },
+      {
+        "name": "expandAll"
+      },
+      {
+        "name": "getCurrentExpandedRows"
+      },
+      {
+        "name": "getSelectedRows"
+      }
+    ]
+  },
+  "uiActionsApi": {},
+  "uiAppsApi": {
+    "minVersion": "50.0"
+  },
+  "uiAssistantPlatformApi": {},
+  "uiDuplicatesApi": {},
+  "uiEciApi": {},
+  "uiEnablementApi": {},
+  "uiGraphQLApi": {
+    "minVersion": "57.0"
+  },
+  "uiGraphQLBatchApi": {},
+  "uiLayoutApi": {
+    "minVersion": "62.0"
+  },
+  "uiLayoutUserStateApi": {},
+  "uiLearningContentPlatformApi": {},
+  "uiLearningPlatformApi": {
+    "minVersion": "62.0"
+  },
+  "uiListApi": {
+    "minVersion": "45.0"
+  },
+  "uiListsApi": {
+    "minVersion": "52.0"
+  },
+  "uiLookupsApi": {},
+  "uiObjectInfoApi": {
+    "minVersion": "45.0"
+  },
+  "uiRecordActionsApi": {},
+  "uiRecordApi": {
+    "minVersion": "46.0"
+  },
+  "uiRecordAvatarApi": {},
+  "uiRelatedListApi": {
+    "minVersion": "53.0"
+  },
+  "unstable_analyticsSmartDataDiscoveryApi": {},
+  "unstable_analyticsWaveApi": {},
+  "unstable_analyticsWavePrivateApi": {},
+  "unstable_cmsAuthoringApi": {},
+  "unstable_cmsDeliveryApi": {},
+  "unstable_cmsTypeApi": {},
+  "unstable_commerceApi": {},
+  "unstable_commerceChannelManagementApi": {},
+  "unstable_communityNavigationMenuApi": {},
+  "unstable_communityRecordSeoPropertiesApi": {},
+  "unstable_communitySitesSearchApi": {},
+  "unstable_experienceMarketingIntegrationApi": {},
+  "unstable_industriesCibApi": {},
+  "unstable_industriesDecisionMatrixDesignerApi": {},
+  "unstable_industriesExplainabilityApi": {},
+  "unstable_industriesHealthcloudHpiApi": {},
+  "unstable_industriesInterestTaggingApi": {},
+  "unstable_industriesLoyaltyEngineApi": {},
+  "unstable_industriesPublicSectorApi": {},
+  "unstable_industriesRcgTenantmanagementApi": {},
+  "unstable_industriesRuleBuilderApi": {},
+  "unstable_platformAdminSuccessGuidanceApi": {},
+  "unstable_platformInteractionOrchestratorApi": {},
+  "unstable_platformScaleCenterApi": {},
+  "unstable_serviceNetworkDataCategoryApi": {},
+  "unstable_uiActionsApi": {},
+  "unstable_uiAppsApi": {},
+  "unstable_uiDuplicatesApi": {},
+  "unstable_uiEnablementApi": {},
+  "unstable_uiGraphQLApi": {},
+  "unstable_uiLayoutApi": {},
+  "unstable_uiLearningContentPlatformApi": {},
+  "unstable_uiListApi": {},
+  "unstable_uiListsApi": {},
+  "unstable_uiLookupsApi": {},
+  "unstable_uiObjectInfoApi": {},
+  "unstable_uiRecordActionsApi": {},
+  "unstable_uiRecordApi": {},
+  "unstable_uiRecordAvatarApi": {},
+  "unstable_uiRelatedListApi": {},
+  "unstable_uiSearchApi": {},
+  "userConsentCookie": {
+    "minVersion": "53.0"
+  },
+  "utils": {},
+  "verticalNavigation": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "compact"
+      },
+      {
+        "name": "selectedItem"
+      },
+      {
+        "name": "shaded"
+      }
+    ]
+  },
+  "verticalNavigationItem": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "href"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "verticalNavigationItemBadge": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "assistiveText"
+      },
+      {
+        "name": "badgeCount"
+      },
+      {
+        "name": "href"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "verticalNavigationItemIcon": {
+    "minVersion": "41.0",
+    "slotNames": [],
+    "properties": [
+      {
+        "name": "href"
+      },
+      {
+        "name": "iconName"
+      },
+      {
+        "name": "label"
+      },
+      {
+        "name": "name"
+      }
+    ],
+    "staticProperties": [
+      {
+        "name": "validationOptOut"
+      }
+    ]
+  },
+  "verticalNavigationOverflow": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ]
+  },
+  "verticalNavigationSection": {
+    "minVersion": "41.0",
+    "slotNames": [
+      ""
+    ],
+    "properties": [
+      {
+        "name": "headingLevel"
+      },
+      {
+        "name": "label"
+      }
+    ]
+  }
+}
+

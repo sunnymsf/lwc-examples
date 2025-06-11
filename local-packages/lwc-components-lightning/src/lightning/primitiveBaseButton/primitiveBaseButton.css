@@ -1,0 +1,175 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * Normalize box-sizing
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Base button styles
+ */
+[part~='button'] {
+  display: inline-flex;
+  gap: var(--sds-c-button-spacing-gap, var(--sds-s-button-spacing-gap));
+  background: var(--sds-c-button-color-background, var(--sds-s-button-color-background));
+  color: var(--sds-c-button-text-color, var(--sds-s-button-color));
+  font-weight: var(--sds-c-button-font-weight, var(--sds-s-button-font-weight));
+  font-size: var(--sds-c-button-font-size, var(--sds-s-button-font-size, inherit));
+  line-height: var(--sds-c-button-font-lineheight);
+  height: var(--sds-c-button-sizing-height);
+  width: var(--sds-c-button-sizing-width);
+  padding-inline-start: var(
+    --sds-c-button-spacing-inlinestart,
+    var(
+      --sds-c-button-spacing-inline,
+      var(--sds-c-button-spacing, var(--sds-s-button-spacing-inline, var(--sds-s-button-spacing)))
+    )
+  );
+  padding-inline-end: var(
+    --sds-c-button-spacing-inlineend,
+    var(
+      --sds-c-button-spacing-inline,
+      var(--sds-c-button-spacing, var(--sds-s-button-spacing-inline, var(--sds-s-button-spacing)))
+    )
+  );
+  padding-block-start: var(
+    --sds-c-button-spacing-blockstart,
+    var(
+      --sds-c-button-spacing-block,
+      var(--sds-c-button-spacing, var(--sds-s-button-spacing-block, var(--sds-s-button-spacing)))
+    )
+  );
+  padding-block-end: var(
+    --sds-c-button-spacing-blockend,
+    var(
+      --sds-c-button-spacing-block,
+      var(--sds-c-button-spacing, var(--sds-s-button-spacing-block, var(--sds-s-button-spacing)))
+    )
+  );
+  border-width: var(--sds-c-button-sizing-border, var(--sds-s-button-sizing-border, 1px));
+  border-style: solid;
+  border-color: var(--sds-c-button-color-border, var(--sds-s-button-color-border, currentColor));
+  border-start-start-radius: var(
+    --sds-c-button-radius-border-startstart,
+    var(
+      --sds-c-button-radius-border,
+      var(--sds-s-button-radius-border-startstart, var(--sds-s-button-radius-border))
+    )
+  );
+  border-start-end-radius: var(
+    --sds-c-button-radius-border-startend,
+    var(
+      --sds-c-button-radius-border,
+      var(--sds-s-button-radius-border-startend, var(--sds-s-button-radius-border))
+    )
+  );
+  border-end-start-radius: var(
+    --sds-c-button-radius-border-endstart,
+    var(
+      --sds-c-button-radius-border,
+      var(--sds-s-button-radius-border-endstart, var(--sds-s-button-radius-border))
+    )
+  );
+  border-end-end-radius: var(
+    --sds-c-button-radius-border-endend,
+    var(
+      --sds-c-button-radius-border,
+      var(--sds-s-button-radius-border-endend, var(--sds-s-button-radius-border))
+    )
+  );
+  box-shadow: var(--sds-c-button-shadow, var(--sds-s-button-shadow));
+  text-decoration: var(--sds-c-button-font-decoration);
+  white-space: normal;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+}
+
+/**
+ * Hover button styles
+ *
+ * Fallback order: Hover > Base
+ */
+[part~='button']:hover {
+  --sds-c-button-text-color: var(--sds-c-button-text-color-hover, var(--sds-s-button-color-hover, revert));
+  --sds-c-button-color-background: var(
+    --sds-c-button-color-background-hover,
+    var(--sds-s-button-color-background-hover, revert)
+  );
+  --sds-c-button-color-border: var(
+    --sds-c-button-color-border-hover,
+    var(--sds-s-button-color-border-hover, revert)
+  );
+  --sds-c-button-shadow: var(--sds-c-button-shadow-hover, var(--sds-s-button-shadow-hover, revert));
+
+  cursor: pointer;
+}
+
+/**
+ * Focus button styles
+ *
+ * Fallback order: Focus > Hover > Base
+ */
+[part~='button']:focus {
+  --sds-c-button-color-background: var(
+    --sds-c-button-color-background-focus,
+    var(--sds-s-button-color-background-focus, revert)
+  );
+  --sds-c-button-color-border: var(
+    --sds-c-button-color-border-focus,
+    var(--sds-s-button-color-border-focus, revert)
+  );
+  --sds-c-button-text-color: var(--sds-c-button-text-color-focus, var(--sds-s-button-color-focus, revert));
+  --sds-c-button-shadow: var(--sds-c-button-shadow-focus, var(--sds-s-button-shadow-focus, revert));
+
+  outline: 0;
+}
+
+/**
+ * Active button styles
+ *
+ * Fallback order: Active > Focus > Base
+ *
+ * @TODO: keep this order (no hover) so active has feedback or go all out?
+ */
+[part~='button']:active {
+  --sds-c-button-text-color: var(--sds-c-button-text-color-active, var(--sds-s-button-color-active, revert));
+  --sds-c-button-color-background: var(
+    --sds-c-button-color-background-active,
+    var(--sds-s-button-color-background-active, revert)
+  );
+  --sds-c-button-color-border: var(
+    --sds-c-button-color-border-active,
+    var(--sds-s-button-color-border-active, revert)
+  );
+  --sds-c-button-shadow: var(--sds-c-button-shadow-active, var(--sds-s-button-shadow-active, revert));
+}
+
+/**
+ * Disabled button styles
+ */
+[part~='button']:disabled {
+  --sds-c-button-text-color: var(--sds-c-button-text-color-disabled);
+  --sds-c-button-color-background: var(--sds-c-button-color-background-disabled);
+  --sds-c-button-color-border: var(--sds-c-button-color-border-disabled);
+  --sds-c-button-shadow: var(--sds-c-button-shadow-disabled);
+
+  pointer-events: none;
+}
+
+[part~='button']:disabled * {
+  pointer-events: none;
+}
+
+[part='button'][aria-pressed='true'] {
+  --sds-c-button-color-background: var(--sds-c-button-color-background-pressed, revert);
+  --sds-c-button-color-border: var(--sds-c-button-color-border-pressed, revert);
+  --sds-c-button-text-color: var(--sds-c-button-text-color-pressed, revert);
+  --sds-c-button-shadow: var(--sds-c-button-shadow-pressed, revert);
+}

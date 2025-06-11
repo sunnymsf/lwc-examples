@@ -1,0 +1,23 @@
+<template>
+    
+    <button
+        type="button"
+        part="button button-icon"
+        class={computedButtonClasses}
+        title={iconAlternativeText}
+        disabled={disabled}
+        aria-pressed={selected}
+        onfocus={handleButtonFocus}
+        onblur={handleButtonBlur}>
+        
+        <lightning-primitive-icon icon-name={iconName} svg-class="slds-button__icon" variant="bare"></lightning-primitive-icon>
+        <span class="slds-assistive-text">{iconAlternativeText}</span>
+    </button>
+
+    <lightning-popup data-button-popup aria-describedby="button-popup-body" onclick={handlePopupClick} onclickout={handlePopupClickOut}>
+        <div id="button-popup-body" data-button-popup-body class="slds-popover slds-popover__body">
+            <slot></slot>
+        </div>
+    </lightning-popup>
+    
+</template>

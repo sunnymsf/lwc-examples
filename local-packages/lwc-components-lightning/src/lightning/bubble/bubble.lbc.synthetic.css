@@ -1,0 +1,5 @@
+/* Fix the SLDS popover class so the nubbin does not cover the body contents. */
+/* To Do: Refactor and remove this class once nubbin from SLDS-internal does not block content. GUS ticket to remove duplicated css: W-12595335 */
+section::before {
+    background-color: unset;
+}

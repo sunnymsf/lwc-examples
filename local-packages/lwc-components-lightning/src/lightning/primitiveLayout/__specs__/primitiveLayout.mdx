@@ -1,0 +1,143 @@
+
+### Overview
+
+The SDS layout provides a flexible, mobile-first, device-agnostic layout system. It has baked-in support for responsive and RTL layouts, based on the [CSS Flexbox][flexbox] and [CSS Grid][grid] specifications.
+
+### Use Cases
+
+The use of SDS layout is recommended for providing structure and alignment of content. This can be leverage within a component, typically using Flexbox or Grid, or within a page layout, typically using Grid. The layout component can be used to create a variety of layouts, including:
+- stacked or inline layouts, e.g. a form
+- responsive layouts, e.g. a form with a stacked layout on mobile and an inline layout on desktop
+- grid layouts, e.g. a dashboard
+- responsive grid layouts, e.g. a dashboard with a 2 column layout on mobile and a 4 column layout on desktop
+- nested layouts, e.g. a dashboard with a 2 column layout on mobile and a 4 column layout on desktop with a 2 column layout in the first column and a 2 column layout in the second column
+
+### Non-goals
+
+- Even thought the layout component can be used to create a variety of layouts, it does not support the entire specification of Flexbox and Grid. It is not intended to be a replacement for CSS Flexbox and CSS Grid, but rather a subset of the specification that is commonly used in layouts.ß
+
+### Features
+
+- Flexbox and Grid based layouts
+- Spacing options to define gaps, including option to pass in custom value
+- Alignment options for inline and block axis
+- Nested flexbox and grid layouts
+- LTR/RTL directional support
+- Flexbox layouts, including:
+  - 1-6 and 12 column layout support
+  - Horizontal and vertical layouts
+  - Flow options to wrap to new line or inflexible
+  - Order options
+- Grid layouts, including:
+  - 12 column layout
+  - Custom grid layouts
+  - Grid regions, span and offset
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/checkbox/)
+- [W3C CSS Flexbox Specification][flexbox]
+- [W3C CSS Grid Specification][grid]
+
+---
+
+### API
+
+The layout component is based on the [CSS Flexbox][flexbox] and [CSS Grid][grid] specifications.
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-layout` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-layout` - This is owned by a subsystem built on SDS, e.g. `dxp-layout`
+
+### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is required to use the SDS Layout CSS.
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="layout">
+    <slot></slot>
+  <div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| default | The content within a layout region | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `layout` | The container for the layout region |
+
+#### Properties & Attributes
+
+##### General
+
+| Attribute | Type | Options | Default Value | Description |
+| - | - | - | - | -|
+| `layout` | `enum` | `flex`, `inline-flex`, `grid`, `inline-grid` | | Defines the layout of the container |
+| `height` | `enum` | `full`, `screen` |  | Defines the height of the container |
+| `gap` | `enum` | `1-12` |  | Defines the gap between regions |
+
+##### Flexbox
+
+| Attribute | Type | Options | Default Value | Description |
+| - | - | - | - | -|
+| `axis` | `enum` | `row`, `column`, `row-reverse`, `column-reverse` | `row` | The flow direction of the items inside a flex container |
+| `flex` | `enum` | `auto`,`initial`,`1`, `none` | `auto` | The flex grow factor of a flex item |
+| `size` | `enum` |  `0`, `full`, `1:2`,`1:3`,`2:3`,`1:4`,`2:4`,`3:4`,`1:5`,`2:5`,`3:5`,`4:5`,`1:6`,`2:6`, `3:6`,`4:6`,`5:6`,`1:12`,`2:12`,`3:12`,`4:12`,`5:12`,`6:12`,`7:12`,`8:12`,`9:12`,`10:12`,`11:12` | | The default size of a region inside a flex container |
+| `size-sm` | `enum` |  `0`, `full`, `1:2`,`1:3`,`2:3`,`1:4`,`2:4`,`3:4`,`1:5`,`2:5`,`3:5`,`4:5`,`1:6`,`2:6`, `3:6`,`4:6`,`5:6`,`1:12`,`2:12`,`3:12`,`4:12`,`5:12`,`6:12`,`7:12`,`8:12`,`9:12`,`10:12`,`11:12` | | The default size of a region inside a flex container when the page is greater than 640px |
+| `size-md` | `enum` |  `0`, `full`, `1:2`,`1:3`,`2:3`,`1:4`,`2:4`,`3:4`,`1:5`,`2:5`,`3:5`,`4:5`,`1:6`,`2:6`, `3:6`,`4:6`,`5:6`,`1:12`,`2:12`,`3:12`,`4:12`,`5:12`,`6:12`,`7:12`,`8:12`,`9:12`,`10:12`,`11:12` | | The default size of a region inside a flex container when the page is greater than 768px |
+| `size-lg` | `enum` |  `0`, `full`, `1:2`,`1:3`,`2:3`,`1:4`,`2:4`,`3:4`,`1:5`,`2:5`,`3:5`,`4:5`,`1:6`,`2:6`, `3:6`,`4:6`,`5:6`,`1:12`,`2:12`,`3:12`,`4:12`,`5:12`,`6:12`,`7:12`,`8:12`,`9:12`,`10:12`,`11:12` | | The default size of a region inside a flex container when the page is greater than 1024px |
+| `size-xlg` | `enum` |  `0`, `full`, `1:2`,`1:3`,`2:3`,`1:4`,`2:4`,`3:4`,`1:5`,`2:5`,`3:5`,`4:5`,`1:6`,`2:6`, `3:6`,`4:6`,`5:6`,`1:12`,`2:12`,`3:12`,`4:12`,`5:12`,`6:12`,`7:12`,`8:12`,`9:12`,`10:12`,`11:12` | | The default size of a region inside a flex container when the page is greater than 1280px |
+| `flow` | `enum` | `wrap`, `wrap-reverse`, `nowrap` | `nowrap` | Defines if flex items should wrap onto multiple lines, from top to bottom |
+| `align-content` | `enum` | `start`, `end`, `center`, `between`, `around`, `evenly`, `stretch` | `null` | Distributes items along the block (column) axis, only works when `flow` is set to `wrap` |
+| `align-self` | `enum` | `start`, `end`, `center`, `baseline`, `stretch` | `start` | Align a flex item inside a region along the block (column) axis |
+| `align-items` | `enum` | `start`, `end`, `center`, `baseline`, `stretch` | `stretch` | Alignment of items on the block (column) axis |
+| `justify-content` | `enum` | `start`, `end`, `center`, `between`, `around`, `evenly` | `start` | Distributes items along the inline (row) axis |
+| `justify-items` | `enum` | `start`, `end`, `center`, `baseline` | | Align items on the inline (row) axis |
+| `order` | `enum` | `1-12`, `first`, `last` | `0` | The visual order in which the region appears in the flex container |
+| `grow` | `enum` | `0`, `1` | `0` | Defines if the region of the flex container should grow or not |
+| `shrink` | `enum` | `0`, `1` | `1` | Defines if the region of the flex container should shrink or not |
+
+##### Grid
+
+| Attribute | Type | Options | Default Value | Description |
+| - | - | - | - | -|
+| `columns` | `enum` | `1-12`, `min` `max` | `1` | Defines the number of columns in the grid container |
+| `rows` | `enum` | `1-6`, `min`, `max` | `1` | Defines the number of rows in the grid container |
+| `template-columns` | `string` | | | Define a custom grid template columns of the grid container |
+| `template-rows` | `string` | | | Define a custom grid template rows of the grid container |
+| `col-span` | `enum` | `1-12`, `full` | `1` | Defines the number of columns the region should span |
+| `row-span` | `enum` | `1-6`, `full` | `1` | Defines the number of rows the region should span |
+| `flow` | `enum` | `row`, `col`, `dense`, `row-dense`, `col-dense` | `row` | If you have grid items that aren't explicitly placed on the grid, flow will determine the auto placement of those items based on the auto-placement algorithm |
+| `align-content` | `enum` | `start`, `end`, `center`, `between`, `around`, `evenly`, `stretch` | | When the total size of the grid is less than the grid container, this defines how the items are aligned on the block (column) axis |
+| `align-self` | `enum` | `start`, `end`, `center`, `stretch` | | Align a grid item inside a region along the block (column) axis |
+| `align-items` | `enum` | `start`, `end`, `center`, `stretch` | `stretch` | Alignment of items on the block (column) axis |
+| `place-content` | `enum` | `start`, `end`, `center`, `stretch` | | When the total size of the grid is less than the grid container, this defines how the items are aligned on the inline (row) axis and the block (column) axis |
+| `place-self` | `enum` | `start`, `end`, `center`, `stretch` | | Align a grid item inside a region along the inline (row) axis and block (column) axis |
+| `place-items` | `enum` | `start`, `end`, `center`, `stretch` | | Align items on the inline (row) and block (column) axis |
+| `justify-content` | `enum` | `start`, `end`, `center`, `between`, `around`, `evenly`, `stretch` | | When the total size of the grid is less than the grid container, this defines how the items are aligned on the inline (row) axis |
+| `justify-self` | `enum` | `start`, `end`, `center`, `stretch` | | Align a grid item inside a region along the inline (row) axis |
+| `justify-items` | `enum` | `start`, `end`, `center`, `stretch` | | Align items on the inline (row) axis |
+
+
+---
+
+### Internationalization
+
+All slotted content inside the layout component will adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+
+[styling-hooks-jump]: #styling-hooks
+[flexbox]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
+[grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout

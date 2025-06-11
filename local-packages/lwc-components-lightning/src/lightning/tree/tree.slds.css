@@ -1,0 +1,20 @@
+
+/**
+ * @summary A tree is visualization of a structure hierarchy. A branch can be expanded or collapsed.
+ */
+:host([data-render-mode="shadow"]) .slds-tree-container,:host([data-render-mode="shadow"]) 
+.slds-tree_container {
+  min-width: calc(var(--slds-g-sizing-12) + var(--slds-g-sizing-9) + var(--slds-g-sizing-3)) ;
+  max-width: var(--slds-c-tree-sizing-max-width, 25rem);
+}
+:host([data-render-mode="shadow"]) .slds-tree-container > .slds-text-heading_label,:host([data-render-mode="shadow"]) 
+.slds-tree_container > .slds-text-heading_label {
+  margin-block-end: var(--slds-g-spacing-2);
+}
+/**
+ * @summary Initializes a slds tree group header
+ */
+:host([data-render-mode="shadow"]) .slds-tree__group-header {
+  font-size: var(--slds-g-font-scale-1);
+  font-weight: var(--slds-g-font-weight-7);
+}

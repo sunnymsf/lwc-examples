@@ -1,0 +1,14 @@
+/**
+ * Minor popover API resets to ensure the popover is positioned consistently.
+ * There's other styles applied by the popover API but we'll leave those alone
+ * unless they interfere with the positioning.
+ */
+::slotted([popover]) {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: none;
+}
+
+::slotted([popover]:popover-open) {
+  display: block;
+}

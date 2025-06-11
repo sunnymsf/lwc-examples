@@ -1,0 +1,189 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * Textarea container
+ * ---
+ * The textarea container holds the `start` and `end` slot contents, as well as the textarea
+ */
+[part~='textarea-container'] {
+  display: flex;
+  gap: var(--sds-c-textarea-spacing-gap, var(--sds-s-input-spacing-gap));
+}
+
+/**
+ * Textarea
+ * ---
+ * The textarea is the actual form control element
+ */
+[part~='textarea-input'] {
+  appearance: none;
+  resize: vertical;
+  flex: 1 1 auto;
+  font-size: var(--sds-c-textarea-font-size, var(--sds-s-input-font-size));
+  color: var(--sds-c-textarea-text-color, var(--sds-s-input-text-color));
+  background: var(--sds-c-textarea-color-background, var(--sds-s-input-color-background));
+  padding-inline-start: var(
+    --sds-c-textarea-spacing-inlinestart,
+    var(--sds-c-textarea-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-textarea-spacing-inlineend,
+    var(--sds-c-textarea-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-textarea-spacing-blockstart,
+    var(--sds-c-textarea-spacing-block, var(--sds-s-input-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-textarea-spacing-blockend,
+    var(--sds-c-textarea-spacing-block, var(--sds-s-input-spacing))
+  );
+  border-block-start: var(--sds-c-textarea-sizing-border-blockstart, var(--sds-c-textarea-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-textarea-color-border-blockstart,
+      var(--sds-c-textarea-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-inline-start: var(
+      --sds-c-textarea-sizing-border-inlinestart,
+      var(--sds-c-textarea-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-textarea-color-border-inlinestart,
+      var(--sds-c-textarea-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-inline-end: var(--sds-c-textarea-sizing-border-inlineend, var(--sds-c-textarea-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-textarea-color-border-inlineend,
+      var(--sds-c-textarea-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-block-end: var(--sds-c-textarea-sizing-border-blockend, var(--sds-c-textarea-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-textarea-color-border-blockend,
+      var(--sds-c-textarea-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-radius: var(--sds-c-textarea-radius-border, var(--sds-s-input-radius-border));
+  box-shadow: var(--sds-c-textarea-shadow, var(--sds-s-input-shadow));
+}
+
+/**
+ * Placeholder text
+ */
+[part~='textarea-input']::placeholder {
+  color: var(--sds-c-textarea-text-color-placeholder, var(--sds-s-input-color-placeholder));
+  font-style: var(--sds-c-textarea-font-style-placeholder, var(--sds-s-input-font-style-placeholder));
+}
+
+/**
+ * Textarea when it receives focus
+ * ---
+ * Fallback order: focus > base
+ */
+[part~='textarea-input']:focus {
+  outline: none;
+
+  --sds-c-textarea-color-border: var(
+    --sds-c-textarea-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+  --sds-c-textarea-shadow: var(--sds-c-textarea-shadow-focus, var(--sds-s-input-shadow-focus, revert));
+  --sds-c-textarea-color-background: var(
+    --sds-c-textarea-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-textarea-text-color: var(
+    --sds-c-textarea-text-color-focus,
+    var(--sds-s-input-text-color-focus, revert)
+  );
+}
+
+/**
+ * Actively typing in textarea
+ * ---
+ * The active attribute gets applied on the input event to inidicate the user inputting text
+ * This is a workaround for the lack of a :active-within selector in CSS
+ */
+:host([active]) [part~='textarea-input'] {
+  --sds-c-textarea-color-background: var(
+    --sds-c-textarea-color-background-active,
+    var(--sds-s-input-color-background-active, revert)
+  );
+  --sds-c-textarea-color-border: var(
+    --sds-c-textarea-color-border-active,
+    var(--sds-s-input-color-border-active, revert)
+  );
+  --sds-c-textarea-shadow: var(--sds-c-textarea-shadow-active, var(--sds-s-input-shadow-active, revert));
+}
+
+[part='label-container'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-c-textarea-label-spacing-gap, var(--sds-s-label-spacing-gap));
+  padding-inline-start: var(
+    --sds-c-textarea-label-spacing-inlinestart,
+    var(--sds-c-textarea-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-textarea-label-spacing-inlineend,
+    var(--sds-c-textarea-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-textarea-label-spacing-blockstart,
+    var(--sds-c-textarea-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-textarea-label-spacing-blockend,
+    var(--sds-c-textarea-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  color: var(--sds-c-textarea-label-color, var(--sds-s-label-color));
+}
+
+[part='label'] {
+  font-size: var(--sds-c-textarea-label-font-size, var(--sds-s-label-font-size));
+  font-weight: var(--sds-c-textarea-label-font-weight, var(--sds-s-label-font-weight));
+}
+
+/**
+ * Help text
+ * ---
+ * "visible" gets added when the slotchange confirms there are children
+ * This prevents box-model customizations from being applied, in the case of no children
+ */
+[part='help-text visible'] {
+  font-size: var(--sds-c-textarea-helptext-font-size, var(--sds-s-helptext-font-size));
+  color: var(--sds-c-textarea-helptext-text-color, var(--sds-s-helptext-color));
+  padding-inline-start: var(
+    --sds-c-textarea-helptext-spacing-inlinestart,
+    var(--sds-c-textarea-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-textarea-helptext-spacing-inlineend,
+    var(--sds-c-textarea-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-textarea-helptext-spacing-blockstart,
+    var(--sds-c-textarea-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-textarea-helptext-spacing-blockend,
+    var(--sds-c-textarea-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+}
+
+/**
+ * Disabled state
+ */
+:host([disabled]) {
+  --sds-c-textarea-color-background: var(
+    --sds-c-textarea-color-background-disabled,
+    var(--sds-s-input-color-background-disabled)
+  );
+  --sds-c-textarea-color-border: var(
+    --sds-c-textarea-color-border-disabled,
+    var(--sds-s-input-color-border-disabled)
+  );
+}

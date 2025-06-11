@@ -1,0 +1,17 @@
+<template>
+    <lightning-input-rich-text
+        label={label}
+        label-visible={computedLabelVisible}
+        field-level-help={fieldLevelHelp}
+        value={_displayValue}
+        formats={formats}
+        message-when-bad-input={_helpMessage}
+        valid={_noErrors}
+        disabled={disabled}
+        disabled-categories={disabledCategories}
+        custom-buttons={customButtons}
+        required={required}
+        onchange={handleChange}
+        onfocus={handleFocus}
+        onblur={handleBlur}></lightning-input-rich-text>
+</template>

@@ -1,0 +1,1186 @@
+* {
+  box-sizing: border-box;
+}
+
+.layout-flex {
+  display: flex;
+}
+
+.layout-inline-flex {
+  display: inline-flex;
+}
+
+.layout-grid {
+  display: grid;
+}
+
+.layout-inline-grid {
+  display: inline-grid;
+}
+
+/*
+ * We set the custom prop to zero if no gap value is passed
+ * Since flex-basis doesn't take into consideration the gap, we need to
+ * subtract the gap from the flex-basis to get the correct width. This sets that up.
+ * Additionally, we "faking" the gap with padding on the child elements. We need to
+ * set the same value to the row-gap to get the correct spacing on multi-line layouts.
+ */
+[part='layout'] {
+  --sds-c-layout-spacing-gap: 0px;
+
+  row-gap: var(--sds-c-layout-spacing-gap);
+}
+
+/*
+ * This class gets created by the component when using explicit sizing on the children
+ * elements. We re-apply the gap to the parent element so if grid is used or flex children
+ * want to be sized by their flex property, they will still have the correct spacing.
+ */
+[part='layout']:not(.has-explicit-size) {
+  gap: var(--sds-c-layout-spacing-gap);
+}
+
+/* Direction of axis for flexbox */
+.axis-row {
+  flex-direction: row;
+}
+
+.axis-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.axis-column {
+  flex-direction: column;
+}
+
+.axis-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Determine if layout items should wrap, be inflexible, or handle auto placement for grids */
+.flow-wrap {
+  flex-wrap: wrap;
+}
+
+.flow-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flow-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flow-row {
+  grid-auto-flow: row;
+}
+
+.flow-col {
+  grid-auto-flow: column;
+}
+
+.flow-dense {
+  grid-auto-flow: dense;
+}
+
+.flow-row-dense {
+  grid-auto-flow: row dense;
+}
+
+.flow-col-dense {
+  grid-auto-flow: column dense;
+}
+
+/* Gaps, support 1-12 to align with global hooks */
+[class*='gap-'].has-explicit-size {
+  margin-inline: calc(var(--sds-c-layout-spacing-gap) / 2 * -1);
+}
+
+.gap-1 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-1);
+}
+
+.gap-2 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-2);
+}
+
+.gap-3 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-3);
+}
+
+.gap-4 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-4);
+}
+
+.gap-5 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-5);
+}
+
+.gap-6 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-6);
+}
+
+.gap-7 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-7);
+}
+
+.gap-8 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-8);
+}
+
+.gap-9 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-9);
+}
+
+.gap-10 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-10);
+}
+
+.gap-11 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-11);
+}
+
+.gap-12 {
+  --sds-c-layout-spacing-gap: var(--sds-g-spacing-12);
+}
+
+/* Heights */
+.height-full {
+  height: 100%;
+}
+
+.height-screen {
+  height: 100vh;
+}
+
+/*** Alignment ***/
+
+/* Justify Content */
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-content-stretch {
+  justify-content: stretch;
+}
+
+/* Justify Items */
+.justify-items-start {
+  justify-items: flex-start;
+}
+
+.justify-items-end {
+  justify-items: flex-end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-baseline {
+  justify-items: baseline;
+}
+
+/* Align Content */
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-between {
+  align-content: space-between;
+}
+
+.align-content-around {
+  align-content: space-around;
+}
+
+.align-content-evenly {
+  align-content: space-evenly;
+}
+
+.align-content-stretch {
+  align-content: stretch;
+}
+
+.align-content-baseline {
+  align-content: baseline;
+}
+
+/* Align Items */
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+/* Place Content */
+.place-content-start {
+  place-content: start;
+}
+
+.place-content-end {
+  place-content: end;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.place-content-between {
+  place-content: space-between;
+}
+
+.place-content-around {
+  place-content: space-around;
+}
+
+.place-content-evenly {
+  place-content: space-evenly;
+}
+
+.place-content-stretch {
+  place-content: stretch;
+}
+
+/* Place Items */
+.place-items-start {
+  place-items: start;
+}
+
+.place-items-end {
+  place-items: end;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.place-items-baseline {
+  place-items: baseline;
+}
+
+.place-items-stretch {
+  place-items: stretch;
+}
+
+/* The following need to be on host since its a direct descendant of the flex container */
+
+/* Justify Item */
+:host([justify-self='start']) {
+  justify-self: flex-start;
+}
+
+:host([justify-self='end']) {
+  justify-self: flex-end;
+}
+
+:host([justify-self='center']) {
+  justify-self: center;
+}
+
+:host([justify-self='stretch']) {
+  justify-self: stretch;
+}
+
+/* Align Item */
+:host([align-self='start']) {
+  align-self: flex-start;
+}
+
+:host([align-self='end']) {
+  align-self: flex-end;
+}
+
+:host([align-self='center']) {
+  align-self: center;
+}
+
+:host([align-self='stretch']) {
+  align-self: stretch;
+}
+
+:host([align-self='baseline']) {
+  align-self: baseline;
+}
+
+/* Place Item */
+:host([place-self='start']) {
+  place-self: start;
+}
+
+:host([place-self='end']) {
+  place-self: end;
+}
+
+:host([place-self='center']) {
+  place-self: center;
+}
+
+:host([place-self='stretch']) {
+  place-self: stretch;
+}
+
+/* Sizing/basis */
+:host([flex='auto']) {
+  flex: 1 1 auto;
+}
+
+:host([flex='initial']) {
+  flex: 0 1 auto;
+}
+
+:host([flex='none']) {
+  flex: none;
+}
+
+:host([flex='1']) {
+  flex: 1 1 0%;
+}
+
+/* Sizing/basis */
+:host([size]) {
+  padding-inline: calc(var(--sds-c-layout-spacing-gap) / 2);
+}
+
+:host([size='0']) {
+  flex-basis: 0%;
+}
+
+:host([size='1\:2']) {
+  flex-basis: 50%;
+}
+
+:host([size='1\:3']) {
+  flex-basis: 33.333%;
+}
+
+:host([size='2\:3']) {
+  flex-basis: 66.6667%;
+}
+
+:host([size='1\:4']) {
+  flex-basis: 25%;
+}
+
+:host([size='2\:4']) {
+  flex-basis: 50%;
+}
+
+:host([size='3\:4']) {
+  flex-basis: 75%;
+}
+
+:host([size='1\:5']) {
+  flex-basis: 20%;
+}
+
+:host([size='2\:5']) {
+  flex-basis: 40%;
+}
+
+:host([size='3\:5']) {
+  flex-basis: 60%;
+}
+
+:host([size='4\:5']) {
+  flex-basis: 80%;
+}
+
+:host([size='1\:6']) {
+  flex-basis: 16.6667%;
+}
+
+:host([size='2\:6']) {
+  flex-basis: 33.333%;
+}
+
+:host([size='3\:6']) {
+  flex-basis: 50%;
+}
+
+:host([size='4\:6']) {
+  flex-basis: 66.6667%;
+}
+
+:host([size='5\:6']) {
+  flex-basis: 83.333%;
+}
+
+:host([size='1\:12']) {
+  flex-basis: 8.333%;
+}
+
+:host([size='2\:12']) {
+  flex-basis: 16.6667%;
+}
+
+:host([size='3\:12']) {
+  flex-basis: 25%;
+}
+
+:host([size='4\:12']) {
+  flex-basis: 33.333%;
+}
+
+:host([size='5\:12']) {
+  flex-basis: 41.6667%;
+}
+
+:host([size='6\:12']) {
+  flex-basis: 50%;
+}
+
+:host([size='7\:12']) {
+  flex-basis: 58.333%;
+}
+
+:host([size='8\:12']) {
+  flex-basis: 66.6667%;
+}
+
+:host([size='9\:12']) {
+  flex-basis: 75%;
+}
+
+:host([size='10\:12']) {
+  flex-basis: 83.333%;
+}
+
+:host([size='11\:12']) {
+  flex-basis: 91.6667%;
+}
+
+:host([size='full']) {
+  flex-basis: 100%;
+}
+
+/* Control how the flex item grows */
+:host([grow='1']) {
+  flex-grow: 1;
+}
+
+:host([grow='0']) {
+  flex-grow: 0;
+}
+
+/* Control how the flex item shrinks */
+:host([shrink='1']) {
+  flex-shrink: 1;
+}
+
+:host([shrink='0']) {
+  flex-shrink: 0;
+}
+
+/* Control the order of the flex item */
+:host([order='1']) {
+  order: 1;
+}
+
+:host([order='2']) {
+  order: 2;
+}
+
+:host([order='3']) {
+  order: 3;
+}
+
+:host([order='4']) {
+  order: 4;
+}
+
+:host([order='5']) {
+  order: 5;
+}
+
+:host([order='6']) {
+  order: 6;
+}
+
+:host([order='7']) {
+  order: 7;
+}
+
+:host([order='8']) {
+  order: 8;
+}
+
+:host([order='9']) {
+  order: 9;
+}
+
+:host([order='10']) {
+  order: 10;
+}
+
+:host([order='11']) {
+  order: 11;
+}
+
+:host([order='12']) {
+  order: 12;
+}
+
+:host([order='first']) {
+  order: -999;
+}
+
+:host([order='last']) {
+  order: 999;
+}
+
+/*** Grid Specific ***/
+
+/* Grid template columns */
+.columns-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.columns-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.columns-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.columns-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.columns-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.columns-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.columns-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.columns-9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.columns-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.columns-11 {
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.columns-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.columns-min {
+  grid-auto-columns: min-content;
+}
+
+.columns-max {
+  grid-auto-columns: max-content;
+}
+
+/* Grid template rows */
+.rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.rows-5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.rows-min {
+  grid-auto-rows: min-content;
+}
+
+.rows-max {
+  grid-auto-rows: max-content;
+}
+
+/* Grid column regions */
+:host([col-span='1']) {
+  grid-column: span 1 / span 1;
+}
+
+:host([col-span='2']) {
+  grid-column: span 2 / span 2;
+}
+
+:host([col-span='3']) {
+  grid-column: span 3 / span 3;
+}
+
+:host([col-span='4']) {
+  grid-column: span 4 / span 4;
+}
+
+:host([col-span='5']) {
+  grid-column: span 5 / span 5;
+}
+
+:host([col-span='6']) {
+  grid-column: span 6 / span 6;
+}
+
+:host([col-span='7']) {
+  grid-column: span 7 / span 7;
+}
+
+:host([col-span='8']) {
+  grid-column: span 8 / span 8;
+}
+
+:host([col-span='9']) {
+  grid-column: span 9 / span 9;
+}
+
+:host([col-span='10']) {
+  grid-column: span 10 / span 10;
+}
+
+:host([col-span='11']) {
+  grid-column: span 11 / span 11;
+}
+
+:host([col-span='12']) {
+  grid-column: span 12 / span 12;
+}
+
+:host([col-span='full']) {
+  grid-column: 1 / -1;
+}
+
+/* Grid row regions */
+:host([row-span='1']) {
+  grid-row: span 1 / span 1;
+}
+
+:host([row-span='2']) {
+  grid-row: span 2 / span 2;
+}
+
+:host([row-span='3']) {
+  grid-row: span 3 / span 3;
+}
+
+:host([row-span='4']) {
+  grid-row: span 4 / span 4;
+}
+
+:host([row-span='5']) {
+  grid-row: span 5 / span 5;
+}
+
+:host([row-span='6']) {
+  grid-row: span 6 / span 6;
+}
+
+:host([row-span='full']) {
+  grid-row: 1 / -1;
+}
+
+/* Responsive sizing */
+@media (min-width: 640px) {
+  :host([size-sm='1\:2']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-sm='1\:3']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-sm='2\:3']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-sm='1\:4']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-sm='2\:4']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-sm='3\:4']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-sm='1\:5']) {
+    flex-basis: 20%;
+  }
+
+  :host([size-sm='2\:5']) {
+    flex-basis: 40%;
+  }
+
+  :host([size-sm='3\:5']) {
+    flex-basis: 60%;
+  }
+
+  :host([size-sm='4\:5']) {
+    flex-basis: 80%;
+  }
+
+  :host([size-sm='1\:6']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-sm='2\:6']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-sm='3\:6']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-sm='4\:6']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-sm='5\:6']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-sm='1\:12']) {
+    flex-basis: 8.333%;
+  }
+
+  :host([size-sm='2\:12']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-sm='3\:12']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-sm='4\:12']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-sm='5\:12']) {
+    flex-basis: 41.6667%;
+  }
+
+  :host([size-sm='6\:12']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-sm='7\:12']) {
+    flex-basis: 58.333%;
+  }
+
+  :host([size-sm='8\:12']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-sm='9\:12']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-sm='10\:12']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-sm='11\:12']) {
+    flex-basis: 91.6667%;
+  }
+
+  :host([size-sm='full']) {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  :host([size-md='1\:2']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-md='1\:3']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-md='2\:3']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-md='1\:4']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-md='2\:4']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-md='3\:4']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-md='1\:5']) {
+    flex-basis: 20%;
+  }
+
+  :host([size-md='2\:5']) {
+    flex-basis: 40%;
+  }
+
+  :host([size-md='3\:5']) {
+    flex-basis: 60%;
+  }
+
+  :host([size-md='4\:5']) {
+    flex-basis: 80%;
+  }
+
+  :host([size-md='1\:6']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-md='2\:6']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-md='3\:6']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-md='4\:6']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-md='5\:6']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-md='1\:12']) {
+    flex-basis: 8.333%;
+  }
+
+  :host([size-md='2\:12']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-md='3\:12']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-md='4\:12']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-md='5\:12']) {
+    flex-basis: 41.6667%;
+  }
+
+  :host([size-md='6\:12']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-md='7\:12']) {
+    flex-basis: 58.333%;
+  }
+
+  :host([size-md='8\:12']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-md='9\:12']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-md='10\:12']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-md='11\:12']) {
+    flex-basis: 91.6667%;
+  }
+
+  :host([size-md='full']) {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  :host([size-lg='1\:2']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-lg='1\:3']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-lg='2\:3']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-lg='1\:4']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-lg='2\:4']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-lg='3\:4']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-lg='1\:5']) {
+    flex-basis: 20%;
+  }
+
+  :host([size-lg='2\:5']) {
+    flex-basis: 40%;
+  }
+
+  :host([size-lg='3\:5']) {
+    flex-basis: 60%;
+  }
+
+  :host([size-lg='4\:5']) {
+    flex-basis: 80%;
+  }
+
+  :host([size-lg='1\:6']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-lg='2\:6']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-lg='3\:6']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-lg='4\:6']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-lg='5\:6']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-lg='1\:12']) {
+    flex-basis: 8.333%;
+  }
+
+  :host([size-lg='2\:12']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-lg='3\:12']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-lg='4\:12']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-lg='5\:12']) {
+    flex-basis: 41.6667%;
+  }
+
+  :host([size-lg='6\:12']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-lg='7\:12']) {
+    flex-basis: 58.333%;
+  }
+
+  :host([size-lg='8\:12']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-lg='9\:12']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-lg='10\:12']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-lg='11\:12']) {
+    flex-basis: 91.6667%;
+  }
+
+  :host([size-lg='full']) {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  :host([size-xlg='1\:2']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-xlg='1\:3']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-xlg='2\:3']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-xlg='1\:4']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-xlg='2\:4']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-xlg='3\:4']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-xlg='1\:5']) {
+    flex-basis: 20%;
+  }
+
+  :host([size-xlg='2\:5']) {
+    flex-basis: 40%;
+  }
+
+  :host([size-xlg='3\:5']) {
+    flex-basis: 60%;
+  }
+
+  :host([size-xlg='4\:5']) {
+    flex-basis: 80%;
+  }
+
+  :host([size-xlg='1\:6']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-xlg='2\:6']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-xlg='3\:6']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-xlg='4\:6']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-xlg='5\:6']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-xlg='1\:12']) {
+    flex-basis: 8.333%;
+  }
+
+  :host([size-xlg='2\:12']) {
+    flex-basis: 16.6667%;
+  }
+
+  :host([size-xlg='3\:12']) {
+    flex-basis: 25%;
+  }
+
+  :host([size-xlg='4\:12']) {
+    flex-basis: 33.333%;
+  }
+
+  :host([size-xlg='5\:12']) {
+    flex-basis: 41.6667%;
+  }
+
+  :host([size-xlg='6\:12']) {
+    flex-basis: 50%;
+  }
+
+  :host([size-xlg='7\:12']) {
+    flex-basis: 58.333%;
+  }
+
+  :host([size-xlg='8\:12']) {
+    flex-basis: 66.6667%;
+  }
+
+  :host([size-xlg='9\:12']) {
+    flex-basis: 75%;
+  }
+
+  :host([size-xlg='10\:12']) {
+    flex-basis: 83.333%;
+  }
+
+  :host([size-xlg='11\:12']) {
+    flex-basis: 91.6667%;
+  }
+
+  :host([size-xlg='full']) {
+    flex-basis: 100%;
+  }
+}

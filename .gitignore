@@ -1,0 +1,22 @@
+# OS artifacts
+.DS_STORE
+
+# Tools artifacts
+.env
+node_modules
+coverage
+.eslintcache
+.idea
+*.log
+*.pem
+tsconfig.tsbuildinfo
+
+# Builds
+dist
+site
+
+# LWR cached items
+__lwr_cache__/
+
+# E2E files
+_results_/

@@ -1,0 +1,12 @@
+<template>
+    <div class="app-container">
+        <h2 class="heading">LWC Lightning</h2>
+        <div class="route-grid">
+            <template for:each={lwcLightningRoutes} for:item="route">
+                <div key={route.id} class="route-card">
+                    <a href={route.path} class="route-link">{route.id}</a>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

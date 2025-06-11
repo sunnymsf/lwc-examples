@@ -1,0 +1,18 @@
+@import 'lightning/sldsCommon';
+
+/* Overriding sort icon styles
+Use opacity instead of display: none to avoid
+column header wrapping on hover (W-16027919) */
+
+.private-dt-sort-icon_container {
+    opacity: 0;
+}
+
+:host(.slds-is-sortable) .slds-th__action:hover .private-dt-sort-icon_container,
+:host(.slds-is-sortable) .slds-th__action:focus .private-dt-sort-icon_container,
+:host(.slds-is-sortable.slds-has-focus) .slds-th__action .private-dt-sort-icon_container,
+:host(.slds-is-sortable.slds-has-focus) .slds-th__action:hover .private-dt-sort-icon_container,
+:host(.slds-is-sortable.slds-has-focus) .slds-th__action:focus .private-dt-sort-icon_container,
+:host(.slds-is-sortable) .slds-is-sorted .private-dt-sort-icon_container {
+    opacity: 1;
+}

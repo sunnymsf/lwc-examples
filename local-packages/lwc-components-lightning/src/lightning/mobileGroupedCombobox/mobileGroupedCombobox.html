@@ -1,0 +1,141 @@
+<template>
+    <label data-main-label
+        class="slds-form-element__label slds-assistive-text"
+        id="lookup-input-label">
+       {ariaLabel}
+    </label>
+    <div class="slds-form-element__control">
+        <!-- Filter -->
+        <template if:true={hasFilter}>
+            <div>
+                <div class="slds-form-element slds-form-element_stacked slds-is-editing">
+                    <label data-filter-label
+                        class="slds-form-element__label slds-assistive-text">
+                        {filterLabel}
+                    </label>
+                    <div class="slds-form-element__control">
+                        <lightning-base-combobox
+                            data-filter
+                            dropdown-alignment="auto"
+                            input-text={filterInputText}
+                            input-icon-name="utility:down"
+                            input-icon-size="xx-small"
+                            items={filterItems}
+                            onready={handleFilterReady}
+                            onselect={handleSelectFilter}>
+                        </lightning-base-combobox>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="slds-input-has-icon slds-input-has-icon_right">
+            <div class="slds-mobile-combobox"
+                role="combobox"
+                aria-expanded="false">
+                <div class={computedLookupComboboxClass}>
+                    <!-- Icon -->
+                    <template if:false={hasFilter}>
+                        <div class="slds-mobile-combobox__addon">
+                            <lightning-icon
+                                icon-name={filterIconName}
+                                alternative-text={filterIconAlternativeText}>
+                            </lightning-icon>
+                        </div>
+                    </template>
+                    <!-- lookup -->
+                    <div class="slds-mobile-combobox__input slds-input-has-icon slds-input-has-icon_right"
+                        role="none">
+                        <lightning-input
+                            data-lookup
+                            aria-autocomplete="list"
+                            aria-controls="listbox"
+                            aria-labelled-by={mainInputLabelId}
+                            autocomplete="off"
+                            label={ariaLabel}
+                            aria-label={ariaLabel}
+                            placeholder={placeholder}
+                            type="search"
+                            value={inputText}
+                            variant="label-hidden"
+                            onchange={handleInputChange}>
+                        </lightning-input>
+                    </div>
+                </div>
+
+                 <!-- Listbox -->
+                <div class="slds-mobile-lookup__listbox_container"
+                    id="listbox"
+                    role="listbox"
+                    aria-labelledby="lookup-input-label">
+                    <template if:true={items}>
+                        <template for:each={items} for:item="item">
+                            <!-- Action Item (ex. Show All Results) -->
+                            <template if:true={item.action}>
+                                <lightning-button
+                                    class="slds-button_stretch slds-mobile-lookup__listbox_trigger"
+                                    data-value={item.value}
+                                    icon-name={item.endIconName}
+                                    icon-position="right"
+                                    key={item.value}
+                                    label={item.text}
+                                    variant="base"
+                                    onclick={handleSelected}>
+                                </lightning-button>
+                            </template>
+                            <template if:true={item.items}>
+                                <ul class="slds-mobile-lookup__listbox"
+                                    key={item.label}
+                                    role="group">
+                                    <!-- Option Heading (ex. Recent Results) -->
+                                    <template if:true={item.label}>
+                                        <li class="slds-mobile-lookup__listbox-option_heading"
+                                            role="presentation">
+                                            <div class="slds-mobile-lookup__listbox-option slds-mobile-lookup__listbox-option_heading">
+                                                <span>{item.label}</span>
+                                            </div>
+                                        </li>
+                                    </template>
+                                    <!-- Options -->
+                                    <template for:each={item.items} for:item="option">
+                                        <li data-value={option.value}
+                                            key={option.value}
+                                            role="presentation"
+                                            onclick={handleSelected}>
+                                            <div class="slds-mobile-lookup__listbox-option"
+                                                role="option">
+                                                <span class="slds-mobile-lookup__listbox_text_container">
+                                                    <!-- Option Text -->
+                                                    <span class="slds-mobile-lookup__listbox_text">
+                                                        <lightning-base-combobox-formatted-text
+                                                            text={option.text}>
+                                                        </lightning-base-combobox-formatted-text>
+                                                    </span>
+                                                    <!-- Option Sub-Text -->
+                                                    <span class="slds-mobile-lookup__listbox_meta">
+                                                        <lightning-base-combobox-formatted-text
+                                                            text={option.subText}>
+                                                        </lightning-base-combobox-formatted-text>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </template>
+                        </template>
+                    </template>
+                    <!-- Loading Indicator -->
+                    <template if:true={showActivityIndicator}>
+                        <div class="slds-mobile-lookup__listbox_loader"
+                            role="presentation" >
+                            <lightning-spinner
+                                alternative-text={i18n.loading}
+                                size="x-small">
+                            </lightning-spinner>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

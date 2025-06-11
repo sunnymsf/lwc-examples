@@ -1,0 +1,158 @@
+import StylingHooks from './inputText.hooks.mdx';
+
+### Overview
+
+Text inputs are used for single-line freeform data entry.
+
+### Use Cases
+
+Text inputs enables an implementer to capture pieces of textual data, such as names, email addresses, and search queries. These inputs may or may not be part of a larger form, and can be extended as part of a larger component.
+
+Text inputs encompasses only the following HTML Input [types](https://html.spec.whatwg.org/multipage/input.html#attr-input-type):
+
+- `text`
+- `search`
+- `tel`
+- `url`
+- `email`
+- `password`
+
+### Non-goals
+
+- Complex or composite inputs.
+- Inputs that feature non-text items, such as date or time controls.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The API design of the SDS Input Text is specific to the [HTML Input](https://html.spec.whatwg.org/multipage/input.html#the-input-element) element.
+- SDS Input Text should accept text with no line breaks.
+- The default appearance provides the basic structure of a text input.
+- The default appearance comes unbranded.
+- Styling Hooks should be used to customize the appearance.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/input/)
+- [Ant Design](https://ant.design/components/input/)
+- [Atlassian](https://atlassian.design/components/textfield/)
+- [Material](https://material.io/components/text-fields)
+- [Carbon](https://www.carbondesignsystem.com/components/text-input/usage)
+- [FAST](https://explore.fast.design/components/fast-text-field)
+- [Polaris](https://polaris.shopify.com/components/forms/text-field)
+
+---
+
+### API
+
+The API design that follows _only_ applies to the [HTML Input Element](https://html.spec.whatwg.org/multipage/input.html#the-input-element).
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-input-text` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-input-text` - This is owned by a subsystem built on SDS, e.g. `dxp-input-text`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="input-text">
+    <label part="label">
+      <slot name="label-start"></slot>
+      <slot></slot>
+      <slot name="label-end"></slot>
+    </label>
+    <div part="input-text-container">
+      <slot name="start"></slot>
+      <input part="input" />
+      <slot name="end"></slot>
+    </div>
+  </div>
+  <slot name="help-text"></slot>
+</host>
+```
+
+#### Slots
+
+| Slot Name   | Description                                                                                              | Fallback Content |
+| ----------- | -------------------------------------------------------------------------------------------------------- | ---------------- |
+| `default`   | Text content that describes the input                                                                    | empty            |
+| `start`     | Content placed prior to the user-added text, such as an icon                                             | empty            |
+| `end`       | Content placed after to the user-added text, such as an icon                                             | empty            |
+| `help-text` | Content area for additional text, such as examples of the type of required data entry, or error messages | empty            |
+
+#### Parts
+
+| Part Name         | Description                                                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `input-text`      | Enables styling for the entire component beyond Styling Hooks, falls outside the support matrix of SDS              |
+| `label`           | Enables styling for the label beyond Styling Hooks, falls outside of the support matrix of SDS                      |
+| `input-container` | Enables styling for the input and corresponding `start` and `end` slots, falls outside of the support matrix of SDS |
+| `input`           | Enables styling for the input itself beyond Styling Hooks, falls outside the support matrix of SDS                  |
+
+#### Properties & Attributes
+
+The following properties and attributes are derived from the [HTML Input specification](https://html.spec.whatwg.org/multipage/input.html#the-input-element):
+
+| Attribute      | Type     | Default Value | Description                                                                          |
+| -------------- | -------- | ------------- | ------------------------------------------------------------------------------------ |
+| `autocomplete` | `bool`   | `false`       | Hint for form autofill feature                                                       |
+| `disabled`     | `bool`   | `false`       | Whether the control is disabled                                                      |
+| `maxlength`    | `number` |               | Maximum length of value                                                              |
+| `minlength`    | `number` |               | Minimum length of value                                                              |
+| `name`         | `string` |               | Name of the element to use for form submission                                       |
+| `pattern`      | `string` |               | Pattern to be matched by the control's value                                         |
+| `placeholder`  | `string` |               | User-visible label to be placed within the control                                   |
+| `readonly`     | `bool`   | `false`       | Whether to allow the value to be edited by the user                                  |
+| `required`     | `bool`   | `false`       | Whether the control is required for form submission                                  |
+| `type`         | `string` | `text`        | Type of form control. Accepts `text`, `search`, `tel`, `url`, `email`, or `password` |
+| `value`        | `string` |               | Initial value of the control                                                         |
+| `title`        | `string` |               | Description of the `pattern` attribute                                               |
+
+#### Events
+
+| Event Name | Type | Bubbles | Composed | Cancellable | Dispatch Behavior                                                              |
+| ---------- | ---- | ------- | -------- | ----------- | ------------------------------------------------------------------------------ |
+| `input`    | none | `true`  |          | `false`     | Fires every time the `value` of the control changes (e.g., on every keystroke) |
+| `change`   | none | `true`  |          | `false`     | Fires after `value` change occurs and the input loses focus (`blur`)           |
+
+#### Styling Hooks
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States         | Initial State | Description                                                                                                                                    |
+| ----------- | -------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `focus`     | `false`        | `false`       | When the input receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+| `disabled`  | `true`/`false` | `false`       | Indicates whether the input is disabled and cannot be interacted with. When disabled, the control is not included in form validation           |
+| `readonly`  | `true`/`false` | `false`       | Controls whether or not the user can edit the form control                                                                                     |
+| `invalid`   | `true`/`false` | `false`       | Displays a style when the provided text does not meet the `pattern` Regular Expression requirements                                            |
+| `valid`     | `true`/`false` | `true`        | Displays a style when the provided text meets the `pattern` Regular Expression requirements                                                    |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) per the W3C.
+
+When interacting with the associated label via click, it should focus the related input.
+
+### Internationalization
+
+All elements of the input control (e.g., `start`/`end` slots, user-entered text, icons, etc) should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All inputs should have visual regression tests to catch any unintended modifications to the visuals.
+- All inputs should have unit tests to ensure the correct input and output of attributes, states, and events.
+- All inputs should test for color contrast combinations that, at a minimum, fulfill the requirements of WCAG 2.1.
+- All inputs should be tested across all supported devices, ensuring that modifications for mobile are taken into account.

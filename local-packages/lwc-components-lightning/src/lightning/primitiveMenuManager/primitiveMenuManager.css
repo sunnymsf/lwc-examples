@@ -1,0 +1,17 @@
+/* Resets */
+::slotted(ul),
+::slotted(ol) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Orientation */
+[part='menu'] > ::slotted(*),
+[part='menu'] > ::slotted([role='presentation']),
+[part='menu'] > ::slotted([role='group']) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Roll your own, youre on your own */

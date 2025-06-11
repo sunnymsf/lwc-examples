@@ -1,0 +1,176 @@
+import StylingHooks from './inputCheckbox.hooks.mdx';
+
+### Overview
+
+The checkbox element is a control that allows the user to select a binary "checked" state, either checked or unchecked. The checkbox also supports a second binary "indeterminate" state.
+
+### Use Cases
+
+The checkbox component is leveraged to indicate a binary state for a single selection. For example, many forms use a checkbox to indicate that a user has accepted terms of service or to opt in or out of email communications.
+
+### Non-goals
+
+- Composite checkboxes (larger components that are made up of multiple SDS components)
+- Complex checkboxes (components that use a checkbox internally but do not have a form-like look and feel, such as a toggle or [SLDS' Visual Picker](https://www.lightningdesignsystem.com/components/visual-picker/) component)
+- Customizations made outside of [Styling Hooks][styling-hooks-jump] are not supported.
+
+### Features
+
+- The API design of the SDS Checkbox is specific to the [HTML Input][input-spec] element and should not be implemented on any other HTML element. All methods and properties pertain to the HTML element as it was designed by the web platform.
+- The option to roll your own, custom indicator implementation.
+- Indeterminate IDL property and visual output handling.
+- The "default" appearance provides the basic structure of a checkbox.
+- The "default" appearance comes unbranded.
+- [Styling hooks][styling-hooks-jump] should be used to customize the appearance of the checkbox.
+- Customization beyond Styling Hooks can be achieved through the [CSS Shadow Parts API][css-shadow-parts].
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/checkbox/)
+- [Ant Design](https://ant.design/components/checkbox/)
+- [Atlassian](https://atlassian.design/components/checkbox/)
+- [Material Design](https://material.io/components/checkboxes)
+- [Carbon](https://www.carbondesignsystem.com/components/checkbox/usage)
+- [FAST](https://explore.fast.design/components/fast-checkbox)
+- [Morning Star](https://designsystem.morningstar.com/components/checkbox/)
+- [Polaris](https://polaris.shopify.com/components/forms/checkbox)
+- [Open UI](https://open-ui.org/components/checkbox)
+
+---
+
+### API
+
+The checkbox component should support all attributes, functionality, and accessibility considerations of the [HTML Input Checkbox State](<https://html.spec.whatwg.org/multipage/input.html#checkbox-state-(type=checkbox)>).
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-input-checkbox` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-input-checkbox` - This is owned by a subsystem built on SDS, e.g. `dxp-input-checkbox`
+
+### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is required to use the SDS Checkbox CSS.
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="input-checkbox">
+    <div part="checkbox">
+      <input type="checkbox" id="checkbox-id" />
+      <div part="mark">
+        <slot name="mark"></slot>
+      </div>
+    </div>
+  </div>
+  <div part="label-container">
+    <slot name="label-start"></slot>
+    <label part="label" for="checkbox-id">
+      <slot></slot>
+    </label>
+    <slot name="label-end"></slot>
+  </div>
+  <div part="help-text">
+    <slot name="help-text"></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| default     | The text content that describes the purpose of the checkbox | empty |
+| `mark` | Content to indicate the control's checked and intermediate states (most often an icon) | `<svg>` |
+| `label-start` | Content to appear before the label | empty |
+| `label-end` | Content to appear after the label | empty |
+| `help-text` | Content to provide additional information about the control | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `input-checkbox` | The container for the checkbox and label |
+| `label`     | The control's label |
+| `checkbox`  | The checkbox container |
+| `mark` | Indicates the checkbox is in a checked or indeterminate state |
+
+#### Properties & Attributes
+
+| Attribute | Type | Default Value | Description |
+| - | - | - | - |
+| `checked`       | `bool`   | `false`       | If present, the checkbox is toggled on by default |
+| `indeterminate` | `bool`   | `false`       | If present, the checkbox is in indeterminate state rather than `true` or `false` |
+| `value` | `string` | | The string to use as the value of the checkbox when submitting the form, if the checkbox is toggled on |
+| `disabled`      | `bool`   | `false`       | Prevents the user from interacting with the control |
+| `required`      | `bool`   | `false`       | Indicates that the control is invalid unless checked |
+| `name`          | `string` | `null`        | Specifies the name of the control for purposes of form submission |
+| `id`            | `string` | `null`        | The ID of the input and the value of the label's `for` attribute |
+
+
+#### Styling Hooks
+
+Use the following Styling Hooks to customize the appearance of the input checkbox component.
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description |
+| - | - | - | - |
+| `checked`       | `true/false` | `false`        | When `true`, associates the control with the parent form data and displays the control with a checked appearance if not also indeterminate. |
+| `indeterminate` | `true/false` | `false`        | When `true`, displays the control with an indeterminate appearance. |
+| `disabled`      | `true/false` | `false`        | When `true`, disables the control, preventing user interaction and displaying the control with a disabled appearance |
+| `required`      | `true/false` | `false`        | When `true`, applies the required attribute to the checkbox |
+
+### Accessibility
+
+#### General Usage
+
+The checkbox component should conform to the [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-1/checkbox-1.html) for checkboxes.
+
+#### Keyboard
+
+Keyboard users can operate the checkbox as follows:
+
+- The checkbox is eligible for document focus.
+- The checkbox can be the target of `click` events (when not `disabled`) either through mouse click, user tap, or keyboard <kbd>space</kbd> key press.
+
+#### Form input
+
+Control is eligible for all native form capabilities including:
+
+- Form submission
+- Form validation
+- Form state restoration
+
+#### Use with Assistive Technology
+
+Implements the [checkbox role](https://www.w3.org/TR/wai-aria-1.1/#checkbox) per the [HTML AAM spec](https://www.w3.org/TR/html-aam-1.0/#html-element-role-mappings).
+
+### Internationalization
+
+All slotted content inside the checkbox should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All checkboxes should have visual regression tests to catch any unintended modifications to the visuals of the checkbox
+- All checkboxes should have unit tests to ensure behavior and functionality works as intended
+
+[styling-hooks-jump]: #styling-hooks
+[input-spec]: https://html.spec.whatwg.org/multipage/input.html#the-input-element
+[checkbox-spec]: https://html.spec.whatwg.org/multipage/input.html#checkbox-state-(type=checkbox)
+[css-shadow-parts]: https://drafts.csswg.org/css-shadow-parts/
+[namespace-service]: https://github.com/salesforce-experience-platform-emu/salesforce-design-system/blob/main/packages/sds-namespaces/src/namespaces.js
+
+### Open Questions
+
+- What is the term to define our 'error' states?
+- May not pertain to checkbox but how do we handle error messages or help text? Included in component or treated as separate component?
+- Larger question of how we will structure our form approach when dealing with the shadow DOM?

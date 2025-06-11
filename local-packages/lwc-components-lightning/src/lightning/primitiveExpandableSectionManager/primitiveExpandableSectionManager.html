@@ -1,0 +1,11 @@
+<template>
+  <div
+    part="expandable-section"
+    onclick={handleClick}
+    onkeydown={handleKeyDown}
+    onchange={handleChange}
+    open={open}
+  >
+    <slot onslotchange={handleSlotChange}></slot>
+  </div>
+</template>

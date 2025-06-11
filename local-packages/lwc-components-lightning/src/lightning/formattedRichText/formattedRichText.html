@@ -1,0 +1,8 @@
+<template>
+    <template lwc:if={rawTextIfSanitizerThrewError}>
+        <span part="formatted-rich-text">{rawTextIfSanitizerThrewError}</span>
+    </template>
+     <template lwc:else>
+        <span lwc:inner-html={richText} part="formatted-rich-text"></span>
+     </template>
+</template>

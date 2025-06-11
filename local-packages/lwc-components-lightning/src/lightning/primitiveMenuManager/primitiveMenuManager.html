@@ -1,0 +1,14 @@
+<template>
+  <div
+    part="menu"
+    role="menu"
+    aria-labelledby={ariaLabelledBy}
+    aria-label={ariaLabel}
+    tabindex="0"
+    onkeydown={onMenuKeydown}
+    onfocus={handleFocus}
+    aria-orientation="vertical"
+  >
+    <slot onslotchange={handleSlotChange}></slot>
+  </div>
+</template>

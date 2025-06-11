@@ -1,0 +1,136 @@
+### Overview
+
+A listbox presents a list of options and allows a user to select one or more of them. A listbox that allows a single option to be chosen is a single-select listbox; one that allows multiple options to be selected is a multi-select listbox.
+
+### Use Cases
+
+A listbox enables an implementer to select item(s) used to perform action. The listbox may or may not be part of a larger form, and can be extended as part of a larger component.
+
+### Non-goals
+
+- Options themselves cannot contain any interactive elements. For example, there cannot be a button, link or input within an option
+- Option names are flattened strings and should not contain any formatting, semantics or hierarchy that is a requirement for understanding the options meaning
+- Options cannot be required
+- Customizations can be made through Light DOM styling with CSS and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+
+### Features
+
+- The API design of the SDS Listbox Manager is specific to the [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/) specification.
+- Manager will automatically upgrade the HTML passed through the slot if contracts are met. If contracts are not met, the HTML will be ignored and a warning will be logged to the console.
+- Full keyboard navigation support for single and multi-select listboxes
+- Full screen reader support for single and multi-select listboxes
+- Listbox options can be grouped, with a label for each group
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/accessibility/patterns/listbox/)
+- [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)
+
+---
+
+### API
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-listbox-manager` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-listbox-manager` - This is owned by a subsystem built on SDS, e.g. `dxp-listbox-manager`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="listbox">
+    <slot></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| `default` |  | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `listbox` | Enables styling for the containing listbox |
+
+#### Contracts
+
+The following contracts must be met for the SDS Listbox Manager to upgrade the HTML passed through the slot:
+
+- All options must have a unique `id` attribute
+- A containing parent element with children, which will be the the list options is valid but must be:
+  - `div`
+  - `ul`
+  - `ol`
+- The list of options inside the containing parent element must be:
+  - `span` or `div` when inside a `div` parent
+  - `li` when inside a `ul` or `ol` parent
+- No nesting beyond one level of `div` or `li` elements
+- No interactive elements within the options
+- If multiple option groups are detected, you are required to have an option group label.
+  - The direct descendant of the group must be a semantically correct element based on the parent, ie, an `li` in a `ul`, with `role="presentation"` and a unique `id` attribute
+- If you need to associate the listbox with a label, you must use the `aria-labelledby` attribute on the listbox element and reference the label's `id` attribute
+- If no label is provided, the listbox will be labeled with the `aria-label` attribute
+
+#### Properties & Attributes
+
+The following properties and attributes are derived from the [WIA Aria specification](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/):
+
+| Attribute | Type | Options | Default Value | Description |
+| - | - | - | - | - |
+| `multiselect` | `bool` | `true`/`false` | `false` | Listbox can select multiple options |
+| `navigate` | `enum` | `select`/`focus` | `select` | When navigating the listbox, sets if aria-activedescendant should be focused or selected|
+| `orientation` | `enum` | `vertical`/`horizontal` | `vertical` | Sets the directional orientation of the listbox |
+| `aria-labelledby` | `string` | | | Refers to the element containing the listbox label. |
+| `aria-label` | `string` | | | When no visible label is present, value that describes the content of the listbox. |
+| `aria-setsize` | `number` | | | For long list of options, the number of options in the listbox |
+| `aria-posinset` | `number` | | | The current position in the current set of list items. |
+| `aria-selected` | `bool` | `true`/`false` | `false` | Indicates that the option is selected |
+| `aria-activedescendant` | `string` | | | Refers to the currently active option in the listbox. |
+| `disabled` | `bool` | `true`/`false` | `false` | Indicates that the listbox is disabled and cannot be interacted with. When disabled, the control is not included in form validation. |
+
+#### Events
+
+| Event Name | Type | Bubbles | Composed | Cancellable | Dispatch Behavior |
+| - | - | - | - | - | - |
+| `listboxregister` | `CustomEvent` | `false` | `false` | `false` | Fires when the listbox is registered |
+| `selectionchange` | `CustomEvent` | `false`  | | `false` | Fires when the selected option(s) changes|
+
+#### Methods
+| Method Name | Parameters | Description |
+| - | - | - |
+| `focus` | | Focuses the listbox |
+| `clearSelected` | | Clears all selected options |
+| `filterListbox` | String | Filters the listbox options based on the provided string |
+| `handleListboxKeyboardNavigation` | KeyboardEvent | Handles keyboard navigation for the listbox |
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description |
+| - | - | - | - |
+| `focus` | `false` | `false` | When the listbox receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+| `disabled` | `true`/`false` | `false` | Indicates whether the listbox is disabled and cannot be interacted with. When disabled, the control is not included in form validation |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/#wai-ariaroles,states,andproperties) per the W3C.
+
+The listbox adheres to the ARIA guidance on [keyboard navigation](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/#keyboardinteraction).
+
+### Test Plan
+
+- All listbox should have visual regression tests to catch any unintended modifications to the visuals.
+- All listbox should have unit tests to ensure the correct input and output of attributes, states, and events.
+- All inputs should be tested across all supported devices, ensuring that modifications for mobile are taken into account.

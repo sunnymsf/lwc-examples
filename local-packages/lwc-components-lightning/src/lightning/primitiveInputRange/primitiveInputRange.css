@@ -1,0 +1,304 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * Input container
+ * ---
+ * The Input Control Container holds the `start` and `end` slot contents, as well as the input control itself
+ */
+[part~='input-container'] {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-c-inputrange-spacing-gap, var(--sds-s-input-spacing-gap));
+  border: var(--sds-c-inputrange-sizing-border, var(--sds-s-input-sizing-border)) solid
+    var(--sds-c-inputrange-color-border, var(--sds-s-input-color-border));
+  border-radius: var(--sds-c-inputrange-radius-border, var(--sds-s-input-radius-border));
+  padding-inline-start: var(
+    --sds-c-inputrange-spacing-inlinestart,
+    var(--sds-c-inputrange-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputrange-spacing-inlineend,
+    var(--sds-c-inputrange-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputrange-spacing-blockstart,
+    var(--sds-c-inputrange-spacing-block, var(--sds-s-input-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputrange-spacing-blockend,
+    var(--sds-c-inputrange-spacing-block, var(--sds-s-input-spacing))
+  );
+  font-size: var(--sds-c-inputrange-font-size, var(--sds-s-input-font-size));
+  background: var(--sds-c-inputrange-color-background, var(--sds-s-input-color-background));
+  box-shadow: var(--sds-c-inputrange-shadow, var(--sds-s-input-shadow));
+  color: var(--sds-c-inputrange-text-color, var(--sds-s-input-color));
+}
+
+/**
+ * Input Control
+ * ---
+ * The input control contains the slider track and the thumb control
+ * We normalize the input since styles are being hoisted to the input-container element
+ */
+[part~='input'] {
+  /* Check for support for the color-mix function */
+  @supports (background: color-mix(in srgb, currentcolor 35%, white)) {
+    --sds-c-inputrange-track-color: color-mix(in srgb, currentcolor 35%, white);
+  }
+
+  /* If the color-mix fn is not supported, fallback to gray */
+  --sds-c-inputrange-track-color: #a6a6a6;
+
+  appearance: none;
+  cursor: pointer;
+  height: var(
+    --sds-c-inputrange-track-sizing-height,
+    var(--sds-c-inputrange-track-sizing, var(--sds-s-input-sizing, 0.25rem))
+  );
+  width: var(
+    --sds-c-inputrange-track-sizing-width,
+    var(--sds-c-inputrange-track-sizing, var(--sds-s-input-sizing))
+  );
+  border-radius: var(--sds-c-inputrange-track-radius-border, var(--sds-s-input-radius-border));
+  /* stylelint-disable */
+  color: var(--sds-c-inputrange-track-color-fill, var(--sds-s-input-color));
+  /* stylelint-enable */
+}
+
+/**
+ * Remove the default focus outline
+ */
+[part~='input']:focus {
+  outline: none;
+
+  /* stylelint-disable */
+  --sds-c-inputrange-track-color-fill: var(
+    --sds-c-inputrange-track-color-fill-focus,
+    var(--sds-s-input-color-fill-focus)
+  );
+  /* stylelint-enable */
+}
+
+[part~='input']::-webkit-slider-thumb {
+  appearance: none;
+  height: var(
+    --sds-c-inputrange-thumb-sizing-height,
+    var(--sds-c-inputrange-thumb-sizing, var(--sds-s-input-sizing, 1rem))
+  );
+  width: var(
+    --sds-c-inputrange-thumb-sizing-width,
+    var(--sds-c-inputrange-thumb-sizing, var(--sds-s-input-sizing, 1rem))
+  );
+  border: var(--sds-c-inputrange-thumb-sizing-border, var(--sds-s-input-sizing-border, 1px)) solid
+    var(--sds-c-inputrange-thumb-color-border, var(--sds-s-input-color-border, currentColor));
+  border-radius: var(--sds-c-inputrange-thumb-radius-border, var(--sds-s-input-radius-border));
+  background: var(--sds-c-inputrange-thumb-color-background, var(--sds-s-input-color-background, white));
+  box-shadow: var(--sds-c-inputrange-thumb-shadow, var(--sds-s-input-shadow));
+}
+
+input[type='range']:focus::-webkit-slider-thumb {
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+  --sds-c-inputrange-thumb-color-background: var(
+    --sds-c-inputrange-thumb-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-inputrange-thumb-shadow: var(
+    --sds-c-inputrange-thumb-shadow-focus,
+    var(--sds-s-input-shadow-focus, revert)
+  );
+}
+
+input[type='range']:hover::-webkit-slider-thumb {
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-hover,
+    var(--sds-s-input-color-border-hover, revert)
+  );
+  --sds-c-inputrange-thumb-color-background: var(
+    --sds-c-inputrange-thumb-color-background-hover,
+    var(--sds-s-input-color-background-hover, revert)
+  );
+  --sds-c-inputrange-thumb-shadow: var(
+    --sds-c-inputrange-thumb-shadow-hover,
+    var(--sds-s-input-shadow-hover, revert)
+  );
+}
+
+input[type='range']:active::-webkit-slider-thumb {
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-active,
+    var(--sds-s-input-color-border-active, revert)
+  );
+  --sds-c-inputrange-thumb-color-background: var(
+    --sds-c-inputrange-thumb-color-background-active,
+    var(--sds-s-input-color-background-active, revert)
+  );
+  --sds-c-inputrange-thumb-shadow: var(
+    --sds-c-inputrange-thumb-shadow-active,
+    var(--sds-s-input-shadow-active, revert)
+  );
+}
+
+[part~='input']::-moz-range-thumb {
+  appearance: none;
+  height: var(
+    --sds-c-inputrange-thumb-sizing-height,
+    var(--sds-c-inputrange-thumb-sizing, var(--sds-s-input-sizing, 1rem))
+  );
+  width: var(
+    --sds-c-inputrange-thumb-sizing-width,
+    var(--sds-c-inputrange-thumb-sizing, var(--sds-s-input-sizing, 1rem))
+  );
+  border: var(--sds-c-inputrange-thumb-sizing-border, var(--sds-s-input-sizing-border, 1px)) solid
+    var(--sds-c-inputrange-thumb-color-border, var(--sds-s-input-color-border, currentColor));
+  border-radius: var(--sds-c-inputrange-thumb-radius-border, var(--sds-s-input-radius-border));
+  background: var(--sds-c-inputrange-thumb-color-background, var(--sds-s-input-color-background, white));
+  box-shadow: var(--sds-c-inputrange-thumb-shadow, var(--sds-s-input-shadow));
+}
+
+input[type='range']:focus::-moz-range-thumb {
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+  --sds-c-inputrange-thumb-color-background: var(
+    --sds-c-inputrange-thumb-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-inputrange-thumb-shadow: var(
+    --sds-c-inputrange-thumb-shadow-focus,
+    var(--sds-s-input-shadow-focus, revert)
+  );
+}
+
+input[type='range']:hover::-moz-range-thumb {
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-hover,
+    var(--sds-s-input-color-border-hover, revert)
+  );
+  --sds-c-inputrange-thumb-color-background: var(
+    --sds-c-inputrange-thumb-color-background-hover,
+    var(--sds-s-input-color-background-hover, revert)
+  );
+  --sds-c-inputrange-thumb-shadow: var(
+    --sds-c-inputrange-thumb-shadow-hover,
+    var(--sds-s-input-shadow-hover, revert)
+  );
+}
+
+input[type='range']:active::-moz-range-thumb {
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-active,
+    var(--sds-s-input-color-border-active, revert)
+  );
+  --sds-c-inputrange-thumb-color-background: var(
+    --sds-c-inputrange-thumb-color-background-active,
+    var(--sds-s-input-color-background-active, revert)
+  );
+  --sds-c-inputrange-thumb-shadow: var(
+    --sds-c-inputrange-thumb-shadow-active,
+    var(--sds-s-input-shadow-active, revert)
+  );
+}
+
+/**
+ * Label Container
+ * ---
+ * The container for the label and its adjacent slots, label-start and label-end
+ */
+[part='label-container'] {
+  display: inline-flex;
+  align-items: center;
+
+  /* Need to tweak stylelint to merge new shared groups into existing set, label is not available */
+  gap: var(--sds-c-inputrange-label-spacing-gap, var(--sds-s-label-spacing-gap));
+  padding-inline-start: var(
+    --sds-c-inputrange-label-spacing-inlinestart,
+    var(--sds-c-inputrange-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputrange-label-spacing-inlineend,
+    var(--sds-c-inputrange-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputrange-label-spacing-blockstart,
+    var(--sds-c-inputrange-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputrange-label-spacing-blockend,
+    var(--sds-c-inputrange-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  color: var(--sds-c-inputrange-label-color, var(--sds-s-label-color));
+}
+
+[part='label'] {
+  font-size: var(--sds-c-inputrange-label-font-size, var(--sds-s-label-font-size));
+  font-weight: var(--sds-c-inputrange-label-font-weight, var(--sds-s-label-font-weight));
+}
+
+/**
+ * Help text
+ * ---
+ * "visible" gets added when the slotchange confirms there are children
+ * This prevents box-model customizations from being applied, in the case of no children
+ */
+[part='help-text visible'] {
+  /* Need to tweak stylelint to merge new shared groups into existing set, helptext is not available */
+  font-size: var(--sds-c-inputrange-helptext-font-size, var(--sds-s-helptext-font-size));
+  color: var(--sds-c-inputrange-helptext-text-color, var(--sds-s-helptext-color));
+  padding-inline-start: var(
+    --sds-c-inputrange-helptext-spacing-inlinestart,
+    var(--sds-c-inputrange-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputrange-helptext-spacing-inlineend,
+    var(--sds-c-inputrange-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputrange-helptext-spacing-blockstart,
+    var(--sds-c-inputrange-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputrange-helptext-spacing-blockend,
+    var(--sds-c-inputrange-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+}
+
+/**
+ * Disabled state
+ */
+:host([disabled]) {
+  --sds-c-inputrange-text-color: var(
+    --sds-c-inputrange-text-color-disabled,
+    var(--sds-s-input-text-color-disabled)
+  );
+  /* stylelint-disable */
+  --sds-c-inputrange-track-color-fill: var(
+    --sds-c-inputrange-track-color-fill-disabled,
+    var(--sds-s-input-color-background-disabled)
+  );
+  /* stylelint-enable */
+  --sds-c-inputrange-thumb-color-border: var(
+    --sds-c-inputrange-thumb-color-border-disabled,
+    var(--sds-s-input-thumb-color-border-disabled)
+  );
+}
+
+/**
+ * If told, the label will be hidden from view
+ */
+:host([label-hidden]) [part='label-container'] {
+  position: absolute !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}

@@ -1,0 +1,118 @@
+import { Meta, Story } from '@storybook/blocks';
+
+<Meta title="SDS Resets/Common Resets" />
+
+## Common Resets
+
+Use the common reset CSS within shadow trees or application documents. Given that few CSS properties inherently transition into a shadow tree, normalization is achieved by importing these common resets. The intent is to standardize HTML types and establish defaults for common pseudo-states and elements, ensuring consistent rendering across browsers and devices. Some styles have been deliberately chosen for consistency.
+
+## Opinionated Normalizations
+
+Below is a list of opinionated normalizations that are applied to the document root and shadow trees.
+
+### Margin Removal
+
+Default margins from elements like headings and paragraphs are removed to ensure uniform element spacing.
+
+```css
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre,
+form {
+  margin: 0;
+}
+```
+
+### Heading Defaults
+
+To accommodate varied Salesforce platform experiences, font sizing is reset to the browser's base font size.
+
+```css
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+```
+
+### List Defaults
+
+Both ordered and unordered lists are unstyled, devoid of bullets/numbers, margin, or padding.
+
+```css
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+```
+
+### Image Constraints
+
+Images and videos adapt to the parent width while maintaining their aspect ratio, ensuring they remain within their containers.
+
+```css
+img,
+[type='image'] {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+## Inheritable Properties
+
+As of CSS level 2 specification, here's the properties that can be inherited through a shadow root from the document root.
+
+> aural-oriented properties have been removed since they don't composite a painted layer.
+
+- `border-collapse`
+- `border-spacing`
+- `caption-side`
+- `color`
+- `cursor`
+- `direction`
+- `empty-cells`
+- `font`
+- `font-family`
+- `font-size`
+- `font-style`
+- `font-variant`
+- `font-weight`
+- `font-size-adjust`
+- `font-stretch`
+- `letter-spacing`
+- `line-height`
+- `list-style`
+- `list-style-image`
+- `list-style-position`
+- `list-style-type`
+- `orphans`
+- `quotes`
+- `text-align`
+- `text-align-last`
+- `text-decoration-color`
+- `text-indent`
+- `text-justify`
+- `text-shadow`
+- `text-transform`
+- `visibility`
+- `white-space`
+- `widows`
+- `word-break`
+- `word-spacing`
+- `word-wrap`

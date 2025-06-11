@@ -1,0 +1,390 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * sldsFormElementUtils.css and form-element.css have many similarities
+ * however, they are used for very different use cases, and this is why
+ * they both exist, separate of each other. the 2 files are not 1:1.
+ *
+ * sldsFormElementUtils.css is used by customers (external) to get the
+ * specific layout styles that are provided by the form element blueprint
+ * https://www.lightningdesignsystem.com/components/form-element/
+ * there are no part attribute rules in this file
+ * the main use case of this utility is LightningModal for styling
+ * form layout for Form Element variants: Stacked, Horizontal, Compound
+ * sldsFormElementUtils.css is imported by customers via LWC CSS files:
+ * @import 'lightning/sldsFormElementUtils';
+ *
+ * form-element.css is used for inclusion by LBC engineers (internal)
+ * in many of our lightning-input components, and is written with
+ * part attributes in mind. Some unneeded form element blueprint sections
+ * are not included in form-element.css, but could be added as needed later
+ *
+ * **NOTE:** If you are updating this file, also check form-element.css
+ * for any needed updates to keep these files in sync
+ */
+
+@supports (--styling-hooks: '') {
+
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* --------------------------------------- */
+    /* FORM ELEMENT: BASE */
+
+    .slds-form-element {
+        position: relative;
+        min-width: 0;
+    }
+
+    .slds-form-element__label {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        display: inline-block;
+        color: var(--sds-g-color-neutral-base-30, #444444);
+        font-size: var(--sds-g-font-scale-neg-3, 0.75rem);
+        padding-inline-end: var(--sds-g-spacing-2, 0.5rem);
+        padding-block-start: var(--sds-g-spacing-1, 0.25rem);
+        margin-block-end: calc(var(--sds-g-spacing-1, 0.25rem) / 2);
+    }
+
+    [dir=rtl] .slds-form-element__label {
+        padding-inline-end: 0;
+        padding-inline-start: var(--sds-g-spacing-2, 0.5rem);
+    }
+
+    .slds-form-element__label:empty {
+        margin: 0;
+    }
+
+    .slds-form-element__control {
+        clear: left;
+        position: relative;
+    }
+
+    [dir=rtl] .slds-form-element__control {
+        clear: right;
+    }
+
+    .slds-form-element__control .slds-radio,
+    .slds-form-element__control .slds-checkbox {
+        display: block;
+    }
+
+    .slds-form-element__icon {
+        display: inline-block;
+        position: relative;
+        padding-block-start: var(--sds-g-spacing-1, 0.25rem);
+        vertical-align: top;
+        line-height: var(--sds-g-font-lineheight-1, 1);
+        z-index: 1;
+    }
+
+    .slds-form-element__icon .slds-button_icon {
+        position: relative;
+    }
+
+    .slds-form-element__help,
+    .slds-form-element__helper {
+        font-size: var(--sds-g-font-scale-neg-2, 0.75rem);
+        margin-block-start: calc(var(--sds-g-spacing-1, 0.25rem) / 2);
+        display: block;
+    }
+
+    .slds-form-element_edit .slds-form-element__static {
+        width: calc(100% - var(--sds-g-sizing-7, 1.5rem));
+    }
+
+    .slds-form-element_readonly {
+        flex-basis: 0%;
+        border-bottom: var(--sds-g-sizing-border-1, 1px) solid var(--sds-g-color-neutral-base-90, #e5e5e5);
+        margin-block-end: 0;
+    }
+
+    .slds-form-element_readonly .slds-form-element__control {
+        padding-block-start: calc(var(--sds-g-spacing-1, 0.25rem) / 2);
+        padding-block-end: calc(var(--sds-g-spacing-1, 0.25rem) / 2);
+    }
+
+    .slds-form-element_readonly .slds-form-element__label {
+        margin-block-end: 0;
+    }
+
+    .slds-form-element__legend {
+        font-weight: var(--sds-g-font-weight-7, 700);
+        float: left;
+    }
+
+    [dir=rtl] .slds-form-element__legend {
+        float: right;
+        padding-inline-end: 0;
+    }
+
+    .slds-form-element__addon {
+        display: inline-block;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: var(--sds-g-spacing-2, 0.5rem);
+        margin-inline-end: var(--sds-g-spacing-2, 0.5rem);
+        align-self: center;
+    }
+
+    .slds-form-element__static {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        display: inline-block;
+        font-size: var(--sds-g-font-scale-neg-1, 0.875rem);
+        font-weight: var(--sds-g-font-weight-4, 400);
+        color: var(--sds-g-color-neutral-base-10, #181818);
+        width: 100%;
+    }
+
+    .slds-form-element__static.slds-text-longform *:last-child {
+        margin-block-end: 0;
+    }
+
+    .slds-form-element__static:empty {
+        min-height: calc(var(--sds-g-sizing-6, 1.25rem) + 1px);
+        vertical-align: bottom;
+    }
+
+    .slds-form-element__static--edit {
+        width: calc(100% - var(--sds-g-sizing-7, 1.5rem));
+    }
+
+    .slds-required {
+        color: var(--sds-g-color-error-1, #ea001e);
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: calc(var(--sds-g-spacing-1, 0.25rem) / 2);
+        margin-inline-end: calc(var(--sds-g-spacing-1, 0.25rem) / 2);
+    }
+
+    .slds-has-error .slds-form-element__help,
+    :host([invalid]) .slds-form-element__help {
+        color: var(--sds-g-color-error-1, #ea001e);
+    }
+
+    /* --------------------------------------- */
+    /* FORM ELEMENT: STACKED */
+
+    .slds-form-element_stacked {
+        display: block;
+    }
+
+    .slds-form-element_stacked:not(.slds-form-element_readonly) {
+        margin-block-end: var(--sds-g-spacing-2, 0.5rem);
+    }
+
+    .slds-form-element_stacked:not(.slds-is-editing) {
+        padding: 0 var(--sds-g-spacing-1, 0.25rem);
+    }
+
+    .slds-form-element_stacked:not([class*=slds-size]) {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .slds-form-element_stacked .slds-form-element {
+        padding: 0;
+        margin-block-end: 0;
+    }
+
+    .slds-form-element_stacked .slds-checkbox,
+    .slds-form-element_stacked .slds-radio {
+        display: block;
+    }
+
+    .slds-form-element_stacked .slds-form-element__label,
+    .slds-form-element_stacked .slds-form-element__control {
+        border-bottom: 0;
+        padding-inline-start: 0;
+    }
+
+    .slds-form-element_stacked .slds-form-element__control {
+        width: 100%;
+        flex-basis: 100%;
+        clear: left;
+    }
+
+    [dir=rtl] .slds-form-element_stacked .slds-form-element__control {
+        clear: right;
+    }
+
+    .slds-form-element_stacked .slds-form-element__icon {
+        float: none;
+        padding-block-start: var(--sds-g-spacing-1, 0.25rem);
+    }
+
+
+    /* --------------------------------------- */
+    /* FORM ELEMENT: HORIZONTAL */
+
+    .slds-form-element_horizontal {
+        display: block;
+    }
+
+    .slds-form-element_horizontal:not(.slds-form-element_readonly) {
+        margin-block-end: var(--sds-g-spacing-2, 0.5rem);
+    }
+
+    .slds-form-element_horizontal:not([class*=slds-size]) {
+        width: 100%;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .slds-form-element_horizontal:not(.slds-is-editing) {
+        padding: var(--sds-g-spacing-1, 0.25rem) var(--sds-g-spacing-1, 0.25rem);
+    }
+
+    .slds-form-element_horizontal .slds-form-element {
+        padding: 0;
+        margin-block-end: 0;
+    }
+
+    .slds-form-element_horizontal.slds-is-edited {
+        padding-inline-start: calc(var(--sds-g-spacing-1, 0.25rem) * 5);
+    }
+
+    @media (min-width: 48em) {
+        .slds-form-element_horizontal.slds-form-element_1-col .slds-form-element__label {
+            max-width: calc((50% - 33%) - calc(var(--sds-g-spacing-1, 0.25rem) * 5));
+        }
+
+        .slds-form-element_horizontal.slds-form-element_1-col .slds-form-element__control {
+            padding-inline-start: calc((50% - 33.333%) - var(--sds-g-spacing-2, 0.5rem));
+        }
+
+        .slds-form-element_horizontal .slds-form-element__label {
+            float: left;
+            max-width: calc(33% - calc(var(--sds-g-spacing-1, 0.25rem) * 5));
+            flex-basis: calc(33% - calc(var(--sds-g-spacing-1, 0.25rem) * 5));
+            margin-block-end: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .slds-form-element_horizontal .slds-form-element__control {
+            padding-inline-start: 33%;
+            clear: none;
+        }
+
+        .slds-form-element_horizontal .slds-form-element__control .slds-form-element__control {
+            padding-inline-start: 0;
+        }
+
+        .slds-form-element_horizontal .slds-form-element__icon {
+            float: left;
+            padding-block-start: var(--sds-g-spacing-1, 0.25rem);
+        }
+
+        .slds-form-element_horizontal .slds-checkbox_standalone {
+            padding: var(--sds-g-spacing-1, 0.25rem) 0;
+        }
+
+        .slds-form-element_horizontal .slds-checkbox:not(.slds-checkbox_stacked) .slds-form-element__label,
+        .slds-form-element_horizontal .slds-radio .slds-form-element__label {
+            position: relative;
+            float: none;
+            max-width: 100%;
+            width: auto;
+        }
+
+        .slds-form-element_horizontal .slds-form-element__row .slds-form-element__label,
+        .slds-form-element_horizontal .slds-form-element__row .slds-form-element__control,
+        .slds-form-element_horizontal .slds-dueling-list__column .slds-form-element__label {
+            width: auto;
+            max-width: 100%;
+            flex-basis:auto;
+            float:none;
+            position: relative;
+            padding-inline-start: 0;
+            margin-block-end: 0;
+        }
+
+        .slds-form-element_horizontal .slds-dueling-list {
+            clear: none;
+        }
+
+        .slds-form-element_horizontal .slds-input-has-icon_left .slds-input__icon {
+            inset-inline-start: calc(33% + 0.75rem);
+        }
+
+        .slds-form-element_horizontal .slds-input-has-icon_left-right .slds-input__icon_left {
+            inset-inline-start: calc(33% + 0.75rem);
+        }
+    }
+
+    .slds-form-element_horizontal .slds-form-element__help {
+        margin-inline-start: 33%;
+    }
+
+    /* --------------------------------------- */
+    /* FORM ELEMENT: COMPOUND */
+
+    .slds-form-element_compound .slds-form-element__row {
+        display: flex;
+        margin-block-end: var(--sds-g-spacing-1, 0.25rem);
+        margin-inline-start: calc(var(--sds-g-spacing-1, 0.25rem) * -1);
+        margin-inline-end: calc(var(--sds-g-spacing-1, 0.25rem) * -1);
+    }
+
+    .slds-form-element_compound .slds-form-element__row .slds-form-element__label {
+        padding-block-start: 0;
+    }
+
+    .slds-form-element_compound .slds-form-element {
+        padding-inline-start: var(--sds-g-spacing-1, 0.25rem);
+        padding-inline-end: var(--sds-g-spacing-1, 0.25rem);
+    }
+
+    .slds-form-element_address .slds-form-element__row {
+        align-items: flex-end;
+    }
+
+    /* --------------------------------------- */
+    /* FORM ELEMENT: Record Detail */
+
+    .slds-form__row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline-start: calc(var(--sds-g-spacing-1, 0.25rem) * -3);
+        margin-inline-end: calc(var(--sds-g-spacing-1, 0.25rem) * -3);
+    }
+
+    .slds-form__item {
+        display: flex;
+        flex: 1 1 0%;
+        min-width: 280px;
+        padding-inline-start: var(--sds-g-spacing-3, 0.75rem);
+        padding-inline-end: var(--sds-g-spacing-3, 0.75rem);
+    }
+
+    .slds-is-edited {
+        background: var(--slds-g-color-palette-yellow-90, #faffbd);
+    }
+
+    .slds-is-edited .slds-form-element__undo {
+        inset-block-start: calc(var(--sds-g-spacing-1, 0.25rem) * -5);;
+        inset-inline-end: var(--sds-g-spacing-1, 0.25rem);
+    }
+
+    .slds-form-element__undo {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+    }
+
+    /* --------------------------------------- */
+    /* lightning-modal-footer Button fix */
+
+    lightning-modal-footer lightning-button:not(:first-child) {
+        margin-inline-start: var(--sds-g-spacing-2, 0.5rem);
+    }
+}

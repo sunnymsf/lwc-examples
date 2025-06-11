@@ -1,0 +1,137 @@
+import StylingHooks from './container.hooks.mdx';
+
+### Overview
+
+A container is a flexible, presentational container of related content and actions. The container has no semantic meaning by default, but you can configure its role to fit your context.
+
+### Use Cases
+
+The container accommodates several use-cases:
+
+- The container helps summarize the content of a more extensive subject and drives visitors to the complete source. It acts as a self-contained composition within a document.
+- The container acts as a presentational, consistently styled container of related elements and actions.
+- The container can represet different many different semantic roles through the [`role` attribute](#roles).
+- A group of containers forms a relationship among the collection of containers.
+
+### Non-goals
+
+- The container is not an all-in-one or highly opinionated solution that attempts to cover the broad, unpredictable usage of containers. It aims to support the Salesforce domain overlaps but provides enough flexibility to handle most customization scenarios.
+- Customizations made outside of [Styling Hooks](#styling-hooks-jump) are not supported.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- Flexible composition is possible through three main slots: the `header` slot, the default slot, and the `footer` slot.
+- The API design of the container inherits [global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes). All methods and properties of the HTML element are as the web platform designed it.
+- The "default" appearance is a body that contains the primary content.
+- The "default" appearance comes unbranded.
+- [Styling hooks](#styling-hooks-jump) should be used to customize the appearance of the container.
+- Customization beyond Styling Hooks can be achieved through the [CSS Shadow Parts API](#css-shadow-parts). The addition of CSS is allowed through `::part` but falls outside the support matrix of SDS.
+
+### Prior Art/Examples
+
+- [Salesforce Design System](https://www.lightningdesignsystem.com/components/cards/)
+- [Trailhead Design System](http://th-components-stg.herokuapp.com/?path=/story/tm-tm-card-grid-a--base)
+- [Ant Design](https://ant.design/components/card/)
+- [Fast](https://explore.fast.design/components/fast-skeleton)
+- [Material Design](https://material.io/components/cards)
+- [Morningstar](https://designsystem.morningstar.com/components/card/)
+- [Polaris](https://polaris.shopify.com/components/structure/card#navigation)
+
+---
+
+### API
+
+The container component should support all [global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes) of HTML elements.
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace](#namespace-service) used as the prefix to the custom elements definition:
+
+1. `sds-container` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-container` - This is owned by a subsystem built on SDS, e.g. `dxp-container`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="container">
+    <div part="header">
+      <slot name="header-start"></slot>
+      <slot name="header"></slot>
+      <slot name="header-end"></slot>
+    </div>
+    <div part="body">
+      <slot></slot>
+    </div>
+    <div part="footer">
+      <slot name="footer"></slot>
+    </div>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name      | Description                                                               | Fallback Content |
+| -------------- | ------------------------------------------------------------------------- | ---------------- |
+| `header`       | Add custom headings and introductory elements within the `header` element | empty            |
+| `header-start` | Add custom elements before the `header` element                           | empty            |
+| `header-end`   | Add custom elements after the `header` element                            | empty            |
+| `default`      | Add the main body of content                                              | empty            |
+| `footer`       | Add actions or supplemental information about the container's content     | empty            |
+
+#### Parts
+
+| Part Name   | Description                       |
+| ----------- | --------------------------------- |
+| `container` | Main container of the component   |
+| `header`    | Container of heading elements     |
+| `body`      | Container of the body of content  |
+| `footer`    | Container for the footer elements |
+
+#### Properties & Attributes
+
+The container inherits [global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes) of HTML elements.
+
+| Attribute          | Type     | Values         | Default Value | Description                                       |
+| ------------------ | -------- | -------------- | ------------- | ------------------------------------------------- |
+| `role`             | `enum`   |                | `null`        | Defines the ARIA semantics of the container.      |
+| `aria-labelledby`  | `string` |                | `null`        | Defines the label for the `region` landmark role. |
+| `variant`          | `string` |                | `null`        | Change the appearance of the container.           |
+| `header-direction` | `enum`   | `row`,`column` | `row`         | Change the direction of the header.               |
+| `body-direction`   | `enum`   | `row`,`column` | `column`      | Change the direction of the body.                 |
+| `footer-direction` | `enum`   | `row`,`column` | `row`         | Change the direction of the footer.               |
+
+#### Styling Hooks
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+N/A
+
+### Accessibility
+
+#### Roles
+
+By default, the container does not receive an [ARIA landmark role](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/index.html). If needed, please choose the appropriate role for your container based on its semantics. For example, if your container is an essential element that navigation should access and include in the page summary, use `role="region"` and include a heading tag with a unique `id`.
+
+#### Headings
+
+More often than not, the `header` slot should include a heading tag with an appropriate heading level. I.e., `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`. The heading level depends on the container's placement within the hierarchy of the document.
+
+If the container's role is a `region`, you must provide a label that describes the region. Create an `id` on your container's top-level heading tag and pass the value of that `id` to the `aria-labelledby` attribute of the container.
+
+### Internationalization
+
+All slotted content inside the container should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All containers should have visual regression tests to catch any unintended modifications to the visuals of the container
+- All containers should have a test to catch color contrast regressions that, at a minimum, fulfill the requirements of WCAG 2.1.

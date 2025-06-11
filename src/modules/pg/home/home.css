@@ -1,0 +1,50 @@
+.app-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.heading {
+  margin: 24px 0px;
+  font-size: 24px;
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Set 3 cards in a row */
+  gap: 20px;
+  padding: 0;
+}
+
+.route-card {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  overflow: hidden; /* Ensure content does not overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text wrapping */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+}
+
+.route-link {
+  display: block;
+  color: #0070d2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  overflow: hidden; /* Ensure link does not overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.route-link:hover {
+  text-decoration: underline;
+}

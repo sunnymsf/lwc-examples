@@ -1,0 +1,20 @@
+<template>
+    <template lwc:if={enabled}>
+        <a href onclick={handleClick}>
+            <span class="slds-icon_container slds-icon-utility-call" title={i18n.clickToDial} aria-label={i18n.clickToDial}>
+                <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                    <use xlink:href={iconPath}></use>
+                </svg>
+            </span>
+            {formattedPhoneNumber}
+        </a>
+    </template>
+    <template lwc:else>
+        <span class="slds-icon_container slds-icon-utility-end_call" title={i18n.clickToDialDisabled} aria-label={i18n.clickToDialDisabled}>
+            <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                <use xlink:href={iconPath}></use>
+            </svg>
+        </span>
+        {formattedPhoneNumber}
+    </template>
+</template>

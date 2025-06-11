@@ -1,0 +1,20 @@
+<template>
+  <div
+    part="listbox"
+    role={role}
+    id={id}
+    aria-labelledby={ariaLabelledBy}
+    aria-label={ariaLabel}
+    aria-activedescendant={ariaActiveDescendant}
+    aria-orientation={orientation}
+    aria-multiselectable={multiselect}
+    aria-setsize={ariaSetSize}
+    aria-posinset={ariaPosInSet}
+    tabindex={tabIndex}
+    onkeydown={handleListboxKeyboardNavigation}
+    onfocus={handleFocus}
+    onblur={handleBlur}
+  >
+    <slot onslotchange={handleSlotChange}></slot>
+  </div>
+</template>

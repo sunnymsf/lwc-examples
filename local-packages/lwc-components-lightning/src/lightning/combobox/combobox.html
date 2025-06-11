@@ -1,0 +1,43 @@
+<template>
+    <div part="combobox">
+        <label
+            class={computedLabelClass}
+            onclick={handleLabelClicked}
+        >
+            <template if:true={required}>
+                <abbr class="slds-required" title={i18n.required}>*</abbr>
+            </template>
+            {label}
+        </label>
+        <lightning-helptext if:true={_fieldLevelHelp} content={_fieldLevelHelp} alternative-text={helptextAlternativeText}></lightning-helptext>
+
+        <div class="slds-form-element__control">
+            <lightning-base-combobox name={name}
+                autocomplete={autocomplete}
+                root-aria-node={templateRootNode}
+                required={required}
+                disabled={disabled}
+                exportparts="dropdown, option"
+                placeholder={placeholder}
+                items={_items}
+                input-text={_selectedLabel}
+                input-label={label}
+                input-icon-size="xx-small"
+                input-icon-name="utility:down"
+                show-dropdown-activity-indicator={spinnerActive}
+                dropdown-alignment={dropdownAlignment}
+                ondropdownopen={handleDropdownOpen}
+                onfocus={handleFocus}
+                onblur={handleBlur}
+                onready={handleComboboxReady}
+                onselect={handleSelect}
+                variant={variant}></lightning-base-combobox>
+        </div>
+        <div id="help-text" data-help-text class="slds-form-element__help" role="status">
+            <template if:true={_helpMessage}>
+                <span class="slds-assistive-text">{label}</span>
+            </template>
+            {_helpMessage}
+        </div>
+    </div>
+</template>

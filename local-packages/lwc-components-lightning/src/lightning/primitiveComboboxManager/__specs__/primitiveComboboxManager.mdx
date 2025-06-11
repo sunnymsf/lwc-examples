@@ -1,0 +1,116 @@
+### Overview
+
+A combobox is an input widget that has an associated popup. The popup enables users to choose a value for the input from a collection.
+
+### Use Cases
+
+Use a combobox when you want to enable users to choose a value for an input from a collection. The collection is a list of options that are displayed in the popup.
+
+### Non-goals
+
+- A combobox is not a replacement for a select. A select is a better choice when the collection is short and the options are well known.
+- A combobox is not a replacement for a text input. A text input is a better choice when the collection is long or the options are not well known.
+- If the listbox is not needed, use the [input-text](../inputText/__specs__/inputText.mdx) component instead.
+- If the listbox passed to the combobox is not wrapped in the listbox manager, the expected accessibility and functionality will not be present. It will need to be rebuilt.
+- Customizations can be made through Light DOM styling with CSS and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+- The combobox manager will not handle the following (feature will be added later):
+  - Multiple selection
+  - Inline Autocomplete
+  - Support for the following listbox types:
+    - `tree`
+    - `grid`
+    - `dialog`
+
+### Features
+
+- The API design of the SDS Combobox Manager is specific to the [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/) specification.
+- Manager will automatically upgrade the HTML passed through the slot if contracts are met. If contracts are not met, the HTML will be ignored and a warning will be logged to the console.
+- The combobox manager will automatically handle the following:
+  - Keyboard navigation
+  - Focus management
+  - Aria attributes
+  - Selection management
+  - Popup management
+  - Input management
+  - Listbox management
+  - Events
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/combobox/)
+- [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/)
+
+---
+
+### API
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-combobox-manager` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-combobox-manager` - This is owned by a subsystem built on SDS, e.g. `dxp-combobox-manager`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="combobox">
+    <slot></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| `default` |  | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `combobox` | Enables styling for the containing combobox |
+
+#### Contracts
+
+The following contracts must be met for the SDS Combobox Manager to upgrade the HTML passed through the slot:
+
+- An `id` is required on both the combobox and the listbox. It needs to be unique.
+- The element which will be the combobox requires the attribute `data-control` and the value needs to be the value of the listbox `id`.
+- The parent element containing the listbox options needs to have the attribute `role="listbox"`. This is the element that also has the `id` of the listbox.
+- When navigating or selecting options in the listbox, the current `aria-activedescendant` needs to be updated to the active option. The attribute needs to be exposed on the listbox.
+- See contracts for [SDS Listbox Manager](../listboxManager/__specs__/listboxManager.mdx) for the listbox requirements
+
+#### Properties & Attributes
+
+The following properties and attributes are derived from the [WIA Aria specification](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/):
+
+| Attribute | Type | Options | Default Value | Description |
+| - | - | - | - | - |
+| `id` | `string` |  |  | The id of the combobox |
+| `aria-haspopup` | `enum` | `listbox`,`tree`,`dialog`,`grid`  | `listbox` | Indicates that the combobox has a popup context menu or dialog. |
+| `autocomplete` | `boolean` |  | `false` | The autocomplete attribute is used to provide an indication to assistive technologies how to provide feedback, such as audio cues, for user action. |
+| `readonly` | `boolean` |  | `false` | Indicates that the combobox is not editable. Required for select only combobox. |
+| `select-mode` | `enum` | `single`,`multi` | `single` | Indicates whether the combobox is single or multi select. (only single select is supported) |
+| `value` | `string` |  |  | The value of the combobox. This is set by the listbox. |
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description |
+| - | - | - | - |
+| `focus` | `false` | `false` | When the combobox is focused. The combobox and `aria-activedescendant` of the listbox options will gain focus. |
+| `blur` | `false` | `false` | When the combobox loses focus. The currently focused combobox and listbox options will lose focus. |
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/#wai-ariaroles,states,andproperties) per the W3C.
+
+The combobox adheres to the ARIA guidance on [keyboard navigation](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/#keyboardinteraction).

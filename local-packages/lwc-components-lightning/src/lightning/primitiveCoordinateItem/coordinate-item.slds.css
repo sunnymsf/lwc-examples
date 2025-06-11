@@ -1,0 +1,47 @@
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item {
+  list-style: none;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action {
+  padding-inline: var(--slds-g-spacing-4);
+  padding-block: var(--slds-g-spacing-2);
+  width: 100%;
+  font: inherit;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action.slds-media {
+  align-items: center;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action .slds-text-link {
+  display: block;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action:hover,:host([data-render-mode="shadow"]) 
+.slds-coordinates__item-action:focus {
+  /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+  background-color: var(--slds-s-menu-item-color-background-active);
+  outline: 0;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action:hover .slds-text-link,:host([data-render-mode="shadow"]) 
+.slds-coordinates__item-action:focus .slds-text-link {
+  text-decoration: underline;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action:focus-visible,:host([data-render-mode="shadow"]) 
+.slds-coordinates__item-action:focus {
+  box-shadow: 0 0 0 2px var(--slds-g-color-brand-base-15) inset,
+    0 0 0 4px var(--slds-g-color-surface-1) inset;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action:active {
+  /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+  background-color: var(--slds-s-menu-item-color-background-active);
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__item-action[aria-pressed='true'] {
+  /* stylelint-disable-next-line sds-stylelint-plugin/styling-hooks-pattern */
+  background-color: var(--slds-s-menu-item-color-background-active);
+}

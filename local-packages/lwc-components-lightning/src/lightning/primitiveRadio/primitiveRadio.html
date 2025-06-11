@@ -1,0 +1,40 @@
+<template>
+  <div part="input-radio">
+    <div part="radio">
+      <input
+        type="radio"
+        id={id}
+        name={name}
+        value={value}
+        checked={checked}
+        onchange={handleChange}
+        onblur={handleBlur}
+        aria-invalid={invalid}
+        aria-describedby="id-help-text"
+        disabled={disabled}
+        required={required}
+        tabindex={tabIndex}
+      />
+      <div part="mark">
+        <slot name="mark">
+          <svg
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="8" cy="8" r="8" fill="currentColor" />
+          </svg>
+        </slot>
+      </div>
+    </div>
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label" for={id}>
+        <slot onslotchange={handleLabelSlotChange}></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+  </div>
+  <div class="help-text" id="id-help-text" lwc:if={invalid}>
+    {helpMessage}
+  </div>
+</template>

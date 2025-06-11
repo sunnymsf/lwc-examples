@@ -1,0 +1,27 @@
+<template>
+  <div part="label-container">
+    <slot name="label-start"></slot>
+    <div part="label" id={_labelId}>
+      <slot name="label"></slot>
+    </div>
+    <slot name="label-end"></slot>
+  </div>
+  <div part="progress-container">
+    <slot name="start"></slot>
+    <div
+      part="progress"
+      role="progressbar"
+      id={id}
+      aria-labelledby={_labelId}
+      aria-valuemin={min}
+      aria-valuemax={max}
+      aria-valuenow={value}
+      min={min}
+      max={max}
+      value={value}
+    >
+      <div part="indicator" style={indicatorValue}></div>
+    </div>
+    <slot name="end"></slot>
+  </div>
+</template>

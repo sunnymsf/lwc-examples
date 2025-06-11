@@ -1,0 +1,24 @@
+/* Resets */
+::slotted(ul),
+::slotted(ol) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Orientation */
+[aria-orientation='horizontal'],
+[aria-orientation='horizontal'] > ::slotted([role='presentation']),
+[aria-orientation='horizontal'] > ::slotted([role='group']) {
+  display: flex;
+  flex-direction: row;
+}
+
+[aria-orientation='vertical'],
+[aria-orientation='vertical'] > ::slotted([role='presentation']),
+[aria-orientation='vertical'] > ::slotted([role='group']) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Roll your own, youre on your own */

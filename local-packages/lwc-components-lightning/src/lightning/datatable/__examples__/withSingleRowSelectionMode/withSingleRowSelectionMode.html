@@ -1,0 +1,20 @@
+<template>
+    <p>Render using: {singleRowSelectionMode}</p>
+    <lightning-input
+        type="checkbox"
+        label="Use checkboxes for selection"
+        name="usecheckbox"
+        onchange={handleCheckboxChange}
+        checked={useCheckbox}
+        >
+    </lightning-input>
+    <lightning-datatable
+        key-field="id"
+        columns={columns}
+        data={data}
+        selected-rows={selectedRows}
+        single-row-selection-mode={singleRowSelectionMode}
+        row-number-offset="0"
+        max-row-selection="1">
+    </lightning-datatable>
+</template>

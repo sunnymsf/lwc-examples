@@ -1,0 +1,340 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+/**
+ * Input container
+ * ---
+ * The Input Control Container holds the `start` and `end` slot contents, as well as the input control itself
+ */
+[part~='input-container'] {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-c-inputcounter-spacing-gap, var(--sds-s-input-spacing-gap));
+  min-height: var(--sds-c-inputcounter-sizing-height, var(--sds-s-input-sizing-height));
+  padding-inline-start: var(
+    --sds-c-inputcounter-spacing-inlinestart,
+    var(--sds-c-inputcounter-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputcounter-spacing-inlineend,
+    var(--sds-c-inputcounter-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputcounter-spacing-blockstart,
+    var(--sds-c-inputcounter-spacing-block, var(--sds-s-input-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputcounter-spacing-blockend,
+    var(--sds-c-inputcounter-spacing-block, var(--sds-s-input-spacing))
+  );
+  background: var(--sds-c-inputcounter-color-background, var(--sds-s-input-color-background));
+  border-block-start: var(
+      --sds-c-inputcounter-sizing-border-blockstart,
+      var(--sds-c-inputcounter-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-color-border-blockstart,
+      var(--sds-c-inputcounter-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-inline-start: var(
+      --sds-c-inputcounter-sizing-border-inlinestart,
+      var(--sds-c-inputcounter-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-color-border-inlinestart,
+      var(--sds-c-inputcounter-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-inline-end: var(
+      --sds-c-inputcounter-sizing-border-inlineend,
+      var(--sds-c-inputcounter-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-color-border-inlineend,
+      var(--sds-c-inputcounter-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-block-end: var(
+      --sds-c-inputcounter-sizing-border-blockend,
+      var(--sds-c-inputcounter-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-color-border-blockend,
+      var(--sds-c-inputcounter-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-radius: var(--sds-c-inputcounter-radius-border, var(--sds-s-input-radius-border));
+  box-shadow: var(--sds-c-inputcounter-shadow, var(--sds-s-input-shadow));
+}
+
+/**
+ * Input Control
+ * ---
+ * The input control is the actual input element
+ * We normalize the input since styles are being hoisted to the input-container element
+ */
+[part~='input'] {
+  appearance: none;
+  /* stylelint-disable property-no-vendor-prefix */
+  -moz-appearance: textfield;
+  /* stylelint-enable property-no-vendor-prefix */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-size: var(--sds-c-inputcounter-font-size, var(--sds-s-input-font-size));
+  color: var(--sds-c-inputcounter-text-color, var(--sds-s-input-text-color));
+  line-height: 1;
+  border: none;
+  background: transparent;
+}
+
+/**
+ * Actively typing in input
+ * ---
+ * The active attribute gets applied the oninput event to inidicate the user inputting numbers
+ * This is a workaround for the lack of a :active-within selector in CSS
+ */
+:host([active]) [part~='input-container'] {
+  --sds-c-inputcounter-color-background: var(
+    --sds-c-inputcounter-color-background-active,
+    var(--sds-s-input-color-background-active)
+  );
+  --sds-c-inputcounter-color-border: var(
+    --sds-c-inputcounter-color-border-active,
+    var(--sds-s-input-color-border-active)
+  );
+  --sds-c-inputcounter-shadow: var(--sds-c-inputcounter-shadow-active, var(--sds-s-input-shadow-active));
+}
+
+/**
+ * Placeholder text
+ */
+[part~='input']::placeholder {
+  color: var(--sds-c-inputcounter-text-color-placeholder, var(--sds-s-input-text-color-placeholder));
+  font-style: var(--sds-c-inputcounter-font-style-placeholder, var(--sds-s-input-font-style-placeholder));
+}
+
+/**
+ * Input container when it receives focus-within
+ * ---
+ * Fallback order: focus > base
+ */
+[part~='input-container']:focus-within {
+  --sds-c-inputcounter-color-border: var(
+    --sds-c-inputcounter-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+  --sds-c-inputcounter-shadow: var(
+    --sds-c-inputcounter-shadow-focus,
+    var(--sds-s-input-shadow-focus, revert)
+  );
+  --sds-c-inputcounter-color-background: var(
+    --sds-c-inputcounter-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-inputcounter-text-color: var(
+    --sds-c-inputcounter-text-color-focus,
+    var(--sds-s-input-text-color-focus, revert)
+  );
+}
+
+/**
+ * Remove the default focus outline since we are hoisting those styles to the input-container using focus-within
+ */
+[part~='input']:focus {
+  outline: none;
+}
+
+/**
+ * Remove user agent styles
+ */
+[part~='input']::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+[part~='input']::-moz-number-spin-up,
+[part~='input']::-moz-number-spin-down {
+  appearance: none;
+}
+
+/**
+ * Label Container
+ * ---
+ * The container for the label and its adjacent slots, label-start and label-end
+ */
+[part='label-container'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-c-inputcounter-label-spacing-gap, var(--sds-s-label-spacing-gap));
+  padding-inline-start: var(
+    --sds-c-inputcounter-label-spacing-inlinestart,
+    var(--sds-c-inputcounter-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputcounter-label-spacing-inlineend,
+    var(--sds-c-inputcounter-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputcounter-label-spacing-blockstart,
+    var(--sds-c-inputcounter-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputcounter-label-spacing-blockend,
+    var(--sds-c-inputcounter-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  color: var(--sds-c-inputcounter-label-color, var(--sds-s-label-color));
+}
+
+[part='label'] {
+  font-size: var(--sds-c-inputcounter-label-font-size, var(--sds-s-label-font-size));
+  font-weight: var(--sds-c-inputcounter-label-font-weight, var(--sds-s-label-font-weight));
+}
+
+/**
+ * Help text
+ * ---
+ * "visible" gets added when the slotchange confirms there are children
+ * This prevents box-model customizations from being applied, in the case of no children
+ */
+[part='help-text visible'] {
+  font-size: var(--sds-c-inputcounter-helptext-font-size, var(--sds-s-helptext-font-size));
+  color: var(--sds-c-inputcounter-helptext-text-color, var(--sds-s-helptext-text-color));
+  padding-inline-start: var(
+    --sds-c-inputcounter-helptext-spacing-inlinestart,
+    var(--sds-c-inputcounter-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputcounter-helptext-spacing-inlineend,
+    var(--sds-c-inputcounter-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputcounter-helptext-spacing-blockstart,
+    var(--sds-c-inputcounter-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputcounter-helptext-spacing-blockend,
+    var(--sds-c-inputcounter-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+}
+
+/**
+ * Disabled state
+ */
+:host([disabled]) {
+  --sds-c-inputcounter-color-background: var(
+    --sds-c-inputcounter-color-background-disabled,
+    var(--sds-s-input-color-background-disabled)
+  );
+  --sds-c-inputcounter-color-border: var(
+    --sds-c-inputcounter-color-border-disabled,
+    var(--sds-s-input-color-border-disabled)
+  );
+}
+
+/**
+ * Step buttons
+ * ---
+ * The buttons that control the increase and decrease of the input value
+ */
+[part~='step'] {
+  appearance: none;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+/**
+ * Step up button
+ * ---
+ * The button that controls the increase of the input value
+ */
+[part~='step-up'] {
+  border-block-start: var(
+      --sds-c-inputcounter-stepup-sizing-border-blockstart,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepup-color-border-blockstart,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  border-inline-start: var(
+      --sds-c-inputcounter-stepup-sizing-border-inlinestart,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepup-color-border-inlinestart,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  border-inline-end: var(
+      --sds-c-inputcounter-stepup-sizing-border-inlineend,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepup-color-border-inlineend,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  border-block-end: var(
+      --sds-c-inputcounter-stepup-sizing-border-blockend,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepup-color-border-blockend,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  background: var(
+    --sds-c-inputcounter-stepup-color-background,
+    var(--sds-c-inputcounter-step-color-background, transparent)
+  );
+}
+
+/**
+ * Step down button
+ * ---
+ * The button that controls the increase of the input value
+ */
+[part~='step-down'] {
+  border-block-start: var(
+      --sds-c-inputcounter-stepup-sizing-border-blockstart,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepdown-color-border-blockstart,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  border-inline-start: var(
+      --sds-c-inputcounter-stepdown-sizing-border-inlinestart,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepdown-color-border-inlinestart,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  border-inline-end: var(
+      --sds-c-inputcounter-stepdown-sizing-border-inlineend,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepdown-color-border-inlineend,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  border-block-end: var(
+      --sds-c-inputcounter-stepdown-sizing-border-blockend,
+      var(--sds-c-inputcounter-step-sizing-border, 0)
+    )
+    solid
+    var(
+      --sds-c-inputcounter-stepdown-color-border-blockend,
+      var(--sds-c-inputcounter-step-color-border, transparent)
+    );
+  background: var(
+    --sds-c-inputcounter-stepdown-color-background,
+    var(--sds-c-inputcounter-step-color-background, transparent)
+  );
+}

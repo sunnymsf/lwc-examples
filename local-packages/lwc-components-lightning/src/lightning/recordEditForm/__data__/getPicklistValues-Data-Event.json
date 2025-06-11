@@ -1,0 +1,320 @@
+{
+  "Event": {
+    "012000000000000AAA": {
+      "EventSubtype": {
+        "controllerValues": {},
+        "defaultValue": null,
+        "eTag": "18498006a1337fa0648d9ffad2abc39c",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/EventSubtype",
+        "values": [
+          {
+            "attributes": null,
+            "label": "Event",
+            "validFor": [],
+            "value": "Event"
+          }
+        ]
+      },
+      "GroupEventType": {
+        "controllerValues": {},
+        "defaultValue": {
+          "attributes": null,
+          "label": "Non-group Event",
+          "validFor": [],
+          "value": "0"
+        },
+        "eTag": "6b2012ccf87bb7d02f9705923aa4530e",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/GroupEventType",
+        "values": [
+          {
+            "attributes": null,
+            "label": "Non-group Event",
+            "validFor": [],
+            "value": "0"
+          },
+          {
+            "attributes": null,
+            "label": "Group Event",
+            "validFor": [],
+            "value": "1"
+          },
+          {
+            "attributes": null,
+            "label": "Proposed Event",
+            "validFor": [],
+            "value": "2"
+          },
+          {
+            "attributes": null,
+            "label": "IsRecurrence2 Series Pattern",
+            "validFor": [],
+            "value": "3"
+          }
+        ]
+      },
+      "Recurrence2PatternVersion": {
+        "controllerValues": {},
+        "defaultValue": null,
+        "eTag": "fc27649f0aa662be871a78f40f7f5f84",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/Recurrence2PatternVersion",
+        "values": [
+          {
+            "attributes": null,
+            "label": "RFC 5545 v4 RRULE",
+            "validFor": [],
+            "value": "1"
+          },
+          {
+            "attributes": null,
+            "label": "RFC 5545 v4_2 RRULE",
+            "validFor": [],
+            "value": "2"
+          }
+        ]
+      },
+      "RecurrenceInstance": {
+        "controllerValues": {},
+        "defaultValue": null,
+        "eTag": "eee3ef761e4ad4cb9c2b4317ade6fdd2",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/RecurrenceInstance",
+        "values": [
+          {
+            "attributes": null,
+            "label": "1st",
+            "validFor": [],
+            "value": "First"
+          },
+          {
+            "attributes": null,
+            "label": "2nd",
+            "validFor": [],
+            "value": "Second"
+          },
+          {
+            "attributes": null,
+            "label": "3rd",
+            "validFor": [],
+            "value": "Third"
+          },
+          {
+            "attributes": null,
+            "label": "4th",
+            "validFor": [],
+            "value": "Fourth"
+          },
+          {
+            "attributes": null,
+            "label": "last",
+            "validFor": [],
+            "value": "Last"
+          }
+        ]
+      },
+      "RecurrenceMonthOfYear": {
+        "controllerValues": {},
+        "defaultValue": null,
+        "eTag": "893e622496aa7ebeb664990420d80074",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/RecurrenceMonthOfYear",
+        "values": [
+          {
+            "attributes": null,
+            "label": "January",
+            "validFor": [],
+            "value": "January"
+          },
+          {
+            "attributes": null,
+            "label": "February",
+            "validFor": [],
+            "value": "February"
+          },
+          {
+            "attributes": null,
+            "label": "March",
+            "validFor": [],
+            "value": "March"
+          },
+          {
+            "attributes": null,
+            "label": "April",
+            "validFor": [],
+            "value": "April"
+          },
+          {
+            "attributes": null,
+            "label": "May",
+            "validFor": [],
+            "value": "May"
+          },
+          {
+            "attributes": null,
+            "label": "June",
+            "validFor": [],
+            "value": "June"
+          },
+          {
+            "attributes": null,
+            "label": "July",
+            "validFor": [],
+            "value": "July"
+          },
+          {
+            "attributes": null,
+            "label": "August",
+            "validFor": [],
+            "value": "August"
+          },
+          {
+            "attributes": null,
+            "label": "September",
+            "validFor": [],
+            "value": "September"
+          },
+          {
+            "attributes": null,
+            "label": "October",
+            "validFor": [],
+            "value": "October"
+          },
+          {
+            "attributes": null,
+            "label": "November",
+            "validFor": [],
+            "value": "November"
+          },
+          {
+            "attributes": null,
+            "label": "December",
+            "validFor": [],
+            "value": "December"
+          }
+        ]
+      },
+      "RecurrenceTimeZoneSidKey": {
+        "controllerValues": {},
+        "defaultValue": null,
+        "eTag": "52d5d106607ed46d1b69dd45d0318735",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/RecurrenceTimeZoneSidKey",
+        "values": [
+          {
+            "attributes": null,
+            "label": "(GMT+14:00) Line Islands Time (Pacific/Kiritimati)",
+            "validFor": [],
+            "value": "Pacific/Kiritimati"
+          },
+          {
+            "attributes": null,
+            "label": "(GMT+06:00) Kyrgyzstan Time (Asia/Bishkek)",
+            "validFor": [],
+            "value": "Asia/Bishkek"
+          },
+          {
+            "attributes": null,
+            "label": "(GMT+06:00) Bangladesh Standard Time (Asia/Dhaka)",
+            "validFor": [],
+            "value": "Asia/Dhaka"
+          },
+          {
+            "attributes": null,
+            "label": "(GMT+03:00) Eastern European Standard Time (Europe/Istanbul)",
+            "validFor": [],
+            "value": "Europe/Istanbul"
+          },
+          {
+            "attributes": null,
+            "label": "(GMT+02:00) South Africa Standard Time (Africa/Johannesburg)",
+            "validFor": [],
+            "value": "Africa/Johannesburg"
+          },
+          {
+            "attributes": null,
+            "label": "(GMT-07:00) Pacific Daylight Time (America/Vancouver)",
+            "validFor": [],
+            "value": "America/Vancouver"
+          }
+        ]
+      },
+      "RecurrenceType": {
+        "controllerValues": {},
+        "defaultValue": null,
+        "eTag": "7218fb74fede4acdd2f10ec589e6a5a0",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/RecurrenceType",
+        "values": [
+          {
+            "attributes": null,
+            "label": "Recurs Daily",
+            "validFor": [],
+            "value": "RecursDaily"
+          },
+          {
+            "attributes": null,
+            "label": "Recurs Every Weekday",
+            "validFor": [],
+            "value": "RecursEveryWeekday"
+          },
+          {
+            "attributes": null,
+            "label": "Recurs Monthly",
+            "validFor": [],
+            "value": "RecursMonthly"
+          },
+          {
+            "attributes": null,
+            "label": "Recurs Monthly Nth",
+            "validFor": [],
+            "value": "RecursMonthlyNth"
+          },
+          {
+            "attributes": null,
+            "label": "Recurs Weekly",
+            "validFor": [],
+            "value": "RecursWeekly"
+          },
+          {
+            "attributes": null,
+            "label": "Recurs Yearly",
+            "validFor": [],
+            "value": "RecursYearly"
+          },
+          {
+            "attributes": null,
+            "label": "Recurs Yearly Nth",
+            "validFor": [],
+            "value": "RecursYearlyNth"
+          }
+        ]
+      },
+      "ShowAs": {
+        "controllerValues": {},
+        "defaultValue": {
+          "attributes": null,
+          "label": "Busy",
+          "validFor": [],
+          "value": "Busy"
+        },
+        "eTag": "acd0c733002dfe45345695cb748c1e27",
+        "url": "/services/data/v62.0/ui-api/object-info/Event/picklist-values/012000000000000AAA/ShowAs",
+        "values": [
+          {
+            "attributes": null,
+            "label": "Busy",
+            "validFor": [],
+            "value": "Busy"
+          },
+          {
+            "attributes": null,
+            "label": "Out of Office",
+            "validFor": [],
+            "value": "OutOfOffice"
+          },
+          {
+            "attributes": null,
+            "label": "Free",
+            "validFor": [],
+            "value": "Free"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[part='container'] {
+  padding-block-start: var(
+    --sds-c-container-spacing-blockstart,
+    var(--sds-c-container-spacing-block, var(--sds-c-container-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-container-spacing-blockend,
+    var(--sds-c-container-spacing-block, var(--sds-c-container-spacing))
+  );
+  padding-inline-start: var(
+    --sds-c-container-spacing-inlinestart,
+    var(--sds-c-container-spacing-inline, var(--sds-c-container-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-container-spacing-inlineend,
+    var(--sds-c-container-spacing-inline, var(--sds-c-container-spacing))
+  );
+  background: var(--sds-c-container-color-background, transparent);
+  border-width: var(--sds-c-container-sizing-border);
+  border-style: solid;
+  border-color: var(--sds-c-container-color-border, transparent);
+  border-radius: var(--sds-c-container-radius-border);
+  background-clip: padding-box;
+  box-shadow: var(--sds-c-container-shadow);
+  color: var(--sds-c-container-text-color);
+}
+
+[part='header'] {
+  padding-block-start: var(
+    --sds-c-container-header-spacing-blockstart,
+    var(--sds-c-container-header-spacing-block, var(--sds-c-container-header-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-container-header-spacing-blockend,
+    var(--sds-c-container-header-spacing-block, var(--sds-c-container-header-spacing))
+  );
+  padding-inline-start: var(
+    --sds-c-container-header-spacing-inlinestart,
+    var(--sds-c-container-header-spacing-inline, var(--sds-c-container-header-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-container-header-spacing-inlineend,
+    var(--sds-c-container-header-spacing-inline, var(--sds-c-container-header-spacing))
+  );
+  margin-block-end: var(--sds-c-container-header-spacing-blockend, var(--sds-c-container-header-spacing));
+  border-block-end: var(--sds-c-container-header-sizing-border) solid
+    var(--sds-c-container-header-color-border);
+  background: var(--sds-c-container-header-color-background, transparent);
+  color: var(--sds-c-container-header-text-color);
+}
+
+[part='header'][header-direction='row'] {
+  display: flex;
+  gap: var(--sds-c-container-header-spacing-gap);
+}
+
+[part='header'][header-direction='column'] {
+  display: flex;
+  flex-direction: column;
+}
+
+[part='body'] {
+  margin-block-start: var(
+    --sds-c-container-body-spacing-blockstart,
+    var(--sds-c-container-body-spacing-block, var(--sds-c-container-body-spacing))
+  );
+  margin-block-end: var(
+    --sds-c-container-body-spacing-blockend,
+    var(--sds-c-container-body-spacing-block, var(--sds-c-container-body-spacing))
+  );
+  padding-inline-start: var(
+    --sds-c-container-body-spacing-inlinestart,
+    var(--sds-c-container-body-spacing-inline, var(--sds-c-container-body-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-container-body-spacing-inlineend,
+    var(--sds-c-container-body-spacing-inline, var(--sds-c-container-body-spacing))
+  );
+}
+
+[part='body'][body-direction='row'] {
+  display: flex;
+  gap: var(--sds-c-container-body-spacing-gap);
+}
+
+[part='body'][body-direction='column'] {
+  display: flex;
+  flex-direction: column;
+}
+
+[part='footer'] {
+  display: flex;
+  padding-block-start: var(
+    --sds-c-container-footer-spacing-blockstart,
+    var(--sds-c-container-footer-spacing-block, var(--sds-c-container-footer-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-container-footer-spacing-blockend,
+    var(--sds-c-container-footer-spacing-block, var(--sds-c-container-footer-spacing))
+  );
+  padding-inline-start: var(
+    --sds-c-container-footer-spacing-inlinestart,
+    var(--sds-c-container-footer-spacing-inline, var(--sds-c-container-footer-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-container-footer-spacing-inlineend,
+    var(--sds-c-container-footer-spacing-inline, var(--sds-c-container-footer-spacing))
+  );
+  margin-block-start: var(--sds-c-container-footer-spacing-blockstart, var(--sds-c-container-footer-spacing));
+  border-block-start: var(--sds-c-container-footer-sizing-border) solid
+    var(--sds-c-container-footer-color-border);
+  background: var(--sds-c-container-footer-color-background, transparent);
+  color: var(--sds-c-container-footer-text-color);
+}
+
+[part='footer'][footer-direction='row'] {
+  display: flex;
+  gap: var(--sds-c-container-footer-spacing-gap);
+}
+
+[part='footer'][footer-direction='column'] {
+  display: flex;
+  flex-direction: column;
+}

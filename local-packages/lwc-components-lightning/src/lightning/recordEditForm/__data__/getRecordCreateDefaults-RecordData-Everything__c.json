@@ -1,0 +1,20 @@
+{
+  "apiName": "Everything__c",
+  "childRelationships": {},
+  "fields": {
+    "Picklist__c": {
+      "displayValue": null,
+      "value": null
+    },
+    "Quantity__c": {
+      "displayValue": null,
+      "value": 24
+    },
+    "TextContent__c": {
+      "displayValue": "TextContent default value",
+      "value": "TextContent default value"
+    }
+  },
+  "id": null,
+  "recordTypeInfo": null
+}

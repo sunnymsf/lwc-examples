@@ -1,0 +1,199 @@
+
+/* Copyright (c) 2015-present, Salesforce, Inc. All rights reserved
+Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+:host([data-render-mode="shadow"].slds-form-element) {
+  pointer-events: none;
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox__label {
+  pointer-events: initial;
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox {
+  display: inline-block;
+  position: relative;
+
+  /**
+    * Remap to SLDS blueprint hooks for parity
+    * https://www.lightningdesignsystem.com/components/checkbox/#Styling-Hooks-Overview
+  */
+  /* stylelint-disable sds-stylelint-plugin/styling-hooks-pattern */
+  --_slds-c-checkboxgroup-shadow: var(--slds-c-checkbox-shadow);
+  --_slds-c-checkboxgroup-shadow-focus: var(--slds-c-checkbox-shadow-focus);
+  --_slds-c-checkboxgroup-color-background: var(--slds-c-checkbox-color-background);
+  --_slds-c-checkboxgroup-color-background-checked: var(--slds-c-checkbox-color-background-checked);
+  --_slds-c-checkboxgroup-color-border: var(--slds-c-checkbox-color-border);
+  --_slds-c-checkboxgroup-color-border-checked: var(--slds-c-checkbox-color-border-checked);
+  --_slds-c-checkboxgroup-color-border-focus: var(--slds-c-checkbox-color-border-focus);
+  --_slds-c-checkboxgroup-mark-color-foreground: var(--slds-c-checkbox-mark-color-foreground);
+  --_slds-c-checkboxgroup-radius-border: var(--slds-c-checkbox-radius-border);
+}
+
+:host([data-render-mode="shadow"]) .slds-form-element__control .slds-checkbox {
+  display: block;
+}
+
+/**
+  * Creates a custom styled checkbox
+  */
+
+:host([data-render-mode="shadow"]) .slds-checkbox .slds-checkbox_faux {
+  width: var(--slds-g-sizing-5);
+  height: var(--slds-g-sizing-5);
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: middle;
+  border-radius: var(--_slds-c-checkboxgroup-radius-border, var(--slds-g-radius-border-1));
+  border-width: var(--slds-s-mark-sizing-border, var(--slds-g-sizing-border-1));
+  border-style: solid;
+  border-color: var(--_slds-c-checkboxgroup-color-border,
+      var(--slds-s-mark-color-border, var(--slds-g-color-border-2)));
+  background-color: var(--_slds-c-checkboxgroup-color-background,
+      var(--slds-s-mark-color-background, var(--slds-g-color-surface-container-1)));
+  box-shadow: var(--_slds-c-checkboxgroup-shadow);
+  transition: border 0.1s linear, background-color 0.1s linear;
+}
+
+/**
+  * Container for faux checkbox, text, and slds-form-element__label
+  */
+
+:host([data-render-mode="shadow"]) .slds-checkbox .slds-checkbox__label .slds-form-element__label {
+  /* When slds-form-element__label is inline with slds-checkbox_faux, display as inline */
+  display: inline;
+  vertical-align: middle;
+  font-size: var(--slds-g-font-size-base);
+}
+
+/**
+  * Checkbox
+  *
+  * Hidden from view, see .slds-checkbox_faux for visual faux checkbox.
+  */
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox'] {
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  pointer-events: auto;
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type=checkbox]+.slds-checkbox__label .slds-checkbox_faux {
+  margin-inline-end: var(--slds-g-spacing-2);
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox']:checked+.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:checked~.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:checked+.slds-checkbox__label .slds-checkbox_faux {
+  --_slds-c-checkboxgroup-color-background: var(--_slds-c-checkboxgroup-color-background-checked,
+      var(--slds-s-mark-color-background-checked, var(--slds-g-color-surface-container-1)));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox']:checked+.slds-checkbox_faux::after,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:checked~.slds-checkbox_faux::after,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:checked+.slds-checkbox__label .slds-checkbox_faux::after {
+  display: block;
+  content: '';
+  height: var(--slds-g-sizing-2);
+  width: var(--slds-g-sizing-3);
+  position: absolute;
+  inset-block-start: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  border-block-end: var(--slds-g-sizing-border-2) solid var(--_slds-c-checkboxgroup-mark-color-foreground, var(--slds-s-mark-color-foreground-checked, var(--slds-g-color-border-accent-1)));
+  border-inline-start: var(--slds-g-sizing-border-2) solid var(--_slds-c-checkboxgroup-mark-color-foreground, var(--slds-s-mark-color-foreground-checked, var(--slds-g-color-border-accent-1)));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox:dir(rtl) [type='checkbox']:checked+.slds-checkbox_faux::after,:host([data-render-mode="shadow"]) 
+.slds-checkbox:dir(rtl) [type='checkbox']:checked~.slds-checkbox_faux::after,:host([data-render-mode="shadow"]) 
+.slds-checkbox:dir(rtl) [type='checkbox']:checked+.slds-checkbox__label .slds-checkbox_faux::after {
+  border-inline-start: 0;
+  border-inline-end: var(--slds-g-sizing-border-2) solid var(--_slds-c-checkboxgroup-mark-color-foreground, var(--slds-s-mark-color-foreground-checked, var(--slds-g-color-border-accent-1)));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox']:focus+.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:focus~.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:focus+.slds-checkbox__label .slds-checkbox_faux {
+  --_slds-c-checkboxgroup-color-border: var(--_slds-c-checkboxgroup-color-border-focus,
+      var(--slds-s-input-color-border-focus, var(--slds-g-color-border-accent-1)));
+  --_slds-c-checkboxgroup-shadow: var(--_slds-c-checkboxgroup-shadow-focus,
+      var(--slds-s-mark-shadow-focus, 0 0 3px var(--slds-g-color-accent-2)));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox']:checked>.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:checked~.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:checked+.slds-checkbox__label .slds-checkbox_faux {
+  --_slds-c-checkboxgroup-color-border: var(--_slds-c-checkboxgroup-color-border-checked,
+      var(--slds-s-input-color-border-checked));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox']:focus:checked>.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:focus:checked~.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox']:focus:checked+.slds-checkbox__label .slds-checkbox_faux {
+  --_slds-c-checkboxgroup-color-border: var(--_slds-c-checkboxgroup-color-border-focus,
+      var(--slds-s-input-color-border-focus, var(--slds-g-color-border-accent-1)));
+  --_slds-c-checkboxgroup-shadow: var(--_slds-c-checkboxgroup-shadow-focus, var(--slds-s-mark-shadow-focus));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox'][disabled]~.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox'][disabled]+.slds-checkbox__label .slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox'][disabled]:checked~.slds-checkbox_faux,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox'][disabled]:checked+.slds-checkbox__label .slds-checkbox_faux {
+  border-color: var(--slds-g-color-border-disabled-1);
+  background-color: var(--slds-s-mark-color-background, var(--slds-g-color-disabled-container-2));
+}
+
+:host([data-render-mode="shadow"]) .slds-checkbox [type='checkbox'][disabled]+.slds-checkbox_faux::after,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox'][disabled]~.slds-checkbox_faux::after,:host([data-render-mode="shadow"]) 
+.slds-checkbox [type='checkbox'][disabled]+.slds-checkbox__label .slds-checkbox_faux::after {
+  border-color: var(--slds-g-color-on-disabled-2);
+}
+
+:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']+.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']~.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']+.slds-checkbox__label .slds-checkbox_faux {
+  border-color: var(--slds-g-color-border-error-1);
+  border-width: var(--slds-g-sizing-border-2);
+}
+
+:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:checked+.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:checked~.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:checked+.slds-checkbox__label .slds-checkbox_faux {
+  border-color: var(--slds-g-color-border-error-1);
+  background-color: var(--slds-s-mark-color-background-invalid);
+  --_slds-c-checkboxgroup-shadow: var(--_slds-c-checkboxgroup-shadow, var(--slds-s-mark-shadow-checked));
+}
+
+:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:focus+.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:focus~.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:focus+.slds-checkbox__label .slds-checkbox_faux {
+  border-color: var(--slds-g-color-border-error-1);
+  border-width: var(--slds-g-sizing-border-2);
+  --_slds-c-checkboxgroup-shadow: var(--_slds-c-checkboxgroup-shadow-focus, var(--slds-s-mark-shadow-focus));
+}
+
+:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:focus:checked+.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:focus:checked~.slds-checkbox_faux,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:focus:checked+.slds-checkbox__label .slds-checkbox_faux {
+  border-color: var(--slds-g-color-border-error-1);
+  border-width: var(--slds-g-sizing-border-2);
+  --_slds-c-checkboxgroup-shadow: var(--_slds-c-checkboxgroup-shadow-focus, var(--slds-s-mark-shadow-focus));
+}
+
+:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:checked+.slds-checkbox_faux::after,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:checked~.slds-checkbox_faux::after,:host([data-render-mode="shadow"].slds-has-error) .slds-checkbox [type='checkbox']:checked+.slds-checkbox__label .slds-checkbox_faux::after {
+  border-color: var(--slds-s-mark-color-foreground-invalid, var(--slds-g-color-border-error-1));
+}
+
+/* required due to :not causing issues with the slds build system
+     'label-hidden' is required here for Native shadow styling sync with Synthetic
+  */
+
+:host([data-render-mode="shadow"][variant='label-stacked']) {
+  padding: 0 var(--slds-g-spacing-1);
+  margin-block-end: var(--slds-g-spacing-2);
+}
+
+/* FORM ELEMENT: INLINE */
+
+:host([data-render-mode="shadow"][variant='label-inline']) .slds-checkbox:not(.slds-checkbox_stacked) .slds-form-element__label {
+  float: none
+}

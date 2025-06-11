@@ -1,0 +1,133 @@
+<template>
+    <template if:true={isDesktop}>
+        <template if:true={lookupActionObjectApiNames}>
+            <lightning-lookup-actions-metadata-service
+                object-api-names={lookupActionObjectApiNames}
+                ondataretrieved={handleLookupActionsMetadataRetrieved}
+                onerror={handleLookupActionsMetadataError}
+            >
+            </lightning-lookup-actions-metadata-service>
+        </template>
+
+        <lightning-lookup-desktop
+            if:false={shouldUseDesktopV2}
+            disabled={disabled}
+            enable-create-new={enableCreateNew}
+            field-name={fieldName}
+            items={items}
+            label={label}
+            max-values={maxValues}
+            object-infos={_objectInfos}
+            pills={internalPills}
+            text-info={textInfo}
+            record={_sourceRecord}
+            required={required}
+            variant={variant}
+            selected-target-api-name={selectedTargetApiName}
+            onadvancedlookupoptionselect={handleAdvancedLookupTrigger}
+            onentityoptionselect={handleEntityOptionSelect}
+            onblur={handleBlur}
+            onlookuprecordsrequest={handleLookupRecordsRequest}
+            onpillremove={handlePillRemove}
+            onrecorditemselect={handleRecordItemSelect}
+        >
+        </lightning-lookup-desktop>
+
+        <template if:true={shouldUseDesktopV2}>
+            <!-- We display both V1 and V2 for testing/comparison purposes -->
+            <span>V2</span>
+            <lightning-lookup-desktop-v2
+                disabled={disabled}
+                enable-create-new={enableCreateNew}
+                field-name={fieldName}
+                label={label}
+                search-type={searchType}
+                max-values={maxValues}
+                object-infos={_objectInfos}
+                pills={internalPills}
+                text-info={textInfo}
+                source-record={_sourceRecord}
+                required={required}
+                variant={variant}
+                action-items={actionItems}
+                selected-target-api-name={selectedTargetApiName}
+                suggestions-display-info={suggestionsDisplayInfoV2}
+                records={recordsV2}
+                selected-record={selectedRecord}
+                onadvancedlookupoptionselect={handleAdvancedLookupTrigger}
+                onentityoptionselect={handleEntityOptionSelect}
+                onblur={handleBlur}
+                onlookuprecordsrequest={handleLookupRecordsRequest}
+                onpillremove={handlePillRemove}
+                onrecorditemselect={handleRecordItemSelect}
+            >
+            </lightning-lookup-desktop-v2>
+
+            <br />
+            <span>V1</span>
+            <lightning-lookup-desktop
+                disabled={disabled}
+                enable-create-new={enableCreateNew}
+                field-name={fieldName}
+                items={items}
+                label={label}
+                max-values={maxValues}
+                object-infos={_objectInfos}
+                pills={internalPills}
+                text-info={textInfo}
+                record={_record}
+                required={required}
+                variant={variant}
+                selected-target-api-name={selectedTargetApiName}
+                onadvancedlookupoptionselect={handleAdvancedLookupTrigger}
+                onentityoptionselect={handleEntityOptionSelect}
+                onblur={handleBlur}
+                onlookuprecordsrequest={handleLookupRecordsRequest}
+                onpillremove={handlePillRemove}
+                onrecorditemselect={handleRecordItemSelect}
+            >
+            </lightning-lookup-desktop>
+        </template>
+    </template>
+    <template if:false={isDesktop}>
+        <lightning-lookup-mobile
+            disabled={disabled}
+            field-api-name={fieldName}
+            field-level-help={fieldLevelHelp}
+            items={items}
+            label={label}
+            object-infos={_objectInfos}
+            pills={internalPills}
+            record={_record}
+            text-info={textInfo}
+            required={required}
+            selected-target-api-name={selectedTargetApiName}
+            variant={variant}
+            search-in-progress={searchInProgress}
+            onblur={handleBlur}
+            onentityoptionselect={handleEntityOptionSelect}
+            onlookuprecordsrequest={handleLookupRecordsRequest}
+            onpillremove={handlePillRemove}
+            onrecorditemselect={handleRecordItemSelect}
+        >
+        </lightning-lookup-mobile>
+    </template>
+
+    <lightning-lookup-data-source
+        field-api-name={dataSourceParams.fieldApiName}
+        object-api-name={dataSourceParams.objectApiName}
+        page={dataSourceParams.page}
+        search-term={dataSourceParams.searchTerm}
+        search-type={dataSourceParams.searchType}
+        source-record={dataSourceParams.sourceRecord}
+        ondataloadstart={handleLookupDataLoadStart}
+        onrecordsretrieve={handleLookupRecordsRetrieved}
+        onerror={handleLookupRecordsError}
+    ></lightning-lookup-data-source>
+    <lightning-lookup-metadata-service
+        field-api-name={unqualifiedFieldApiName}
+        source-api-name={sourceApiName}
+        onmetadataretrieve={handleLookupMetadataRetrieve}
+    >
+    </lightning-lookup-metadata-service>
+</template>

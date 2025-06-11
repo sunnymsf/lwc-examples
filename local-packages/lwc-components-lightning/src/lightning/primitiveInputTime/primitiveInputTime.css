@@ -1,0 +1,197 @@
+/**
+ * Input container
+ * ---
+ * The Input Control Container holds the `start` and `end` slot contents, as well as the input control itself
+ */
+[part~='input-container'] {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-c-inputtime-sizing-gap, var(--sds-s-input-spacing-gap));
+  min-height: var(--sds-c-inputtime-sizing-height, var(--sds-s-input-sizing-height));
+  padding-inline-start: var(
+    --sds-c-inputtime-spacing-inlinestart,
+    var(--sds-c-inputtime-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputtime-spacing-inlineend,
+    var(--sds-c-inputtime-spacing-inline, var(--sds-s-input-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputtime-spacing-blockstart,
+    var(--sds-c-inputtime-spacing-block, var(--sds-s-input-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputtime-spacing-blockend,
+    var(--sds-c-inputtime-spacing-block, var(--sds-s-input-spacing))
+  );
+  background: var(--sds-c-inputtime-color-background, var(--sds-s-input-color-background));
+  border-block-start: var(
+      --sds-c-inputtime-sizing-border-blockstart,
+      var(--sds-c-inputtime-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-inputtime-color-border-blockstart,
+      var(--sds-c-inputtime-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-inline-start: var(
+      --sds-c-inputtime-sizing-border-inlinestart,
+      var(--sds-c-inputtime-sizing-border, 1px)
+    )
+    solid
+    var(
+      --sds-c-inputtime-color-border-inlinestart,
+      var(--sds-c-inputtime-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-inline-end: var(--sds-c-inputtime-sizing-border-inlineend, var(--sds-c-inputtime-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-inputtime-color-border-inlineend,
+      var(--sds-c-inputtime-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-block-end: var(--sds-c-inputtime-sizing-border-blockend, var(--sds-c-inputtime-sizing-border, 1px))
+    solid
+    var(
+      --sds-c-inputtime-color-border-blockend,
+      var(--sds-c-inputtime-color-border, var(--sds-s-input-color-border, currentColor))
+    );
+  border-radius: var(--sds-c-inputtime-radius-border, var(--sds-s-input-radius-border));
+  box-shadow: var(--sds-c-inputtime-shadow, var(--sds-s-input-shadow));
+}
+
+/**
+ * Input Control
+ * ---
+ * The input control is the actual input element
+ * We normalize the input since styles are being hoisted to the input-container element
+ */
+[part~='input'] {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-size: var(--sds-c-inputtime-font-size, var(--sds-s-input-font-size));
+  color: var(--sds-c-inputtime-text-color, var(--sds-s-input-color));
+  line-height: 1;
+  border: none;
+  background: transparent;
+}
+
+/**
+ * Input container when it receives focus-within
+ * ---
+ * Fallback order: focus > base
+ */
+[part~='input-container']:focus-within {
+  --sds-c-inputtime-color-border: var(
+    --sds-c-inputtime-color-border-focus,
+    var(--sds-s-input-color-border-focus, revert)
+  );
+  --sds-c-inputtime-shadow: var(--sds-c-inputtime-shadow-focus, var(--sds-s-input-shadow-focus, revert));
+  --sds-c-inputtime-color-background: var(
+    --sds-c-inputtime-color-background-focus,
+    var(--sds-s-input-color-background-focus, revert)
+  );
+  --sds-c-inputtime-text-color: var(
+    --sds-c-inputtime-text-color-focus,
+    var(--sds-s-input-text-color-focus, revert)
+  );
+}
+
+/**
+ * Actively typing in text input
+ * ---
+ * The active attribute gets applied the oninput event to inidicate the user inputting text
+ * This is a workaround for the lack of a :active-within selector in CSS
+ */
+:host([active]) [part~='input-container'] {
+  --sds-c-inputtime-color-background: var(
+    --sds-c-inputtime-color-background-active,
+    var(--sds-s-input-color-background-active, revert)
+  );
+  --sds-c-inputtime-color-border: var(
+    --sds-c-inputtime-color-border-active,
+    var(--sds-s-input-color-border-active, revert)
+  );
+  --sds-c-inputtime-shadow: var(--sds-c-inputtime-shadow-active, var(--sds-s-input-shadow-active, revert));
+}
+
+/**
+ * Remove the default focus outline since we are hoisting those styles to the input-container using focus-within
+ */
+[part~='input']:focus {
+  outline: none;
+}
+
+/**
+ * Label Container
+ * ---
+ * The container for the label and its adjacent slots, label-start and label-end
+ */
+[part='label-container'] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-c-inputtime-label-sizing-gap, var(--sds-s-label-spacing-gap));
+  padding-inline-start: var(
+    --sds-c-inputtime-label-spacing-inlinestart,
+    var(--sds-c-inputtime-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputtime-label-spacing-inlineend,
+    var(--sds-c-inputtime-label-spacing-inline, var(--sds-s-label-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputtime-label-spacing-blockstart,
+    var(--sds-c-inputtime-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputtime-label-spacing-blockend,
+    var(--sds-c-inputtime-label-spacing-block, var(--sds-s-label-spacing))
+  );
+  color: var(--sds-c-inputtime-label-color, var(--sds-s-label-color));
+}
+
+[part='label'] {
+  font-size: var(--sds-c-inputtime-label-font-size, var(--sds-s-label-font-size));
+  font-weight: var(--sds-c-inputtime-label-font-weight, var(--sds-s-label-font-weight));
+}
+
+/**
+ * Help text
+ * ---
+ * "visible" gets added when the slotchange confirms there are children
+ * This prevents box-model customizations from being applied, in the case of no children
+ */
+[part='help-text visible'] {
+  font-size: var(--sds-c-inputtime-helptext-font-size, var(--sds-s-helptext-font-size));
+  color: var(--sds-c-inputtime-helptext-text-color, var(--sds-s-helptext-color));
+  padding-inline-start: var(
+    --sds-c-inputtime-helptext-spacing-inlinestart,
+    var(--sds-c-inputtime-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-inline-end: var(
+    --sds-c-inputtime-helptext-spacing-inlineend,
+    var(--sds-c-inputtime-helptext-spacing-inline, var(--sds-s-helptext-spacing))
+  );
+  padding-block-start: var(
+    --sds-c-inputtime-helptext-spacing-blockstart,
+    var(--sds-c-inputtime-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+  padding-block-end: var(
+    --sds-c-inputtime-helptext-spacing-blockend,
+    var(--sds-c-inputtime-helptext-spacing-block, var(--sds-s-helptext-spacing))
+  );
+}
+
+/**
+ * Disabled state
+ */
+:host([disabled]) {
+  --sds-c-inputtime-color-background: var(
+    --sds-c-inputtime-color-background-disabled,
+    var(--sds-s-input-color-background-disabled)
+  );
+  --sds-c-inputtime-color-border: var(
+    --sds-c-inputtime-color-border-disabled,
+    var(--sds-s-input-color-border-disabled)
+  );
+}

@@ -1,0 +1,127 @@
+
+/* Initialize Progress Indicator */
+:host([data-render-mode="shadow"]) .slds-progress {
+    position: relative;
+    max-width: 70%;
+    width: 100%;
+    flex: 1 1 auto;
+    margin: auto;
+}
+:host([data-render-mode="shadow"]) .slds-progress > lightning-progress-bar {
+    --_slds-c-progressbar-position: absolute;
+    --_slds-c-progressbar-inset-block-start: 50%;
+    --_slds-c-progressbar-margin-block-start: -0.0625rem;
+}
+/**
+ * An ordered list containing steps of a process
+*/
+:host([data-render-mode="shadow"]) .slds-progress__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+/**
+  * When on a shaded background such as the modal footer
+*/
+:host([data-render-mode="shadow"]) .slds-progress_shade {
+    --_slds-c-progressstep-border-color: var(--slds-g-color-neutral-base-95);
+    --_slds-c-progressstep-background-color: var(--slds-g-color-neutral-base-95);
+
+    --_slds-c-progressstep-background-color-active: var(--slds-g-color-neutral-base-95);
+    --_slds-c-progressstep-box-shadow-active: var(--slds-g-color-neutral-base-95);
+}
+/* PATH */
+/**
+ * Allows the path itself to be responsive
+ */
+:host([data-render-mode="shadow"]) .slds-path__track {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+@media (width >= 64em) {
+    :host([data-render-mode="shadow"]) .slds-path__track {
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+}
+/**
+ * Creates the scrolling container for tab overflow
+ */
+:host([data-render-mode="shadow"]) .slds-path__scroller {
+    flex: 1;
+    max-width: 100%;
+    overflow: hidden;
+}
+/**
+ * Shows the stage name when in the smaller state
+ */
+:host([data-render-mode="shadow"]) .slds-path__stage-name {
+    display: block;
+    font-weight: var(--slds-g-font-weight-7);
+    margin: var(--slds-g-spacing-3) 0;
+}
+@media (width >= 48em) {
+    :host([data-render-mode="shadow"]) .slds-path__stage-name {
+        margin: 0;
+    }
+}
+@media (width >= 64em) {
+    :host([data-render-mode="shadow"]) .slds-path__stage-name {
+        display: none;
+    }
+}
+/**
+ * Creates the container for toggle button and path
+ */
+:host([data-render-mode="shadow"]) .slds-path__scroller-container {
+    flex: 1;
+    flex-basis: 100%;
+    overflow: hidden;
+}
+@media (width >= 64em) {
+    :host([data-render-mode="shadow"]) .slds-path__scroller-container {
+        flex-basis: auto;
+    }
+}
+/**
+ * Container for path actions
+ */
+:host([data-render-mode="shadow"]) .slds-path__action {
+    flex-grow: 1;
+    flex-basis: 100%;
+    margin-inline-start: 0;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+:host([data-render-mode="shadow"]) .slds-path__action .slds-icon-text-default {
+    --slds-c-icon-color-foreground: var(--slds-g-color-on-accent-1);
+}
+@media (width >= 48em) {
+    :host([data-render-mode="shadow"]) .slds-path__action {
+        justify-content: space-between;
+        margin-block-start: var(--slds-g-spacing-4);
+        flex-direction: row;
+    }
+}
+@media (width >= 64em) {
+    :host([data-render-mode="shadow"]) .slds-path__action {
+        flex-basis: auto;
+        flex-grow: 0;
+        align-items: normal;
+        margin-block-start: 0;
+        margin-inline-start: var(--slds-g-spacing-5);
+    }
+}
+/**
+ * Horizontal list of stages in path component
+ */
+:host([data-render-mode="shadow"]) .slds-path__nav {
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+}

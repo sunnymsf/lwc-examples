@@ -1,0 +1,153 @@
+import StylingHooks from './link.hooks.mdx';
+
+### Overview
+
+An interactive reference to an internal or external resource that, when activated, causes the user agent to navigate to that resource.
+
+### Use Cases
+
+The link enables an implementor to create a simple, but customizable link element.
+
+### Non-goals
+
+- Complex or composite links.
+- Customizations can be made through [Styling Hooks][styling-hooks-jump] and `::part` API, where the addition of CSS through `::part` falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The CSS can be used on a set of [interactive content](https://html.spec.whatwg.org/multipage/dom.html#interactive-content-2) to represent the appearance of a link:
+  - `a` - [WHATWG Spec][anchor-spec]
+- The API design of the SDS Link is specific to the [HTML Link][anchor-spec] element and should not be implemented on any other HTML element. All methods and properties pertain to the HTML element as it was designed by the web platform.
+- The "default" appearance provides the basic structure of a link.
+- The "default" appearance comes unbranded.
+- [Styling hooks][styling-hooks-jump] should be used to customize the appearance of the link.
+- Customization beyond Styling Hooks can be achieved through the [CSS Shadow Parts API][css-shadow-parts]. The addition of CSS is allowed through `::part` but falls outside the support matrix of SDS.
+
+### Prior Art/Examples
+
+It is useful to understand how other design-systems are authoring their components.
+Please list out any known implementations of this component on the Web Platform and/or Salesforce Platform.
+
+- [US Gov](https://designsystem.digital.gov/components/link/)
+- [Carbon](https://carbondesignsystem.com/components/link/usage/)
+- [Dell](https://www.delldesignsystem.com/components/link/?tab=Design)
+- [Morning Star](https://designsystem.morningstar.com/components/link/)
+- [Primer](https://primer.style/view-components/components/beta/link)
+
+---
+
+### API
+
+The API design that follows _only_ applies to the [HTML a[href] Element][anchor-spec].
+
+The SDS link component should support all methods and attributes of the [HTML a[href] Element][anchor-spec].
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the [subsystems namespace][namespace-service] used as the prefix to the custom elements definition:
+
+1. `sds-link` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-link` - This is owned by a subsystem built on SDS, e.g. `dxp-link`
+
+### Anatomy and Appearance
+
+The following DOM structure and named part attribute on the leaf node as documented is **required** to use the SDS link CSS.
+
+#### DOM Structure
+
+```html
+<host>
+  <a part="link">
+    <slot name="start"></slot>
+    <slot></slot>
+    <slot name="end"></slot>
+  </a>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| `start`   | The content that at the start of the primary link content | empty |
+| `default` | The primary link content                                  | empty |
+| `end`     | The content that at the start of the primary link content | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `link`  | Enables styling beyond Styling Hooks, falls outside the support matrix of SDS |
+
+#### Properties & Attributes
+
+Please list out known attributes the component should be aware of.
+
+| Attribute | Type | Default Value | Description |
+| - | - | - | - |
+| `href` | `string` | `#` | The URL that the link points to. If the href attribute is not specified, the link is not a hyperlink. |
+| `target` | `string` | `null` | The target attribute specifies where to open the linked document. |
+| `rel` | `string` | `null` | The rel attribute specifies the relationship between the current document and the linked document. |
+| `download` | `boolean` | `false` | The download attribute specifies that the target will be downloaded when a user clicks on the hyperlink. |
+| `hreflang` | `string` | `null` | The hreflang attribute specifies the language of the linked document. |
+| `type` | `string` | `null` | The type attribute specifies the media type of the linked document. |
+| `referrerpolicy` | `string` | `null` | The referrerpolicy attribute specifies which referrer to send when fetching the linked document. |
+| `ping` | `string` | `null` | The ping attribute specifies a space-separated list of URLs to which, when the link is followed, post requests with the body ping will be sent by the browser (in the background). Typically used for tracking. |
+| `aria-label` | `string` | `null` | The aria-label attribute provides an accessible name for the link. |
+| `aria-haspopup` | `boolean` | `false` | The aria-haspopup attribute indicates that the element has a popup context menu or sub-level menu. |
+| `aria-expanded` | `boolean` | `false` | The aria-expanded attribute indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. |
+| `aria-atomic` | `boolean` | `false` | The aria-atomic attribute indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. |
+| `aria-busy` | `boolean` | `false` | The aria-busy attribute indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. |
+| `aria-controls` | `string` | `null` | The aria-controls attribute indicates the element or elements whose contents or presence are controlled by the current element. |
+| `aria-current` | `string` | `null` | The aria-current attribute indicates the element representing the current item within a container or set of related elements. |
+| `aria-describedby` | `string` | `null` | The aria-describedby attribute contains descriptive information about the object that is not easily determinable from the main content of the element. |
+| `aria-details` | `string` | `null` | The aria-details attribute references additional information which, if removed, would substantially change the meaning of the remaining content. |
+| `aria-flowto` | `string` | `null` | The aria-flowto attribute provides a link to a container element that provides more detailed information than would be appropriate to include directly within the context of the current element. |
+| `aria-grabbed` | `boolean` | `false` | The aria-grabbed attribute indicates an element's "grabbed" state in a drag-and-drop operation. |
+| `aria-keyshortcuts` | `string` | `null` | The aria-keyshortcuts attribute indicates keyboard shortcuts that an author has implemented to activate or give focus to an element. |
+| `aria-label` | `string` | `null` | The aria-label attribute provides an accessible name for the link. |
+| `aria-labelledby` | `string` | `null` | The aria-labelledby attribute indicates the IDs of the elements that are the labels for the object. |
+| `aria-owns` | `string` | `null` | The aria-owns attribute indicates that an element is controlled by a remote resource and that changes to the controlled element may invalidate the contents or usability of the remote resource. |
+| `aria-relevant` | `string` | `null` | The aria-relevant attribute indicates what types of changes are relevant to a live region. |
+
+
+#### Styling Hooks
+
+<StylingHooks />
+
+---
+
+### Behavior
+
+Please use the following sections to describe the basic intended behavior of the component. This can come in the form of state changes when a user interacts with the component or if the component receives an event.
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description |
+| - | - | - | - |
+| `hover`    | `hover` | `false` | When a user interacts with link, but does not necessarily activate it. |
+| `focus`    | `false` | `false` | When a link receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's <kbd>Tab</kbd> key. |
+| `active`   | `false` | `false` | When a user activates the link. |
+| `disabled` | `true` / `false` | `false` | Indicates whether the link is disabled and cannot be interacted with. |
+
+### Accessibility
+
+#### Truncation
+
+The text within a link should never be truncated. If you are dealing with long text, please wrap the text to a second line.
+
+### Internationalization
+
+All slotted content inside the button should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All links should have visual regression tests to catch any unintended modifications to the visuals of the link
+- All links should have unit tests to ensure the correct input and output of attributes and events
+- All links should have a test to catch color contrast regressions that, at a minimum, fulfill the requirements of WCAG 2.1.
+
+[anchor-spec]: https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element
+[css-shadow-parts]: https://drafts.csswg.org/css-shadow-parts/
+[styling-hooks-jump]: #styling-hooks
+[namespace-service]: https://github.com/salesforce-experience-platform-emu/salesforce-design-system/blob/main/packages/sds-namespaces/src/namespaces.js

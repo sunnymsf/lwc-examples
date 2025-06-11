@@ -1,0 +1,20 @@
+
+:host([data-render-mode="shadow"]) ::slotted(.slds-float_right) {
+    float: right;
+}
+
+/*
+Note:
+    'slds-media' are utility classes that
+    may be used as they are documented in SLDS-internal doc but are not currently in any LBC example templates.
+    These classes should be refactored and moved into utility file when available and should be exposed outside of shadow DOM.
+*/
+:host([data-render-mode="shadow"]) ::slotted(.slds-media) {
+    display: flex;
+    align-items: flex-start;
+}
+
+:host([data-render-mode="shadow"]) ::slotted(.slds-media__body) {
+    display: flex;
+    align-items: flex-start;
+}

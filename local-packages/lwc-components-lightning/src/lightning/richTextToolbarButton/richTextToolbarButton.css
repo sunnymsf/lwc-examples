@@ -1,0 +1,9 @@
+@import 'lightning/sldsCommon';
+@import './button-icon.slds.css';
+@import './popover.slds.css';
+@import './input-rich-text.slds.css';
+@import './rich-text-toolbar-button.slds.css';
+
+.slds-button.single-button {
+    border-radius: var(--slds-g-radius-border-2, .25rem);
+}

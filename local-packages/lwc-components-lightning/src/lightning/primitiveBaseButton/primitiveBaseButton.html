@@ -1,0 +1,27 @@
+<template>
+  <button
+    part="button"
+    disabled={disabled}
+    name={name}
+    role={role}
+    tabindex={tabIndex}
+    title={title}
+    type={type}
+    value={value}
+    onclick={handleClick}
+    onfocus={handleFocus}
+    onblur={handleBlur}
+    aria-haspopup={ariaHasPopup}
+    aria-expanded={ariaExpanded}
+    aria-pressed={ariaPressed}
+    aria-current={ariaCurrent}
+    aria-description={ariaDescription}
+    aria-keyshortcuts={ariaKeyShortcuts}
+    aria-label={ariaLabel}
+    aria-roledescription={ariaRoleDescription}
+  >
+    <slot name="start"></slot>
+    <slot></slot>
+    <slot name="end"></slot>
+  </button>
+</template>

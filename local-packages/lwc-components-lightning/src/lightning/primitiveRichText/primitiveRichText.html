@@ -1,0 +1,14 @@
+<template>
+  <div part="rich-text">
+    <template lwc:if={copy}>
+      <div part="copy-container">
+        <button part="copy" aria-label="Copy Rich Text" onclick={handleCopy}>
+          <slot name="copy-label"></slot>
+        </button>
+      </div>
+    </template>
+    <div part="rich-text-container">
+      <slot onslotchange={handleSlotChange}></slot>
+    </div>
+  </div>
+</template>

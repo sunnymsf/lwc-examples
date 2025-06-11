@@ -1,0 +1,281 @@
+{
+  "Task": {
+      "012000000000000AAA": {
+          "Full": {
+              "View": {
+                  "eTag": "012a62de5e60a024dc57c975a25bbbb8",
+                  "id": "00Txx000003rIUiEAM",
+                  "layoutType": "Full",
+                  "mode": "View",
+                  "objectApiName": "Task",
+                  "recordTypeId": "012000000000000AAA",
+                  "saveOptions": [],
+                  "sections": [
+                      {
+                          "collapsible": false,
+                          "columns": 2,
+                          "heading": "Task Information",
+                          "id": "01Bxx000002C1sDEAS",
+                          "layoutRows": [
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Assigned To",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "OwnerId",
+                                                  "componentType": "Field",
+                                                  "label": "Assigned To ID"
+                                              }
+                                          ],
+                                          "lookupIdApiName": "OwnerId",
+                                          "required": true,
+                                          "sortable": false
+                                      },
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Status",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "Status",
+                                                  "componentType": "Field",
+                                                  "label": "Status"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": true,
+                                          "sortable": false
+                                      }
+                                  ]
+                              },
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Subject",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "Subject",
+                                                  "componentType": "Field",
+                                                  "label": "Subject"
+                                              }
+                                          ],
+                                          "lookupIdApiName": "Id",
+                                          "required": true,
+                                          "sortable": false
+                                      },
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Name",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "WhoId",
+                                                  "componentType": "Field",
+                                                  "label": "Name ID"
+                                              }
+                                          ],
+                                          "lookupIdApiName": "WhoId",
+                                          "required": false,
+                                          "sortable": false
+                                      }
+                                  ]
+                              },
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Due Date",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "ActivityDate",
+                                                  "componentType": "Field",
+                                                  "label": "Due Date Only"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": false,
+                                          "sortable": false
+                                      },
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Related To",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "WhatId",
+                                                  "componentType": "Field",
+                                                  "label": "Related To ID"
+                                              }
+                                          ],
+                                          "lookupIdApiName": "WhatId",
+                                          "required": false,
+                                          "sortable": false
+                                      }
+                                  ]
+                              },
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Priority",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "Priority",
+                                                  "componentType": "Field",
+                                                  "label": "Priority"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": true,
+                                          "sortable": false
+                                      },
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Reminder Set",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "IsReminderSet",
+                                                  "componentType": "Field",
+                                                  "label": "Reminder Set"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": false,
+                                          "sortable": false
+                                      }
+                                  ]
+                              },
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": false,
+                                          "label": "Create Recurring Series of Tasks",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "IsRecurrence",
+                                                  "componentType": "Field",
+                                                  "label": "Create Recurring Series of Tasks"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": false,
+                                          "sortable": false
+                                      },
+                                      {
+                                          "editableForNew": false,
+                                          "editableForUpdate": false,
+                                          "label": "",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": null,
+                                                  "componentType": "EmptySpace"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": false,
+                                          "sortable": false
+                                      }
+                                  ]
+                              }
+                          ],
+                          "rows": 5,
+                          "useHeading": false
+                      },
+                      {
+                          "collapsible": false,
+                          "columns": 2,
+                          "heading": "System Information",
+                          "id": "01Bxx000002C1sCEAS",
+                          "layoutRows": [
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": false,
+                                          "editableForUpdate": false,
+                                          "label": "Created By",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "CreatedById",
+                                                  "componentType": "Field",
+                                                  "label": "Created By ID"
+                                              },
+                                              {
+                                                  "apiName": "CreatedDate",
+                                                  "componentType": "Field",
+                                                  "label": "Created Date"
+                                              }
+                                          ],
+                                          "lookupIdApiName": "CreatedById",
+                                          "required": false,
+                                          "sortable": false
+                                      },
+                                      {
+                                          "editableForNew": false,
+                                          "editableForUpdate": false,
+                                          "label": "Last Modified By",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "LastModifiedById",
+                                                  "componentType": "Field",
+                                                  "label": "Last Modified By ID"
+                                              },
+                                              {
+                                                  "apiName": "LastModifiedDate",
+                                                  "componentType": "Field",
+                                                  "label": "Last Modified Date"
+                                              }
+                                          ],
+                                          "lookupIdApiName": "LastModifiedById",
+                                          "required": false,
+                                          "sortable": false
+                                      }
+                                  ]
+                              }
+                          ],
+                          "rows": 1,
+                          "useHeading": false
+                      },
+                      {
+                          "collapsible": false,
+                          "columns": 1,
+                          "heading": "Description Information",
+                          "id": "01Bxx000002C1sBEAS",
+                          "layoutRows": [
+                              {
+                                  "layoutItems": [
+                                      {
+                                          "editableForNew": true,
+                                          "editableForUpdate": true,
+                                          "label": "Comments",
+                                          "layoutComponents": [
+                                              {
+                                                  "apiName": "Description",
+                                                  "componentType": "Field",
+                                                  "label": "Description"
+                                              }
+                                          ],
+                                          "lookupIdApiName": null,
+                                          "required": false,
+                                          "sortable": false
+                                      }
+                                  ]
+                              }
+                          ],
+                          "rows": 1,
+                          "useHeading": false
+                      }
+                  ]
+              }
+          }
+      }
+  }
+}

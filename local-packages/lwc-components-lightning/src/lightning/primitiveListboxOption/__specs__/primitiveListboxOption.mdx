@@ -1,0 +1,149 @@
+import StylingHooks from './listboxOption.hooks.mdx';
+
+### Overview
+
+The listbox option is used for selectable items in a listbox.
+
+### Use Cases
+
+The listbox option is used to identify selections a user can make in a listbox. These options are similar to the `<option>` elements in a `<select>` element, but they can contain images.
+
+### Non-goals
+
+- Used where a parent container does not represent `role="listbox"`.
+- Customizations can be made through Styling Hooks and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+- Variants are not included in SDS. Variants should be applied at the subsystem layer.
+
+### Features
+
+- The API design of the SDS Listbox Option is specific to the [Aria Role Option](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/option_role).
+- The default appearance provides the basic structure of a selectable option.
+- The default appearance comes unbranded.
+- Styling Hooks should be used to customize the appearance.
+- Customization beyond Styling Hooks can be achieved through the CSS Shadow Parts API.
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/accessibility/patterns/listbox/)
+- [Aria Role Option](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/option_role)
+- [Listbox Pattern (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)
+- [Vaadin](https://vaadin.com/docs/v14/ds/components/list-box)
+- [Carbon](https://web-components.carbondesignsystem.com/?path=/story/components-combo-box--default)
+- [FAST](https://explore.fast.design/components/fast-listbox)
+- [Polaris](https://polaris.shopify.com/components/lists/listbox)
+
+---
+
+### API
+
+The API design that follows _only_ applies to the [Aria Role Option](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/option_role).
+
+### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-listbox-option` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-listbox-option` - This is owned by a subsystem built on SDS, e.g. `dxp-listbox-option`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="listbox-option">
+    <slot name="start"></slot>
+    <slot></slot>
+    <slot name="end"></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description | Fallback Content |
+| - | - | - |
+| `default` | Text content that describes the option | empty |
+| `start`   | Content placed prior to the user-added text, such as an icon | empty |
+| `end`     | Content placed after to the user-added text, such as an icon | empty |
+
+#### Parts
+
+| Part Name | Description |
+| - | - |
+| `listbox-option` | Enables styling for the entire component beyond Styling Hooks, falls outside the support matrix of SDS |
+
+#### Properties & Attributes
+
+| Attribute | Type | Default Value | Description |
+| - | - | - | - |
+| `id` | `string` | `false` | Unique ID for the option |
+| `aria-selected` | `enum` | `false` | Whether the option is selected |
+| `aria-checked`  | `enum` | `false` | Whether the option is checked |
+| `aria-disabled` | `enum` | `false` | Whether the option is disabled |
+
+#### Events
+
+| Event Name | Type | Bubbles | Composed | Cancellable | Dispatch Behavior |
+| - | - | - | - | - | - |
+| `click`  | none | `false` | `false` | `false` | Fires after the user clicks on the option |
+| `blur`   | none | `false` | `false` | `false` | Fires after the option loses focus |
+
+#### Styling Hooks
+<StylingHooks />
+
+---
+
+### Behavior
+
+#### States & Interactions
+
+| State Group | States | Initial State | Description|
+| - | - | - | - |
+| `focus`     | `false`        | `false` | When the input receives focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key. |
+| `disabled`  | `true`/`false` | `false` | Indicates whether the input is disabled and cannot be interacted with. |
+
+### Accessibility
+
+All selectable options should have `aria-selected` match their state, `true` when selected and `false` when not. If an option is not selectable, `aria-selected` can be omitted. A disabled option can have `aria-disabled="true"` and `aria-selected="false"` to communicate to the user that the option is present, albeit disabled.
+
+The listbox option is for identifying selectable choices of a `listbox`. Options must be provided an accessible name. Generally, the accessible name for an option should come from the element's descendant content.
+
+Authors can also explicitly provide an accessible name by specifying `aria-label` or `aria-labelledby` to the element with the option role.
+
+#### All descendants are presentational
+
+There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a listbox option. To deal with this limitation, browsers, automatically apply role `presentation` to all descendant elements of any option element as it is a role that does not support semantic children.
+
+For example, consider the following option element, which contains a heading.
+
+```html
+<sds-listbox-option>
+  <h3>Title of my option</h3>
+</sds-listbox-option>
+```
+
+Because descendants of option are presentational, the following code is equivalent:
+
+```html
+<sds-listbox-option>
+  <h3 role="presentation">Title of my option</h3>
+</sds-listbox-option>
+```
+
+From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the accessibility tree:
+
+```html
+<div role="option">Title of my option</div>
+```
+
+### Internationalization
+
+All elements of the listbox option (e.g., `start`/`end` slots, user-entered text, icons, etc) should adhere to bi-directional languages such as `ltr` (left to right) and `rtl` (right to left).
+
+### Test Plan
+
+- All listbox options should have visual regression tests to catch any unintended modifications to the visuals.
+- All listbox options should have unit tests to ensure the correct input and output of attributes, states, and events.
+- All listbox options should test for color contrast combinations that, at a minimum, fulfill the requirements of WCAG 2.1.
+- All listbox options should be tested across all supported devices, ensuring that modifications for mobile are taken into account.

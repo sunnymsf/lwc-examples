@@ -1,0 +1,237 @@
+/** This file is generated. Do not edit manually. **/
+@layer shared {
+  :where(html) {
+    /* Text/icon color for the table */
+    --sds-s-table-color: var(--slds-s-table-color);
+    --slds-s-table-color: var(--slds-g-color-on-surface-3);
+    /* Background color for the table header */
+    --sds-s-table-header-color-background: var(--slds-s-table-header-color-background);
+    --slds-s-table-header-color-background: var(--slds-g-color-surface-container-2);
+    /* Background color for the table header cells on hover */
+    --sds-s-table-header-color-background-hover: var(--slds-s-table-header-color-background-hover);
+    --slds-s-table-header-color-background-hover: var(--slds-g-color-surface-container-1);
+    /* Background color for the table cells on active/selected */
+    --sds-s-table-header-color-background-selected: var(--slds-s-table-header-color-background-selected);
+    --slds-s-table-header-color-background-selected: var(--slds-g-color-surface-container-1);
+    /* Text/icon color for the table header */
+    --sds-s-table-header-color: var(--slds-s-table-header-color);
+    --slds-s-table-header-color: var(--slds-g-color-on-surface-2);
+    /* Font weight for the table header */
+    --sds-s-table-header-font-weight: var(--slds-s-table-header-font-weight);
+    --slds-s-table-header-font-weight: var(--slds-g-font-weight-7);
+    /* Color of the resize handle on table columns */
+    --sds-s-table-resize-color: var(--slds-s-table-resize-color);
+    --slds-s-table-resize-color: var(--slds-g-color-neutral-base-70);
+    /* Active color of the resize handle on table columns */
+    --sds-s-table-resize-color-active: var(--slds-s-table-resize-color-active);
+    --slds-s-table-resize-color-active: var(--slds-g-color-accent-2);
+    /* Background color of the selected table row */
+    --sds-s-table-row-color-background-selected: var(--slds-s-table-row-color-background-selected);
+    --slds-s-table-row-color-background-selected: var(--slds-g-color-surface-container-2);
+    /* Border color of the selected table row on hover */
+    --sds-s-table-row-color-border-selected-hover: var(--slds-s-table-row-color-border-selected-hover);
+    --slds-s-table-row-color-border-selected-hover: var(--slds-g-color-border-1);
+    /* Box shadow of the selected table cell */
+    --sds-s-table-cell-shadow-selected: var(--slds-s-table-cell-shadow-selected);
+    --slds-s-table-cell-shadow-selected: var(--slds-g-color-accent-2) 0 0 0 1px inset;
+    /* Hover background color for pills */
+    --sds-s-pill-color-background-hover: var(--slds-s-pill-color-background-hover);
+    --slds-s-pill-color-background-hover: var(--slds-g-color-surface-container-2);
+    /* Background color of all page header */
+    --sds-s-pageheader-color-background: var(--slds-s-pageheader-color-background);
+    --slds-s-pageheader-color-background: var(--slds-g-color-surface-container-2);
+    /* Background color of all page header rows */
+    --sds-s-pageheader-row-color-background: var(--slds-s-pageheader-row-color-background);
+    --slds-s-pageheader-row-color-background: var(--slds-g-color-surface-container-1);
+    /* Border radius for all page headers */
+    --sds-s-pageheader-radius-border: var(--slds-s-pageheader-radius-border);
+    --slds-s-pageheader-radius-border: var(--slds-g-radius-border-2);
+    /* Font-size of all page header titles */
+    --sds-s-pageheader-title-font-size: var(--slds-s-pageheader-title-font-size);
+    --slds-s-pageheader-title-font-size: 1.125rem;
+    /* Font-weight of all page header titles */
+    --sds-s-pageheader-title-font-weight: var(--slds-s-pageheader-title-font-weight);
+    --slds-s-pageheader-title-font-weight: var(--slds-g-font-weight-7);
+    /* Border width for all page headers */
+    --sds-s-pageheader-sizing-border: var(--slds-s-pageheader-sizing-border);
+    --slds-s-pageheader-sizing-border: 1px;
+    /* Box shadow for all page headers */
+    --sds-s-pageheader-shadow: var(--slds-s-pageheader-shadow);
+    --slds-s-pageheader-shadow: var(--slds-g-shadow-1);
+    /* Default color for tabs */
+    --sds-s-navigation-color-background: var(--slds-s-navigation-color-background);
+    --slds-s-navigation-color-background: var(--slds-g-color-surface-container-2);
+    /* Default color for tabs */
+    --sds-s-navigation-color-background-active: var(--slds-s-navigation-color-background-active);
+    --slds-s-navigation-color-background-active: var(--slds-g-color-surface-container-1);
+    /* Default color for tabs */
+    --sds-s-navigation-color-background-hover: var(--slds-s-navigation-color-background-hover);
+    --slds-s-navigation-color-background-hover: var(--slds-g-color-surface-container-2);
+    /* Default color for tabs */
+    --sds-s-navigation-radius-border: var(--slds-s-navigation-radius-border);
+    --slds-s-navigation-radius-border: var(--slds-g-radius-border-2);
+    /* Default color for tabs */
+    --sds-s-navigation-color: var(--slds-s-navigation-color);
+    --slds-s-navigation-color: var(--slds-g-color-on-surface-2);
+    /* Default color for tabs */
+    --sds-s-navigation-color-active: var(--slds-s-navigation-color-active);
+    --slds-s-navigation-color-active: var(--slds-g-color-on-surface-2);
+    /* Default color for tabs */
+    --sds-s-navigation-color-hover: var(--slds-s-navigation-color-hover);
+    --slds-s-navigation-color-hover: var(--slds-g-color-on-surface-2);
+    /* Default border color for tabs */
+    --sds-s-navigation-color-border: var(--slds-s-navigation-color-border);
+    --slds-s-navigation-color-border: var(--slds-g-color-border-2);
+    /* Default border color for tabs */
+    --sds-s-navigation-color-border-hover: var(--slds-s-navigation-color-border-hover);
+    --slds-s-navigation-color-border-hover: var(--slds-g-color-accent-2);
+    /* Default border color for tabs */
+    --sds-s-navigation-sizing-border-hover: var(--slds-s-navigation-sizing-border-hover);
+    --slds-s-navigation-sizing-border-hover: 2px;
+    /* Default border color for tabs */
+    --sds-s-navigation-sizing-border-active: var(--slds-s-navigation-sizing-border-active);
+    --slds-s-navigation-sizing-border-active: 3px;
+    /* Default border color for tabs */
+    --sds-s-navigation-font-weight: var(--slds-s-navigation-font-weight);
+    --slds-s-navigation-font-weight: normal;
+    /* Default border color for tabs */
+    --sds-s-navigation-font-weight-active: var(--slds-s-navigation-font-weight-active);
+    --slds-s-navigation-font-weight-active: 700;
+    /* Active background color for menu/listbox items */
+    --sds-s-menu-item-color-background-active: var(--slds-s-menu-item-color-background-active);
+    --slds-s-menu-item-color-background-active: var(--slds-g-color-surface-container-2);
+    /* Active text color for menu/listbox items */
+    --sds-s-menu-item-color-active: var(--slds-s-menu-item-color-active);
+    --slds-s-menu-item-color-active: var(--slds-g-color-accent-2);
+    /* Default color for links */
+    --sds-s-link-color: var(--slds-s-link-color);
+    --slds-s-link-color: var(--lwc-brandTextLink, var(--slds-g-color-accent-2));
+    /* Default color for links on hover */
+    --sds-s-link-color-hover: var(--slds-s-link-color-hover);
+    --slds-s-link-color-hover: var(--lwc-brandTextLinkActive, var(--slds-g-color-accent-3));
+    /* Default color for links on focus */
+    --sds-s-link-color-focus: var(--slds-s-link-color-focus);
+    --slds-s-link-color-focus: var(--lwc-brandTextLinkActive, var(--slds-g-color-accent-3));
+    /* Default color for links on active */
+    --sds-s-link-color-active: var(--slds-s-link-color-active);
+    --slds-s-link-color-active: var(--lwc-brandTextLinkActive, var(--slds-g-color-accent-3));
+    /* Default box shadow for links on focus */
+    --sds-s-link-shadow-focus: var(--slds-s-link-shadow-focus);
+    --slds-s-link-shadow-focus: 0 0 0 2px var(--slds-g-color-surface-1), 0 0 0 3px var(--slds-g-color-brand-base-40);
+    /* Spacing between the label and the input */
+    --sds-s-label-spacing: var(--slds-s-label-spacing);
+    --slds-s-label-spacing: var(--slds-g-spacing-1);
+    /* Font size for form labels */
+    --sds-s-label-font-size: var(--slds-s-label-font-size);
+    --slds-s-label-font-size: var(--slds-g-font-scale-neg-1);
+    /* Text color for form labels */
+    --sds-s-label-color: var(--slds-s-label-color);
+    --slds-s-label-color: var(--slds-g-color-on-surface-2);
+    /* Spacing gap between elements in the label container */
+    --sds-s-label-sizing-gap: var(--slds-s-label-sizing-gap);
+    --slds-s-label-sizing-gap: var(--slds-g-spacing-1);
+    /* Border radius for inputs */
+    --sds-s-input-radius-border: var(--slds-s-input-radius-border);
+    --slds-s-input-radius-border: var(--slds-g-radius-border-2);
+    /* Background color for inputs */
+    --sds-s-input-color-background: var(--slds-s-input-color-background);
+    --slds-s-input-color-background: var(--slds-g-color-surface-container-1);
+    /* Background color for inputs when disabled */
+    --sds-s-input-color-background-disabled: var(--slds-s-input-color-background-disabled);
+    --slds-s-input-color-background-disabled: var(--slds-g-color-surface-container-3);
+    /* Background color for inputs when disabled */
+    --sds-s-input-color-background-invalid: var(--slds-s-input-color-background-invalid);
+    --slds-s-input-color-background-invalid: var(--slds-g-color-surface-container-1);
+    /* Border color for inputs */
+    --sds-s-input-color-border: var(--slds-s-input-color-border);
+    --slds-s-input-color-border: var(--slds-g-color-border-2);
+    /* Spacing for inputs. Set as padding. */
+    --sds-s-input-spacing: var(--slds-s-input-spacing);
+    --slds-s-input-spacing: var(--slds-g-spacing-2);
+    /* Text color for inputs */
+    --sds-s-input-color: var(--slds-s-input-color);
+    --slds-s-input-color: var(--slds-g-color-on-surface-2);
+    /* Text color for inputs when disabled */
+    --sds-s-input-color-invalid: var(--slds-s-input-color-invalid);
+    --slds-s-input-color-invalid: var(--slds-g-color-on-surface-2);
+    /* Box shadow for inputs on focus. */
+    --sds-s-input-shadow-focus: var(--slds-s-input-shadow-focus);
+    --slds-s-input-shadow-focus: 0 0 3px var(--sds-g-color-accent-2);
+    /* Box shadow for inputs on focus. */
+    --sds-s-input-shadow-invalid: var(--slds-s-input-shadow-invalid);
+    --slds-s-input-shadow-invalid: inset 0 0 0 1px var(--sds-g-color-error-1);
+    /* Border color for inputs on focus. */
+    --sds-s-input-color-border-focus: var(--slds-s-input-color-border-focus);
+    --slds-s-input-color-border-focus: var(--slds-g-color-border-accent-2);
+    /* Border color for inputs on hover. */
+    --sds-s-input-color-border-hover: var(--slds-s-input-color-border-hover);
+    --slds-s-input-color-border-hover: var(--slds-g-color-border-2);
+    /* Fill color for icons. The default is utility icons. */
+    --sds-s-icon-color-foreground: var(--slds-s-icon-color-foreground);
+    --slds-s-icon-color-foreground: var(--slds-g-color-on-surface-1);
+    /* Default border radius for icons. */
+    --sds-s-icon-radius-border: var(--slds-s-icon-radius-border);
+    --slds-s-icon-radius-border: var(--slds-g-radius-border-2);
+    /* Text size of help text that sits below a form control, if present. */
+    --sds-s-helptext-font-size: var(--slds-s-helptext-font-size);
+    --slds-s-helptext-font-size: var(--slds-g-font-scale-neg-1);
+    /* Spacing between the helptext and the form control. */
+    --sds-s-helptext-spacing: var(--slds-s-helptext-spacing);
+    --slds-s-helptext-spacing: var(--slds-g-spacing-1);
+    /* Container text color */
+    --sds-s-container-color: var(--slds-s-container-color);
+    --slds-s-container-color: var(--slds-g-color-on-surface-3);
+    /* Container shadow */
+    --sds-s-container-shadow: var(--slds-s-container-shadow);
+    --slds-s-container-shadow: var(--slds-g-shadow-2);
+    /* Container border color */
+    --sds-s-container-color-border: var(--slds-s-container-color-border);
+    --slds-s-container-color-border: var(--slds-g-color-border-1);
+    /* Container border radius */
+    --sds-s-container-radius-border: var(--slds-s-container-radius-border);
+    --slds-s-container-radius-border: var(--slds-g-radius-border-2);
+    /* Container heading font weight */
+    --sds-s-container-heading-font-weight: var(--slds-s-container-heading-font-weight);
+    --slds-s-container-heading-font-weight: var(--slds-g-font-weight-4);
+    /* Container footer background color */
+    --sds-s-container-footer-color-background: var(--slds-s-container-footer-color-background);
+    --slds-s-container-footer-color-background: var(--slds-g-color-surface-container-2);
+    /* Background of neutral buttons */
+    --sds-s-button-color-background: var(--slds-s-button-color-background);
+    --slds-s-button-color-background: var(--slds-g-color-surface-container-1);
+    /* Hover background of neutral buttons */
+    --sds-s-button-color-background-hover: var(--slds-s-button-color-background-hover);
+    --slds-s-button-color-background-hover: var(--slds-g-transparent);
+    /* Focus background of neutral buttons */
+    --sds-s-button-color-background-focus: var(--slds-s-button-color-background-focus);
+    --slds-s-button-color-background-focus: var(--slds-g-color-surface-container-2);
+    /* Active background of neutral buttons */
+    --sds-s-button-color-background-active: var(--slds-s-button-color-background-active);
+    --slds-s-button-color-background-active: var(--slds-g-color-surface-container-2);
+    /* Border color of neutral buttons */
+    --sds-s-button-color-border: var(--slds-s-button-color-border);
+    --slds-s-button-color-border: var(--slds-g-color-border-2);
+    /* Focus border color of neutral buttons */
+    --sds-s-button-shadow-focus: var(--slds-s-button-shadow-focus);
+    --slds-s-button-shadow-focus: 0 0 3px var(--sds-g-color-accent-2);
+    /* Active border color of neutral buttons */
+    --sds-s-button-shadow-active: var(--slds-s-button-shadow-active);
+    --slds-s-button-shadow-active: 0 0 3px var(--sds-g-color-accent-2);
+    /* Default border radius for buttons */
+    --sds-s-button-radius-border: var(--slds-s-button-radius-border);
+    --slds-s-button-radius-border: var(--slds-g-radius-border-2);
+    /* Hover text color of neutral buttons */
+    --sds-s-button-color-hover: var(--slds-s-button-color-hover);
+    --slds-s-button-color-hover: var(--slds-g-color-accent-3);
+    /* Inline/horizontal spacing of buttons */
+    --sds-s-button-spacing-inline: var(--slds-s-button-spacing-inline);
+    --slds-s-button-spacing-inline: var(--slds-g-spacing-4);
+    /* Backdrop color */
+    --sds-s-backdrop-color-background: var(--slds-s-backdrop-color-background);
+    --slds-s-backdrop-color-background: rgba(24, 24, 24, 0.5);
+    /* Alert font weight */
+    --sds-s-alert-font-weight: var(--slds-s-alert-font-weight);
+    --slds-s-alert-font-weight: var(--slds-g-font-weight-4);
+  }
+}
+  

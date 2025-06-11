@@ -1,0 +1,72 @@
+
+:host([data-render-mode="shadow"]) .slds-map_container {
+  flex: 3 1 auto;
+}
+
+:host([data-render-mode="shadow"]) .slds-map {
+  position: relative;
+  min-width: calc(var(--slds-g-sizing-15) + var(--slds-g-sizing-10) + var(--slds-g-sizing-4));
+  width: 100%;
+  max-height: 100%;
+}
+
+:host([data-render-mode="shadow"].slds-has-coordinates) .slds-map::before {
+  padding-block-start: 75%;
+}
+
+:host([data-render-mode="shadow"]) .slds-map::before {
+  content: '';
+  display: block;
+  height: 0;
+  width: 100%;
+  padding-block-start: 56.25%;
+}
+
+:host([data-render-mode="shadow"].slds-has-coordinates) {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-height: calc(var(--slds-g-sizing-16) + var(--slds-g-sizing-13) + var(--slds-g-sizing-6));
+  background: var(--slds-g-color-surface-container-1);
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates {
+  overflow: auto;
+  flex: 1 1 auto;
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__header {
+  padding: var(--slds-g-spacing-4);
+}
+
+:host([data-render-mode="shadow"]) .slds-coordinates__title {
+  font-size: var(--slds-g-font-scale-2);
+  font-weight: var(--slds-g-font-weight-bold);
+}
+
+:host([data-render-mode="shadow"]) .slds-p-around_medium {
+  padding: 1rem;
+}
+
+:host([data-render-mode="shadow"]) .slds-button_brand {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0;
+  padding-inline: var(--slds-g-spacing-4);
+  background: none;
+  background-color: var(--slds-g-color-accent-container-1);
+  background-clip: border-box;
+  border-color: var(--slds-g-color-border-accent-1);
+  border-style: solid;
+  border-width: var(--slds-g-sizing-border-1);
+  border-radius: var(--slds-g-radius-border-2);
+  line-height: calc(var(--slds-g-sizing-8) + var(--slds-g-sizing-1));
+}
+
+:host([data-render-mode="shadow"]) .slds-button_brand:hover,:host([data-render-mode="shadow"]) 
+.slds-button_brand:focus,:host([data-render-mode="shadow"]) 
+.slds-button_brand:active {
+  background-color: var(--slds-g-color-accent-container-2);
+  border-color: var(--slds-g-color-border-accent-2);
+}

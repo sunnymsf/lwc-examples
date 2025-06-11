@@ -1,0 +1,77 @@
+{
+  "lwc": {
+    "modules": [
+      {
+        "npm": "lwc-components-lightning"
+      },
+      {
+        "dir": "$rootDir/src/modules"
+      },
+      {
+        "dir": "$rootDir/src/playground-metadata/lwc/lightning"
+      },
+      {
+        "dir": "$rootDir/src/playground-metadata/lwc/lightning/examples"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "rootComponent": "pg/home",
+      "layoutTemplate": "$layoutsDir/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "playground",
+      "path": "/playground.html",
+      "rootComponent": "pg/home",
+      "layoutTemplate": "$layoutsDir/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "lwclightning-accordion",
+      "path": "/playground/lwc/lightning/accordion.html",
+      "rootComponent": "playground/lwclightningaccordion",
+      "layoutTemplate": "$layoutsDir/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "lwclightning-button",
+      "path": "/playground/lwc/lightning/button.html",
+      "rootComponent": "playground/lwclightningbutton",
+      "layoutTemplate": "$layoutsDir/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    },
+    {
+      "id": "lwclightning-buttonGroup",
+      "path": "/playground/lwc/lightning/buttongroup.html",
+      "rootComponent": "playground/lwclightningbuttongroup",
+      "layoutTemplate": "$layoutsDir/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    }
+  ],
+  "assets": [
+    {
+      "alias": "sldsDir",
+      "dir": "$rootDir/node_modules/@salesforce-ux/design-system/assets",
+      "urlPath": "/slds"
+    },
+    {
+      "alias": "assetsDir",
+      "dir": "$rootDir/src/assets",
+      "urlPath": "/public/assets"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<template>
+  <a
+    part="link"
+    href={href}
+    target={target}
+    rel={rel}
+    download={download}
+    type={type}
+    hreflang={hreflang}
+    referrerpolicy={referrerpolicy}
+    ping={ping}
+    aria-disabled={ariaDisabled}
+    aria-haspopup={ariaHasPopup}
+    aria-expanded={ariaExpanded}
+    aria-pressed={ariaPressed}
+    aria-current={ariaCurrent}
+    aria-label={ariaLabel}
+    onslotchange={handleSlotChange}
+    onkeydown={handleKeyDown}
+    onclick={handleClick}
+    onblur={handleBlur}
+    onfocus={handleFocus}
+  >
+    <slot name="start"></slot>
+    <slot></slot>
+    <slot name="end"></slot>
+  </a>
+</template>

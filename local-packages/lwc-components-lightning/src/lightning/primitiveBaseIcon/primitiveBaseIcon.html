@@ -1,0 +1,7 @@
+<template>
+  <div part="boundary" symbol={symbol} set={set}>
+    <div part="icon" aria-label={ariaLabel} role={role}>
+      <slot onslotchange={handleSlotChange}></slot>
+    </div>
+  </div>
+</template>

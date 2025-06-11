@@ -1,0 +1,9 @@
+@import './primitiveIcon.lbc.native.css';
+
+/* Overriding sort icon styles
+Use opacity instead of display: none to avoid
+column header wrapping on hover (W-16027919) */
+
+.private-dt-sort-icon {
+    display: inline-block;
+}

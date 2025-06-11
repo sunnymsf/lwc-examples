@@ -1,0 +1,99 @@
+### Overview
+
+The expandable section component provides a container that can be expanded or collapsed to show or hide its content. This action is triggered by a button.
+
+### Use Cases
+
+- Collapsible Sections: Hide/show content for better user experience.
+- Show/Hide Content: Condense information and reveal details as needed.
+- Nested Expandable Sections: Organize content in a hierarchical structure.
+
+### Non-goals
+
+- The manager doesn't support multiple buttons (`aria-controls`) that toggle its content. Only the first button with the aria-control attribute will be assigned to be the trigger for the content.
+- Complex structures where the button and the content has the need to be part of different elements or where the encapsulation is broken (e.g. `dd`, button in `dt`, component in `dl`)
+- Customizations can be made through Light DOM styling with CSS and `::part` API, where the addition of CSS through ::part falls outside the support matrix of SDS.
+
+### Features
+
+- The API design of the SDS Expandable Section Manager is specific to the [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/) specification.
+- Manager will automatically upgrade the HTML passed through the slot if contracts are met. If contracts are not met, the HTML will be ignored and a warning will be logged to the console.
+- Full keyboard navigation support for the following elements: `button`, `input type="button"`, element with `role="button"`.
+- Content visibility set by the `open` (Expanded) attribute on the host element.
+
+  - Default is set to false.
+  - The attribute handles the proper `aria-expanded`, `aria-hidden` and `display` values.
+  - When the content is visible, the element with `role="button"` has `aria-expanded` set to `true`. When hidden, it is set to `false`.
+  - When the content is visible, `display` is set to `block`, and `aria-hidden` is set to `false`. When hidden, `display` is set to `hide`, and `aria-hidden` is set to `true`.
+
+- Support for one direct child element within a button (e.g. `button > span`)
+- Instances of the SDS Expandable Section Manager can be nested within the content element of the top level manager.
+
+### Prior Art/Examples
+
+- [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/components/expandable-section/)
+- [WAI Aria](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)
+
+---
+
+### API
+
+#### Custom Element
+
+This specification will apply to a SDS custom element but can also be implemented in a subsystem's ecosystem with the subsystems namespace used as the prefix to the custom elements definition:
+
+1. `sds-expandable-section-manager` - This is owned by the Salesforce Design System (SDS) Team.
+2. `<namespace>-expandable-section-manager` - This is owned by a subsystem built on SDS, e.g. `dxp-expandable-section-manager`
+
+### Anatomy and Appearance
+
+#### DOM Structure
+
+```html
+<host>
+  <div part="expandable-section">
+    <slot></slot>
+  </div>
+</host>
+```
+
+#### Slots
+
+| Slot Name | Description                                            | Fallback Content |
+| --------- | ------------------------------------------------------ | ---------------- |
+| `default` | Add the main body of content (i.e. button and content) | empty            |
+
+#### Parts
+
+| Part Name            | Description                              |
+| -------------------- | ---------------------------------------- |
+| `expandable-section` | Main container of the expandable section |
+
+##### Properties & Attributes
+
+| Attribute | Type   | Default Value | Description                                                 |
+| --------- | ------ | ------------- | ----------------------------------------------------------- |
+| `open`    | `bool` | `false`       | Indicates whether the content section is expanded (Visible) |
+
+#### Contracts
+
+The following contracts must be met for the SDS Expandable Section Manager to upgrade the HTML passed through the slot:
+
+- The manager must contain at least one element within the slot
+- The button element must be a `button`, `input type="button"`, element with `role="button"` or a valid custom element that includes any of the previous
+- The button element must have a unique `aria-controls` attribute
+- The button element supports a direct child (e.g. `span` within a `button`). Multiple levels of nesting within the element with `aria-controls` are not supported
+- The content element must have a unique `id` attribute
+- The content element `id` must be equal to the button `aria-controls`
+- The manager has support for a single trigger and content. For multiple expandable sections, multiple managers should be used
+
+---
+
+### Accessibility
+
+All [global `aria-*` attributes](https://www.w3.org/TR/wai-aria-1.1/#global_states) should follow all [interaction requirements](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/#wai-ariaroles,states,andproperties) per the W3C.
+
+### Test Plan
+
+- All expandable sections should have visual regression tests to catch any unintended modifications to the visuals of the container
+- All expandable sections should have unit tests to ensure the correct input and output of attributes, states, and events

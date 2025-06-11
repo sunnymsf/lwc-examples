@@ -1,0 +1,43 @@
+<template>
+  <div part="input-checkbox">
+    <div part="checkbox">
+      <input
+        type="checkbox"
+        id={id}
+        disabled={disabled}
+        required={required}
+        name={name}
+        value={value}
+        aria-invalid={invalid}
+        onchange={handleChange}
+        onclick={handleClick}
+        onblur={handleBlur}
+        checked={checked}
+      />
+      <div part="mark">
+        <slot name="mark">
+          <template lwc:if={indeterminate}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M19 13H5v-2h14v2z" />
+            </svg>
+          </template>
+          <template lwc:else>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="none" stroke="currentColor" stroke-width="3" d="M1.73 12.91l6.37 6.37L22.79 4.59" />
+            </svg>
+          </template>
+        </slot>
+      </div>
+    </div>
+    <div part="label-container">
+      <slot name="label-start"></slot>
+      <label part="label" for={id}>
+        <slot onslotchange={handleLabelSlotChange}></slot>
+      </label>
+      <slot name="label-end"></slot>
+    </div>
+  </div>
+  <div part="help-text">
+    <slot name="help-text" onslotchange={handleHelpTextSlotChange}></slot>
+  </div>
+</template>
